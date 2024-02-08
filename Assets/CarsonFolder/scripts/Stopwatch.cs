@@ -4,11 +4,11 @@ using System.Threading;
 using UnityEngine;
 
 
-public class TargetScript : MonoBehaviour
+public class Stopwatch: MonoBehaviour
 {
     public GlobalTimerManager timerManager;
 
-    public bool complete = false; //flag to check if the puzzle is complete
+    
     private List<GameObject> hitTargets = new List<GameObject>(); //list to store hit targets
     private const int totalTargets = 3;
 
@@ -21,31 +21,36 @@ public class TargetScript : MonoBehaviour
             {
                 timerManager.StartGlobalTimer();
             }
-
+            
             
             hitTargets.Add(gameObject);
             CheckPuzzleCompletion();
         }
     }
 
-    //cxheck if all targets are hit and update the complete flag
+    //cxheck if all targets are hit and update the complete flah
     void CheckPuzzleCompletion()
     {
-        complete = hitTargets.Count == totalTargets;
+        if (hitTargets.Count == totalTargets)
+        {
+            timerManager.complete = true;
+        }
+       
+        
     }
 
     // reset the puzzle if the timer runs out
     public void ResetPuzzle()
     {
         hitTargets.Clear();
-        complete = false;
+        timerManager.complete = false;
     }
 
     // Update is called once per frame
     void Update()
     {
         // Check if the timer has run out and the puzzle is not complete
-        if (!complete && timerManager.running && timerManager.globalTime >= 10.0f)
+        if (!timerManager.complete && timerManager.running && timerManager.globalTime >= 10.0f)
         {
             // Reset the puzzle if the timer runs out and the puzzle is not complete
             ResetPuzzle();
