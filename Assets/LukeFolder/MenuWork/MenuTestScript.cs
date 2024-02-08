@@ -43,6 +43,9 @@ public class MenuTestScript : MonoBehaviour
         if(canvasObject.activeSelf)
         {
             this.transform.position = gameCamera.transform.position + new Vector3(0,0,menuDistance);
+
+            //this.transform.LookAt(gameCamera.transform, Vector3.up);
+
         }
 
 
