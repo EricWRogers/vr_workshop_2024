@@ -31,14 +31,15 @@ public class FPSController : MonoBehaviour
     }
 
     // Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         Vector3 forward = playerCamera.transform.forward;
         Vector3 right = playerCamera.transform.right;
 
         bool isRunning = Keyboard.current.leftShiftKey.isPressed;
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkspeed) * Keyboard.current.wKey.ReadValue() : 0f;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkspeed) * Keyboard.current.dKey.ReadValue() : 0f;
+        float curSpeedX = canMove ? (isRunning ? runSpeed : walkspeed) * (Keyboard.current.wKey.ReadValue() - Keyboard.current.sKey.ReadValue()) : 0f;
+        float curSpeedY = canMove ? (isRunning ? runSpeed : walkspeed) * (Keyboard.current.dKey.ReadValue() - Keyboard.current.aKey.ReadValue()) : 0f;
         float movementDirectionY = moveDirection.y;
         moveDirection = forward * curSpeedX + right * curSpeedY;
 
