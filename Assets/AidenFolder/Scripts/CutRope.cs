@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CutRope : MonoBehaviour
 {
-    public void OnTriggerEnter(Collider collider)
+    public GameObject prefab;
+
+
+    public void OnTriggerEnter(Collider other)
     {
-        if(collider.CompareTag("AidensArrow"))
+        if(other.CompareTag("AidensArrow"))
         {
-            //Debug.Log(collider.gameObject.transform.position);
+            Debug.Log(GetComponent<Collider>().gameObject.transform.position);
+            //Instantiate(prefab, )
             Debug.Log("Aidens Arrow Collided");
             Destroy(this.gameObject);
         }

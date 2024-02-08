@@ -16,7 +16,7 @@ public class TestDrawBridgeFunctionality : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if(rope == null)
+       if(rope == null && ropeTwo == null)
        {
             Debug.Log("The space key was pressed");
             Destroy(this.gameObject);

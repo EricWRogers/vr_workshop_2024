@@ -11,8 +11,6 @@ GameObject:
   - component: {fileID: 5026282952954154521}
   - component: {fileID: 5913573412393675602}
   - component: {fileID: 2658376612505763378}
-  - component: {fileID: 5870121608689815561}
-  - component: {fileID: 1595315306042506824}
   m_Layer: 0
   m_Name: Rope controller
   m_TagString: Untagged
@@ -171,39 +169,6 @@ MonoBehaviour:
   dRope: 2
   aRope: 0.05
   mRopeSection: 0.2
---- !u!65 &5870121608689815561
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187450647584132267}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.20000167, y: 6.799999, z: 0.20000072}
-  m_Center: {x: 1.2399992, y: 5.7000003, z: -2.4400005}
---- !u!114 &1595315306042506824
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 187450647584132267}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2c9896960bcc8e4392137b142c994dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &745003955757846231
 GameObject:
   m_ObjectHideFlags: 0
