@@ -2,43 +2,54 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
 using UnityEngine;
-using TMPro;
 
-public class Stopwatch : MonoBehaviour
+
+public class TargetScript : MonoBehaviour
 {
-    public float time = 0.0f;
-    public bool running = false;
-    //public TMP_Text TimerUI;
-    public bool ishit = false;
-    
-    void Start()
+    public GlobalTimerManager timerManager;
+
+    public bool complete = false; //flag to check if the puzzle is complete
+    private List<GameObject> hitTargets = new List<GameObject>(); //list to store hit targets
+    private const int totalTargets = 3;
+
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Arrow"))
+        {
+            // start the global timer when the first target is hit
+            if (!timerManager.running)
+            {
+                timerManager.StartGlobalTimer();
+            }
+
+            
+            hitTargets.Add(gameObject);
+            CheckPuzzleCompletion();
+        }
+    }
+
+    //cxheck if all targets are hit and update the complete flag
+    void CheckPuzzleCompletion()
+    {
+        complete = hitTargets.Count == totalTargets;
+    }
+
+    // reset the puzzle if the timer runs out
+    public void ResetPuzzle()
+    {
+        hitTargets.Clear();
+        complete = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (ishit)
+        // Check if the timer has run out and the puzzle is not complete
+        if (!complete && timerManager.running && timerManager.globalTime >= 10.0f)
         {
-            running = true;
+            // Reset the puzzle if the timer runs out and the puzzle is not complete
+            ResetPuzzle();
+            timerManager.StopGlobalTimer(); // Stop the global timer
         }
-        if (running)
-        {
-            time += Time.deltaTime;
-            int wholeNumber = (int)time;
-
-            int des = (int)((time - wholeNumber) * 1000);
-
-
-            //TimerUI.text = time.ToString();
-        }   
     }
-    public void Stop() 
-    {
-        running = false;
-    }
-
-
-
 }
