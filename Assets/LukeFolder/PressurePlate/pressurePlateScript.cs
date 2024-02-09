@@ -23,7 +23,7 @@ public class pressurePlateScript : MonoBehaviour
     {
         
     }
-    void OnTriggerEnter(Collider colliderEnter)
+    void OnTriggerStay(Collider colliderEnter)
     {   
         if(buttonActive == false)
         {
@@ -40,16 +40,10 @@ public class pressurePlateScript : MonoBehaviour
     }
     void OnTriggerExit(Collider colliderExit) //ISSUE: IF OBJECT LEAVES BY METHOD OF DEACTIVATION OR DELETION, IT WILL NOT TRIGGER ON EXIT
     {
-        if(lastCollided != colliderExit)
-        {
-            Debug.Log("Object that left did not match what entered");
-        }
-        if(lastCollided == colliderExit) 
-        {
+
             Debug.Log("Object that entered first left");
             deactivatorEvent.Invoke();
             buttonActive = false;
             buttonObject.SetActive(true);
-        }
     }
 }
