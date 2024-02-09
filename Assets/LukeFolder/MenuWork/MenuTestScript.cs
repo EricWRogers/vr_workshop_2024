@@ -42,7 +42,9 @@ public class MenuTestScript : MonoBehaviour
 
         if(canvasObject.activeSelf)
         {
-            this.transform.position = gameCamera.transform.position + new Vector3(0,0,menuDistance);
+            
+
+            transform.rotation = Quaternion.Euler(-gameCamera.transform.rotation.eulerAngles.x,gameCamera.transform.rotation.eulerAngles.y,-gameCamera.transform.rotation.eulerAngles.z);
 
             //this.transform.LookAt(gameCamera.transform, Vector3.up);
 
