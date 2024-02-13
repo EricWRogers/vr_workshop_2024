@@ -9,27 +9,13 @@ public class Stopwatch: MonoBehaviour
     public GlobalTimerManager timerManager;
 
     
-    private List<GameObject> hitTargets = new List<GameObject>(); //list to store hit targets
+    public List<GameObject> hitTargets = new List<GameObject>(); //list to store hit targets
     private const int totalTargets = 3;
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Arrow"))
-        {
-            // start the global timer when the first target is hit
-            if (!timerManager.running)
-            {
-                timerManager.StartGlobalTimer();
-            }
-            
-            
-            hitTargets.Add(gameObject);
-            CheckPuzzleCompletion();
-        }
-    }
+    
 
     //cxheck if all targets are hit and update the complete flah
-    void CheckPuzzleCompletion()
+    public void CheckPuzzleCompletion()
     {
         if (hitTargets.Count == totalTargets)
         {
