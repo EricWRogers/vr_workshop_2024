@@ -15,7 +15,7 @@ public class RopeControllerRealistic : MonoBehaviour
     public List<RopeSection> allRopeSections = new List<RopeSection>();
 
     //Rope data
-    private float ropeSectionLength = 1f;
+    public float ropeSectionLength = 1f;
 
     //Data we can change to change the properties of the rope
     //Spring constant
@@ -36,15 +36,22 @@ public class RopeControllerRealistic : MonoBehaviour
         //Create the rope
         //
         //Build the rope from the top
-        Vector3 pos = whatTheRopeIsConnectedTo.position;
+        Vector3 topPos = whatTheRopeIsConnectedTo.position;
+
+        Vector3 bottomPos = whatIsHangingFromTheRope.position;
+
+        float distance = Vector3.Distance(topPos, bottomPos);
+
+        float MaxRopeSection = distance / ropeSectionLength;
+        int MaxRopeSectionInt = Mathf.FloorToInt(MaxRopeSection);
 
         List<Vector3> ropePositions = new List<Vector3>();
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < MaxRopeSectionInt; i++)
         {
-            ropePositions.Add(pos);
+            ropePositions.Add(topPos);
 
-            pos.y -= ropeSectionLength;
+            topPos.y -= ropeSectionLength;
         }
 
         //But add the rope sections from bottom because it's easier to add
