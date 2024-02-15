@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TargetChecker : MonoBehaviour
 {
-    public Stopwatch targetScript;
+    public TargetLogic targetScript;
     public GlobalTimerManager timerManager;
 
     void OnTriggerEnter(Collider other)

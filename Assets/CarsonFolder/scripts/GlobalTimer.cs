@@ -7,7 +7,7 @@ public class GlobalTimerManager : MonoBehaviour
     public float globalTime = 0.0f;
     public bool running = false;
     public bool complete = false; //flag to check if the puzzle is complete
-    public Stopwatch targetScript; 
+    public TargetLogic targetScript; 
 
     void Start()
     {

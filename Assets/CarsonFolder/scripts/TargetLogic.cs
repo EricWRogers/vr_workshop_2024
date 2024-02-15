@@ -4,7 +4,7 @@ using System.Threading;
 using UnityEngine;
 
 
-public class Stopwatch: MonoBehaviour
+public class TargetLogic: MonoBehaviour
 {
     public GlobalTimerManager timerManager;
 

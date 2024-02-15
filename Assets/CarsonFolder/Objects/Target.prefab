@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 8828669644308888242}
   - component: {fileID: 4596021961189564439}
   - component: {fileID: 687925010013592631}
-  - component: {fileID: 2739126313423011567}
+  - component: {fileID: 5958516611840896752}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Target
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -101,7 +101,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -134,7 +134,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2739126313423011567
+--- !u!114 &5958516611840896752
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,8 +143,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 2442965875302194808}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58c69f92fcef71440baa4a6407959dd4, type: 3}
+  m_Script: {fileID: 11500000, guid: 9f9d5bf5cd5f33447b06a475491afe38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetScript: {fileID: 0}
   timerManager: {fileID: 0}
-  hitTargets: []
