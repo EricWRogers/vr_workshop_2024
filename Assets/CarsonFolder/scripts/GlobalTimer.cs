@@ -37,6 +37,7 @@ public class GlobalTimerManager : MonoBehaviour
             if (complete)
             {
                 StopGlobalTimer();
+                //gameObject.GetComponent<AudioSource>().Play();
             }
         }
     }
