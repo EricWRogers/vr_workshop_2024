@@ -28,8 +28,13 @@ public class SaveManager : MonoBehaviour
         {
             savedTime = timer.accumulatedTime
         };
+        /*
 
-        leaderboard.text = "Name: " + TimeSpan.FromSeconds(save.savedTime).ToString(@"mm\:ss\:ff");
+        int minutes = (int)savedTime / 60;
+        int seconds = (int)savedTime % 60;
+        double milliseconds = (savedTime - minutes*60 - seconds)*100;
+        leaderboard.text = "Name: " + string.Format("{0:##0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
+        */
 
         using (FileStream fileStream = File.Create(savePath))
         {

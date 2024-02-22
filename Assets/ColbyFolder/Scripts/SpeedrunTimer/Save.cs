@@ -1,6 +1,6 @@
 [System.Serializable]
 public class Save
 {
-    public float savedTime;
+    public double savedTime;
     public string leaderboard;
 }

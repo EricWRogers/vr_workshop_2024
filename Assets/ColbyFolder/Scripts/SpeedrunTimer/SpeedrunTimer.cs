@@ -5,11 +5,9 @@ using UnityEngine;
 
 public class SpeedrunTimer : MonoBehaviour
 {
-    public float accumulatedTime = 0f;
     private bool timerStarted = false;
+    public double accumulatedTime = 0.0f;
     private TextMeshProUGUI timer = null;
-
-    static StringBuilder timerStringBuilder = new StringBuilder(10); 
 
     private void Start()
     {
@@ -21,8 +19,11 @@ public class SpeedrunTimer : MonoBehaviour
     {
         if (timer != null && timerStarted)
         {
-            accumulatedTime += Time.deltaTime;
-            FormatTimer(TimeSpan.FromMilliseconds(accumulatedTime));
+            accumulatedTime += Time.deltaTime*60;
+            int minutes = (int)accumulatedTime / 60;
+            int seconds = (int)accumulatedTime % 60;
+            double milliseconds = (accumulatedTime - minutes*60 - seconds)*100;
+            timer.text = string.Format("{0:##0}:{1:00}.{2:00}", minutes, seconds, milliseconds);
         }
     }
 
@@ -46,22 +47,5 @@ public class SpeedrunTimer : MonoBehaviour
     public void LoadTimer(float savedTime)
     {
         accumulatedTime = savedTime;
-        FormatTimer(TimeSpan.FromMilliseconds(accumulatedTime));
-    }
-
-    private void FormatTimer(TimeSpan time)
-    {
-        timerStringBuilder.Clear(); // Clear the StringBuilder from previous content
-
-        int minutes = time.Minutes;
-        int seconds = time.Seconds;
-        int milliseconds = time.Milliseconds;
-
-        // Append formatted time to StringBuilder
-        timerStringBuilder.Append(minutes.ToString("D3")).Append(':')
-            .Append(seconds.ToString("00")).Append('.')
-            .Append((milliseconds / 10).ToString("00"));
-
-        timer.text = timerStringBuilder.ToString();
     }
 }
