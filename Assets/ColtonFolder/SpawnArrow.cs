@@ -8,7 +8,7 @@ public class SpawnArrow : MonoBehaviour
     Rigidbody arr_rigidbody;
     private GameObject arrow;
 
-    public float thrust = 10.0f;
+    public float thrust = 5.0f;
     void Start()
     {
         arr_rigidbody = prefarrow.GetComponent<Rigidbody>();
@@ -20,7 +20,7 @@ public class SpawnArrow : MonoBehaviour
         bool keyDownFlag = false;
         if (Input.GetKeyDown(KeyCode.Mouse0) && keyDownFlag == false)
         {
-            arrow = Instantiate(prefarrow, (transform.position + new Vector3 (0,1.5f, 2.0f)), Quaternion.identity);
+            arrow = Instantiate(prefarrow, (transform.position + new Vector3 (0,1.5f, 2.0f)), prefarrow.transform.rotation);
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
             //arrow.transform.rotation = Transform.LookAt();
            // Arrow.transform.Rotate(new Vector3.forward * 45f);
@@ -29,10 +29,8 @@ public class SpawnArrow : MonoBehaviour
 
         if (Input.GetKeyUp(KeyCode.Mouse0))
         {
-            //Debug.Log("Key up");
-            arr_rigidbody.AddForce(transform.up * thrust, ForceMode.Impulse);
-            arr_rigidbody.AddForce(transform.forward * thrust, ForceMode.Impulse);
             arrow.GetComponent<Rigidbody>().isKinematic = false;
+            arr_rigidbody.AddForce(transform.forward * thrust, ForceMode.Impulse);
             keyDownFlag = false;
         }
     }
