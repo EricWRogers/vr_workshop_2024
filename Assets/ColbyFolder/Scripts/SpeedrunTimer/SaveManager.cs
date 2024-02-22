@@ -2,6 +2,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class SaveManager : MonoBehaviour
 {
@@ -18,10 +19,17 @@ public class SaveManager : MonoBehaviour
     public void Save()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
+        /*
+        string tempLeaderboard = "";
+
+        tempLeaderboard = leaderboard.text;
+        */
         Save save = new Save()
         {
             savedTime = timer.accumulatedTime
         };
+
+        leaderboard.text = "Name: " + TimeSpan.FromSeconds(save.savedTime).ToString(@"mm\:ss\:ff");
 
         using (FileStream fileStream = File.Create(savePath))
         {
@@ -41,7 +49,7 @@ public class SaveManager : MonoBehaviour
                 save = (Save)binaryFormatter.Deserialize(fileStream);
             }
 
-            leaderboard.text = "Name: " + save.savedTime.ToString();
+            leaderboard.text = "Name: " + TimeSpan.FromSeconds(save.savedTime).ToString(@"mm\:ss\:ff");
         }
         else
         {
