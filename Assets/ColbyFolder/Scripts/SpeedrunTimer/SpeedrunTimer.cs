@@ -1,5 +1,3 @@
-using System;
-using System.Text;
 using TMPro;
 using UnityEngine;
 
@@ -8,6 +6,8 @@ public class SpeedrunTimer : MonoBehaviour
     private bool timerStarted = false;
     public double accumulatedTime = 0.0f;
     private TextMeshProUGUI timer = null;
+    [Tooltip("Multipiler for how fast the timer counts up, should be 1 for the build")]
+    public double timerMultiplier = 1.0f;
 
     private void Start()
     {
@@ -19,7 +19,7 @@ public class SpeedrunTimer : MonoBehaviour
     {
         if (timer != null && timerStarted)
         {
-            accumulatedTime += Time.deltaTime*60;
+            accumulatedTime += Time.deltaTime * timerMultiplier;
             int minutes = (int)accumulatedTime / 60;
             int seconds = (int)accumulatedTime % 60;
             double milliseconds = (accumulatedTime - minutes*60 - seconds)*100;
@@ -41,7 +41,7 @@ public class SpeedrunTimer : MonoBehaviour
     {
         timerStarted = false;
         accumulatedTime = 0f;
-        timer.text = "000:00.00";
+        timer.text = "0:00.00";
     }
 
     public void LoadTimer(float savedTime)
