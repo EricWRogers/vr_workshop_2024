@@ -1,31 +1,48 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections.Generic;
 
-public class UpdatedManager : MonoBehaviour
+public class UpdatedManager: MonoBehaviour
 {
-    public List<GameObject> hitTargets = new List<GameObject>(); //list to store hit targets
-    private const int totalTargets = 3;
-    public bool complete = false;
+    public List<UpdatedTargetLogic> targets = new List<UpdatedTargetLogic>();
+    public int targetsToCompletePuzzle = 3;
+    public bool puzzleComplete = false;
+    public AudioSource waa;
 
-
-    public void CheckPuzzleCompletion()
-    {
-        if (hitTargets.Count == totalTargets)
-        {
-            complete = true;
-        }
-
-
-    }
-
-    // Update is called once per frame
-    void Update()
+    void Start()
     {
         
-        if (complete) 
-        { 
-            gameObject.GetComponent<AudioSource>().Play();
+        puzzleComplete = false;
+    }
+
+    public void AddTargetToList(UpdatedTargetLogic target)
+    {
+        
+        targets.Add(target);
+        CheckPuzzleCompletion();
+    }
+
+    public void RemoveTargetFromList(UpdatedTargetLogic target)
+    {
+        
+        targets.Remove(target);
+        CheckPuzzleCompletion();
+    }
+
+    void CheckPuzzleCompletion()
+    {
+        
+        if (targets.Count == targetsToCompletePuzzle)
+        {
+          
+            puzzleComplete = true;
+         
+            Debug.Log("yippee");
+            //waa.Play();
+        }
+        else
+        {
+            
+            puzzleComplete = false;
         }
     }
 }

@@ -1,18 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class UpdatedTargetLogic : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float timerDuration = 10.0f; 
+    public UpdatedManager timerManager; 
+    public bool isHit = false; 
+
+    void OnTriggerEnter(Collider other)
     {
-        
+        if (other.gameObject.CompareTag("Arrow") && !isHit)
+        {
+            
+            Invoke("CompleteTimer", timerDuration);
+            
+            timerManager.AddTargetToList(this);
+            
+            isHit = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    
+    void CompleteTimer()
     {
         
+        timerManager.RemoveTargetFromList(this);
     }
 }
