@@ -361,7 +361,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDuration: 10
   timerManager: {fileID: 240638048}
-  isHit: 0
 --- !u!1001 &642203330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -518,7 +517,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDuration: 10
   timerManager: {fileID: 240638048}
-  isHit: 0
 --- !u!1001 &1151212571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -536,6 +534,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: arrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 4895626141664274607, guid: a320e04c3875f0145b25eca737186080,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7122472922886524049, guid: a320e04c3875f0145b25eca737186080,
         type: 3}
@@ -808,7 +811,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timerDuration: 10
   timerManager: {fileID: 240638048}
-  isHit: 0
 --- !u!1 &1437318204
 GameObject:
   m_ObjectHideFlags: 0
