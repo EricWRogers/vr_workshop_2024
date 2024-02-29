@@ -7,6 +7,9 @@ public class PlayerStartingSpawn : MonoBehaviour
 
     private void Start()
     {
-        transform.position = spawnPoints.transform.GetChild(spawnIndex).transform.position;
+        if (spawnPoints != null)
+        {
+            transform.position = spawnPoints.transform.GetChild(spawnIndex).transform.position;
+        }
     }
 }
