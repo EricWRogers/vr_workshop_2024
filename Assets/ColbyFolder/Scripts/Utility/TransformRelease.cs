@@ -1,7 +1,10 @@
+
+#if UNITY_EDITOR
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+
 
 [InitializeOnLoad]
 public class ObjectPositionTracker
@@ -105,3 +108,4 @@ public class ObjectPositionTracker
         return false; // No overlap detected
     }
 }
+#endif
