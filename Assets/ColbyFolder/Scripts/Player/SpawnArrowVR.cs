@@ -38,6 +38,7 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             arrowSpawned = false;
             arrowNocked = false;
+            Destroy(arrow, 3.5f);
         }
     }
 }

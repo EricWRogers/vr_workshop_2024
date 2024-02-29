@@ -30,6 +30,7 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
+            Destroy(arrow, 3.5f);
             keyDownFlag = false;
         }
     }
