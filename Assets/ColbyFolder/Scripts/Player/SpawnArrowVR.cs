@@ -4,18 +4,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SpawnArrowVR : MonoBehaviour
 {
     public GameObject prefabarrow;
-    Rigidbody arr_rigidbody;
     private GameObject arrow;
     public float thrust = 5.0f;
     public GameObject rightController;
 
     private bool arrowSpawned = false;
     public bool arrowNocked = false;
-
-    void Start()
-    {
-        arr_rigidbody = prefabarrow.GetComponent<Rigidbody>();
-    }
 
     //[System.Obsolete] //This is because StartManualInteraction is deprecated, but it still works good for us at the moment and this line removes the error message
     public void SpawnArrow()
@@ -39,10 +33,12 @@ public class SpawnArrowVR : MonoBehaviour
         }
         else
         {
+            rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
-            arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
+            arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             arrowSpawned = false;
+            arrowNocked = false;
         }
     }
 }
