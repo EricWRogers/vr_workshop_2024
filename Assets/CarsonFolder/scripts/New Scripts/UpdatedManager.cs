@@ -8,9 +8,17 @@ public class UpdatedManager: MonoBehaviour
     public bool puzzleComplete = false;
     public AudioSource waa;
 
+    public GameObject doorToCredits;
+
+    void Awake()
+    {
+        doorToCredits.SetActive(false);
+    }
+
     void Start()
     {
         puzzleComplete = false;
+
     }
 
     public void AddTargetToList(UpdatedTargetLogic target)
@@ -20,12 +28,14 @@ public class UpdatedManager: MonoBehaviour
             targets.Add(target);
         }
         CheckPuzzleCompletion();
+        CreateExitDoor();
     }
 
     public void RemoveTargetFromList(UpdatedTargetLogic target)
     {
         targets.Remove(target);
         CheckPuzzleCompletion();
+        CreateExitDoor();
     }
 
     void CheckPuzzleCompletion()
@@ -44,6 +54,14 @@ public class UpdatedManager: MonoBehaviour
         else
         {
             puzzleComplete = false;
+        }
+    }
+
+    void CreateExitDoor()
+    {
+        if(puzzleComplete == true)
+        {
+            doorToCredits.SetActive(true);
         }
     }
 }

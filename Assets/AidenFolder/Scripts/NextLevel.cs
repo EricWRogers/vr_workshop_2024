@@ -9,7 +9,7 @@ public class NextLevel : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            SceneManager.LoadSceneAsync("AidenTestScene");
+            SceneManager.LoadSceneAsync("BuildScene");
         }
     }
 }
