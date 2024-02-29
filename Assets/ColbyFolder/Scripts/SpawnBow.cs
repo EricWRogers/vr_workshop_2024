@@ -11,15 +11,17 @@ public class SpawnBow : MonoBehaviour
     private GameObject bowReference;
     private bool bowSpawned = false;
 
+    [System.Obsolete] //This is because StartManualInteraction is deprecated, but it still works good for us at the moment and this line removes the error message
     public void SpawnBowNow()
     {
         if (!bowSpawned)
         {
-            bowReference = Instantiate(objectToSpawn, leftController.transform.position, leftController.transform.rotation, leftController.transform);
+            bowReference = Instantiate(objectToSpawn, leftController.transform.position, leftController.transform.rotation, leftController.transform); 
+            leftController.GetComponent<XRBaseInteractor>().StartManualInteraction(bowReference.GetComponent<XRGrabInteractable>());
             bowSpawned = true;
 
             //Logic to put the bow into the hand of the controller
-            //leftController.GetComponent<XRController>().
+            //leftController.GetComponent<XRController>().makebegrabbed
         }
     }
 
