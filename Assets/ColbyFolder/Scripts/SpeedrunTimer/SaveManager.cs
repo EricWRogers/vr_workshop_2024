@@ -54,4 +54,10 @@ public class SaveManager : MonoBehaviour
             leaderboard.LoadLeaderboard(new List<KeyValuePairData>());
         }
     }
+
+    public void WipeSave()
+    {
+        Debug.Log("Save Wiped");
+        Save save = new Save();
+    }
 }
