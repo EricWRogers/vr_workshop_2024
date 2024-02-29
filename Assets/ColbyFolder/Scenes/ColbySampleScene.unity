@@ -2296,6 +2296,8 @@ GameObject:
   - component: {fileID: 1446497013}
   - component: {fileID: 1446497014}
   - component: {fileID: 1446497015}
+  - component: {fileID: 1446497016}
+  - component: {fileID: 1446497017}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Untagged
@@ -2590,6 +2592,67 @@ MonoBehaviour:
   objectToSpawn: {fileID: 7176234223194637328, guid: 69161adb9c21de2429833a52e485ee5e,
     type: 3}
   leftController: {fileID: 2068082429}
+--- !u!114 &1446497016
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446497004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 157a544e352117049bd8dd008155523d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabarrow: {fileID: 6935186114090029277, guid: 8d67a33f86a070c4a93837c3d3d08160,
+    type: 3}
+  thrust: 30
+  rightController: {fileID: 24139514}
+  arrowNocked: 0
+--- !u!114 &1446497017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1446497004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7623a58f1db09408f0a2ef6f5e739b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deviceCharacteristics: 576
+  button: 5
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1446497016}
+        m_TargetAssemblyTypeName: SpawnArrowVR, Assembly-CSharp
+        m_MethodName: SpawnArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1446497016}
+        m_TargetAssemblyTypeName: SpawnArrowVR, Assembly-CSharp
+        m_MethodName: ReleaseArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1477816451
 GameObject:
   m_ObjectHideFlags: 0

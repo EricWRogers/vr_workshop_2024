@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SpawnArrow : MonoBehaviour
+public class SpawnArrowWASD : MonoBehaviour
 {
     public GameObject prefabarrow;
     Rigidbody arr_rigidbody;
