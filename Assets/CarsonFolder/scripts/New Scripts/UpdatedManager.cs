@@ -33,6 +33,10 @@ public class UpdatedManager: MonoBehaviour
         if (targets.Count == targetsToCompletePuzzle)
         {
             puzzleComplete = true;
+            foreach (UpdatedTargetLogic target in targets)
+            {
+                target.meshRenderer.material = target.winMaterial;
+            }
          
             Debug.Log("yippee");
             //waa.Play();
