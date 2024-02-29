@@ -11,7 +11,6 @@ public class SpawnArrowVR : MonoBehaviour
     private bool arrowSpawned = false;
     public bool arrowNocked = false;
 
-    //[System.Obsolete] //This is because StartManualInteraction is deprecated, but it still works good for us at the moment and this line removes the error message
     public void SpawnArrow()
     {
         if (!arrowSpawned)
