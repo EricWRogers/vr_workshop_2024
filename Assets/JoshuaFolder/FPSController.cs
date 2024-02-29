@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using UnityEngine;
 
@@ -19,19 +17,26 @@ public class FPSController : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
     public bool canMove = true;
+    public bool cursorVisible = false;
 
     CharacterController characterController;
 
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.visible = false;
+        if (cursorVisible)
+        {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+        }
         characterController = GetComponent<CharacterController>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
     }
 
-    // Update is called once per frame
     // Update is called once per frame
     void Update()
     {

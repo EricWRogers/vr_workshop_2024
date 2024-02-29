@@ -2,15 +2,16 @@ using UnityEngine;
 
 public class SpawnArrow : MonoBehaviour
 {
-    public GameObject prefarrow;
+    public GameObject prefabarrow;
     Rigidbody arr_rigidbody;
     private GameObject arrow;
     public float thrust = 5.0f;
-    public float spawnDistance = 1.0f;
+    public Transform spawnLocation;
+    public Transform arrowParent;
 
     void Start()
     {
-        arr_rigidbody = prefarrow.GetComponent<Rigidbody>();
+        arr_rigidbody = prefabarrow.GetComponent<Rigidbody>();
     }
 
     void Update()
@@ -19,14 +20,8 @@ public class SpawnArrow : MonoBehaviour
         bool keyDownFlag = false;
         if (Input.GetKeyDown(KeyCode.Mouse0) && keyDownFlag == false)
         {
-            Vector3 playerPos = transform.position;
-            Vector3 playerDirection = transform.forward;
-            Quaternion playerRotation = transform.rotation;
-            Vector3 spawnPos = playerPos + playerDirection * spawnDistance;
-            arrow = Instantiate(prefarrow, spawnPos, playerRotation, transform);
+            arrow = Instantiate(prefabarrow, spawnLocation.position, arrowParent.rotation, arrowParent);
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
-            //arrow.transform.rotation = Transform.LookAt();
-            //Arrow.transform.Rotate(new Vector3.forward * 45f);
             keyDownFlag = true;
         }
 
@@ -34,7 +29,7 @@ public class SpawnArrow : MonoBehaviour
         {
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
-            arr_rigidbody.AddForce(transform.forward * thrust, ForceMode.Impulse);
+            arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             keyDownFlag = false;
         }
     }

@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.InputSystem.XR;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class SpawnBow : MonoBehaviour
@@ -18,6 +17,9 @@ public class SpawnBow : MonoBehaviour
         {
             bowReference = Instantiate(objectToSpawn, leftController.transform.position, leftController.transform.rotation, leftController.transform);
             bowSpawned = true;
+
+            //Logic to put the bow into the hand of the controller
+            //leftController.GetComponent<XRController>().
         }
     }
 
