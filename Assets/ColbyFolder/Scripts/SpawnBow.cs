@@ -16,7 +16,7 @@ public class SpawnBow : MonoBehaviour
     {
         if (!bowSpawned)
         {
-            bowReference = Instantiate(objectToSpawn, leftController.transform.position, leftController.transform.rotation, leftController.transform); 
+            bowReference = Instantiate(objectToSpawn, leftController.transform.position, leftController.transform.rotation); 
             leftController.GetComponent<XRBaseInteractor>().StartManualInteraction(bowReference.GetComponent<XRGrabInteractable>());
             bowSpawned = true;
         }

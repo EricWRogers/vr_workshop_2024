@@ -22,7 +22,7 @@ public class SpawnArrowVR : MonoBehaviour
     {
         if (!arrowSpawned)
         {
-            arrow = Instantiate(prefabarrow, rightController.transform.position, rightController.transform.rotation, rightController.transform);
+            arrow = Instantiate(prefabarrow, rightController.transform.position, rightController.transform.rotation);
             #pragma warning disable CS0618 // Type or member is obsolete, this line removes the error message
             rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(arrow.GetComponent<XRGrabInteractable>());
             #pragma warning restore CS0618 // Type or member is obsolete, this line resumes error messages
