@@ -11,32 +11,32 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 142.52942
+      value: 380
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 7.4681616
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 4.363
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 4.3717136
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
@@ -76,7 +76,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
@@ -95,7 +95,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 7500133a42cdebc4bb99748fa12f0b9e,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3733417648285321509}
+      addedObject: {fileID: 8738647946429291956}
   m_SourcePrefab: {fileID: 100100000, guid: 7500133a42cdebc4bb99748fa12f0b9e, type: 3}
 --- !u!1 &1550343297884773156 stripped
 GameObject:
@@ -103,8 +103,8 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1820163237062731381}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &3733417648285321509
-BoxCollider:
+--- !u!136 &8738647946429291956
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -121,6 +121,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.034971073, y: 0.012177134, z: 0.03226681}
+  serializedVersion: 2
+  m_Radius: 0.017485537
+  m_Height: 0.012177134
+  m_Direction: 1
   m_Center: {x: 0, y: -0.004172813, z: 0}
