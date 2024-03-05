@@ -11,4 +11,26 @@ public class ExplosiveBarrel : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, ExplosiveRange);
 
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Fire"))
+        {
+            Detonate();
+        }
+
+    }
+
+    public void Detonate()
+    {
+        Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange);
+
+        foreach(var objectToExplode in objectsToExplode) 
+        {
+            Destroy(objectToExplode.gameObject);
+        }
+
+
+
+    }
 }

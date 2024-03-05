@@ -123,6 +123,39 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &177893890 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6856513334948252916, guid: 45a98aab195ab614788e64cfc6bd97df,
+    type: 3}
+  m_PrefabInstance: {fileID: 3717284482444870592}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &177893891
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 177893890}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &191986824
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -131,6 +164,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 150641145761413642, guid: 9f8873be0a5a36442a3b5824d43f5d55,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6200594352757183470, guid: 9f8873be0a5a36442a3b5824d43f5d55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -295,6 +333,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RegularTarget (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298020458247646757, guid: d552090891fa74f4488e61dc2f059480,
+        type: 3}
+      propertyPath: m_TagString
+      value: Explodable
       objectReference: {fileID: 0}
     - target: {fileID: 4434386691772345191, guid: d552090891fa74f4488e61dc2f059480,
         type: 3}
@@ -482,6 +525,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: RegularTarget (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1298020458247646757, guid: d552090891fa74f4488e61dc2f059480,
+        type: 3}
+      propertyPath: m_TagString
+      value: Explodable
+      objectReference: {fileID: 0}
     - target: {fileID: 4434386691772345191, guid: d552090891fa74f4488e61dc2f059480,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -545,15 +593,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3396955225930515591, guid: 45a98aab195ab614788e64cfc6bd97df,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: f499ab0126953d941954fb2736d47b99, type: 2}
     - target: {fileID: 6856513334948252916, guid: 45a98aab195ab614788e64cfc6bd97df,
         type: 3}
       propertyPath: m_Name
       value: ExplosiveBarrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6856513334948252916, guid: 45a98aab195ab614788e64cfc6bd97df,
+        type: 3}
+      propertyPath: m_TagString
+      value: Explodable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272242800229922545, guid: 45a98aab195ab614788e64cfc6bd97df,
+        type: 3}
+      propertyPath: m_Height
+      value: 1.9825293
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272242800229922545, guid: 45a98aab195ab614788e64cfc6bd97df,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.008735359
+      objectReference: {fileID: 0}
+    - target: {fileID: 7272242800229922545, guid: 45a98aab195ab614788e64cfc6bd97df,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.00000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 9174944832523076447, guid: 45a98aab195ab614788e64cfc6bd97df,
         type: 3}
@@ -608,7 +671,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6856513334948252916, guid: 45a98aab195ab614788e64cfc6bd97df,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 177893891}
   m_SourcePrefab: {fileID: 100100000, guid: 45a98aab195ab614788e64cfc6bd97df, type: 3}
 --- !u!1001 &5326963650941187769
 PrefabInstance:
@@ -690,6 +757,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: RegularTarget
+      objectReference: {fileID: 0}
+    - target: {fileID: 1298020458247646757, guid: d552090891fa74f4488e61dc2f059480,
+        type: 3}
+      propertyPath: m_TagString
+      value: Explodable
       objectReference: {fileID: 0}
     - target: {fileID: 4434386691772345191, guid: d552090891fa74f4488e61dc2f059480,
         type: 3}
