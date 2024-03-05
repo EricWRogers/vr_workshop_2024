@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MenuTestScript : MonoBehaviour
 {
@@ -10,14 +6,12 @@ public class MenuTestScript : MonoBehaviour
     Camera gameCamera;
     bool keyDown = false; //for the keypress toggle for the menu
     public float menuDistance = 5.0f; //meant to push the z value of the menu away from camera
+    
     void Awake()
     {
         gameCamera = Camera.main;
     }
-    void Start()
-    {
-        
-    }
+
     void Update()
     {
         
@@ -32,6 +26,10 @@ public class MenuTestScript : MonoBehaviour
                 {
                     canvasObject.SetActive(true);
                     keyDown = true;
+                    transform.LookAt(gameCamera.transform, Vector3.up);
+                    this.transform.Rotate(0,180,0);
+                    transform.position = gameCamera.transform.position + gameCamera.transform.forward * menuDistance; 
+                    transform.position = new Vector3(transform.position.x, gameCamera.transform.position.y, transform.position.z);
                 }
                 
         }
@@ -39,22 +37,5 @@ public class MenuTestScript : MonoBehaviour
         {
             keyDown = false;
         }
-
-        if(canvasObject.activeSelf)
-        {
-            
-
-            transform.rotation = Quaternion.Euler(-gameCamera.transform.rotation.eulerAngles.x,gameCamera.transform.rotation.eulerAngles.y,-gameCamera.transform.rotation.eulerAngles.z);
-
-            //this.transform.LookAt(gameCamera.transform, Vector3.up);
-
-        }
-
-
-
-    }
-    public void ButtonClick()
-    {
-        Debug.Log("Clicked");
     }
 }

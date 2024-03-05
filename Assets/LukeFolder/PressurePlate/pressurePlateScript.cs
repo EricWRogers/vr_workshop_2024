@@ -27,14 +27,19 @@ public class pressurePlateScript : MonoBehaviour
     {   
         if(buttonActive == false)
         {
-            lastCollided = colliderEnter; //save what last entered, gonna check it on exit
-        
-            Debug.Log(colliderEnter.gameObject);
-            //check for tag
 
-            activatorEvent.Invoke();
-            buttonActive = true;
-            buttonObject.SetActive(false);
+            if(colliderEnter.gameObject.tag == "weightedObject")
+            {
+                lastCollided = colliderEnter; 
+                //save what last entered, gonna check it on exit
+                Debug.Log(colliderEnter.gameObject);
+                //check for tag
+
+                activatorEvent.Invoke();
+                //calls the event that will be activated, in another object/script
+                buttonActive = true;
+                buttonObject.SetActive(false);
+            }
         }
         
     }
