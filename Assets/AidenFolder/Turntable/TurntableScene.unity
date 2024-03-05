@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -123,26 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &209978800 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3083397796624714466, guid: a5fc5f5eb8b0d7442a55e54301194910,
-    type: 3}
-  m_PrefabInstance: {fileID: 1210164764}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &209978801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 209978800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b0f9ac7eb0168854a8f8582833dc69f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotateSpeed: 100
-  isPuzzleDone: 0
 --- !u!1001 &442603876
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -159,7 +139,7 @@ PrefabInstance:
     - target: {fileID: 102534204447667958, guid: 3b3603a862c8da04a9046b32697577ef,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.12499999
+      value: 0.12499998
       objectReference: {fileID: 0}
     - target: {fileID: 102534204447667958, guid: 3b3603a862c8da04a9046b32697577ef,
         type: 3}
@@ -174,12 +154,12 @@ PrefabInstance:
     - target: {fileID: 102534204447667958, guid: 3b3603a862c8da04a9046b32697577ef,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.24825034
+      value: 0.24825038
       objectReference: {fileID: 0}
     - target: {fileID: 102534204447667958, guid: 3b3603a862c8da04a9046b32697577ef,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.13650005
+      value: -0.13650009
       objectReference: {fileID: 0}
     - target: {fileID: 102534204447667958, guid: 3b3603a862c8da04a9046b32697577ef,
         type: 3}
@@ -410,11 +390,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3083397796624714466, guid: a5fc5f5eb8b0d7442a55e54301194910,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 209978801}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5fc5f5eb8b0d7442a55e54301194910, type: 3}
 --- !u!1 &2094279984
 GameObject:
