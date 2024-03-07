@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class ExplosiveBarrel : MonoBehaviour
 {
-   private float ExplosiveRange = 3f;
+    [SerializeField] private float ExplosiveRange = 3f;
+    [SerializeField] private LayerMask explodableLayerMask;
+
+#if (UNITY_EDITOR)
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, ExplosiveRange);
 
     }
+#endif
 
     void OnTriggerEnter(Collider other)
     {
@@ -23,7 +27,7 @@ public class ExplosiveBarrel : MonoBehaviour
 
     public void Detonate()
     {
-        Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange);
+        Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange, explodableLayerMask);
 
         foreach(var objectToExplode in objectsToExplode) 
         {
