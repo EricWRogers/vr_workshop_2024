@@ -23,7 +23,7 @@ Material:
   m_Name: Trail_01
   m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
   m_Parent: {fileID: 2100000, guid: 9c7e03f2f39bf854a9df86a0462186e3, type: 2}
-  m_ModifiedSerializedProperties: 18
+  m_ModifiedSerializedProperties: 26
   m_ValidKeywords:
   - _DETAIL_MULX2
   - _EMISSION
@@ -34,7 +34,7 @@ Material:
   m_InvalidKeywords: []
   m_LightmapFlags: 1
   m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
+  m_DoubleSidedGI: 1
   m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
@@ -52,15 +52,18 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
+    - _Blend: 2
     - _BlendModePreserveSpecular: 0
+    - _Cull: 0
     - _Cutoff: 0.61
     - _DetailNormalMapScale: 0.28
-    - _DstBlend: 10
-    - _DstBlendAlpha: 10
+    - _DstBlend: 1
+    - _DstBlendAlpha: 1
     - _EnvironmentReflections: 0
     - _Smoothness: 0.21
     - _SpecularHighlights: 0
     - _SrcBlend: 5
+    - _SrcBlendAlpha: 1
     - _Surface: 1
     - _WorkflowMode: 0
     - _ZWrite: 0
