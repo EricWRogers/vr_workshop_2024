@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3511260801348019393}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: DistanceCheckPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.05
+      value: 0.050000057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -52,22 +52,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.05
+      value: 0.050000057
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.44999993
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -82,7 +82,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.70710635
+      value: -0.7071064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -134,10 +134,20 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -5.16
       objectReference: {fileID: 0}
+    - target: {fileID: 834192292310563322, guid: 736336c0433255047a0dec3eaec1ea64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_Name
       value: QuiverAndBelt
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 736336c0433255047a0dec3eaec1ea64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3405106871835312687, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -159,6 +169,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -4.21
       objectReference: {fileID: 0}
+    - target: {fileID: 6512596416276915350, guid: 736336c0433255047a0dec3eaec1ea64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8183623132523853079, guid: 736336c0433255047a0dec3eaec1ea64,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -179,6 +199,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 771683784010345062}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 736336c0433255047a0dec3eaec1ea64,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4161546637540668142}
   m_SourcePrefab: {fileID: 100100000, guid: 736336c0433255047a0dec3eaec1ea64, type: 3}
 --- !u!4 &4659876416580008709 stripped
 Transform:
@@ -252,5 +276,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d7371f4684075940b507676699c7b5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distance: 2
+  distance: 0.2
   distanceCheckPoint: {fileID: 6844035296581900326}
+--- !u!114 &4161546637540668142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5467620936688132543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08fc5e8e6cafc0945b1a6031b5b9c0e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerOrigin: {fileID: 0}
+  playerCam: {fileID: 0}
+  quiverX: 0.15
+  quiverY: -1.12
+  quiverZ: 0
