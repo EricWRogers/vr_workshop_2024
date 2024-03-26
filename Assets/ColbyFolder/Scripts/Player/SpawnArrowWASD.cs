@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class SpawnArrowWASD : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class SpawnArrowWASD : MonoBehaviour
     public float thrust = 5.0f;
     public Transform spawnLocation;
     public Transform arrowParent;
+    public float delayTime = 4.0f;
 
     void Start()
     {
@@ -20,7 +22,9 @@ public class SpawnArrowWASD : MonoBehaviour
         bool keyDownFlag = false;
         if (Input.GetKeyDown(KeyCode.Mouse0) && keyDownFlag == false)
         {
-            arrow = Instantiate(prefabarrow, spawnLocation.position, arrowParent.rotation, arrowParent);
+            arrow = ArrowPool.SharedInstance.GetPooledObject();
+            arrow.transform.position = spawnLocation.transform.position;
+            arrow.transform.rotation = spawnLocation.transform.rotation;
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
             keyDownFlag = true;
         }
@@ -30,8 +34,16 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
-            Destroy(arrow, 3.5f);
+            StartCoroutine(repoolArrow());
             keyDownFlag = false;
         }
+    }
+
+    IEnumerator repoolArrow()
+    {
+        // Wait for the specified delay time
+        yield return new WaitForSeconds(delayTime);
+
+        arrow.SetActive(false);
     }
 }

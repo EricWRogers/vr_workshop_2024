@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
+using System.Collections;
 
 public class SpawnArrowVR : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class SpawnArrowVR : MonoBehaviour
     private GameObject arrow;
     public float thrust = 5.0f;
     public GameObject rightController;
+    public float delayTime = 4.0f;
 
     private bool arrowSpawned = false;
     public bool arrowNocked = false;
@@ -15,7 +17,9 @@ public class SpawnArrowVR : MonoBehaviour
     {
         if (!arrowSpawned)
         {
-            arrow = Instantiate(prefabarrow, rightController.transform.position, rightController.transform.rotation);
+            arrow = ArrowPool.SharedInstance.GetPooledObject();
+            arrow.transform.position = rightController.transform.position;
+            arrow.transform.rotation = rightController.transform.rotation;
             #pragma warning disable CS0618 // Type or member is obsolete, this line removes the error message
             rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(arrow.GetComponent<XRGrabInteractable>());
             #pragma warning restore CS0618 // Type or member is obsolete, this line resumes error messages
@@ -38,7 +42,14 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             arrowSpawned = false;
             arrowNocked = false;
-            Destroy(arrow, 3.5f);
+            StartCoroutine(repoolArrow());
         }
+    }
+    IEnumerator repoolArrow()
+    {
+        // Wait for the specified delay time
+        yield return new WaitForSeconds(delayTime);
+
+        arrow.SetActive(false);
     }
 }
