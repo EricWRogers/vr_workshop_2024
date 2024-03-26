@@ -31,6 +31,7 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             keyDownFlag = false;
+            AudioManager.instance.Play("Arrow_Whoosh");
         }
     }
 }
