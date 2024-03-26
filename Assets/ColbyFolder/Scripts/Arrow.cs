@@ -6,7 +6,7 @@ public class Arrow : MonoBehaviour
 
     private void Start()
     {
-        player = FindObjectOfType<SpawnArrowVR>().gameObject;
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerStay(Collider other)
