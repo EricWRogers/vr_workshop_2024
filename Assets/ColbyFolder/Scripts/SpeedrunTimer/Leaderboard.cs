@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class Leaderboard : MonoBehaviour
 {
+    public static Leaderboard Instance;
     private TextMeshProUGUI leaderboard;
     private List<KeyValuePairData> top5;
 
-    private void Start()
+    //Must be awake and not start because LoadLeaderboard is called in SaveManager's start
+    private void Awake()
     {
+        //Turns this object into a singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
         //The leaderboard text is found 2 children down
         leaderboard = transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
@@ -17,26 +28,29 @@ public class Leaderboard : MonoBehaviour
 
     public void LoadLeaderboard(List<KeyValuePairData> highscores)
     {
-        if (highscores != null && highscores.Count != 0)
+        if (highscores != null)
         {
-            // Sort by lowest value (ascending order)
-            highscores.Sort((x, y) => x.value.CompareTo(y.value));
-
-            // Construct the leaderboard text
-            string leaderboardText = "";
-            foreach (var kvp in highscores)
+            if (highscores.Count > 0)
             {
-                //Add the key and value into the larger scoped variable
-                top5.Add(new KeyValuePairData(kvp.key, kvp.value)); 
+                //Sort by lowest value (ascending order)
+                highscores.Sort((x, y) => x.value.CompareTo(y.value));
 
-                int minutes = (int)kvp.value / 60;
-                int seconds = (int)kvp.value % 60;
-                double milliseconds = (kvp.value - minutes * 60 - seconds) * 100;
+                //Construct the leaderboard text
+                string leaderboardText = "";
+                foreach (var kvp in highscores)
+                {
+                    //Add the key and value into the larger scoped variable
+                    top5.Add(new KeyValuePairData(kvp.key, kvp.value)); 
 
-                leaderboardText += kvp.key + ": " + string.Format("{0:00}:{1:00}.{2:00}\n", minutes, seconds, milliseconds);
+                    int minutes = (int)kvp.value / 60;
+                    int seconds = (int)kvp.value % 60;
+                    double milliseconds = (kvp.value - minutes * 60 - seconds) * 100;
+
+                    leaderboardText += kvp.key + ": " + string.Format("{0:00}:{1:00}.{2:00}\n", minutes, seconds, milliseconds);
+                }
+
+                leaderboard.text = leaderboardText;
             }
-
-            leaderboard.text = leaderboardText;
         }
         else
         {
