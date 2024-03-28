@@ -71,6 +71,13 @@ public class FPSController : MonoBehaviour
             rotationX = Mathf.Clamp(rotationX, -lookXlimit, lookXlimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Mouse.current.delta.x.ReadValue() * lookSpeed, 0);
+            //AudioManager.instance.Play("Stone_Step_1");
         }
+
+        if (curSpeedX > 0f)
+        {
+            AudioManager.instance.Play("Stone_Step_1");
+        }
+
     }
 }
