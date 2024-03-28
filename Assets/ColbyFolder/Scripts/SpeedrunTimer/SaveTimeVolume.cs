@@ -14,6 +14,7 @@ public class SaveTimeVolume : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             leaderboard.transform.GetChild(4).GetComponent<SaveManager>().Save();
+            gameObject.SetActive(false);
         }
     }
 }

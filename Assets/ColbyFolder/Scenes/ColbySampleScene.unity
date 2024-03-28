@@ -988,6 +988,18 @@ MonoBehaviour:
   thingToSpawn: {fileID: 8236068333949868543, guid: bbc67ae6a1770dc4b95b50c6d001a1d4,
     type: 3}
   spawnPosition: {fileID: 1306560206}
+--- !u!114 &496679297 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6509872540542415835, guid: f02799c4bff3e714db87ea22974c772d,
+    type: 3}
+  m_PrefabInstance: {fileID: 1984799395}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9afadef833a169841bbe23f9562c609e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &536526117
 GameObject:
   m_ObjectHideFlags: 0
@@ -2326,6 +2338,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: Leaderboard, Assembly-CSharp
         m_MethodName: SetHighscoreName
         m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 496679297}
+        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
+        m_MethodName: Save
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

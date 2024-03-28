@@ -20,17 +20,13 @@ public class SaveManager : MonoBehaviour
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
+        timer.PauseTimer();
         leaderboard.TestSpeed(timer.accumulatedTime);
 
         Save save = new Save()
         {
             highscores = leaderboard.GetHighscores()
         };
-
-        for (int i = 0; i < save.highscores.Count; i++)
-        {
-            Debug.Log(save.highscores[i].key + " " + save.highscores[i].value);
-        }
 
         using (FileStream fileStream = File.Create(savePath))
         {
