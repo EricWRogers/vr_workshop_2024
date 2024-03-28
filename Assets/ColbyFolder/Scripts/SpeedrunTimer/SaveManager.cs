@@ -59,5 +59,6 @@ public class SaveManager : MonoBehaviour
     {
         Debug.Log("Save Wiped");
         Save save = new Save();
+        leaderboard.ClearLeaderboard();
     }
 }

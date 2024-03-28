@@ -5,6 +5,7 @@ using UnityEngine;
 public class Leaderboard : MonoBehaviour
 {
     public static Leaderboard Instance;
+    public bool currentRunHighscore = false;
     private TextMeshProUGUI leaderboard;
     private List<KeyValuePairData> top5;
 
@@ -23,6 +24,12 @@ public class Leaderboard : MonoBehaviour
         //The leaderboard text is found 2 children down
         leaderboard = transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
 
+        top5 = new List<KeyValuePairData>();
+    }
+
+    public void ClearLeaderboard()
+    {
+        leaderboard.text = string.Empty;
         top5 = new List<KeyValuePairData>();
     }
 
@@ -61,13 +68,25 @@ public class Leaderboard : MonoBehaviour
     public void TestSpeed(double speed)
     {
         //Add in the new value
-        top5.Add(new KeyValuePairData("Placeholder Name", speed));
+        top5.Add(new KeyValuePairData("Unnamed", speed));
         //Sort the new value in
         top5.Sort((x, y) => x.value.CompareTo(y.value));
         //Remove the slowest time if there are more than 5 entries
         if (top5.Count > 5)
         {
+            //If the bottom score isn't the current speed, this run is a highscore
+            if (top5[top5.Count - 1].value != speed)
+            {
+                currentRunHighscore = true;
+                Debug.Log("Highscore!");
+            }
             top5.RemoveAt(top5.Count - 1);
+        }
+        //If there are less than 5 scores, this run is a highscore
+        else
+        {
+            currentRunHighscore = true;
+            Debug.Log("Highscore!");
         }
 
         // Construct the leaderboard text
@@ -87,5 +106,15 @@ public class Leaderboard : MonoBehaviour
     public List<KeyValuePairData> GetHighscores()
     {
         return top5;
+    }
+
+    public bool GetCurrentRunHighscore()
+    {
+        return currentRunHighscore;
+    }
+
+    public void SetCurrentRunHighscore(bool isHighscore)
+    {
+        currentRunHighscore = isHighscore;
     }
 }
