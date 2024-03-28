@@ -44,6 +44,7 @@ public class Leaderboard : MonoBehaviour
                 //Sort by lowest value (ascending order)
                 highscores.Sort((x, y) => x.value.CompareTo(y.value));
 
+                top5 = highscores;
                 ContructLeaderboardText(highscores);
             }
         }

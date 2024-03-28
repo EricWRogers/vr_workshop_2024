@@ -27,6 +27,11 @@ public class SaveManager : MonoBehaviour
             highscores = leaderboard.GetHighscores()
         };
 
+        for (int i = 0; i < save.highscores.Count; i++)
+        {
+            Debug.Log(save.highscores[i].key + " " + save.highscores[i].value);
+        }
+
         using (FileStream fileStream = File.Create(savePath))
         {
             binaryFormatter.Serialize(fileStream, save);
