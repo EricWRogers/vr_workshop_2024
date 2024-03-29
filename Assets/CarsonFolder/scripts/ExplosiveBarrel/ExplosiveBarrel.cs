@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ExplosiveBarrel : MonoBehaviour
 {
+    public RotateTurntable turnTable;
     [SerializeField] private float ExplosiveRange = 3f;
     [SerializeField] private LayerMask explodableLayerMask;
 
@@ -21,6 +22,7 @@ public class ExplosiveBarrel : MonoBehaviour
         if (other.gameObject.CompareTag("Fire"))
         {
             Detonate();
+            turnTable.isPuzzleDone = true;
         }
 
     }
