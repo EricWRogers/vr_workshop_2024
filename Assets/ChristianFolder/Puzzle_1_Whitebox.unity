@@ -2639,7 +2639,7 @@ MonoBehaviour:
   - name: Stone_Step_1
     clip: {fileID: 8300000, guid: f8b2b75f67fbbc0428a39aeab7f61dc9, type: 3}
     type: 1
-    volume: 0.5
+    volume: 0.3
     pitch: 1
     loop: 0
     bypassEffects: 0
@@ -2653,7 +2653,7 @@ MonoBehaviour:
   - name: Stone_Step_2
     clip: {fileID: 8300000, guid: e554950dbb3f8d7479cce354935e2bc0, type: 3}
     type: 1
-    volume: 0.5
+    volume: 0.25
     pitch: 1
     loop: 0
     bypassEffects: 0
@@ -5087,6 +5087,8 @@ MonoBehaviour:
   lookXlimit: 45
   canMove: 1
   cursorVisible: 0
+  footstepSoundDelay: 1
+  footNum: 1
 --- !u!143 &1375516440
 CharacterController:
   m_ObjectHideFlags: 0
