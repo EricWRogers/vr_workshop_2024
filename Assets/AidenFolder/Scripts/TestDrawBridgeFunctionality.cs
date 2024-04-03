@@ -6,6 +6,7 @@ public class TestDrawBridgeFunctionality : MonoBehaviour
 {
     public GameObject rope;
     public GameObject ropeTwo;
+    public List<GameObject> brigdeStoppers;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,10 @@ public class TestDrawBridgeFunctionality : MonoBehaviour
        if(rope == null && ropeTwo == null)
        {
             Debug.Log("The space key was pressed");
-            Destroy(this.gameObject);
+            for(int i = 0; i < brigdeStoppers.Count; i++)
+            {
+                Destroy(brigdeStoppers[i]);
+            }
        }
     }
 }
