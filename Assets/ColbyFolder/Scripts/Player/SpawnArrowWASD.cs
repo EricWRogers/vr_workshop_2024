@@ -36,7 +36,10 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
-            arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
+            if (arrow.GetComponent<Arrow>().onFire )
+            {
+                arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
+            }
             arrow.GetComponent<Arrow>().arrowNocked = false;
             keyDownFlag = false;
         }

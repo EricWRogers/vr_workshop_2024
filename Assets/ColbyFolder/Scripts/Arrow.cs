@@ -20,6 +20,11 @@ public class Arrow : MonoBehaviour
         if (other.CompareTag("Bow"))
         {
             player.GetComponent<SpawnArrowVR>().arrowNocked = true;
+            arrowNocked = true;
+        }
+        else if (other.CompareTag("FireZone"))
+        {
+            onFire = true;
         }
     }
 
@@ -28,6 +33,11 @@ public class Arrow : MonoBehaviour
         if (other.CompareTag("Bow"))
         {
             player.GetComponent<SpawnArrowVR>().arrowNocked = false;
+            arrowNocked = false;
+        }
+        else if (other.CompareTag("FireZone") && player.GetComponent<SpawnArrowVR>().arrowNocked)
+        {
+            onFire = false;
         }
     }
 

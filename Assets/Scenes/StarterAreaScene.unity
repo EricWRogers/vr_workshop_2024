@@ -4664,7 +4664,6 @@ GameObject:
   - component: {fileID: 86584461}
   - component: {fileID: 86584460}
   - component: {fileID: 86584459}
-  - component: {fileID: 86584458}
   m_Layer: 0
   m_Name: BridgeStopper
   m_TagString: Untagged
@@ -4672,21 +4671,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &86584458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 86584457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f03d77c76767e41891ef710f67597e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rope: {fileID: 0}
-  ropeTwo: {fileID: 0}
-  brigdeStoppers: []
 --- !u!65 &86584459
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9153,7 +9137,6 @@ GameObject:
   - component: {fileID: 162537478}
   - component: {fileID: 162537477}
   - component: {fileID: 162537476}
-  - component: {fileID: 162537475}
   m_Layer: 0
   m_Name: BridgeStopper (1)
   m_TagString: Untagged
@@ -9161,21 +9144,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &162537475
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 162537474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f03d77c76767e41891ef710f67597e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rope: {fileID: 0}
-  ropeTwo: {fileID: 0}
-  brigdeStoppers: []
 --- !u!65 &162537476
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64382,7 +64350,7 @@ GameObject:
   - component: {fileID: 939536978}
   m_Layer: 0
   m_Name: Draw Bridge
-  m_TagString: Untagged
+  m_TagString: DrawBridge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -64486,7 +64454,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 939536972}
   serializedVersion: 4
-  m_Mass: 99999
+  m_Mass: 1e+9
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -64503,7 +64471,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 96
   m_CollisionDetection: 0
 --- !u!114 &939536978
 MonoBehaviour:
@@ -64526,6 +64494,7 @@ MonoBehaviour:
   - {fileID: 1891388371}
   - {fileID: 1586750110}
   - {fileID: 1473802616}
+  - {fileID: 100450611}
   - {fileID: 100450611}
 --- !u!1 &942741305
 GameObject:
@@ -66474,7 +66443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0704656c0f178354eb654d56ef46a3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 939536977}
 --- !u!65 &982304956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -66555,7 +66523,7 @@ Transform:
   m_GameObject: {fileID: 982304954}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0849998, y: -23.975, z: 29.855003}
+  m_LocalPosition: {x: 2.0849998, y: -24.27, z: 29.855003}
   m_LocalScale: {x: 3.8342998, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -68296,7 +68264,6 @@ GameObject:
   - component: {fileID: 1012584161}
   - component: {fileID: 1012584160}
   - component: {fileID: 1012584159}
-  - component: {fileID: 1012584158}
   m_Layer: 0
   m_Name: BridgeStopper (2)
   m_TagString: Untagged
@@ -68304,21 +68271,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1012584158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012584157}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f03d77c76767e41891ef710f67597e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rope: {fileID: 0}
-  ropeTwo: {fileID: 0}
-  brigdeStoppers: []
 --- !u!65 &1012584159
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -91254,7 +91206,7 @@ Transform:
   m_GameObject: {fileID: 1439058640}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.43, y: 1.45, z: -66.5}
+  m_LocalPosition: {x: 3.55, y: 1.45, z: -66.5}
   m_LocalScale: {x: 1, y: 3.0686173, z: 73.78381}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -99239,7 +99191,6 @@ GameObject:
   - component: {fileID: 1586750114}
   - component: {fileID: 1586750113}
   - component: {fileID: 1586750112}
-  - component: {fileID: 1586750111}
   m_Layer: 0
   m_Name: BridgeStopper (4)
   m_TagString: Untagged
@@ -99247,21 +99198,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1586750111
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1586750110}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f03d77c76767e41891ef710f67597e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rope: {fileID: 0}
-  ropeTwo: {fileID: 0}
-  brigdeStoppers: []
 --- !u!65 &1586750112
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -115900,7 +115836,6 @@ GameObject:
   - component: {fileID: 1891388375}
   - component: {fileID: 1891388374}
   - component: {fileID: 1891388373}
-  - component: {fileID: 1891388372}
   m_Layer: 0
   m_Name: BridgeStopper (3)
   m_TagString: Untagged
@@ -115908,21 +115843,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1891388372
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1891388371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f03d77c76767e41891ef710f67597e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rope: {fileID: 0}
-  ropeTwo: {fileID: 0}
-  brigdeStoppers: []
 --- !u!65 &1891388373
 BoxCollider:
   m_ObjectHideFlags: 0
