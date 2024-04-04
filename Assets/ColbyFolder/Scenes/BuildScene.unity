@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2800,6 +2800,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 596994592}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &603918777 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8974919208392673134, guid: 89caa485e11d401439480b9e1d0c5412,
+    type: 3}
+  m_PrefabInstance: {fileID: 2044201463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &604421447
 GameObject:
   m_ObjectHideFlags: 0
@@ -5419,6 +5425,8 @@ GameObject:
   - component: {fileID: 962273536}
   - component: {fileID: 962273535}
   - component: {fileID: 962273534}
+  - component: {fileID: 962273549}
+  - component: {fileID: 962273548}
   m_Layer: 0
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -5789,6 +5797,53 @@ Transform:
   - {fileID: 1932992725}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &962273548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962273533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7623a58f1db09408f0a2ef6f5e739b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deviceCharacteristics: 256
+  button: 8
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 962273549}
+        m_TargetAssemblyTypeName: MenuScriptVR, Assembly-CSharp
+        m_MethodName: OpenMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &962273549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 962273533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f8aa9124574354428ddb3941183284d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canvasObject: {fileID: 603918777}
+  parentTransform: {fileID: 1642182856}
+  menuDistance: 5
 --- !u!1 &963103257
 GameObject:
   m_ObjectHideFlags: 0
@@ -8730,6 +8785,12 @@ Transform:
   - {fileID: 604421448}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1642182856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4058887573982233572, guid: 89caa485e11d401439480b9e1d0c5412,
+    type: 3}
+  m_PrefabInstance: {fileID: 2044201463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1646718969
 GameObject:
   m_ObjectHideFlags: 0
@@ -11757,6 +11818,79 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 15.356506, y: 23.42111, z: 5.171165}
   m_Center: {x: 0, y: 0, z: 0.0000002384186}
+--- !u!1001 &2044201463
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2817483620387967711, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4058887573982233572, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_Name
+      value: MenuVR
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9154718266219064510, guid: 89caa485e11d401439480b9e1d0c5412,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 89caa485e11d401439480b9e1d0c5412, type: 3}
 --- !u!1 &2048853095
 GameObject:
   m_ObjectHideFlags: 0
@@ -12538,3 +12672,4 @@ SceneRoots:
   - {fileID: 1976273365}
   - {fileID: 729072025}
   - {fileID: 1637179410}
+  - {fileID: 2044201463}
