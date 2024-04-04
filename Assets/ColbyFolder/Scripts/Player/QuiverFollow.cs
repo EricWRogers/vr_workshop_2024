@@ -10,7 +10,7 @@ public class QuiverFollow : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(playerOrigin.position.x + playerCam.position.x + quiverX, playerOrigin.position.y + playerCam.position.y + quiverY, playerOrigin.position.z + playerCam.position.z + quiverZ);
+        transform.position = new Vector3(playerOrigin.position.x + playerCam.position.x, playerOrigin.position.y + playerCam.position.y, playerOrigin.position.z + playerCam.position.z);
         transform.rotation = Quaternion.Euler(0f, transform.rotation.y + playerCam.rotation.eulerAngles.y - 90, 0f);
     }
 }

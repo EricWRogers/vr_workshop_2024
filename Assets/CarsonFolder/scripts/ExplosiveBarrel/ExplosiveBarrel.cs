@@ -3,6 +3,8 @@ using UnityEngine;
 public class ExplosiveBarrel : MonoBehaviour
 {
     public RotateTurntable turnTable;
+    public GameObject explosionVFX;
+    public SecondTargetChecker targetChecker;
     [SerializeField] private float ExplosiveRange = 3f;
     [SerializeField] private LayerMask explodableLayerMask;
 
@@ -30,6 +32,8 @@ public class ExplosiveBarrel : MonoBehaviour
 
     public void Detonate()
     {
+        targetChecker.CheckTargets();
+        Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange, explodableLayerMask);
 
         foreach(var objectToExplode in objectsToExplode) 

@@ -8778,7 +8778,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &158384142
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -37580,7 +37580,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &471957732
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97681,6 +97681,26 @@ PrefabInstance:
       propertyPath: distance
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4161546637540668142, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: quiverX
+      value: -6.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161546637540668142, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: quiverZ
+      value: -6.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 4161546637540668142, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: playerCam
+      value: 
+      objectReference: {fileID: 1105753472}
+    - target: {fileID: 4161546637540668142, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: playerOrigin
+      value: 
+      objectReference: {fileID: 158384155}
     - target: {fileID: 4659876416580008709, guid: b5dadbc667fcc5341ae1f7a35c14d552,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -102106,7 +102126,7 @@ PrefabInstance:
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
