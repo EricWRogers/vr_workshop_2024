@@ -1,10 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExplosiveBarrel : MonoBehaviour
 {
     public RotateTurntable turnTable;
+    public GameObject explosionVFX;
+    public SecondTargetChecker targetChecker;
     [SerializeField] private float ExplosiveRange = 3f;
     [SerializeField] private LayerMask explodableLayerMask;
 
@@ -19,24 +19,26 @@ public class ExplosiveBarrel : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Fire"))
+        if (other.gameObject.CompareTag("Arrow"))
         {
-            Detonate();
-            turnTable.isPuzzleDone = true;
+            if (other.gameObject.GetComponent<Arrow>().onFire)
+            {
+                Detonate();
+                turnTable.isPuzzleDone = true;
+            }
         }
 
     }
 
     public void Detonate()
     {
+        targetChecker.CheckTargets();
+        Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange, explodableLayerMask);
 
         foreach(var objectToExplode in objectsToExplode) 
         {
             Destroy(objectToExplode.gameObject);
         }
-
-
-
     }
 }

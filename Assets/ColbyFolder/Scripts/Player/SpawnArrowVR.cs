@@ -10,6 +10,7 @@ public class SpawnArrowVR : MonoBehaviour
 
     private bool arrowSpawned = false;
     public bool arrowNocked = false;
+    public bool inFireZone = false;
 
     public void SpawnArrow()
     {
@@ -19,6 +20,10 @@ public class SpawnArrowVR : MonoBehaviour
             #pragma warning disable CS0618 // Type or member is obsolete, this line removes the error message
             rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(arrow.GetComponent<XRGrabInteractable>());
             #pragma warning restore CS0618 // Type or member is obsolete, this line resumes error messages
+            if (inFireZone)
+            {
+                arrow.GetComponent<Arrow>().onFire = true;
+            }
             arrowSpawned = true;
         }
     }
@@ -36,8 +41,29 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
+            if (inFireZone)
+            {
+                arrow.GetComponent<Arrow>().onFire = true;
+                arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
+            }
             arrowSpawned = false;
             arrowNocked = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FireZone"))
+        {
+            inFireZone = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("FireZone"))
+        {
+            inFireZone = false;
         }
     }
 }
