@@ -23,6 +23,7 @@ public class SpawnArrowWASD : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0) && keyDownFlag == false)
         {
             arrow = ArrowPool.SharedInstance.GetPooledObject();
+            arrow.SetActive(true);
             arrow.transform.position = spawnLocation.transform.position;
             arrow.transform.rotation = spawnLocation.transform.rotation;
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
@@ -34,16 +35,7 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
-            StartCoroutine(repoolArrow());
             keyDownFlag = false;
         }
-    }
-
-    IEnumerator repoolArrow()
-    {
-        // Wait for the specified delay time
-        yield return new WaitForSeconds(delayTime);
-
-        arrow.SetActive(false);
     }
 }

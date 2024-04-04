@@ -7,6 +7,8 @@ public class ArrowPool : MonoBehaviour
     public List<GameObject> pooledObjects;
     public GameObject objectToPool;
     public int amountToPool;
+    private Rigidbody arrRigidbody;
+    private int index = 0;
 
     void Awake()
     {
@@ -20,9 +22,9 @@ public class ArrowPool : MonoBehaviour
         for (int i = 0; i < amountToPool; i++)
         {
             tmp = Instantiate(objectToPool);
-            Rigidbody rigidbody = tmp.AddComponent<Rigidbody>();
-            rigidbody.useGravity = false;
-            rigidbody.isKinematic = true;
+            //get arrow rigidbody
+            tmp.GetComponent<Rigidbody>().useGravity = false;
+            tmp.GetComponent<Rigidbody>().isKinematic = true;
             tmp.SetActive(false);
             pooledObjects.Add(tmp);
         }
@@ -33,14 +35,12 @@ public class ArrowPool : MonoBehaviour
     // set the gameObject back to inactive with pooledObject.SetActive(false);
     public GameObject GetPooledObject()
     {
-        for (int i = 0; i < amountToPool; i++)
+        GameObject arrow = pooledObjects[index];
+        index++;
+        if (index >= amountToPool)
         {
-            if (!pooledObjects[i].activeInHierarchy)
-            {
-                return pooledObjects[i];
-            }
+            index = 0;
         }
-        Debug.Log("No pooled objects, don't forget to set any objects you are done with back to inactive to return them to the pool");
-        return null;
+        return arrow;
     }
 }

@@ -18,6 +18,7 @@ public class SpawnArrowVR : MonoBehaviour
         if (!arrowSpawned)
         {
             arrow = ArrowPool.SharedInstance.GetPooledObject();
+            arrow.SetActive(true);
             arrow.transform.position = rightController.transform.position;
             arrow.transform.rotation = rightController.transform.rotation;
             #pragma warning disable CS0618 // Type or member is obsolete, this line removes the error message
@@ -31,7 +32,7 @@ public class SpawnArrowVR : MonoBehaviour
     {
         if (!arrowNocked)
         {
-            Destroy(arrow);
+            arrow.SetActive(false);
             arrowSpawned = false;
         }
         else
@@ -42,14 +43,6 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             arrowSpawned = false;
             arrowNocked = false;
-            StartCoroutine(repoolArrow());
         }
-    }
-    IEnumerator repoolArrow()
-    {
-        // Wait for the specified delay time
-        yield return new WaitForSeconds(delayTime);
-
-        arrow.SetActive(false);
     }
 }
