@@ -8,6 +8,7 @@ public class SpawnArrowWASD : MonoBehaviour
     public float thrust = 5.0f;
     public Transform spawnLocation;
     public Transform arrowParent;
+    public bool inFireZone = false;
 
     void Start()
     {
@@ -22,6 +23,11 @@ public class SpawnArrowWASD : MonoBehaviour
         {
             arrow = Instantiate(prefabarrow, spawnLocation.position, arrowParent.rotation, arrowParent);
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
+            arrow.GetComponent<Arrow>().arrowNocked = true;
+            if (inFireZone)
+            {
+                arrow.GetComponent<Arrow>().onFire = true;
+            }
             keyDownFlag = true;
         }
 
@@ -30,7 +36,25 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
+            arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
+            arrow.GetComponent<Arrow>().arrowNocked = false;
             keyDownFlag = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FireZone"))
+        {
+            inFireZone = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("FireZone"))
+        {
+            inFireZone = false;
         }
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ExplosiveBarrel : MonoBehaviour
@@ -19,10 +17,13 @@ public class ExplosiveBarrel : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Fire"))
+        if (other.gameObject.CompareTag("Arrow"))
         {
-            Detonate();
-            turnTable.isPuzzleDone = true;
+            if (other.gameObject.GetComponent<Arrow>().onFire)
+            {
+                Detonate();
+                turnTable.isPuzzleDone = true;
+            }
         }
 
     }
@@ -35,8 +36,5 @@ public class ExplosiveBarrel : MonoBehaviour
         {
             Destroy(objectToExplode.gameObject);
         }
-
-
-
     }
 }
