@@ -20,6 +20,7 @@ public class SaveManager : MonoBehaviour
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
+        timer.PauseTimer();
         leaderboard.TestSpeed(timer.accumulatedTime);
 
         Save save = new Save()
@@ -59,5 +60,6 @@ public class SaveManager : MonoBehaviour
     {
         Debug.Log("Save Wiped");
         Save save = new Save();
+        leaderboard.ClearLeaderboard();
     }
 }
