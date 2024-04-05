@@ -19,6 +19,11 @@ public class FPSController : MonoBehaviour
     public bool canMove = true;
     public bool cursorVisible = false;
 
+    //Timers for footstep sound
+    public float footstepSoundDelay = 1.0f;
+    private float footstepTimer = 0.0f;
+    public int footNum = 1; 
+
     CharacterController characterController;
 
     // Start is called before the first frame update
@@ -72,5 +77,27 @@ public class FPSController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
             transform.rotation *= Quaternion.Euler(0, Mouse.current.delta.x.ReadValue() * lookSpeed, 0);
         }
+
+        //Foostep sound stuff
+        footstepTimer -= Time.deltaTime;
+        if (curSpeedX != 0f || curSpeedY != 0f)
+        {
+            if (footstepTimer < 0.1)
+            {
+                if (footNum == 1)
+                {
+                AudioManager.instance.Play("Stone_Step_1");
+                footstepTimer = footstepSoundDelay;
+                footNum++;
+                } else if (footNum == 2)
+                {
+                AudioManager.instance.Play("Stone_Step_2");
+                footstepTimer = footstepSoundDelay;
+                footNum--;
+                }
+            }
+        }
+        
+
     }
 }

@@ -42,6 +42,7 @@ public class SpawnArrowWASD : MonoBehaviour
             }
             arrow.GetComponent<Arrow>().arrowNocked = false;
             keyDownFlag = false;
+            AudioManager.instance.Play("Arrow_Whoosh");
         }
     }
 
