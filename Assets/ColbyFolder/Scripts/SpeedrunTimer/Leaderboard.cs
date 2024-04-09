@@ -5,6 +5,9 @@ using UnityEngine;
 public class Leaderboard : MonoBehaviour
 {
     public static Leaderboard Instance;
+    public bool currentRunHighscore = false;
+    [HideInInspector]
+    public int currentRunIndex;
     private TextMeshProUGUI leaderboard;
     private List<KeyValuePairData> top5;
 
@@ -26,6 +29,12 @@ public class Leaderboard : MonoBehaviour
         top5 = new List<KeyValuePairData>();
     }
 
+    public void ClearLeaderboard()
+    {
+        leaderboard.text = string.Empty;
+        top5 = new List<KeyValuePairData>();
+    }
+
     public void LoadLeaderboard(List<KeyValuePairData> highscores)
     {
         if (highscores != null)
@@ -35,21 +44,8 @@ public class Leaderboard : MonoBehaviour
                 //Sort by lowest value (ascending order)
                 highscores.Sort((x, y) => x.value.CompareTo(y.value));
 
-                //Construct the leaderboard text
-                string leaderboardText = "";
-                foreach (var kvp in highscores)
-                {
-                    //Add the key and value into the larger scoped variable
-                    top5.Add(new KeyValuePairData(kvp.key, kvp.value)); 
-
-                    int minutes = (int)kvp.value / 60;
-                    int seconds = (int)kvp.value % 60;
-                    double milliseconds = (kvp.value - minutes * 60 - seconds) * 100;
-
-                    leaderboardText += kvp.key + ": " + string.Format("{0:00}:{1:00}.{2:00}\n", minutes, seconds, milliseconds);
-                }
-
-                leaderboard.text = leaderboardText;
+                top5 = highscores;
+                ContructLeaderboardText(highscores);
             }
         }
         else
@@ -58,21 +54,48 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
+    public void SetHighscoreName(string name)
+    {
+        top5[currentRunIndex].key = name;
+        ContructLeaderboardText(top5);
+    }
+
     public void TestSpeed(double speed)
     {
         //Add in the new value
-        top5.Add(new KeyValuePairData("Placeholder Name", speed));
+        top5.Add(new KeyValuePairData("Unnamed", speed));
         //Sort the new value in
         top5.Sort((x, y) => x.value.CompareTo(y.value));
+        for (int i = 0; i < top5.Count; i++)
+        {
+            if (top5[i].value == speed)
+            {
+                currentRunIndex = i;
+            }
+        }
         //Remove the slowest time if there are more than 5 entries
         if (top5.Count > 5)
         {
+            //If the bottom score isn't the current speed, this run is a highscore
+            if (currentRunIndex < 5)
+            {
+                currentRunHighscore = true;
+            }
             top5.RemoveAt(top5.Count - 1);
         }
+        //If there are less than 5 scores, this run is a highscore
+        else
+        {
+            currentRunHighscore = true;
+        }
 
-        // Construct the leaderboard text
+        ContructLeaderboardText(top5);
+    }
+
+    private void ContructLeaderboardText(List<KeyValuePairData> highscores)
+    {
         string leaderboardText = "";
-        foreach (var kvp in top5)
+        foreach (var kvp in highscores)
         {
             int minutes = (int)kvp.value / 60;
             int seconds = (int)kvp.value % 60;
