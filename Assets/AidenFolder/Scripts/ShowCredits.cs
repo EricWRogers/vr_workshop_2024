@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ShowCredits : MonoBehaviour
@@ -11,7 +9,7 @@ public class ShowCredits : MonoBehaviour
     public GameObject approachText;
     public GameObject whichWayToGoText;
 
-    public ParticleSystem particles;
+    //public ParticleSystem particles;
     
     // Awake is called before the first frame update
     void Awake()
@@ -21,7 +19,7 @@ public class ShowCredits : MonoBehaviour
         creditText.SetActive(false);
         whichWayToGoText.SetActive(false);
 
-        particles.Stop();
+        //particles.Stop();
     }
 
     // Update is called once per frame
@@ -40,7 +38,7 @@ public class ShowCredits : MonoBehaviour
             creditText.SetActive(true);
             whichWayToGoText.SetActive(true);
 
-            particles.Play();
+            //particles.Play();
         }
     }
 }
