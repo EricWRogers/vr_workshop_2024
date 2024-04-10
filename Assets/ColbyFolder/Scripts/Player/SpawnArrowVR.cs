@@ -8,7 +8,7 @@ public class SpawnArrowVR : MonoBehaviour
     public float thrust = 5.0f;
     public GameObject rightController;
 
-    private bool arrowSpawned = false;
+    public bool arrowSpawned = false;
     public bool arrowNocked = false;
     public bool inFireZone = false;
 
