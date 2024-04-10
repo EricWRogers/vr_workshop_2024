@@ -53,14 +53,14 @@ public class Arrow : MonoBehaviour
             onFire = false;
         }
 
-        // //Aiden Added This
-        // if(hasBeenFired == true)
-        // {
-        //     trailEffect.SetActive(true);
-        // }else
-        // {
-        //     trailEffect.SetActive(false);
-        // }//
+        //Aiden Added This
+        if(hasBeenFired == true)
+        {
+            trailEffect.SetActive(true);
+        }else
+        {
+            trailEffect.SetActive(false);
+        }//
 
         fireEffects.SetActive(onFire);
     }
