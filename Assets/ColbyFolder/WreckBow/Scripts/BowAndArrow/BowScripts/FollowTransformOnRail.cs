@@ -1,6 +1,5 @@
 using UnityEngine;
 
-
 /// <summary>
 /// snaps our transform to the target trans, position but restricts position to be 0,0 x,y and between min and max on z when FireOnRail is fired.
 /// Is reset to init pos when ResetPosition is fired.
@@ -14,25 +13,21 @@ public class FollowTransformOnRail : MonoBehaviour
     public float railMin = -0.7f;
     public float railMax = 0;
 
-    Transform _trans;
     Vector3 _resetPosition;
-
 
     void Start()
     {
-        _trans = transform;
-        _resetPosition = _trans.localPosition;
+        _resetPosition = targetTransform.localPosition;
     }
 
-
-    public void FollowOnRail()
+    private void Update()
     {
-        _trans.position = targetTransform.position;
-        _trans.localPosition = new Vector3(0, 0, Mathf.Clamp(_trans.localPosition.z, railMin, railMax));
+        transform.position = targetTransform.position;
+        transform.localPosition = new Vector3(_resetPosition.x, _resetPosition.y, Mathf.Clamp(transform.localPosition.z, railMin + _resetPosition.z, railMax + _resetPosition.z));
     }
 
     public void ResetPosition()
     {
-        _trans.localPosition = _resetPosition;
+        transform.localPosition = _resetPosition;
     }
 }
