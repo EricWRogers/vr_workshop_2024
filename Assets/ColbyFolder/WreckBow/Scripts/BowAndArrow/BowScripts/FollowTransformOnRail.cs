@@ -9,6 +9,7 @@ public class FollowTransformOnRail : MonoBehaviour
 {
 
     public Transform targetTransform;
+    public bool isGrabbing = false;
     
     public float railMin = -0.7f;
     public float railMax = 0;
@@ -24,10 +25,23 @@ public class FollowTransformOnRail : MonoBehaviour
     {
         transform.position = targetTransform.position;
         transform.localPosition = new Vector3(_resetPosition.x, _resetPosition.y, Mathf.Clamp(transform.localPosition.z, railMin + _resetPosition.z, railMax + _resetPosition.z));
+        float test = CalculatePullAmount();
+        Debug.Log(test);
     }
 
     public void ResetPosition()
     {
         transform.localPosition = _resetPosition;
+    }
+
+    public float CalculatePullAmount()
+    {
+        if (!isGrabbing)
+        {
+            return 0;
+        }
+        float pullAmount = Vector3.Distance(_resetPosition, transform.localPosition) / Mathf.Abs(railMin);
+        pullAmount = Mathf.Clamp(pullAmount, 0.0f, 1.0f);
+        return pullAmount;
     }
 }

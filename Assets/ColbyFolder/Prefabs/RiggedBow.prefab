@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
   m_Colliders:
-  - {fileID: 0}
+  - {fileID: 8926649390594367872}
   m_InteractionLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -196,13 +196,37 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6858940086515219505}
+        m_TargetAssemblyTypeName: BowString, Assembly-CSharp
+        m_MethodName: OnGrab
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1936049005726873813}
         m_TargetAssemblyTypeName: FollowTransformOnRail, Assembly-CSharp
         m_MethodName: ResetPosition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6858940086515219505}
+        m_TargetAssemblyTypeName: BowString, Assembly-CSharp
+        m_MethodName: OnStopGrab
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -318,6 +342,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 090bf480457535f4ba506edc9597ef5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joint: {fileID: 1936049005726873813}
 --- !u!1001 &4583286812882199504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -921,5 +946,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 6395217515336850325}
+  isGrabbing: 0
   railMin: -3.75
   railMax: 0
