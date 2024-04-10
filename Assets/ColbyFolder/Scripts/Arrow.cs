@@ -9,6 +9,10 @@ public class Arrow : MonoBehaviour
     public float lengthOfFire = 8.0f;
     public bool onFire = false;
 
+    //Aiden's Addition to the Code
+    public GameObject trailEffect;
+    public bool hasBeenFired = false;
+
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -48,6 +52,15 @@ public class Arrow : MonoBehaviour
         {
             onFire = false;
         }
+
+        // //Aiden Added This
+        // if(hasBeenFired == true)
+        // {
+        //     trailEffect.SetActive(true);
+        // }else
+        // {
+        //     trailEffect.SetActive(false);
+        // }//
 
         fireEffects.SetActive(onFire);
     }
