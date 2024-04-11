@@ -12,36 +12,52 @@ public class NoteInteraction : MonoBehaviour
     public bool Action = false;
 
     public void Start()
-    { 
-     InteractText.SetActive(false);
-     ParchmentText.SetActive(false);
-     NoteBackground.SetActive(false);
-    
+    {
+        InteractText.SetActive(false);
+
     }
     void Update()
     {
-        if (InRange == true) 
+        if (Action == false) 
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-             InteractText.SetActive(false);
-
-             ParchmentText.SetActive(true);  
-             NoteBackground.SetActive(true);
-             Action = true;
-            }
+         ParchmentText.SetActive(false);
+         NoteBackground.SetActive(false);
         }
         if (Action == true)
         {
+         InteractText.SetActive(false);
+         ParchmentText.SetActive(true);
+         NoteBackground.SetActive(true);
+        }
+        if (InRange == true && Action == false) 
+        {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                InteractText.SetActive(true);
-
-                ParchmentText.SetActive(false);
-                NoteBackground.SetActive(false);
+             Action = true;
+            }
+        }
+        if (InRange == true && Action == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+             Action = false;
+            }
+        }
+        if (InRange == false && Action == false)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
                 Action = false;
             }
         }
+        if (InRange == false && Action == true)
+        {
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                Action = false;
+            }
+        }
+
 
 
 
@@ -72,6 +88,7 @@ public class NoteInteraction : MonoBehaviour
      InRange = false;
      ParchmentText.SetActive(false);
      NoteBackground.SetActive(false);
+     Action = false;
     }
     
     
