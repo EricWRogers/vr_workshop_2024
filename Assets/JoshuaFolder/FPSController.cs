@@ -82,7 +82,7 @@ public class FPSController : MonoBehaviour
         footstepTimer -= Time.deltaTime;
         if (curSpeedX != 0f || curSpeedY != 0f)
         {
-            if (footstepTimer < 0.1)
+            if (footstepTimer < 0.2)
             {
                 if (footNum == 1)
                 {
