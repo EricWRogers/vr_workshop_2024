@@ -389,9 +389,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DebugScript, Assembly-CSharp
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 8387018686153335346}
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: OnPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -410,7 +410,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9154718266219064510}
-  m_Layer: 0
+  - component: {fileID: 8387018686153335346}
+  m_Layer: 5
   m_Name: MenuVR
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -433,6 +434,18 @@ Transform:
   - {fileID: 1675044022107298924}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8387018686153335346
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4058887573982233572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f274a866b5d1b2446b5d1af14f7856b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4330173440775459314
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,9 +567,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DebugScript, Assembly-CSharp
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 8387018686153335346}
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: OnPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -687,9 +700,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DebugScript, Assembly-CSharp
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 8387018686153335346}
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: OnPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -891,7 +904,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 1}
+  m_Color: {r: 0.5943396, g: 0.07008721, b: 0.07008721, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -920,6 +933,7 @@ GameObject:
   - component: {fileID: 5064387523597452814}
   - component: {fileID: 3760862491687310804}
   - component: {fileID: 2800294113542947915}
+  - component: {fileID: 5514185205921677296}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -971,7 +985,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: 344856955
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!114 &3760862491687310804
@@ -1014,6 +1028,25 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &5514185205921677296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974919208392673134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7951c64acb0fa62458bf30a60089fe2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 0
+  m_CheckFor2DOcclusion: 0
+  m_CheckFor3DOcclusion: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 32
+  m_RaycastTriggerInteraction: 1
 --- !u!1 &9141923133583109057
 GameObject:
   m_ObjectHideFlags: 0

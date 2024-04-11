@@ -16,6 +16,8 @@ TagManager:
   - FireZone
   - Arrow
   - Arrow
+  - NonStick
+  - Hands
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - Water
   - UI
   - Bow
-  - 
+  - Hands
   - 
   - 
   - 
@@ -50,6 +52,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Hand Layer
+    uniqueID: 343292657
+    locked: 0
+  - name: UI Layer
+    uniqueID: 344856955
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

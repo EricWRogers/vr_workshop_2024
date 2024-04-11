@@ -56,4 +56,8 @@ public class MenuScriptWASD : MonoBehaviour
     {
         Debug.Log("Menu Opened in Desktop Mode");
     }
+    public void ButtonPress()
+    {
+        Debug.Log("PRESSED");
+    }
 }
