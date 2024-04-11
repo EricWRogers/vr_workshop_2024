@@ -10,14 +10,19 @@ public class Arrow : MonoBehaviour
     public bool onFire = false;
 
     //Aiden's Addition to the Code
-    private GameObject trailEffect;
+    public GameObject trailEffect;
     public bool hasBeenFired = false;
+    public LayerMask mask;
+    private Vector3 positionLastFrame;
+    private RaycastHit info;
+    private TargetPractice target;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         fireEffects = transform.GetChild(0).gameObject;
-
+        //Aiden added this
+        target = GetComponent<TargetPractice>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -79,4 +84,22 @@ public class Arrow : MonoBehaviour
 
         fireEffects.SetActive(onFire);
     }
+
+    //Aiden added this
+    private void FixedUpdate()
+    {
+        if (Physics.Linecast(positionLastFrame, transform.position, out info, mask))
+        {
+            if (info.transform.CompareTag("Target"))
+            {
+                if(target != null)
+                {
+                    target.GotHit();
+                }
+            }
+
+        }
+
+        positionLastFrame = transform.position;
+    }//
 }

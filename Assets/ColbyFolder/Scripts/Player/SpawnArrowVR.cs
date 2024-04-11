@@ -52,7 +52,8 @@ public class SpawnArrowVR : MonoBehaviour
             arrowSpawned = false;
             arrowNocked = false;
             //Aiden Added This
-            arrow.GetComponent<Arrow>().hasBeenFired = true;
+            arrow.GetComponent<Arrow>().hasBeenFired = true;//
+
         }
     }
 
@@ -80,5 +81,13 @@ public class SpawnArrowVR : MonoBehaviour
         {
             arrow.GetComponent<Arrow>().hasBeenFired = false;
         }
-    }
+
+        if(arrow.GetComponent<Arrow>().hasBeenFired == true)
+            {
+                arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
+            }else
+            {
+                arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
+            }
+    }//
 }
