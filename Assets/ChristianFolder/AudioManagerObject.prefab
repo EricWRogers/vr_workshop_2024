@@ -1,0 +1,265 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6743552652858072862
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136635547379360233}
+  - component: {fileID: 220843575456735260}
+  - component: {fileID: 8692835752490741083}
+  m_Layer: 0
+  m_Name: AudioManagerObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &136635547379360233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743552652858072862}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -125.43384, y: 42.976776, z: -14.151596}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &220843575456735260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743552652858072862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64d3a482d8123b548a3a6cfda3e41a8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  masterMixer: {fileID: 24300002, guid: 884548a756cfc7b41a8458eab53c7f9f, type: 2}
+  musicMixer: {fileID: 9045681289650022610, guid: 884548a756cfc7b41a8458eab53c7f9f,
+    type: 2}
+  soundEffectMixer: {fileID: 534336405428723026, guid: 884548a756cfc7b41a8458eab53c7f9f,
+    type: 2}
+  sounds:
+  - name: Wood_Impact
+    clip: {fileID: 8300000, guid: b7f2613e005002d4594955807a40c083, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Metal_Impact
+    clip: {fileID: 8300000, guid: c72c2029cf2aadb48b9114083f9daad9, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Nature_ambiance
+    clip: {fileID: 8300000, guid: ba47e31b9b4ef504891b46de40cf0557, type: 3}
+    type: 0
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Stone_Impact
+    clip: {fileID: 8300000, guid: cc0d4979b55e3304c85f900a062abeaa, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Bow_Draw
+    clip: {fileID: 8300000, guid: 3724284d00ed47f46ac2381f28092e65, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Stone_Step_1
+    clip: {fileID: 8300000, guid: f8b2b75f67fbbc0428a39aeab7f61dc9, type: 3}
+    type: 1
+    volume: 0.3
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Stone_Step_2
+    clip: {fileID: 8300000, guid: e554950dbb3f8d7479cce354935e2bc0, type: 3}
+    type: 1
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Dirt_Step_1
+    clip: {fileID: 8300000, guid: 01ada8c8f67d4b84ba8e1e90e8100d68, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Dirt_Step_2
+    clip: {fileID: 8300000, guid: 61be3cb67a1c9c64396bc7136d187eff, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Cricket_Sounds
+    clip: {fileID: 8300000, guid: 61be3cb67a1c9c64396bc7136d187eff, type: 3}
+    type: 0
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Bow_String_Drawn
+    clip: {fileID: 8300000, guid: b46e9aa488530e546b3be0b6b1c65c15, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Arrow_Whoosh
+    clip: {fileID: 8300000, guid: 847aea6f313440448829ef7dd6ba4100, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Fire_Sound
+    clip: {fileID: 8300000, guid: c6c89158186cf6c459c64f788b06ac4d, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Arrow_Flicking_Sound
+    clip: {fileID: 8300000, guid: 3e67de28848f07d4287f04c6567ad231, type: 3}
+    type: 1
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+--- !u!114 &8692835752490741083
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743552652858072862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa1f4e53ba7a124b8a529844d790a09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObjects: []
+  objectToPool: {fileID: 9153338646309354728, guid: 75a9a57630509a545bba9fb90c0b5b42,
+    type: 3}
+  amountToPool: 50

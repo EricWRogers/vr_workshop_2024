@@ -9,6 +9,7 @@ public class ToNewScene : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+            AudioManager.instance.GatherAllSounds();
             SceneManager.LoadSceneAsync(sceneName);
         }
     }
