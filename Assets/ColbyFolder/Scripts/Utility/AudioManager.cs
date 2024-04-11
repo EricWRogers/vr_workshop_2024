@@ -163,6 +163,19 @@ public class AudioManager : MonoBehaviour
         audioSource.gameObject.SetActive(false);
     }
 
+    //This is called just before loading into a new scene to gather all outstanding sounds back to the Singleton AudioManager so it doesn't lose them
+    public void GatherAllSounds()
+    {
+        foreach (GameObject audioSourceObject in ObjectPool.SharedInstance.pooledObjects)
+        {
+            if (audioSourceObject.transform.parent != gameObject)
+            {
+                audioSourceObject.transform.SetParent(transform);
+                audioSourceObject.gameObject.SetActive(false);
+            }
+        }
+    }
+
     public void Stop(string name)
     {
         Sound sound = Array.Find(sounds, sound => sound.name == name);
