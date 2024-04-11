@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class FollowTransformOnRail : MonoBehaviour
 {
-
     public Transform targetTransform;
     private Animator bowAnimator;
     public bool isGrabbing = false;

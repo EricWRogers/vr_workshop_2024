@@ -4,9 +4,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SpawnArrowVR : MonoBehaviour
 {
     public GameObject prefabarrow;
-    private GameObject arrow;
+    public GameObject arrow;
     public float thrust = 5.0f;
     public GameObject rightController;
+    public BowString bowString;
 
     public bool arrowSpawned = false;
     public bool arrowNocked = false;
@@ -37,8 +38,8 @@ public class SpawnArrowVR : MonoBehaviour
         }
         else
         {
-            rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
-            arrow.transform.parent = null;
+            arrow.GetComponent<Arrow>().arrowAttached = false;
+            arrow.GetComponent<Arrow>().attachedObject = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             if (inFireZone)
@@ -48,6 +49,7 @@ public class SpawnArrowVR : MonoBehaviour
             }
             arrowSpawned = false;
             arrowNocked = false;
+            rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
         }
     }
 
