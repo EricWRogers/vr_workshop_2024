@@ -389,9 +389,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DebugScript, Assembly-CSharp
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 5634614624171164389}
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: OnPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -411,6 +411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9154718266219064510}
   - component: {fileID: -4057950855798192621}
+  - component: {fileID: 5634614624171164389}
   m_Layer: 0
   m_Name: MenuWASD
   m_TagString: Untagged
@@ -446,10 +447,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c391536596fbc8d45a2f0554499f0736, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvasObject: {fileID: 0}
+  canvasObject: {fileID: 8974919208392673134}
   gameCamera: {fileID: 0}
   menuDistance: 5
   fpsScript: {fileID: 0}
+--- !u!114 &5634614624171164389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4058887573982233572}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f274a866b5d1b2446b5d1af14f7856b8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4330173440775459314
 GameObject:
   m_ObjectHideFlags: 0
@@ -571,9 +584,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DebugScript, Assembly-CSharp
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 5634614624171164389}
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: OnPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -704,9 +717,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DebugScript, Assembly-CSharp
-        m_MethodName: ButtonClick
+      - m_Target: {fileID: 5634614624171164389}
+        m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
+        m_MethodName: OnPress
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MenuActions : MonoBehaviour
 {
@@ -18,5 +19,6 @@ public class MenuActions : MonoBehaviour
     public void OnPress()
     {
         Debug.Log("Hey");
+        SceneManager.LoadScene(1);
     }
 }
