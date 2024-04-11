@@ -30,7 +30,7 @@ public class AudioManager : MonoBehaviour
         Sound sound = Array.Find(sounds, sound => sound.name == name);
         if (sound != null)
         {
-            AudioSource audioSource = ObjectPool.SharedInstance.GetPooledObject().GetComponent<AudioSource>();
+            AudioSource audioSource = GetComponent<ObjectPool>().GetPooledObject().GetComponent<AudioSource>();
             audioSource.gameObject.SetActive(true);
             sound.audioSource = audioSource;
             sound.audioSource.clip = sound.clip;
@@ -69,7 +69,7 @@ public class AudioManager : MonoBehaviour
         Sound sound = Array.Find(sounds, sound => sound.name == name);
         if (sound != null)
         {
-            AudioSource audioSource = ObjectPool.SharedInstance.GetPooledObject().GetComponent<AudioSource>();
+            AudioSource audioSource = GetComponent<ObjectPool>().GetPooledObject().GetComponent<AudioSource>();
             audioSource.gameObject.SetActive(true);
             audioSource.transform.position = position;
             sound.audioSource = audioSource;
@@ -110,7 +110,7 @@ public class AudioManager : MonoBehaviour
         AudioSource audioSource;
         if (sound != null)
         {
-            GameObject pooledObject = ObjectPool.SharedInstance.GetPooledObject();
+            GameObject pooledObject = GetComponent<ObjectPool>().GetPooledObject();
             if (pooledObject != null)
             {
                 audioSource = pooledObject.GetComponent<AudioSource>();
@@ -199,7 +199,7 @@ public class AudioManager : MonoBehaviour
 
     public void StopAll()
     {
-        foreach (GameObject audioSourceObject in ObjectPool.SharedInstance.pooledObjects)
+        foreach (GameObject audioSourceObject in GetComponent<ObjectPool>().pooledObjects)
         {
             if (audioSourceObject.activeSelf)
             {
