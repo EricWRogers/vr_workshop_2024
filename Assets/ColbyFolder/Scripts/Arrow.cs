@@ -10,13 +10,14 @@ public class Arrow : MonoBehaviour
     public bool onFire = false;
 
     //Aiden's Addition to the Code
-    public GameObject trailEffect;
+    private GameObject trailEffect;
     public bool hasBeenFired = false;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         fireEffects = transform.GetChild(0).gameObject;
+
     }
 
     private void OnTriggerStay(Collider other)
@@ -36,13 +37,24 @@ public class Arrow : MonoBehaviour
     {
         if (other.CompareTag("Bow"))
         {
-            player.GetComponent<SpawnArrowVR>().arrowNocked = false;
-            arrowNocked = false;
-        }
-        else if (other.CompareTag("FireZone") && player.GetComponent<SpawnArrowVR>().arrowNocked)
+            if (player != null && player.GetComponent<SpawnArrowVR>() != null)
+            {
+                player.GetComponent<SpawnArrowVR>().arrowNocked = false;
+                arrowNocked = false;
+            }
+            // player.GetComponent<SpawnArrowVR>().arrowNocked = false;
+            // arrowNocked = false;
+        }else if(other.CompareTag("FireZone"))
         {
-            onFire = false;
+            if (player != null && player.GetComponent<SpawnArrowVR>() != null && player.GetComponent<SpawnArrowVR>().arrowNocked)
+            {
+                onFire = false;
+            }
         }
+        // else if (other.CompareTag("FireZone") && player.GetComponent<SpawnArrowVR>().arrowNocked)
+        // {
+        //     onFire = false;
+        // }
     }
 
     private void Update()
@@ -54,12 +66,15 @@ public class Arrow : MonoBehaviour
         }
 
         //Aiden Added This
-        if(hasBeenFired == true)
+        if(trailEffect != null)
         {
-            trailEffect.SetActive(true);
-        }else
-        {
-            trailEffect.SetActive(false);
+            if(hasBeenFired == true)
+            {
+                trailEffect.SetActive(true);
+            }else
+            {
+                trailEffect.SetActive(false);
+            }
         }//
 
         fireEffects.SetActive(onFire);
