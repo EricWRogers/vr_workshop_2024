@@ -15,14 +15,12 @@ public class Arrow : MonoBehaviour
     public LayerMask mask;
     private Vector3 positionLastFrame;
     private RaycastHit info;
-    private TargetPractice target;
+
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         fireEffects = transform.GetChild(0).gameObject;
-        //Aiden added this
-        target = GetComponent<TargetPractice>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -92,10 +90,33 @@ public class Arrow : MonoBehaviour
         {
             if (info.transform.CompareTag("Target"))
             {
-                if(target != null)
+                Debug.Log("Target was detected");
+                if(info.transform.gameObject.GetComponent<TargetPractice>() != null)
                 {
-                    target.GotHit();
+                    info.transform.gameObject.GetComponent<TargetPractice>().GotHit();
+                    Debug.Log("Target has changed color");
                 }
+                if(info.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
+                    Debug.Log("Target Destroyed");
+                }
+                if(info.transform.gameObject.GetComponent<FirstTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
+                    Debug.Log("Targets was hit");
+                }
+                if(info.transform.gameObject.GetComponent<SecondTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
+                    Debug.Log("Target was hit");
+                }
+                if(info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
+                {
+                    info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                    Debug.Log("Target was hit");
+                }
+                
             }
 
         }
