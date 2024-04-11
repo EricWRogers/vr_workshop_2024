@@ -12,6 +12,9 @@ public class SpawnArrowVR : MonoBehaviour
     public bool arrowNocked = false;
     public bool inFireZone = false;
 
+    //Aiden Added This
+    private float velocityThreshold = 0.01f;
+
     public void SpawnArrow()
     {
         if (!arrowSpawned)
@@ -48,6 +51,8 @@ public class SpawnArrowVR : MonoBehaviour
             }
             arrowSpawned = false;
             arrowNocked = false;
+            //Aiden Added This
+            arrow.GetComponent<Arrow>().hasBeenFired = true;
         }
     }
 
@@ -64,6 +69,16 @@ public class SpawnArrowVR : MonoBehaviour
         if (other.CompareTag("FireZone"))
         {
             inFireZone = false;
+        }
+    }
+
+    //Aiden Added This
+    private void Update()
+    {
+        // Check if arrow is spawned and it's not moving (velocity close to zero)
+        if (arrowSpawned && arrow != null && arrow.GetComponent<Rigidbody>().velocity.magnitude < velocityThreshold)
+        {
+            arrow.GetComponent<Arrow>().hasBeenFired = false;
         }
     }
 }

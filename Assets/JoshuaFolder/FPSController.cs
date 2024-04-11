@@ -86,12 +86,12 @@ public class FPSController : MonoBehaviour
             {
                 if (footNum == 1)
                 {
-                //AudioManager.instance.Play("Stone_Step_1");
+                AudioManager.instance.Play("Stone_Step_1");
                 footstepTimer = footstepSoundDelay;
                 footNum++;
                 } else if (footNum == 2)
                 {
-                //AudioManager.instance.Play("Stone_Step_2");
+                AudioManager.instance.Play("Stone_Step_2");
                 footstepTimer = footstepSoundDelay;
                 footNum--;
                 }
