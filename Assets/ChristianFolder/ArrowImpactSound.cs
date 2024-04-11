@@ -7,7 +7,7 @@ public class FireSound : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        AudioManager.instance.PlayOnObject("Fire_Sound", gameObject);
+        //AudioManager.instance.PlayOnObject("Stone_Impact", gameObject);
     }
 
     // Update is called once per frame
