@@ -333,7 +333,7 @@ GameObject:
   - component: {fileID: 214014091}
   - component: {fileID: 214014090}
   m_Layer: 0
-  m_Name: Smoke (1)
+  m_Name: alternate_hit_effect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -10297,7 +10297,7 @@ Transform:
   m_GameObject: {fileID: 444981605}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -1.51, y: 3.25, z: -1.13}
+  m_LocalPosition: {x: -2.42, y: 4.65, z: -1.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31017,7 +31017,7 @@ Transform:
   m_GameObject: {fileID: 1459596548}
   serializedVersion: 2
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0.112, y: 0, z: 0}
+  m_LocalPosition: {x: 0.112, y: 0, z: 0.11}
   m_LocalScale: {x: 0.33, y: 1, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -31044,6 +31044,7 @@ MeshRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: a1ee8707944d0ae40b530c7668a302e0, type: 2}
+  - {fileID: 2100000, guid: 1a299ea90fd609e4aba28c3ebad5a112, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -41735,8 +41736,8 @@ SceneRoots:
   - {fileID: 570940644}
   - {fileID: 790183844}
   - {fileID: 1970613069}
-  - {fileID: 602262580}
   - {fileID: 214014092}
+  - {fileID: 602262580}
   - {fileID: 444981608}
   - {fileID: 969591624}
   - {fileID: 66998089}
