@@ -27,7 +27,8 @@ public class BowString : MonoBehaviour
                 rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
                 player.arrow.GetComponent<XRGrabInteractable>().throwOnDetach = false;
                 player.arrow.transform.parent = null;
-                player.arrow.GetComponent<Arrow>().Attach(joint.gameObject);
+                //Attaches based on an attachPoint on the joint
+                player.arrow.GetComponent<Arrow>().Attach(joint.transform.GetChild(1).gameObject);
                 OnGrab();
             }
         }
