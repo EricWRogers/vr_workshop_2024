@@ -41,7 +41,7 @@ public class ArrowNonStick : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 1.0f))
             {
-                if (!hit.collider.gameObject.CompareTag("NonStick"))
+                if (!hit.collider.gameObject.CompareTag("NonStick") && !hit.collider.gameObject.CompareTag("Bow"))
                 {
                     firstContact = true;
                     //arrowRigidbody.velocity = Vector3.zero;
