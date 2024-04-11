@@ -10,58 +10,111 @@ public class NoteInteraction : MonoBehaviour
     public GameObject InteractText;
     public bool InRange = false;
     public bool Action = false;
+    public bool TextUp = false;
 
     public void Start()
     {
         InteractText.SetActive(false);
-
+        ParchmentText.SetActive(false);
+        NoteBackground.SetActive(false);
     }
     void Update()
     {
-        if (Action == false) 
+        if (TextUp) 
         {
-         ParchmentText.SetActive(false);
-         NoteBackground.SetActive(false);
+            InteractText.SetActive(false);
+            ParchmentText.SetActive(true);
+            NoteBackground.SetActive(true);
         }
-        if (Action == true)
+        if (!TextUp) 
         {
-         InteractText.SetActive(false);
-         ParchmentText.SetActive(true);
-         NoteBackground.SetActive(true);
+            ParchmentText.SetActive(false);
+            NoteBackground.SetActive(false);
         }
-        if (InRange == true && Action == false) 
+        
+        
+        
+        if (Input.GetKeyDown(KeyCode.E)) 
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-             Action = true;
-            }
+         Action = true;
         }
-        if (InRange == true && Action == true)
+        if (Input.GetKeyUp(KeyCode.E)) 
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-             Action = false;
-            }
+         Action = false;
         }
-        if (InRange == false && Action == false)
+
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Action = false;
-            }
+            TextUp = true;
         }
-        if (InRange == false && Action == true)
+        if (Input.GetKeyUp(KeyCode.Q))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                Action = false;
-            }
+            TextUp = false;
+        }
+
+
+
+        if (InRange && Action) 
+        {
+         TextUp = true;
+        }
+        if (!InRange && !Action) 
+        {
+         TextUp = false;
         }
 
 
 
 
-    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            /*if (TextUp == false) 
+            {
+             ParchmentText.SetActive(false);
+             NoteBackground.SetActive(false);
+            }
+            if TextUp == true)
+            {
+             InteractText.SetActive(false);
+             ParchmentText.SetActive(true);
+             NoteBackground.SetActive(true);
+            }
+            if (InRange == true && Action == false) 
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                 Action = true;
+                    Debug.Log("yippee");
+                }
+            }
+            if (InRange == true && Action == true)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                 Action = false;
+                }
+            }
+            if (InRange == false && Action == false)
+            {
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    Action = false;
+                }
+            }
+            */
+        }
 
 
 #if (UNITY_EDITOR)

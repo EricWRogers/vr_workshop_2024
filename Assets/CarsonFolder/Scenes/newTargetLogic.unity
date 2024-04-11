@@ -1131,6 +1131,7 @@ MonoBehaviour:
   InteractText: {fileID: 1822463582}
   InRange: 0
   Action: 0
+  TextUp: 0
 --- !u!1 &933977184
 GameObject:
   m_ObjectHideFlags: 0
@@ -1818,7 +1819,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"E" to Interact'
+  m_text: '"E" to Open
+
+    "Q" to Close'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 17352549a1b4b284cba943bf4e23b5ce, type: 2}
   m_sharedMaterial: {fileID: -7104882599370363014, guid: 17352549a1b4b284cba943bf4e23b5ce,
