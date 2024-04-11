@@ -24,15 +24,10 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow = Instantiate(prefabarrow, spawnLocation.position, arrowParent.rotation, arrowParent);
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
             arrow.GetComponent<Arrow>().arrowNocked = true;
-            arrow.GetComponent<Arrow>().hasBeenFired = false;
+            arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
             if (inFireZone)
             {
                 arrow.GetComponent<Arrow>().onFire = true;
-                //Aiden added this
-                if(arrow.GetComponent<Arrow>().hasBeenFired == false)
-                {
-                    arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
-                }
             }
             keyDownFlag = true;
         }
@@ -49,9 +44,9 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.GetComponent<Arrow>().arrowNocked = false;
             arrow.GetComponent<Arrow>().hasBeenFired = true;
             if(arrow.GetComponent<Arrow>().hasBeenFired == true)
-                {
-                    arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
-                }
+            {
+                arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
+            }
             keyDownFlag = false;
             AudioManager.instance.Play("Arrow_Whoosh");
         }
