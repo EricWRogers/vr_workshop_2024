@@ -166,7 +166,7 @@ public class AudioManager : MonoBehaviour
     //This is called just before loading into a new scene to gather all outstanding sounds back to the Singleton AudioManager so it doesn't lose them
     public void GatherAllSounds()
     {
-        foreach (GameObject audioSourceObject in ObjectPool.SharedInstance.pooledObjects)
+        foreach (GameObject audioSourceObject in GetComponent<ObjectPool>().pooledObjects)
         {
             if (audioSourceObject.transform.parent != gameObject)
             {

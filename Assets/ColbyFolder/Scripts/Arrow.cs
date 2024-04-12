@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private GameObject player;
     private GameObject fireEffects;
     public float fireTimer = 0.0f;
     public bool arrowNocked = false;
@@ -10,11 +9,13 @@ public class Arrow : MonoBehaviour
     public bool onFire = false;
     public GameObject attachedObject;
     public bool arrowAttached = false;
+    public bool hasBeenFired = false;
+    public GameObject trailEffect;
 
-    private void Start()
+    private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         fireEffects = transform.GetChild(0).gameObject;
+        trailEffect = transform.GetChild(7).gameObject;
     }
 
     private void OnTriggerStay(Collider other)
