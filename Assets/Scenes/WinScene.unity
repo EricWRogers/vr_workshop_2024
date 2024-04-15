@@ -745,7 +745,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 130897964}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Camera Offset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2340,7 +2340,7 @@ GameObject:
   - component: {fileID: 478346970}
   - component: {fileID: 478346969}
   - component: {fileID: 478346968}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Right Controller
   m_TagString: RightHand
   m_Icon: {fileID: 0}
@@ -8388,7 +8388,7 @@ GameObject:
   - component: {fileID: 821807164}
   - component: {fileID: 821807163}
   - component: {fileID: 821807162}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -9727,7 +9727,7 @@ GameObject:
   - component: {fileID: 1162762734}
   - component: {fileID: 1162762733}
   - component: {fileID: 1162762732}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -9795,7 +9795,6 @@ MonoBehaviour:
   arrow: {fileID: 0}
   thrust: 30
   rightController: {fileID: 478346966}
-  bowString: {fileID: 0}
   arrowSpawned: 0
   arrowNocked: 0
   inFireZone: 0
@@ -10271,10 +10270,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 821807161}
     m_Modifications:
+    - target: {fileID: 2107946839275681912, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 3896476356474141956, guid: b5dadbc667fcc5341ae1f7a35c14d552,
         type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3941666126412720633, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4659876416580008709, guid: b5dadbc667fcc5341ae1f7a35c14d552,
         type: 3}
@@ -10340,6 +10349,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: QuiverAndBelt
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467620936688132543, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5526524688094717204, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10894,7 +10913,7 @@ GameObject:
   - component: {fileID: 1330753527}
   - component: {fileID: 1330753526}
   - component: {fileID: 1330753525}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Left Controller
   m_TagString: LeftHand
   m_Icon: {fileID: 0}
