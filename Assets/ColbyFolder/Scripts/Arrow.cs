@@ -2,49 +2,52 @@ using UnityEngine;
 
 public class Arrow : MonoBehaviour
 {
-    private GameObject player;
     private GameObject fireEffects;
     public float fireTimer = 0.0f;
     public bool arrowNocked = false;
     public float lengthOfFire = 8.0f;
     public bool onFire = false;
+    public GameObject attachedObject;
+    public bool arrowAttached = false;
+    public bool hasBeenFired = false;
+    public GameObject trailEffect;
 
-    private void Start()
+    private void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
         fireEffects = transform.GetChild(0).gameObject;
+        trailEffect = transform.GetChild(7).gameObject;
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Bow"))
-        {
-            player.GetComponent<SpawnArrowVR>().arrowNocked = true;
-            arrowNocked = true;
-        }
-        else if (other.CompareTag("FireZone"))
+        if (other.CompareTag("FireZone"))
         {
             onFire = true;
+            fireTimer = lengthOfFire;
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    public void NockArrow(bool nocked)
     {
-        if (other.CompareTag("Bow"))
-        {
-            player.GetComponent<SpawnArrowVR>().arrowNocked = false;
-            arrowNocked = false;
-        }
-        else if (other.CompareTag("FireZone") && player.GetComponent<SpawnArrowVR>().arrowNocked)
-        {
-            onFire = false;
-        }
+        arrowNocked = nocked;
+    }
+
+    public void Attach(GameObject attachObject)
+    {
+        attachedObject = attachObject;
+        arrowAttached = true;
     }
 
     private void Update()
     {
+        if (arrowAttached)
+        {
+            transform.position = attachedObject.transform.position;
+            transform.rotation = attachedObject.transform.rotation;
+        }
+
         fireTimer -= Time.deltaTime;
-        if (!arrowNocked && onFire && fireTimer < 0.0f)
+        if (onFire && fireTimer < 0.0f)
         {
             onFire = false;
         }
