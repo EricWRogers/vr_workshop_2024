@@ -25,11 +25,14 @@ public class Quiver : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject == rightController.transform.GetChild(0).transform.GetChild(0).gameObject)
+        if (rightController.transform.childCount > 0 && rightController.transform.GetChild(0).childCount > 0)
         {
-            if (!player.arrowSpawned)
+            if (other.gameObject == rightController.transform.GetChild(0).transform.GetChild(0).gameObject)
             {
-                canGrabArrow = true;
+                if (!player.arrowSpawned)
+                {
+                    canGrabArrow = true;
+                }
             }
         }
     }
