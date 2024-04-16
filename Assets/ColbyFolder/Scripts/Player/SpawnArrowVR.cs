@@ -4,11 +4,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SpawnArrowVR : MonoBehaviour
 {
     public GameObject prefabarrow;
-    private GameObject arrow;
+    [HideInInspector]
+    public GameObject arrow;
     public float thrust = 5.0f;
     public GameObject rightController;
 
-    private bool arrowSpawned = false;
+    public bool arrowSpawned = false;
     public bool arrowNocked = false;
     public bool inFireZone = false;
 
@@ -20,6 +21,7 @@ public class SpawnArrowVR : MonoBehaviour
             #pragma warning disable CS0618 // Type or member is obsolete, this line removes the error message
             rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(arrow.GetComponent<XRGrabInteractable>());
             #pragma warning restore CS0618 // Type or member is obsolete, this line resumes error messages
+            arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
             if (inFireZone)
             {
                 arrow.GetComponent<Arrow>().onFire = true;
@@ -37,8 +39,10 @@ public class SpawnArrowVR : MonoBehaviour
         }
         else
         {
-            rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
-            arrow.transform.parent = null;
+            arrow.GetComponent<Arrow>().arrowAttached = false;
+            arrow.GetComponent<Arrow>().attachedObject = null;
+            arrow.GetComponent<Arrow>().hasBeenFired = true;
+            arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
             if (inFireZone)
@@ -48,6 +52,7 @@ public class SpawnArrowVR : MonoBehaviour
             }
             arrowSpawned = false;
             arrowNocked = false;
+            rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
         }
     }
 
