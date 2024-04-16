@@ -20,13 +20,17 @@ public class TargetPractice : MonoBehaviour
             GetComponent<MeshRenderer>().material = baseMaterial;
         }
     }
+    public void GotHit()
+    {
+        GetComponent<MeshRenderer>().material = hitMaterial;
+        timer = timeToStayHit;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Arrow"))
         {
-            GetComponent<MeshRenderer>().material = hitMaterial;
-            timer = timeToStayHit;
+            GotHit();
         }
     }
 }

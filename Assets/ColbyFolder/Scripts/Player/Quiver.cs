@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class Quiver : MonoBehaviour
 {
-    [Tooltip("This value determines how far from the quiver the hand must be to grab an arrow. Smaller values mean closer")]
-    public double distance;
-    public GameObject distanceCheckPoint;
     private GameObject rightController;
     private SpawnArrowVR player;
+    public bool canGrabArrow = false;
 
     private void Start()
     {
@@ -18,10 +16,32 @@ public class Quiver : MonoBehaviour
     {
         if (player != null)
         {
-            if (Vector3.Distance(rightController.transform.position, distanceCheckPoint.transform.position) <= distance)
+            if (canGrabArrow)
             {
                 player.SpawnArrow();
             }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (rightController.transform.childCount > 0 && rightController.transform.GetChild(0).childCount > 0)
+        {
+            if (other.gameObject == rightController.transform.GetChild(0).transform.GetChild(0).gameObject)
+            {
+                if (!player.arrowSpawned)
+                {
+                    canGrabArrow = true;
+                }
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject == rightController.transform.GetChild(0).transform.GetChild(0).gameObject)
+        {
+            canGrabArrow = false;
         }
     }
 }
