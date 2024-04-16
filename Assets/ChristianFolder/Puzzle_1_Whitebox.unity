@@ -2653,7 +2653,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726389441}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ba47e31b9b4ef504891b46de40cf0557, type: 3}
@@ -2764,7 +2764,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726389441}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 554a8aeb5457d304298378c1d74d3447, type: 3}
@@ -7691,8 +7691,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 220843575456735260, guid: 9f53b78222749de439a20bd46fdd0ae1,
         type: 3}
+      propertyPath: sounds.Array.data[3].volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 220843575456735260, guid: 9f53b78222749de439a20bd46fdd0ae1,
+        type: 3}
+      propertyPath: sounds.Array.data[11].volume
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 220843575456735260, guid: 9f53b78222749de439a20bd46fdd0ae1,
+        type: 3}
       propertyPath: sounds.Array.data[12].volume
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 220843575456735260, guid: 9f53b78222749de439a20bd46fdd0ae1,
+        type: 3}
+      propertyPath: sounds.Array.data[3].maxDistance
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 220843575456735260, guid: 9f53b78222749de439a20bd46fdd0ae1,
         type: 3}

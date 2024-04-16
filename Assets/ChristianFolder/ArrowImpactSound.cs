@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FireSound : MonoBehaviour
+public class ArrowImpactSound : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,5 +14,14 @@ public class FireSound : MonoBehaviour
     void Update()
     {
         //AudioManager.instance.PlayOnObject("Fire_Sound", GetComponent<GameObject>());
+        //OnTriggerEnter();
+    }
+
+    void OnCollisionEnter(Collision other)
+    {
+        if (!other.gameObject.CompareTag("Bow") && !other.gameObject.CompareTag("Player"))
+        {
+            AudioManager.instance.PlayOnObject("Stone_Impact", gameObject);
+        }
     }
 }

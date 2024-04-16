@@ -87,6 +87,7 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.dopplerLevel = sound.dopplerLevel;
             //1 spactial blend means the sound is 3D and will play louder when closer
             sound.audioSource.spatialBlend = 1f;
+            sound.audioSource.rolloffMode = AudioRolloffMode.Custom;
             if (sound.type == Sound.TypeOfSound.Music)
             {
                 audioSource.outputAudioMixerGroup = musicMixer;
@@ -137,6 +138,7 @@ public class AudioManager : MonoBehaviour
             sound.audioSource.dopplerLevel = sound.dopplerLevel;
             //1 spactial blend means the sound is 3D and will play louder when closer
             sound.audioSource.spatialBlend = 1f;
+            sound.audioSource.rolloffMode = AudioRolloffMode.Custom;
             if (sound.type == Sound.TypeOfSound.Music)
             {
                 audioSource.outputAudioMixerGroup = musicMixer;
