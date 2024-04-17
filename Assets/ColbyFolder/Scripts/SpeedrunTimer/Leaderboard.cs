@@ -43,14 +43,18 @@ public class Leaderboard : MonoBehaviour
         //The leaderboard text is found 2 children down
         leaderboard = transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
         speedrunTimer = transform.GetChild(1).gameObject;
-
         top5 = new List<KeyValuePairData>();
+
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
     //Called before Awake
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (_instance != this)
+        {
+            return;
+        }
         if (scene.name == "WinScene")
         {
             speedrunTimer.SetActive(false);
@@ -70,7 +74,7 @@ public class Leaderboard : MonoBehaviour
         //Normal trial scene
         else
         {
-            speedrunTimer.SetActive(true); //This line causes errors on scene load for some reason
+            speedrunTimer.SetActive(true);
             leaderboard.transform.parent.gameObject.SetActive(false);
             GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
         }
