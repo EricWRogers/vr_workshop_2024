@@ -10,7 +10,9 @@ public class Arrow : MonoBehaviour
     public GameObject attachedObject;
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
-    public GameObject trailEffect;
+    public LayerMask mask;
+    private Vector3 positionLastFrame;
+    private RaycastHit info;
 
     private void Awake()
     {
@@ -54,4 +56,45 @@ public class Arrow : MonoBehaviour
 
         fireEffects.SetActive(onFire);
     }
+
+    //Aiden added this
+    private void FixedUpdate()
+    {
+        if (Physics.Linecast(positionLastFrame, transform.position, out info, mask))
+        {
+            if (info.transform.CompareTag("Target"))
+            {
+                Debug.Log("Target was detected");
+                if(info.transform.gameObject.GetComponent<TargetPractice>() != null)
+                {
+                    info.transform.gameObject.GetComponent<TargetPractice>().GotHit();
+                    Debug.Log("Target has changed color");
+                }
+                if(info.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
+                    Debug.Log("Target Destroyed");
+                }
+                if(info.transform.gameObject.GetComponent<FirstTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
+                    Debug.Log("Targets was hit");
+                }
+                if(info.transform.gameObject.GetComponent<SecondTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
+                    Debug.Log("Target was hit");
+                }
+                if(info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
+                {
+                    info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                    Debug.Log("Target was hit");
+                }
+                
+            }
+
+        }
+
+        positionLastFrame = transform.position;
+    }//
 }
