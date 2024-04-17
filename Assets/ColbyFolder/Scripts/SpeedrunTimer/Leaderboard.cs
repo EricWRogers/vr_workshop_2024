@@ -1,32 +1,62 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Leaderboard : MonoBehaviour
 {
-    public static Leaderboard Instance;
+    private static Leaderboard _instance;
+    public static Leaderboard Instance { get { return _instance; } }
     public bool currentRunHighscore = false;
     [HideInInspector]
     public int currentRunIndex;
     private TextMeshProUGUI leaderboard;
+    private GameObject speedrunTimer;
     private List<KeyValuePairData> top5;
 
     //Must be awake and not start because LoadLeaderboard is called in SaveManager's start
     private void Awake()
     {
         //Turns this object into a singleton
-        if (Instance != null && Instance != this)
+        if (_instance != null && _instance != this)
         {
-            Destroy(this);
+            Destroy(gameObject);
         }
         else
         {
-            Instance = this;
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         //The leaderboard text is found 2 children down
         leaderboard = transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+        speedrunTimer = transform.GetChild(1).gameObject;
 
         top5 = new List<KeyValuePairData>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    //Called before Awake
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (scene.name == "WinScene")
+        {
+            speedrunTimer.SetActive(false);
+            leaderboard.gameObject.SetActive(true);
+            //leaderboard.transform.position = spot for it to go to
+            //inputField.transform.position = spot for it to go to
+        }
+        else if (scene.name == "StarterAreaScene")
+        {
+            speedrunTimer.SetActive(false);
+            leaderboard.gameObject.SetActive(true);
+            //leaderboard.transform.position = spot for it to go to
+        }
+        //Normal trial scene
+        else
+        {
+            speedrunTimer.SetActive(true);
+            leaderboard.gameObject.SetActive(false);
+        }
     }
 
     public void ClearLeaderboard()
@@ -102,7 +132,6 @@ public class Leaderboard : MonoBehaviour
         string leaderboardText = "";
         foreach (var kvp in highscores)
         {
-            Debug.Log(kvp.key + ": " + kvp.value);
             int minutes = (int)kvp.value / 60;
             int seconds = (int)kvp.value % 60;
             double milliseconds = (kvp.value - minutes * 60 - seconds) * 100;

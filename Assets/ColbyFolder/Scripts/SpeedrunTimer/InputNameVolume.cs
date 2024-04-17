@@ -21,6 +21,7 @@ public class InputNameVolume : MonoBehaviour
             {
                 playerMovespeed = player.GetComponent<ActionBasedContinuousMoveProvider>().moveSpeed;
                 player.GetComponent<ActionBasedContinuousMoveProvider>().moveSpeed = 0.0f;
+                TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
             }
             EventSystem.current.SetSelectedGameObject(gameObject);
         }
