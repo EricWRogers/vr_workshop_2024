@@ -57,24 +57,30 @@ public class Leaderboard : MonoBehaviour
         }
         if (scene.name == "WinScene")
         {
+            transform.GetChild(4).GetComponent<SaveManager>().Save();
             speedrunTimer.SetActive(false);
             leaderboard.transform.parent.gameObject.SetActive(true);
-            leaderboard.transform.position = winSceneLeaderboardPosition;
-            leaderboard.transform.rotation = winSceneLeaderboardRotation;
+            transform.position = winSceneLeaderboardPosition;
+            transform.rotation = winSceneLeaderboardRotation;
+            GetComponent<RectTransform>().localScale = new Vector3(winSceneLeaderboardScale.x, winSceneLeaderboardScale.y, winSceneLeaderboardScale.z);
             GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
-            //inputField.transform.position = spot for it to go to
         }
         else if (scene.name == "StarterAreaScene")
         {
+            speedrunTimer.GetComponent<SpeedrunTimer>().ResetTimer();
+            currentRunHighscore = false;
             speedrunTimer.SetActive(false);
             leaderboard.transform.parent.gameObject.SetActive(true);
-            leaderboard.transform.position = starterAreaSceneLeaderboardPosition;
+            transform.position = starterAreaSceneLeaderboardPosition;
+            transform.rotation = starterAreaSceneLeaderboardRotation;
+            GetComponent<RectTransform>().localScale = new Vector3(starterAreaSceneLeaderboardScale.x, starterAreaSceneLeaderboardScale.y, starterAreaSceneLeaderboardScale.z);
             GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
         }
         //Normal trial scene
         else
         {
             speedrunTimer.SetActive(true);
+            speedrunTimer.GetComponent<SpeedrunTimer>().StartTimer();
             leaderboard.transform.parent.gameObject.SetActive(false);
             GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
         }
@@ -119,7 +125,7 @@ public class Leaderboard : MonoBehaviour
     public void TestSpeed(double speed)
     {
         //Add in the new value
-        top5.Add(new KeyValuePairData("Unnamed", speed));
+        top5.Add(new KeyValuePairData("Placeholder Name", speed));
         //Sort the new value in
         top5.Sort((x, y) => x.value.CompareTo(y.value));
         for (int i = 0; i < top5.Count; i++)

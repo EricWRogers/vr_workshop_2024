@@ -11163,18 +11163,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
+      propertyPath: winSceneLeaderboardScale.x
+      value: 0.003233909
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
+        type: 3}
+      propertyPath: winSceneLeaderboardScale.y
+      value: 0.003407099
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
+        type: 3}
+      propertyPath: winSceneLeaderboardScale.z
+      value: 0.00532
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
+        type: 3}
       propertyPath: winSceneLeaderboardPosition.x
-      value: -7.03
+      value: -6.596
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: winSceneLeaderboardPosition.y
-      value: 2.901
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: winSceneLeaderboardPosition.z
-      value: 11.48
+      value: 11.86
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
@@ -11204,17 +11219,17 @@ PrefabInstance:
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: starterAreaSceneLeaderboardPosition.x
-      value: -185.2
+      value: 12.02512
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: starterAreaSceneLeaderboardPosition.y
-      value: -117.4
+      value: 3.187546
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: starterAreaSceneLeaderboardPosition.z
-      value: 134
+      value: -10.45669
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
@@ -11230,6 +11245,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedrunLeaderboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963963186815045738, guid: f02799c4bff3e714db87ea22974c772d,
+        type: 3}
+      propertyPath: timerMultiplier
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5713822942878991941, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}

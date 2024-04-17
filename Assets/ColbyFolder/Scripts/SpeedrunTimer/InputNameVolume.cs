@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.XR.Interaction.Toolkit;
@@ -6,6 +7,17 @@ public class InputNameVolume : MonoBehaviour
 {
     private float playerMovespeed = 5.0f;
     private GameObject player;
+
+    private void Awake()
+    {
+        GetComponent<TMP_InputField>().onEndEdit.AddListener(OnEndEdit);
+    }
+
+    private void OnEndEdit(string name)
+    {
+        Leaderboard.Instance.SetHighscoreName(name);
+        Leaderboard.Instance.transform.GetChild(4).GetComponent<SaveManager>().Save();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
