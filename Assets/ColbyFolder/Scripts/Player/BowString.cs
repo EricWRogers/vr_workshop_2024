@@ -12,7 +12,6 @@ public class BowString : MonoBehaviour
     {
         localPosition = transform.localPosition;
         rightController = GameObject.FindGameObjectWithTag("RightHand");
-        rightController.transform.parent.transform.parent.GetComponent<SpawnArrowVR>().bowString = this;
         player = FindObjectOfType<SpawnArrowVR>().GetComponent<SpawnArrowVR>();
     }
 

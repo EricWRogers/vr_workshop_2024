@@ -4,10 +4,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class SpawnArrowVR : MonoBehaviour
 {
     public GameObject prefabarrow;
+    [HideInInspector]
     public GameObject arrow;
     public float thrust = 5.0f;
     public GameObject rightController;
-    public BowString bowString;
 
     public bool arrowSpawned = false;
     public bool arrowNocked = false;
