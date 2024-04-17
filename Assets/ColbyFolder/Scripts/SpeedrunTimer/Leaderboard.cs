@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -10,6 +11,18 @@ public class Leaderboard : MonoBehaviour
     public bool currentRunHighscore = false;
     [HideInInspector]
     public int currentRunIndex;
+    [SerializeField]
+    private Vector3 starterAreaSceneLeaderboardPosition;
+    [SerializeField]
+    private Quaternion starterAreaSceneLeaderboardRotation;
+    [SerializeField]
+    private Vector3 starterAreaSceneLeaderboardScale;
+    [SerializeField]
+    private Vector3 winSceneLeaderboardPosition;
+    [SerializeField]
+    private Quaternion winSceneLeaderboardRotation;
+    [SerializeField]
+    private Vector3 winSceneLeaderboardScale;
     private TextMeshProUGUI leaderboard;
     private GameObject speedrunTimer;
     private List<KeyValuePairData> top5;
@@ -41,21 +54,25 @@ public class Leaderboard : MonoBehaviour
         if (scene.name == "WinScene")
         {
             speedrunTimer.SetActive(false);
-            leaderboard.gameObject.SetActive(true);
-            //leaderboard.transform.position = spot for it to go to
+            leaderboard.transform.parent.gameObject.SetActive(true);
+            leaderboard.transform.position = winSceneLeaderboardPosition;
+            leaderboard.transform.rotation = winSceneLeaderboardRotation;
+            GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
             //inputField.transform.position = spot for it to go to
         }
         else if (scene.name == "StarterAreaScene")
         {
             speedrunTimer.SetActive(false);
-            leaderboard.gameObject.SetActive(true);
-            //leaderboard.transform.position = spot for it to go to
+            leaderboard.transform.parent.gameObject.SetActive(true);
+            leaderboard.transform.position = starterAreaSceneLeaderboardPosition;
+            GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
         }
         //Normal trial scene
         else
         {
-            speedrunTimer.SetActive(true);
-            leaderboard.gameObject.SetActive(false);
+            speedrunTimer.SetActive(true); //This line causes errors on scene load for some reason
+            leaderboard.transform.parent.gameObject.SetActive(false);
+            GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
         }
     }
 
