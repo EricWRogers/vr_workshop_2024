@@ -33,6 +33,7 @@ public class Leaderboard : MonoBehaviour
     {
         leaderboard.text = string.Empty;
         top5 = new List<KeyValuePairData>();
+        LoadLeaderboard(top5);
     }
 
     public void LoadLeaderboard(List<KeyValuePairData> highscores)
@@ -46,6 +47,10 @@ public class Leaderboard : MonoBehaviour
 
                 top5 = highscores;
                 ContructLeaderboardText(highscores);
+            }
+            else
+            {
+                leaderboard.text = "No highscores";
             }
         }
         else
@@ -97,6 +102,7 @@ public class Leaderboard : MonoBehaviour
         string leaderboardText = "";
         foreach (var kvp in highscores)
         {
+            Debug.Log(kvp.key + ": " + kvp.value);
             int minutes = (int)kvp.value / 60;
             int seconds = (int)kvp.value % 60;
             double milliseconds = (kvp.value - minutes * 60 - seconds) * 100;

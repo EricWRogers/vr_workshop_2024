@@ -21,7 +21,10 @@ public class SaveManager : MonoBehaviour
         BinaryFormatter binaryFormatter = new BinaryFormatter();
 
         timer.PauseTimer();
-        leaderboard.TestSpeed(timer.accumulatedTime);
+        if (!leaderboard.currentRunHighscore) //If this is true, this is called when the name is changing and shouldn't add a new speed to the highscores
+        {
+            leaderboard.TestSpeed(timer.accumulatedTime);
+        }
 
         Save save = new Save()
         {
