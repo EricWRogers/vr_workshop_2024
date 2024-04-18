@@ -26,6 +26,8 @@ public class Sound
     public float maxDistance = float.PositiveInfinity;
     [Tooltip("Within the Min distance the AudioSource will cease to grow louder in volume.")]
     public float minDistance = 0f;
+    [Tooltip("Determines the distance rolloff for the volume of 3D sounds")]
+    public AudioRolloffMode rolloffMode = AudioRolloffMode.Linear;
     [Range (0f, 5f)]
     [Tooltip("The higher this number, the more frequency change will happen based on the audio's relative motion to those hearing it")]
     public float dopplerLevel = 1f;

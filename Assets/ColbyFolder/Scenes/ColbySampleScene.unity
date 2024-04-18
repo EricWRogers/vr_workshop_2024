@@ -2464,7 +2464,7 @@ PrefabInstance:
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3420,7 +3420,6 @@ MonoBehaviour:
   arrow: {fileID: 0}
   thrust: 30
   rightController: {fileID: 2611796763099002567}
-  bowString: {fileID: 0}
   arrowSpawned: 0
   arrowNocked: 0
   inFireZone: 0
@@ -3490,7 +3489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!20 &6749813627034761243
 Camera:
   m_ObjectHideFlags: 0
@@ -4062,11 +4061,11 @@ SceneRoots:
   - {fileID: 9161765396185579623}
   - {fileID: 274906392}
   - {fileID: 7455275820502983011}
+  - {fileID: 1228132124301881968}
   - {fileID: 1477816455}
   - {fileID: 97069779}
   - {fileID: 303567028}
   - {fileID: 1227659043}
-  - {fileID: 1228132124301881968}
   - {fileID: 450841486}
   - {fileID: 1335986740}
   - {fileID: 1593985610}
