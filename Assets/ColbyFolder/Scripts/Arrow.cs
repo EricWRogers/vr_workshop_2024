@@ -10,7 +10,11 @@ public class Arrow : MonoBehaviour
     public GameObject attachedObject;
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
+    public LayerMask mask;
+    [HideInInspector]
     public GameObject trailEffect;
+    private Vector3 positionLastFrame;
+    private RaycastHit info;
 
     private void Awake()
     {
@@ -53,5 +57,40 @@ public class Arrow : MonoBehaviour
         }
 
         fireEffects.SetActive(onFire);
+    }
+
+    //For improved hit detection
+    private void FixedUpdate()
+    {
+        if (Physics.Linecast(positionLastFrame, transform.position, out info, mask))
+        {
+            if (info.transform.CompareTag("Target"))
+            {
+                if(info.transform.gameObject.GetComponent<TargetPractice>() != null)
+                {
+                    info.transform.gameObject.GetComponent<TargetPractice>().GotHit();
+                }
+                if(info.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
+                }
+                if(info.transform.gameObject.GetComponent<FirstTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
+                }
+                if(info.transform.gameObject.GetComponent<SecondTargets>() != null)
+                {
+                    info.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
+                }
+                if(info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
+                {
+                    info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                }
+                
+            }
+
+        }
+
+        positionLastFrame = transform.position;
     }
 }

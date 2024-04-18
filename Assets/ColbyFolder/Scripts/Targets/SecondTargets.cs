@@ -6,6 +6,16 @@ public class SecondTargets : MonoBehaviour
     public SecondTargetChecker targetChecker;
     public Material hitMaterial;
 
+    public void HitTarget()
+    {
+        if (!isHit)
+        {
+            isHit = true;
+            targetChecker.CheckTargets();
+            GetComponent<MeshRenderer>().material = hitMaterial;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Arrow"))
