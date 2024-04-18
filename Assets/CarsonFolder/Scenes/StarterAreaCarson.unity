@@ -1713,9 +1713,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabarrow: {fileID: 6935186114090029277, guid: 8d67a33f86a070c4a93837c3d3d08160,
     type: 3}
+  arrow: {fileID: 0}
   thrust: 30
   rightController: {fileID: 1461758110}
+  arrowSpawned: 0
   arrowNocked: 0
+  inFireZone: 0
 --- !u!114 &158384145
 MonoBehaviour:
   m_ObjectHideFlags: 0
