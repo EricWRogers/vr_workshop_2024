@@ -7,6 +7,7 @@ public class InputNameVolume : MonoBehaviour
 {
     private float playerMovespeed = 5.0f;
     private GameObject player;
+    private TouchScreenKeyboard keyboard;
 
     private void Awake()
     {
@@ -24,19 +25,23 @@ public class InputNameVolume : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.gameObject;
-            if (player.GetComponent<FPSController>() != null)
+            if (player.GetComponent<FPSController>() != null) //Playing in WASD
             {
                 playerMovespeed = player.GetComponent<FPSController>().walkspeed;
                 player.GetComponent<FPSController>().walkspeed = 0.0f;
             }
-            else
+            else //Playing in VR
             {
                 playerMovespeed = player.GetComponent<ActionBasedContinuousMoveProvider>().moveSpeed;
                 player.GetComponent<ActionBasedContinuousMoveProvider>().moveSpeed = 0.0f;
-                TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
             }
             EventSystem.current.SetSelectedGameObject(gameObject);
         }
+    }
+
+    public void ShowKeyboard()
+    {
+        keyboard = TouchScreenKeyboard.Open("", TouchScreenKeyboardType.Default);
     }
 
     public void PlayerCanMove()
