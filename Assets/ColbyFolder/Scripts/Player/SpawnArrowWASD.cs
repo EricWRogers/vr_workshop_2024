@@ -25,7 +25,8 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow = ArrowPool.SharedInstance.GetPooledObject();
             arrow.SetActive(true);
             arrow.transform.position = spawnLocation.transform.position;
-            arrow.transform.rotation = spawnLocation.transform.rotation;
+            arrow.transform.rotation = arrowParent.transform.rotation;
+            arrow.transform.parent = arrowParent;
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
             keyDownFlag = true;
         }
