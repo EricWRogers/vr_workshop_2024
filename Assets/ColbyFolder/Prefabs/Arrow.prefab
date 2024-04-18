@@ -611,7 +611,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.02
+      scalar: 0.002
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -5099,7 +5099,7 @@ Light:
   m_BounceIntensity: 0.5
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 6e-44, z: 7.6e-44, w: 2.8114e-41}
+  m_BoundingSphereOverride: {x: 7.31e-43, y: 6e-45, z: -1.7702543e+29, w: 0}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -5381,7 +5381,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.8396226, g: 0.5032249, b: 0.13069598, a: 1}
+      maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -5769,7 +5769,7 @@ ParticleSystem:
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.02
+      scalar: 0.002
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -6484,8 +6484,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.8207547, g: 0.450947, b: 0.08904416, a: 1}
-        key1: {r: 0.8584906, g: 0.10933607, b: 0.10933607, a: 0}
+        key0: {r: 0.9245283, g: 0.5256156, b: 0.13519046, a: 1}
+        key1: {r: 0.8584906, g: 0.10933607, b: 0.10933607, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -10500,6 +10500,9 @@ MonoBehaviour:
   attachedObject: {fileID: 0}
   arrowAttached: 0
   hasBeenFired: 0
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
   trailEffect: {fileID: 0}
 --- !u!4 &7743213513685764711 stripped
 Transform:
