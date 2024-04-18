@@ -39,7 +39,7 @@ public class ArrowNonStick : MonoBehaviour
         if (!firstContact)
         {
             RaycastHit hit;
-            if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 1.0f))
+            if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 0.8f))
             {
                 if (!hit.collider.gameObject.CompareTag("NonStick") && !hit.collider.gameObject.CompareTag("Bow"))
                 {
@@ -47,7 +47,7 @@ public class ArrowNonStick : MonoBehaviour
                     //arrowRigidbody.velocity = Vector3.zero;
                     transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     arrowRigidbody.constraints = RigidbodyConstraints.FreezeAll;
-                    boxCollider.enabled = false;
+                    //boxCollider.enabled = false; //error! the targets check for the box collider to trigger them!
                 }
             }
             

@@ -97,9 +97,9 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 112000000, guid: 728e721e8d97b5d4b9907fa7701ecb32,
+  m_LightingDataAsset: {fileID: 112000000, guid: a485e4a59770ddb479fd658e5ef56998,
     type: 2}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: 663f23defa8fa3c4081ec24dd2061721,
+  m_LightingSettings: {fileID: 4890085278179872738, guid: c5feba7dd457c2a409b947a12bbcf7e1,
     type: 2}
 --- !u!196 &4
 NavMeshSettings:
@@ -30087,6 +30087,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8025103297847420246, guid: 696dad3a9484482478a0bb3d9f5a7ce6,
+        type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583155147065355906, guid: 696dad3a9484482478a0bb3d9f5a7ce6,
+        type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
