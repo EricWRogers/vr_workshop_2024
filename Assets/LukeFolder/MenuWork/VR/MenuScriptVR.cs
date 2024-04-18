@@ -1,3 +1,5 @@
+// This script is for the player's interactions with the menu. Place it within the playerobject, and set the actions apropriately.
+
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,12 +22,12 @@ public class MenuScriptVR : MonoBehaviour
         canvasPrefabObject.transform.Rotate(0, 180, 0);
         canvasPrefabObject.transform.position =
         (gameCamera.transform.position + gameCamera.transform.forward * menuDistance);
-        
+
     }
 
     void Start()
     {
-        
+
     }
 
     void Update()
@@ -43,9 +45,9 @@ public class MenuScriptVR : MonoBehaviour
         if (canvasPrefabObject.activeSelf) //if menu is open
         {
             foreach (GameObject number in handObjects)
-		{
-			number.layer = LayerMask.NameToLayer("Default");
-		}
+            {
+                number.layer = LayerMask.NameToLayer("Default");
+            }
             canvasPrefabObject.SetActive(false);
             postProcessingVolume.SetActive(false);
             return;
@@ -53,9 +55,9 @@ public class MenuScriptVR : MonoBehaviour
         else if (!canvasPrefabObject.activeSelf) //if menu is not open
         {
             foreach (GameObject number in handObjects)
-		{
-			number.layer = LayerMask.NameToLayer("Hands");
-		}
+            {
+                number.layer = LayerMask.NameToLayer("Hands");
+            }
             postProcessingVolume.SetActive(true);
             canvasPrefabObject.SetActive(true);
             canvasPrefabObject.transform.LookAt(gameCamera.transform, Vector3.up);
@@ -66,8 +68,5 @@ public class MenuScriptVR : MonoBehaviour
         }
 
     }
-    public void ButtonPress()
-    {
-        Debug.Log("PRESSED");
-    }
+
 }

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3747573114559528290}
   - component: {fileID: 7077803420846993926}
   m_Layer: 5
-  m_Name: menu text
+  m_Name: Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -199,7 +199,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Load Scene
+  m_text: Close Menu
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60.85
+  m_fontSize: 61
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -281,7 +281,7 @@ GameObject:
   - component: {fileID: 2959325293004355155}
   - component: {fileID: 1722883311493083030}
   m_Layer: 5
-  m_Name: Button Test 3
+  m_Name: Return Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -391,7 +391,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8387018686153335346}
         m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
-        m_MethodName: OnPress
+        m_MethodName: ExitButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -459,7 +459,7 @@ GameObject:
   - component: {fileID: 2724593751088408996}
   - component: {fileID: 9047594405865938787}
   m_Layer: 5
-  m_Name: Button Test 2
+  m_Name: Options Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -569,7 +569,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8387018686153335346}
         m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
-        m_MethodName: OnPress
+        m_MethodName: OptionsButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -592,7 +592,7 @@ GameObject:
   - component: {fileID: 4626695052240508107}
   - component: {fileID: 6538760048518183659}
   m_Layer: 5
-  m_Name: Button Test
+  m_Name: Close Menu Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -702,7 +702,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8387018686153335346}
         m_TargetAssemblyTypeName: MenuActions, Assembly-CSharp
-        m_MethodName: OnPress
+        m_MethodName: CloseMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -777,7 +777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Do something else
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -804,12 +804,12 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.4
+  m_fontSize: 90
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 200
+  m_fontSizeMax: 90
   m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
@@ -858,7 +858,7 @@ GameObject:
   - component: {fileID: 4440197139917705089}
   - component: {fileID: 3370818667134731748}
   m_Layer: 5
-  m_Name: Fullscreen grey
+  m_Name: Fullscreen Color
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1112,9 +1112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quit
-
-'
+  m_text: Return Outside (First area)
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1141,7 +1139,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 123.25
+  m_fontSize: 48.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
