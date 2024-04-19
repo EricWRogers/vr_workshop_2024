@@ -41,7 +41,7 @@ public class ArrowNonStick : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 0.8f))
             {
-                if (!hit.collider.gameObject.CompareTag("NonStick") && !hit.collider.gameObject.CompareTag("Bow"))
+                if (!hit.collider.gameObject.CompareTag("NonStick") || !hit.collider.gameObject.CompareTag("Bow") || hit.collider.gameObject.layer != 2) //layer is in int form, so "Ignore Raycast"
                 {
                     firstContact = true;
                     //arrowRigidbody.velocity = Vector3.zero;
