@@ -10,6 +10,7 @@ public class SpawnArrowWASD : MonoBehaviour
     public Transform spawnLocation;
     public Transform arrowParent;
     public float delayTime = 4.0f;
+    public bool inFireZone = false;
 
     void Start()
     {
@@ -28,6 +29,12 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.rotation = arrowParent.transform.rotation;
             arrow.transform.parent = arrowParent;
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
+            arrow.GetComponent<Arrow>().arrowNocked = true;
+            arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
+            if (inFireZone)
+            {
+                arrow.GetComponent<Arrow>().onFire = true;
+            }
             keyDownFlag = true;
         }
 
@@ -36,7 +43,34 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
+            if (arrow.GetComponent<Arrow>().onFire )
+            {
+                arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
+            }
+            arrow.GetComponent<Arrow>().arrowNocked = false;
+            arrow.GetComponent<Arrow>().hasBeenFired = true;
+            if(arrow.GetComponent<Arrow>().hasBeenFired == true)
+            {
+                arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
+            }
             keyDownFlag = false;
+            AudioManager.instance.Play("Arrow_Whoosh");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("FireZone"))
+        {
+            inFireZone = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("FireZone"))
+        {
+            inFireZone = false;
         }
     }
 }

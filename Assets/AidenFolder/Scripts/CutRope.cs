@@ -9,7 +9,7 @@ public class CutRope : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("AidensArrow"))
+        if(other.CompareTag("Arrow"))
         {
             Debug.Log(GetComponent<Collider>().gameObject.transform.position);
             //Instantiate(prefab, )

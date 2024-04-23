@@ -1,13 +1,14 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class ReloadZone : MonoBehaviour
 {
+    public Transform respawnPoint;
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex);
+            other.gameObject.transform.position = respawnPoint.position;
         }
     }
 }
