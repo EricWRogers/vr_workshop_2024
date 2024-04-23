@@ -23,7 +23,7 @@ public class ArrowImpactSound : MonoBehaviour
             AudioManager.instance.PlayOnObject("Wood_Impact", gameObject);
         }
 
-        if (!other.gameObject.CompareTag("Bow") && !other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Target"))
+        if (!other.gameObject.CompareTag("Bow") && !other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Target") && !other.gameObject.CompareTag("Arrow"))
         {
             AudioManager.instance.PlayOnObject("Stone_Impact", gameObject);
         }
