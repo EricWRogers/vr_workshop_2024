@@ -39,6 +39,10 @@ public class SpeedrunTimer : MonoBehaviour
 
     public void ResetTimer()
     {
+        if (timer == null)
+        {
+            return;
+        }
         timerStarted = false;
         accumulatedTime = 0f;
         timer.text = "0:00.00";
