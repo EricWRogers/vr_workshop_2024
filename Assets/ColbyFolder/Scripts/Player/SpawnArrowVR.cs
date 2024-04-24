@@ -9,8 +9,8 @@ public class SpawnArrowVR : MonoBehaviour
     [SerializeField]
     private float thrust = 10f;
     [SerializeField]
-    [Tooltip("b changes the logrithmic rolloff of the arrow thrust based on how far back it is pulled. b's values but be between -infinity and 0 with numbers closer to 0 causing a greater weakening effect to smaller pull back amounts")]
-    private float b = -0.5f;
+    [Tooltip("n changes the logrithmic rolloff of the arrow thrust based on how far back it is pulled. Smaller numbers increase the weakening effect on low pull back amounts")]
+    private float n = 0.1f;
     public GameObject rightController;
 
     public bool arrowSpawned = false;
@@ -71,7 +71,7 @@ public class SpawnArrowVR : MonoBehaviour
 
     private float ForceCalculator(float percentagePulledBack)
     {
-        return (1 / Mathf.Log((b - 1)/b) * Mathf.Log((b - percentagePulledBack)/b)) * thrust;
+        return ((n+1)*percentagePulledBack)/(n*amountPulledBack+1) * thrust;
     }
 
     private void OnTriggerEnter(Collider other)
