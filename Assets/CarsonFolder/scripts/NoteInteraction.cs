@@ -32,10 +32,19 @@ public class NoteInteraction : MonoBehaviour
         }
         else
         {
+            InteractText.SetActive(false);
             CloseText();
         }
 
         if (Input.GetKeyDown(KeyCode.E))
+        {
+            SetAction();
+        }
+    }
+
+    public void SetAction()
+    {
+        if (InRange)
         {
             if (!Action)
             {
@@ -46,11 +55,6 @@ public class NoteInteraction : MonoBehaviour
                 Action = false;
             }
         }
-    }
-
-    public void SetAction(bool action)
-    {
-        Action = action;
     }
 
     public void OpenText()

@@ -375,21 +375,21 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8861618061637716177}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -1, z: -0, w: -0.0000002533197}
+  m_LocalPosition: {x: 0, y: 0, z: 0.0027}
+  m_LocalScale: {x: 0.000039056642, y: 0.000039056642, z: 0.000039056642}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5598520262122274749}
   - {fileID: 5525604037903901910}
   - {fileID: 2889922725785552216}
   m_Father: {fileID: 760866656093145656}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.00035, y: 0.03872}
+  m_SizeDelta: {x: 1156, y: 540}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &3171235082364367952
 Canvas:
   m_ObjectHideFlags: 0
@@ -399,7 +399,7 @@ Canvas:
   m_GameObject: {fileID: 8861618061637716177}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -435,7 +435,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &3805273011271114329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -452,7 +452,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 191
 --- !u!1 &9081447471110900022
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,7 +465,7 @@ GameObject:
   - component: {fileID: 7141185887320659222}
   - component: {fileID: 6534761928870219174}
   m_Layer: 5
-  m_Name: InteractText
+  m_Name: InteractText(E)ForWASD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -518,7 +518,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '"E" to Open'
+  m_text: '"Left Trigger" to Open'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 79b19bde630d07848b78f70b02a56fc7, type: 2}
   m_sharedMaterial: {fileID: 2967779301944430839, guid: 79b19bde630d07848b78f70b02a56fc7,
