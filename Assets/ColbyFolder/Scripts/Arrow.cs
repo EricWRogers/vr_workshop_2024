@@ -15,11 +15,13 @@ public class Arrow : MonoBehaviour
     public GameObject trailEffect;
     private Vector3 positionLastFrame;
     private RaycastHit info;
+    Rigidbody rb;
 
     private void Awake()
     {
         fireEffects = transform.GetChild(0).gameObject;
         trailEffect = transform.GetChild(7).gameObject;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -66,37 +68,34 @@ public class Arrow : MonoBehaviour
         {
             if (info.transform.CompareTag("Target"))
             {
-                if(info.transform.gameObject.GetComponent<TargetPractice>() != null)
+                if (info.transform.gameObject.GetComponent<TargetPractice>() != null)
                 {
                     info.transform.gameObject.GetComponent<TargetPractice>().GotHit();
                 }
-                if(info.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                if (info.transform.gameObject.GetComponent<BridgeTargets>() != null)
                 {
                     info.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
                 }
-                if(info.transform.gameObject.GetComponent<FirstTargets>() != null)
+                if (info.transform.gameObject.GetComponent<FirstTargets>() != null)
                 {
                     info.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
                 }
-                if(info.transform.gameObject.GetComponent<SecondTargets>() != null)
+                if (info.transform.gameObject.GetComponent<SecondTargets>() != null)
                 {
                     info.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
                 }
-                if(info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
+                if (info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
                 {
                     info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
                 }
-                
             }
-
         }
-
-        positionLastFrame = transform.position;
 
         // Look in the direction we are moving
-        if (!arrowAttached)
+        if (hasBeenFired && (rb.velocity.z > 0.5f || rb.velocity.y > 0.5f || rb.velocity.x > 0.5f))
         {
-            transform.LookAt(positionLastFrame);
+            transform.forward = rb.velocity;
         }
+        positionLastFrame = transform.position;
     }
 }

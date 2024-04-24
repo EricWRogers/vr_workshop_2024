@@ -56,7 +56,6 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             float arrowForce = ForceCalculator(amountPulledBack);
-            Debug.Log(arrowForce);
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * arrowForce, ForceMode.Impulse);
             if (inFireZone)
             {
