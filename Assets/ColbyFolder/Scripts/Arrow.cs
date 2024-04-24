@@ -92,5 +92,11 @@ public class Arrow : MonoBehaviour
         }
 
         positionLastFrame = transform.position;
+
+        // Look in the direction we are moving
+        if (!arrowAttached)
+        {
+            transform.LookAt(positionLastFrame);
+        }
     }
 }

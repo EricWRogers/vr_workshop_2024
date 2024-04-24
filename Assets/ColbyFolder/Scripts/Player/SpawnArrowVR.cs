@@ -6,12 +6,18 @@ public class SpawnArrowVR : MonoBehaviour
     public GameObject prefabarrow;
     [HideInInspector]
     public GameObject arrow;
-    public float thrust = 5.0f;
+    [SerializeField]
+    private float thrust = 10f;
+    [SerializeField]
+    [Tooltip("b changes the logrithmic rolloff of the arrow thrust based on how far back it is pulled. b's values but be between -infinity and 0 with numbers closer to 0 causing a greater weakening effect to smaller pull back amounts")]
+    private float b = -0.5f;
     public GameObject rightController;
 
     public bool arrowSpawned = false;
     public bool arrowNocked = false;
     public bool inFireZone = false;
+
+    private float amountPulledBack = 1.0f;
 
     public void SpawnArrow()
     {
@@ -32,6 +38,10 @@ public class SpawnArrowVR : MonoBehaviour
 
     public void ReleaseArrow()
     {
+        if (!arrowSpawned)
+        {
+            return;
+        }
         if (!arrowNocked)
         {
             Destroy(arrow);
@@ -39,12 +49,15 @@ public class SpawnArrowVR : MonoBehaviour
         }
         else
         {
+            amountPulledBack = arrow.GetComponent<Arrow>().attachedObject.transform.parent.GetComponent<FollowTransformOnRail>().pullAmount;
             arrow.GetComponent<Arrow>().arrowAttached = false;
             arrow.GetComponent<Arrow>().attachedObject = null;
             arrow.GetComponent<Arrow>().hasBeenFired = true;
             arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
             arrow.GetComponent<Rigidbody>().isKinematic = false;
-            arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
+            float arrowForce = ForceCalculator(amountPulledBack);
+            Debug.Log(arrowForce);
+            arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * arrowForce, ForceMode.Impulse);
             if (inFireZone)
             {
                 arrow.GetComponent<Arrow>().onFire = true;
@@ -54,6 +67,11 @@ public class SpawnArrowVR : MonoBehaviour
             arrowNocked = false;
             rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
         }
+    }
+
+    private float ForceCalculator(float percentagePulledBack)
+    {
+        return (1 / Mathf.Log((b - 1)/b) * Mathf.Log((b - percentagePulledBack)/b)) * thrust;
     }
 
     private void OnTriggerEnter(Collider other)
