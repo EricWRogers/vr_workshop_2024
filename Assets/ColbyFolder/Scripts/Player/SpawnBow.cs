@@ -34,6 +34,8 @@ public class SpawnBow : MonoBehaviour
         if (player.arrowNocked)
         {
             player.arrowNocked = false;
+            Destroy(player.arrow);
+            player.arrowSpawned = false;
             rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
         }
 
