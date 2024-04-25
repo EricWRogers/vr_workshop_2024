@@ -7191,31 +7191,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1426749323}
     m_Modifications:
-    - target: {fileID: 2107946839275681912, guid: b5dadbc667fcc5341ae1f7a35c14d552,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 3896476356474141956, guid: b5dadbc667fcc5341ae1f7a35c14d552,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3941666126412720633, guid: b5dadbc667fcc5341ae1f7a35c14d552,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659876416580008709, guid: b5dadbc667fcc5341ae1f7a35c14d552,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.050000064
-      objectReference: {fileID: 0}
-    - target: {fileID: 4659876416580008709, guid: b5dadbc667fcc5341ae1f7a35c14d552,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.050000064
-      objectReference: {fileID: 0}
     - target: {fileID: 4659876416580008709, guid: b5dadbc667fcc5341ae1f7a35c14d552,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7270,16 +7245,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: QuiverAndBelt
-      objectReference: {fileID: 0}
-    - target: {fileID: 5467620936688132543, guid: b5dadbc667fcc5341ae1f7a35c14d552,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 5526524688094717204, guid: b5dadbc667fcc5341ae1f7a35c14d552,
-        type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7751,6 +7716,7 @@ GameObject:
   - component: {fileID: 275474234}
   - component: {fileID: 275474233}
   - component: {fileID: 275474232}
+  - component: {fileID: 275474245}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -7818,6 +7784,7 @@ MonoBehaviour:
     type: 3}
   arrow: {fileID: 0}
   thrust: 30
+  n: 0.1
   rightController: {fileID: 56343856}
   arrowSpawned: 0
   arrowNocked: 0
@@ -7836,7 +7803,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3700396227118915201, guid: 0d8092ecb8c0ab24083abe51cb555c30,
     type: 3}
-  leftController: {fileID: 1297219146}
 --- !u!114 &275474235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8109,6 +8075,50 @@ Transform:
   - {fileID: 504625569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &275474245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275474231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c7623a58f1db09408f0a2ef6f5e739b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deviceCharacteristics: 256
+  button: 0
+  OnPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 561662223}
+        m_TargetAssemblyTypeName: NoteInteraction, Assembly-CSharp
+        m_MethodName: SetAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 277964262}
+        m_TargetAssemblyTypeName: NoteInteraction, Assembly-CSharp
+        m_MethodName: SetAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnRelease:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &277460661
 GameObject:
   m_ObjectHideFlags: 0
@@ -8294,6 +8304,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d6478478d5e4749ad5cd85548f59c0, type: 3}
+--- !u!114 &277964262 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2304762296582522601, guid: 21d6478478d5e4749ad5cd85548f59c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 277964261}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1250ce4d4ea43148a1ccb3a76b3fd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &320681234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9889,6 +9911,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d6478478d5e4749ad5cd85548f59c0, type: 3}
+--- !u!114 &561662223 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2304762296582522601, guid: 21d6478478d5e4749ad5cd85548f59c0,
+    type: 3}
+  m_PrefabInstance: {fileID: 561662222}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1250ce4d4ea43148a1ccb3a76b3fd98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &561816635
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14084,11 +14118,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedrunLeaderboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 4963963186815045738, guid: f02799c4bff3e714db87ea22974c772d,
-        type: 3}
-      propertyPath: timerMultiplier
-      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5713822942878991941, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}

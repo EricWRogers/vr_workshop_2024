@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class NoteInteraction : MonoBehaviour
@@ -10,7 +8,6 @@ public class NoteInteraction : MonoBehaviour
     public GameObject InteractText;
     public bool InRange = false;
     public bool Action = false;
-    public bool TextUp = false;
 
     public void Start()
     {
@@ -18,111 +15,66 @@ public class NoteInteraction : MonoBehaviour
         ParchmentText.SetActive(false);
         NoteBackground.SetActive(false);
     }
+
     void Update()
     {
-        if (TextUp) 
+        if (InRange)
+        {
+            if (!Action)
+            {
+                InteractText.SetActive(true);
+                CloseText();
+            }
+            else
+            {
+                OpenText();
+            }
+        }
+        else
         {
             InteractText.SetActive(false);
-            ParchmentText.SetActive(true);
-            NoteBackground.SetActive(true);
+            CloseText();
         }
-        if (!TextUp) 
+
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            ParchmentText.SetActive(false);
-            NoteBackground.SetActive(false);
+            SetAction();
         }
-        
-        
-        
-        if (Input.GetKeyDown(KeyCode.E)) 
+    }
+
+    public void SetAction()
+    {
+        if (InRange)
         {
-         Action = true;
-        }
-        if (Input.GetKeyUp(KeyCode.E)) 
-        {
-         Action = false;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            TextUp = true;
-        }
-        if (Input.GetKeyUp(KeyCode.Q))
-        {
-            TextUp = false;
-        }
-
-
-
-        if (InRange && Action) 
-        {
-         TextUp = true;
-        }
-        if (!InRange && !Action) 
-        {
-         TextUp = false;
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            /*if (TextUp == false) 
+            if (!Action)
             {
-             ParchmentText.SetActive(false);
-             NoteBackground.SetActive(false);
+                Action = true;
             }
-            if TextUp == true)
+            else
             {
-             InteractText.SetActive(false);
-             ParchmentText.SetActive(true);
-             NoteBackground.SetActive(true);
+                Action = false;
             }
-            if (InRange == true && Action == false) 
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                 Action = true;
-                    Debug.Log("yippee");
-                }
-            }
-            if (InRange == true && Action == true)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                 Action = false;
-                }
-            }
-            if (InRange == false && Action == false)
-            {
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    Action = false;
-                }
-            }
-            */
         }
+    }
 
+    public void OpenText()
+    {
+        InteractText.SetActive(false);
+        ParchmentText.SetActive(true);
+        NoteBackground.SetActive(true);
+    }
+
+    public void CloseText()
+    {
+        ParchmentText.SetActive(false);
+        NoteBackground.SetActive(false);
+    }
 
 #if (UNITY_EDITOR)
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireCube(transform.position, new Vector3(2, 1, 2));
-
     }
 #endif
 
@@ -130,21 +82,17 @@ public class NoteInteraction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         { 
-         InteractText.SetActive(true);
-         InRange = true;
+            InteractText.SetActive(true);
+            InRange = true;
         }
     }
     
     void OnTriggerExit(Collider other) 
     {
-     InteractText.SetActive(false);
-     InRange = false;
-     ParchmentText.SetActive(false);
-     NoteBackground.SetActive(false);
-     Action = false;
+        InteractText.SetActive(false);
+        InRange = false;
+        ParchmentText.SetActive(false);
+        NoteBackground.SetActive(false);
+        Action = false;
     }
-    
-    
-    
-    
 }

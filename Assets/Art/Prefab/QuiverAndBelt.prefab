@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.050000057
+      value: 0.050000064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -21,22 +21,22 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.050000057
+      value: 0.050000064
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.265
+      value: 0.246
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.7096
+      value: -0.281
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.124
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -136,7 +136,7 @@ PrefabInstance:
     - target: {fileID: 834192292310563322, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -146,7 +146,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 3405106871835312687, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
@@ -176,12 +176,12 @@ PrefabInstance:
     - target: {fileID: 6512596416276915350, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8183623132523853079, guid: 736336c0433255047a0dec3eaec1ea64,
         type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -246,7 +246,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canGrabArrow: 0
-  holdingArrow: 0
 --- !u!65 &3896476356474141956
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -262,7 +261,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
