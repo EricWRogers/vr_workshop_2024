@@ -31,6 +31,11 @@ public class SecondTargetChecker : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             doorToMove.transform.position = Vector3.MoveTowards(doorToMove.transform.position, startingPosition + new Vector3(0, heightOfDoorOpening, 0), step);
+            if (Vector3.Distance(doorToMove.transform.position, startingPosition + new Vector3(0, heightOfDoorOpening, 0)) < 0.5f)
+            {
+                //It has arrived
+                AudioManager.instance.Stop("Stone_door");
+            }
         }
     }
 }
