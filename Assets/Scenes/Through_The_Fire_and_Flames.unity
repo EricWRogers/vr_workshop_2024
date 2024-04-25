@@ -7784,6 +7784,7 @@ MonoBehaviour:
     type: 3}
   arrow: {fileID: 0}
   thrust: 30
+  n: 0.1
   rightController: {fileID: 56343856}
   arrowSpawned: 0
   arrowNocked: 0
@@ -7802,7 +7803,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3700396227118915201, guid: 0d8092ecb8c0ab24083abe51cb555c30,
     type: 3}
-  leftController: {fileID: 1297219146}
 --- !u!114 &275474235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14118,11 +14118,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedrunLeaderboard
-      objectReference: {fileID: 0}
-    - target: {fileID: 4963963186815045738, guid: f02799c4bff3e714db87ea22974c772d,
-        type: 3}
-      propertyPath: timerMultiplier
-      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 5713822942878991941, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
