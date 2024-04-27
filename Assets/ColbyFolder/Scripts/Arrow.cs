@@ -13,7 +13,6 @@ public class Arrow : MonoBehaviour
     public LayerMask mask;
     [HideInInspector]
     public GameObject trailEffect;
-    private Vector3 positionLastFrame;
     private RaycastHit info;
     Rigidbody rb;
 
@@ -64,7 +63,8 @@ public class Arrow : MonoBehaviour
     //For improved hit detection
     private void FixedUpdate()
     {
-        if (Physics.Linecast(positionLastFrame, transform.position, out info, mask))
+        Vector3 predictedPosition = new Vector3 (transform.position.x + rb.velocity.x, transform.position.y + rb.velocity.y, transform.position.z + rb.velocity.z);
+        if (Physics.Linecast(transform.position, predictedPosition, out info, mask))
         {
             if (info.transform.CompareTag("Target"))
             {
@@ -96,6 +96,5 @@ public class Arrow : MonoBehaviour
         {
             transform.forward = rb.velocity;
         }
-        positionLastFrame = transform.position;
     }
 }
