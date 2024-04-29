@@ -35,6 +35,7 @@ public class SecondTargetChecker : MonoBehaviour
             {
                 //It has arrived
                 AudioManager.instance.Stop("Stone_door");
+                AudioManager.instance.PlayOnObject("Stone_crash", doorToMove);
             }
         }
     }

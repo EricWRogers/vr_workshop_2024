@@ -234,7 +234,7 @@ MonoBehaviour:
   - name: Fire_Sound
     clip: {fileID: 8300000, guid: c6c89158186cf6c459c64f788b06ac4d, type: 3}
     type: 1
-    volume: 1
+    volume: 0.5
     pitch: 1
     loop: 1
     bypassEffects: 0
@@ -282,6 +282,21 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 1
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 50
+    minDistance: 0
+    rolloffMode: 2
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Stone_crash
+    clip: {fileID: 8300000, guid: b7e4d5e7bc2622a4ead7d09e5a5261a0, type: 3}
+    type: 1
+    volume: 1
+    pitch: 1
+    loop: 0
     bypassEffects: 0
     bypassReverbZones: 0
     revebZoneMix: 0
