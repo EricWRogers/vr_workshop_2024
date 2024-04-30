@@ -9,6 +9,8 @@ public class UpdatedTargetLogic : MonoBehaviour
     public Material hitMaterial; //To show feedback to the player they hit the target
     public Material winMaterial; //To show feedback to the player they won
     private Material startingMaterial; //To go back to once the timer runs out
+    public GameObject TargetGlow;
+    private float GlowAmount = 0.0f;
 
     private void Start()
     {
@@ -50,6 +52,7 @@ public class UpdatedTargetLogic : MonoBehaviour
         {
             timerManager.RemoveTargetFromList(this);
             meshRenderer.material = startingMaterial;
+            GlowAmount = 0.0f;
         }
     }
 }
