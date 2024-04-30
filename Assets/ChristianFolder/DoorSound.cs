@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class SecondTargetChecker : MonoBehaviour
+public class DoorSound : MonoBehaviour
 {
     private int targetsHit = 0;
     private bool startMoving = false;
@@ -9,6 +9,8 @@ public class SecondTargetChecker : MonoBehaviour
     public float heightOfDoorOpening = 10f;
     public float speed = 10f;
     private Vector3 startingPosition;
+
+    public AudioSource audioSource;
 
     private void Start()
     {
@@ -21,8 +23,7 @@ public class SecondTargetChecker : MonoBehaviour
         if (targetsHit == totalTargets)
         {
             startMoving = true;
-            //AudioManager.instance.PlayOnObject("Stone_door", doorToMove);
-            GetComponent<AudioSource>().Play(0);
+            audioSource.enabled = true;
         }
     }
 
@@ -35,8 +36,8 @@ public class SecondTargetChecker : MonoBehaviour
             if (Vector3.Distance(doorToMove.transform.position, startingPosition + new Vector3(0, heightOfDoorOpening, 0)) < 0.5f)
             {
                 //It has arrived
-                //AudioManager.instance.Stop("Stone_door");
-                gameObject.SetActive(false);
+                audioSource.enabled = false;
+                //AudioManager.instancePlayOnObject("Stone_csarh", doorToMove); This is for when I can add the sound
             }
         }
     }
