@@ -27,6 +27,8 @@ public class Leaderboard : MonoBehaviour
     [SerializeField]
     private Vector3 overlayPosition;
     [SerializeField]
+    private Vector3 overlayRotation;
+    [SerializeField]
     private Vector3 overlayScale;
     private TextMeshProUGUI leaderboard;
     private GameObject speedrunTimer;
@@ -103,12 +105,13 @@ public class Leaderboard : MonoBehaviour
             }
             else //You can't have overlay camera in VR
             {
-                //Puts a speedrunTimer as a child of the VR camera to display it as an overlay
+                //Puts a speedrunTimer as a child of the left controller to show it on the left wrist
                 summoningClone = true;
-                GameObject newCanvas = Instantiate(gameObject, player.transform.GetChild(0).transform.GetChild(0));
+                GameObject newCanvas = Instantiate(gameObject, player.transform.GetChild(0).transform.GetChild(1));
                 newCanvas.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
                 newCanvas.transform.localPosition = new Vector3(overlayPosition.x, overlayPosition.y, overlayPosition.z);
-                newCanvas.transform.localRotation = Quaternion.identity;
+                //I don't know why I need the - 90 but it works
+                newCanvas.transform.eulerAngles = new Vector3(overlayRotation.x, overlayRotation.y - 90, overlayRotation.z);
                 newCanvas.transform.localScale = new Vector3(overlayScale.x, overlayScale.y, overlayScale.z);
             }
         }
