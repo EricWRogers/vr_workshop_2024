@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6403913509367448872}
   - component: {fileID: 9168117323934790114}
   - component: {fileID: 8004385732398082672}
+  - component: {fileID: 3156007048574514420}
   m_Layer: 0
   m_Name: Column 2
   m_TagString: Untagged
@@ -103,7 +104,30 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.017485537
-  m_Height: 0.016689954
+  m_Radius: 0.010346261
+  m_Height: 0.016621845
   m_Direction: 1
-  m_Center: {x: 0, y: -0.001916403, z: 0}
+  m_Center: {x: 0.0001788199, y: -0.0019504592, z: 0}
+--- !u!136 &3156007048574514420
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7222452539744276535}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.017485537
+  m_Height: 0.004542046
+  m_Direction: 1
+  m_Center: {x: 0, y: -0.009891555, z: 0}

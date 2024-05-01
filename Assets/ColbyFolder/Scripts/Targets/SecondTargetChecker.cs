@@ -21,7 +21,8 @@ public class SecondTargetChecker : MonoBehaviour
         if (targetsHit == totalTargets)
         {
             startMoving = true;
-            AudioManager.instance.PlayOnObject("Stone_door", doorToMove);
+            //AudioManager.instance.PlayOnObject("Stone_door", doorToMove);
+            GetComponent<AudioSource>().Play(0);
         }
     }
 
