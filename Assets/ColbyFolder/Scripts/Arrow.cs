@@ -13,13 +13,14 @@ public class Arrow : MonoBehaviour
     public LayerMask mask;
     [HideInInspector]
     public GameObject trailEffect;
-    private Vector3 positionLastFrame;
     private RaycastHit info;
+    Rigidbody rb;
 
     private void Awake()
     {
         fireEffects = transform.GetChild(0).gameObject;
         trailEffect = transform.GetChild(7).gameObject;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void OnTriggerStay(Collider other)
@@ -62,35 +63,38 @@ public class Arrow : MonoBehaviour
     //For improved hit detection
     private void FixedUpdate()
     {
-        if (Physics.Linecast(positionLastFrame, transform.position, out info, mask))
+        Vector3 predictedPosition = new Vector3 (transform.position.x + rb.velocity.x, transform.position.y + rb.velocity.y, transform.position.z + rb.velocity.z);
+        if (Physics.Linecast(transform.position, predictedPosition, out info, mask))
         {
             if (info.transform.CompareTag("Target"))
             {
-                if(info.transform.gameObject.GetComponent<TargetPractice>() != null)
+                if (info.transform.gameObject.GetComponent<TargetPractice>() != null)
                 {
                     info.transform.gameObject.GetComponent<TargetPractice>().GotHit();
                 }
-                if(info.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                if (info.transform.gameObject.GetComponent<BridgeTargets>() != null)
                 {
                     info.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
                 }
-                if(info.transform.gameObject.GetComponent<FirstTargets>() != null)
+                if (info.transform.gameObject.GetComponent<FirstTargets>() != null)
                 {
                     info.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
                 }
-                if(info.transform.gameObject.GetComponent<SecondTargets>() != null)
+                if (info.transform.gameObject.GetComponent<SecondTargets>() != null)
                 {
                     info.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
                 }
-                if(info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
+                if (info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
                 {
                     info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
                 }
-                
             }
-
         }
 
-        positionLastFrame = transform.position;
+        // Look in the direction we are moving
+        if (hasBeenFired && (rb.velocity.z > 0.5f || rb.velocity.y > 0.5f || rb.velocity.x > 0.5f))
+        {
+            transform.forward = rb.velocity;
+        }
     }
 }

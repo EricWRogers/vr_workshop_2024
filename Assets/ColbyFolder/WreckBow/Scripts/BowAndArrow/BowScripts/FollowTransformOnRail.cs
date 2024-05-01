@@ -14,6 +14,8 @@ public class FollowTransformOnRail : MonoBehaviour
     public float railMin = -0.7f;
     public float railMax = 0;
 
+    public float pullAmount = 0.0f;
+
     Vector3 _resetPosition;
 
     void Start()
@@ -42,7 +44,7 @@ public class FollowTransformOnRail : MonoBehaviour
         }
         else
         {
-            float pullAmount = Vector3.Distance(_resetPosition, transform.localPosition) / Mathf.Abs(railMin);
+            pullAmount = Vector3.Distance(_resetPosition, transform.localPosition) / Mathf.Abs(railMin);
             pullAmount = Mathf.Clamp(pullAmount, 0.0f, 1.0f);
             bowAnimator.SetFloat("PullBack", pullAmount);
         }
