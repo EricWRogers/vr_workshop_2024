@@ -11,7 +11,10 @@ public class SpawnArrowVR : MonoBehaviour
     [SerializeField]
     [Tooltip("n changes the logrithmic rolloff of the arrow thrust based on how far back it is pulled. Smaller numbers increase the weakening effect on low pull back amounts")]
     private float n = 0.1f;
+    [HideInInspector]
     public GameObject rightController;
+    [HideInInspector]
+    public GameObject leftController;
 
     public bool arrowSpawned = false;
     public bool arrowNocked = false;
@@ -19,7 +22,13 @@ public class SpawnArrowVR : MonoBehaviour
 
     private float amountPulledBack = 1.0f;
 
-    public void SpawnArrow()
+    private void Start()
+    {
+        rightController = GameObject.FindGameObjectWithTag("RightHand");
+        leftController = GameObject.FindGameObjectWithTag("LeftHand");
+    }
+
+        public void SpawnArrow()
     {
         if (!arrowSpawned)
         {
