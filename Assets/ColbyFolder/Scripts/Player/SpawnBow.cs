@@ -5,8 +5,8 @@ public class SpawnBow : MonoBehaviour
 {
     [SerializeField]
     private GameObject objectToSpawn;
-    private GameObject leftController;
-    private GameObject rightController;
+    public GameObject leftController;
+    public GameObject rightController;
 
     private GameObject bowReference;
     private bool bowSpawned = false;
