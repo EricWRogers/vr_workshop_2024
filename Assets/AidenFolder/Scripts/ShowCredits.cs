@@ -3,11 +3,11 @@ using UnityEngine;
 public class ShowCredits : MonoBehaviour
 {
     public GameObject exitDoorWay;
-    public GameObject startOverDoorWay;
-
     public GameObject creditText;
     public GameObject approachText;
     public GameObject whichWayToGoText;
+    public GameObject door1Model;
+    public GameObject door2Model;
 
     //public ParticleSystem particles;
     
@@ -15,10 +15,10 @@ public class ShowCredits : MonoBehaviour
     void Awake()
     {
         exitDoorWay.SetActive(false);
-        startOverDoorWay.SetActive(false);
         creditText.SetActive(false);
         whichWayToGoText.SetActive(false);
-
+        door1Model.SetActive(true);
+        door2Model.SetActive(true);
         //particles.Stop();
     }
 
@@ -34,10 +34,10 @@ public class ShowCredits : MonoBehaviour
         {
             approachText.SetActive(false);
             exitDoorWay.SetActive(true);
-            startOverDoorWay.SetActive(true);
             creditText.SetActive(true);
             whichWayToGoText.SetActive(true);
-
+            door1Model.SetActive(false);
+            door2Model.SetActive(false);
             //particles.Play();
         }
     }
