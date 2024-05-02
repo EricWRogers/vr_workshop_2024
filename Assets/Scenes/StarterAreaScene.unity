@@ -55514,6 +55514,7 @@ GameObject:
   m_Component:
   - component: {fileID: 738255237}
   - component: {fileID: 738255238}
+  - component: {fileID: 738255239}
   m_Layer: 0
   m_Name: SwitchHandsLogic
   m_TagString: Untagged
@@ -55557,6 +55558,18 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.6295592, y: 2.1108124, z: 2.1907454}
   m_Center: {x: -0.18522009, y: -0.18821913, z: 0.030021198}
+--- !u!114 &738255239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 738255236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bdef06eef2a8414283c4e98c4e7ba67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &742376213
 PrefabInstance:
   m_ObjectHideFlags: 0
