@@ -18100,6 +18100,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
+      propertyPath: currentRunIndex
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
+        type: 3}
+      propertyPath: currentRunHighscore
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
+        type: 3}
       propertyPath: winSceneLeaderboardScale.x
       value: 0.003233909
       objectReference: {fileID: 0}
@@ -18116,27 +18126,27 @@ PrefabInstance:
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: winSceneLeaderboardPosition.x
-      value: -6.596
+      value: -1.588
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: winSceneLeaderboardPosition.y
-      value: 2.9
+      value: 2.734
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: winSceneLeaderboardPosition.z
-      value: 11.86
+      value: 14.26
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: winSceneLeaderboardRotation.w
-      value: 0.70710677
+      value: 0.8099137
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
       propertyPath: winSceneLeaderboardRotation.x
-      value: 0.70710677
+      value: 0.58654904
       objectReference: {fileID: 0}
     - target: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
@@ -20216,6 +20226,7 @@ MonoBehaviour:
     type: 3}
   arrow: {fileID: 0}
   thrust: 30
+  n: 0.1
   rightController: {fileID: 1814084219}
   arrowSpawned: 0
   arrowNocked: 0
@@ -20234,7 +20245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3700396227118915201, guid: 0d8092ecb8c0ab24083abe51cb555c30,
     type: 3}
-  leftController: {fileID: 209245201}
 --- !u!114 &775144376
 MonoBehaviour:
   m_ObjectHideFlags: 0
