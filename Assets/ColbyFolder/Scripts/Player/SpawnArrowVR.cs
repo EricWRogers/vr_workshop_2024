@@ -28,7 +28,7 @@ public class SpawnArrowVR : MonoBehaviour
         leftController = GameObject.FindGameObjectWithTag("LeftHand");
     }
 
-        public void SpawnArrow()
+    public void SpawnArrow()
     {
         if (!arrowSpawned)
         {
