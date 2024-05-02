@@ -35,8 +35,9 @@ public class SecondTargetChecker : MonoBehaviour
             if (Vector3.Distance(doorToMove.transform.position, startingPosition + new Vector3(0, heightOfDoorOpening, 0)) < 0.5f)
             {
                 //It has arrived
-                AudioManager.instance.Stop("Stone_door");
-                AudioManager.instance.PlayOnObject("Stone_crash", doorToMove);
+                //AudioManager.instance.Stop("Stone_door");
+                AudioManager.instance.Play("Stone_crash");
+                gameObject.SetActive(false);
             }
         }
     }

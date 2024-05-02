@@ -20,7 +20,7 @@ public class ArrowImpactSound : MonoBehaviour
     void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Target")){
-            AudioManager.instance.PlayOnObject("Wood_Impact", gameObject);
+            AudioManager.instance.PlayOnObject("Target_hit", gameObject);
         }
 
         if (!other.gameObject.CompareTag("Bow") && !other.gameObject.CompareTag("Player") && !other.gameObject.CompareTag("Target") && !other.gameObject.CompareTag("Arrow"))
