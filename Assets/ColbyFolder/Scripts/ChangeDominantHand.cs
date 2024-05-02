@@ -12,7 +12,6 @@ public class ChangeDominantHand : MonoBehaviour
         {
             if (rightHandMode)
             {
-                rightHandMode = false;
                 inputs = other.GetComponents<VRInputs>();
                 //Change lefthand bow spawn to right hand
                 inputs[0].deviceCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.Right;
@@ -26,10 +25,11 @@ public class ChangeDominantHand : MonoBehaviour
                 quiver = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
                 //Swap hands for the quiver
                 (quiver.leftController, quiver.rightController) = (quiver.rightController, quiver.leftController);
+                rightHandMode = false;
             }
             else
             {
-                rightHandMode = true;
+                inputs = other.GetComponents<VRInputs>();
                 //Change righthand bow spawn to left hand
                 inputs[0].deviceCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.Left;
                 //Swap what hand the bow spawns at
@@ -42,6 +42,7 @@ public class ChangeDominantHand : MonoBehaviour
                 quiver = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
                 //Swap hands for the quiver
                 (quiver.leftController, quiver.rightController) = (quiver.rightController, quiver.leftController);
+                rightHandMode = true;
             }
         }
     }
