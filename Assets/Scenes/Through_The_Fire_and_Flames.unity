@@ -8682,6 +8682,7 @@ MonoBehaviour:
   thrust: 30
   n: 0.1
   rightController: {fileID: 56343856}
+  leftController: {fileID: 0}
   arrowSpawned: 0
   arrowNocked: 0
   inFireZone: 0
@@ -8699,6 +8700,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3700396227118915201, guid: 0d8092ecb8c0ab24083abe51cb555c30,
     type: 3}
+  leftController: {fileID: 0}
+  rightController: {fileID: 0}
 --- !u!114 &275474235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9028,7 +9031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPoints: {fileID: 918235776}
-  spawnIndex: 2
+  spawnIndex: 0
 --- !u!1 &277460661
 GameObject:
   m_ObjectHideFlags: 0
@@ -23863,7 +23866,7 @@ PrefabInstance:
     - target: {fileID: 832041417684931276, guid: f9d359fbefbee974ca1a87ae554907cc,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 59.17505
+      value: 59.251
       objectReference: {fileID: 0}
     - target: {fileID: 832041417684931276, guid: f9d359fbefbee974ca1a87ae554907cc,
         type: 3}
@@ -23873,7 +23876,7 @@ PrefabInstance:
     - target: {fileID: 832041417684931276, guid: f9d359fbefbee974ca1a87ae554907cc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.896611
+      value: -13.8
       objectReference: {fileID: 0}
     - target: {fileID: 832041417684931276, guid: f9d359fbefbee974ca1a87ae554907cc,
         type: 3}
@@ -45267,3 +45270,4 @@ SceneRoots:
   - {fileID: 1547653659}
   - {fileID: 1725124131}
   - {fileID: 995792650}
+  - {fileID: 15035859126136498}
