@@ -18,6 +18,7 @@ public class TeleportArrow : MonoBehaviour
     public GameObject trailEffect;
     private RaycastHit info;
     Rigidbody rb;
+    public Transform player;
 
     private void Awake()
     {
@@ -91,8 +92,10 @@ public class TeleportArrow : MonoBehaviour
                 {
                     info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
                 }
+                player.transform.position = info.point + (info.normal * 1.5f);
+                Destroy(gameObject);
             }
-           
+            
         }
 
         // Look in the direction we are moving
