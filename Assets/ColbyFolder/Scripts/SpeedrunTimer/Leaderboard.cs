@@ -113,6 +113,8 @@ public class Leaderboard : MonoBehaviour
                 //I don't know why I need the - 90 but it works
                 newCanvas.transform.eulerAngles = new Vector3(overlayRotation.x, overlayRotation.y - 90, overlayRotation.z);
                 newCanvas.transform.localScale = new Vector3(overlayScale.x, overlayScale.y, overlayScale.z);
+                //Move the extra instance to ten buc to so it's not seen
+                _instance.speedrunTimer.GetComponent<RectTransform>().position = new Vector3(999f, 999f, 999f);
             }
         }
     }
