@@ -57,6 +57,7 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             float arrowForce = ForceCalculator(amountPulledBack);
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * arrowForce, ForceMode.Impulse);
+            AudioManager.instance.Play("Arrow_Whoosh");
             if (inFireZone)
             {
                 arrow.GetComponent<Arrow>().onFire = true;
