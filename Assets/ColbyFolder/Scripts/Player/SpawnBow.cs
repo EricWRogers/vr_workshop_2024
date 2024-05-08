@@ -5,11 +5,14 @@ public class SpawnBow : MonoBehaviour
 {
     [SerializeField]
     private GameObject objectToSpawn;
-    private GameObject leftController;
-    private GameObject rightController;
+    [HideInInspector]
+    public GameObject leftController;
+    [HideInInspector]
+    public GameObject rightController;
 
     private GameObject bowReference;
     private bool bowSpawned = false;
+    private BowString bowString;
 
     private void Start()
     {
@@ -24,8 +27,12 @@ public class SpawnBow : MonoBehaviour
         {
             bowReference = Instantiate(objectToSpawn, leftController.transform.position, leftController.transform.rotation);
             leftController.GetComponent<XRBaseInteractor>().StartManualInteraction(bowReference.GetComponent<XRGrabInteractable>());
+            bowString = bowReference.transform.GetChild(0).GetComponent<BowString>();
             bowSpawned = true;
+            bowString.leftController = leftController;
+            bowString.rightController = rightController;
         }
+        Debug.Log("hand that can pull back bow " + bowString.rightController);
     }
 
     public void DestroyBow()
