@@ -24,7 +24,6 @@ public class BowString : MonoBehaviour
         //If the right controller touches the bowstring
         if (other.gameObject == rightController.transform.GetChild(0).transform.GetChild(0).gameObject)
         {
-            Debug.Log("Detected collision between hand and bowstring " + rightController);
             if (player.arrowSpawned)
             {
                 player.arrowNocked = true;

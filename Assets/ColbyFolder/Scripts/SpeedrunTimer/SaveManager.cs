@@ -16,6 +16,11 @@ public class SaveManager : MonoBehaviour
         Load();
     }
 
+    public void SaveFromEndEdit(string str)
+    {
+        Save();
+    }
+
     public void Save()
     {
         BinaryFormatter binaryFormatter = new BinaryFormatter();
