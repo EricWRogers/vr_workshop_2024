@@ -64,5 +64,11 @@ public class SaveManager : MonoBehaviour
         Debug.Log("Save Wiped");
         Save save = new Save();
         leaderboard.ClearLeaderboard();
+
+        BinaryFormatter binaryFormatter = new BinaryFormatter();
+        using (FileStream fileStream = File.Create(savePath))
+        {
+            binaryFormatter.Serialize(fileStream, save);
+        }
     }
 }
