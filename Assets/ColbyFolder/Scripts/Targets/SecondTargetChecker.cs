@@ -37,7 +37,8 @@ public class SecondTargetChecker : MonoBehaviour
                 //It has arrived
                 //AudioManager.instance.Stop("Stone_door");
                 AudioManager.instance.Play("Stone_crash");
-                gameObject.SetActive(false);
+                GetComponent<AudioSource>().Stop();
+                startMoving = false;
             }
         }
     }
