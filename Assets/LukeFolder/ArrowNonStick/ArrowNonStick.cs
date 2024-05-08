@@ -1,5 +1,3 @@
-using Unity.VisualScripting;
-using UnityEditor.UI;
 using UnityEngine;
 
 public class ArrowNonStick : MonoBehaviour
