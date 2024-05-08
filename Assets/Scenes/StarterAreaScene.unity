@@ -19307,6 +19307,83 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 242992541}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &245728561
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 127495648368873602, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_Name
+      value: Lore
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.017590165
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 7.387762
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -56.929
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 760866656093145656, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1757591503139816057, guid: 21d6478478d5e4749ad5cd85548f59c0,
+        type: 3}
+      propertyPath: m_text
+      value: "Welcome to the temple of Levol\xEDa archer. What stands before you
+        is a set of great trials to test if you are worthy of his secret tome. A
+        book so mighty it could make anyone the greatest archer in the universe!
+        Many have seeked its knowledge, but few have made it. I wish you luck Archer
+        may your arrows fly true. "
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 21d6478478d5e4749ad5cd85548f59c0, type: 3}
 --- !u!4 &246724546 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 675757728980507846, guid: eb5b3d310d49b15428f1d4173729573b,
@@ -65602,7 +65679,7 @@ PrefabInstance:
     - target: {fileID: 3771161143393781564, guid: af12e9b3ec240ee4080b12d4b1fc1624,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.776
+      value: 0.688
       objectReference: {fileID: 0}
     - target: {fileID: 3771161143393781564, guid: af12e9b3ec240ee4080b12d4b1fc1624,
         type: 3}
@@ -137134,3 +137211,4 @@ SceneRoots:
   - {fileID: 1367724912}
   - {fileID: 1332745750}
   - {fileID: 635323958}
+  - {fileID: 245728561}
