@@ -14,7 +14,6 @@ public class UpdatedTargetLogic : MonoBehaviour
     public float MinIntensity = 0.0f;
     public float CurrentIntensity = 0.0f;
     private float IntensityChangeRate;
-    
 
     private void Start()
     {
@@ -24,7 +23,6 @@ public class UpdatedTargetLogic : MonoBehaviour
         CurrentIntensity = MinIntensity;
         TargetGlow.intensity = CurrentIntensity;
         IntensityChangeRate = MaxIntensity / timerDuration;
-
     }
 
     public void StartPuzzleSolver()
@@ -33,8 +31,6 @@ public class UpdatedTargetLogic : MonoBehaviour
         meshRenderer.material = hitMaterial;
         timerManager.AddTargetToList(this);
         CurrentIntensity = MaxIntensity;
-        
-        
     }
 
     void OnTriggerEnter(Collider other)
