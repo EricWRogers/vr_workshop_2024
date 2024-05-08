@@ -293,30 +293,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f02799c4bff3e714db87ea22974c772d, type: 3}
---- !u!114 &4145490 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3180873362652516487, guid: f02799c4bff3e714db87ea22974c772d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4145488}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccb3bcba253054d4ab78a6f9ef5d4e5b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4145491 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6509872540542415835, guid: f02799c4bff3e714db87ea22974c772d,
-    type: 3}
-  m_PrefabInstance: {fileID: 4145488}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9afadef833a169841bbe23f9562c609e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &9869722
 GameObject:
   m_ObjectHideFlags: 0
@@ -9030,6 +9006,74 @@ Transform:
   - {fileID: 2019366372}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1001 &631147798
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3332557906489846413, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_Name
+      value: Global Bloom Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.890879
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.61888
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -11.1237955
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6798478607824355872, guid: 61703f4e189b5c14d82e1c698ffb078e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 61703f4e189b5c14d82e1c698ffb078e, type: 3}
 --- !u!1 &662942083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -4766017759750415202, guid: 86b03cba083d7764e8de6ed5739c2bee,
@@ -9984,30 +10028,6 @@ MonoBehaviour:
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4145490}
-        m_TargetAssemblyTypeName: Leaderboard, Assembly-CSharp
-        m_MethodName: SetHighscoreName
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4145491}
-        m_TargetAssemblyTypeName: SaveManager, Assembly-CSharp
-        m_MethodName: Save
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 961609794}
         m_TargetAssemblyTypeName: InputNameVolume, Assembly-CSharp
         m_MethodName: PlayerCanMove
@@ -15093,6 +15113,7 @@ SceneRoots:
   m_Roots:
   - {fileID: 63902265}
   - {fileID: 1457510509}
+  - {fileID: 631147798}
   - {fileID: 1543089383}
   - {fileID: 1162762744}
   - {fileID: 342998944}

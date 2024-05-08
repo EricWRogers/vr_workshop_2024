@@ -5,13 +5,10 @@ public class NoteInteraction : MonoBehaviour
     [SerializeField]
     private GameObject ParchmentText;
     public GameObject NoteBackground;
-    public GameObject InteractText;
     public bool InRange = false;
-    public bool Action = false;
 
     public void Start()
     {
-        InteractText.SetActive(false);
         ParchmentText.SetActive(false);
         NoteBackground.SetActive(false);
     }
@@ -20,46 +17,16 @@ public class NoteInteraction : MonoBehaviour
     {
         if (InRange)
         {
-            if (!Action)
-            {
-                InteractText.SetActive(true);
-                CloseText();
-            }
-            else
-            {
-                OpenText();
-            }
+            OpenText();
         }
         else
         {
-            InteractText.SetActive(false);
             CloseText();
-        }
-
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            SetAction();
-        }
-    }
-
-    public void SetAction()
-    {
-        if (InRange)
-        {
-            if (!Action)
-            {
-                Action = true;
-            }
-            else
-            {
-                Action = false;
-            }
         }
     }
 
     public void OpenText()
     {
-        InteractText.SetActive(false);
         ParchmentText.SetActive(true);
         NoteBackground.SetActive(true);
     }
@@ -82,17 +49,14 @@ public class NoteInteraction : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         { 
-            InteractText.SetActive(true);
             InRange = true;
         }
     }
     
     void OnTriggerExit(Collider other) 
     {
-        InteractText.SetActive(false);
         InRange = false;
         ParchmentText.SetActive(false);
         NoteBackground.SetActive(false);
-        Action = false;
     }
 }
