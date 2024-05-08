@@ -39,6 +39,7 @@ public class ExplosiveBarrel : MonoBehaviour
         foreach(var objectToExplode in objectsToExplode) 
         {
             Destroy(objectToExplode.gameObject);
+            AudioManager.instance.PlayOnObject("Explosion_sound", gameObject);
         }
     }
 }
