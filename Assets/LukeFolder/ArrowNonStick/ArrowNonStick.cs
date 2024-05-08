@@ -17,7 +17,7 @@ public class ArrowNonStick : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (!firstContact)
+        if (!firstContact && GetComponent<Arrow>().hasBeenFired)
         {
             RaycastHit hit;
             if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 1.0f)) //, 0, QueryTriggerInteraction.Ignore  the integer between the float and querytriggerinteraction is the layer number, the default layer. it will ignore any other.
