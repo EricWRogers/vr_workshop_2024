@@ -32,7 +32,6 @@ public class SpawnBow : MonoBehaviour
             bowString.leftController = leftController;
             bowString.rightController = rightController;
         }
-        Debug.Log("hand that can pull back bow " + bowString.rightController);
     }
 
     public void DestroyBow()
