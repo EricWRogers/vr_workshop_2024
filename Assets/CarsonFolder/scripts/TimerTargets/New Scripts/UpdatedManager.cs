@@ -62,6 +62,7 @@ public class UpdatedManager: MonoBehaviour
         if(puzzleComplete == true)
         {
             doorToCredits.SetActive(true);
+            AudioManager.instance.Play("Win_sound");
         }
     }
 }

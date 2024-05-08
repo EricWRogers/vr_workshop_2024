@@ -21,6 +21,8 @@ public class SecondTargetChecker : MonoBehaviour
         if (targetsHit == totalTargets)
         {
             startMoving = true;
+            //AudioManager.instance.PlayOnObject("Stone_door", doorToMove);
+            GetComponent<AudioSource>().Play(0);
         }
     }
 
@@ -30,6 +32,14 @@ public class SecondTargetChecker : MonoBehaviour
         {
             float step = speed * Time.deltaTime;
             doorToMove.transform.position = Vector3.MoveTowards(doorToMove.transform.position, startingPosition + new Vector3(0, heightOfDoorOpening, 0), step);
+            if (Vector3.Distance(doorToMove.transform.position, startingPosition + new Vector3(0, heightOfDoorOpening, 0)) < 0.5f)
+            {
+                //It has arrived
+                //AudioManager.instance.Stop("Stone_door");
+                AudioManager.instance.Play("Stone_crash");
+                GetComponent<AudioSource>().Stop();
+                startMoving = false;
+            }
         }
     }
 }

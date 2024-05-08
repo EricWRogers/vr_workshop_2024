@@ -62,6 +62,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -76,6 +77,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -90,20 +92,22 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
   - name: Stone_Impact
     clip: {fileID: 8300000, guid: cc0d4979b55e3304c85f900a062abeaa, type: 3}
     type: 1
-    volume: 0.5
+    volume: 1
     pitch: 1
     loop: 0
     bypassEffects: 0
     bypassReverbZones: 0
     revebZoneMix: 0
-    maxDistance: 0
+    maxDistance: 500
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -118,6 +122,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -132,6 +137,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -146,6 +152,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -160,6 +167,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -174,6 +182,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -188,6 +197,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -202,13 +212,14 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
   - name: Arrow_Whoosh
     clip: {fileID: 8300000, guid: 847aea6f313440448829ef7dd6ba4100, type: 3}
     type: 1
-    volume: 0.5
+    volume: 0.2
     pitch: 1
     loop: 0
     bypassEffects: 0
@@ -216,6 +227,7 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -228,8 +240,9 @@ MonoBehaviour:
     bypassEffects: 0
     bypassReverbZones: 0
     revebZoneMix: 0
-    maxDistance: 0
+    maxDistance: 100
     minDistance: 0
+    rolloffMode: 1
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
@@ -244,6 +257,97 @@ MonoBehaviour:
     revebZoneMix: 0
     maxDistance: 0
     minDistance: 0
+    rolloffMode: 1
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Cave_music
+    clip: {fileID: 8300000, guid: 10854222132f5394abf24a2afef7a868, type: 3}
+    type: 0
+    volume: 0.5
+    pitch: 1
+    loop: 1
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 0
+    minDistance: 0
+    rolloffMode: 1
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Stone_door
+    clip: {fileID: 8300000, guid: 5a65ce93f83f5004b80b4159c20d718b, type: 3}
+    type: 1
+    volume: 1
+    pitch: 1
+    loop: 1
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 50
+    minDistance: 0
+    rolloffMode: 2
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Target_hit
+    clip: {fileID: 8300000, guid: ca624069da7d45d42a8128e103b37dcf, type: 3}
+    type: 1
+    volume: 1
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 500
+    minDistance: 0
+    rolloffMode: 2
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Water_splash
+    clip: {fileID: 8300000, guid: 549172e25dc02b044b552f47dbabab88, type: 3}
+    type: 1
+    volume: 1
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 200
+    minDistance: 0
+    rolloffMode: 2
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Stone_crash
+    clip: {fileID: 8300000, guid: 74de5db2f46888c4083ede04b71eae84, type: 3}
+    type: 1
+    volume: 1
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 200
+    minDistance: 0
+    rolloffMode: 2
+    dopplerLevel: 0
+    audioMixer: {fileID: 0}
+    audioSource: {fileID: 0}
+  - name: Win_sound
+    clip: {fileID: 8300000, guid: 57cda0fcf776864448f5388b0869907f, type: 3}
+    type: 1
+    volume: 1
+    pitch: 1
+    loop: 0
+    bypassEffects: 0
+    bypassReverbZones: 0
+    revebZoneMix: 0
+    maxDistance: 200
+    minDistance: 0
+    rolloffMode: 2
     dopplerLevel: 0
     audioMixer: {fileID: 0}
     audioSource: {fileID: 0}
