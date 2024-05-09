@@ -21,5 +21,6 @@ public class ArrowImpactSound : MonoBehaviour
         {
             AudioManager.instance.PlayOnObject("Stone_Impact", gameObject);
         }
+        soundPlayed = true;
     }
 }
