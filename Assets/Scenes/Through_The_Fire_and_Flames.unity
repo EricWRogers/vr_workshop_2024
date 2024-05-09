@@ -13065,6 +13065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portalprefab
       objectReference: {fileID: 0}
+    - target: {fileID: 750892233092851360, guid: 9fca7a100f040d34597303bdc9e44754,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4624382760700805333, guid: 9fca7a100f040d34597303bdc9e44754,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -13123,6 +13128,11 @@ PrefabInstance:
     - target: {fileID: 4624382760700805333, guid: 9fca7a100f040d34597303bdc9e44754,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822277443090288377, guid: 9fca7a100f040d34597303bdc9e44754,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5485594441126373124, guid: 9fca7a100f040d34597303bdc9e44754,
@@ -31256,13 +31266,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1773060469}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.8617139, y: -5.0749984, z: 0.20000464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.86, y: -5.0749984, z: 0.3}
   m_LocalScale: {x: 15.883803, y: 29.073843, z: 1.4359486}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1760349300}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1773060471
 BoxCollider:
   m_ObjectHideFlags: 0

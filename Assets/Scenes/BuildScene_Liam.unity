@@ -66714,6 +66714,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portalprefab (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 750892233092851360, guid: 9fca7a100f040d34597303bdc9e44754,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4624382760700805333, guid: 9fca7a100f040d34597303bdc9e44754,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -66762,6 +66767,11 @@ PrefabInstance:
     - target: {fileID: 4624382760700805333, guid: 9fca7a100f040d34597303bdc9e44754,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4822277443090288377, guid: 9fca7a100f040d34597303bdc9e44754,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8834767556721914845, guid: 9fca7a100f040d34597303bdc9e44754,
@@ -69131,7 +69141,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: fbb27139642b44b4585a06b9bf40610f, type: 2}
+  - {fileID: 2100000, guid: 592602b36aa61d44e8bcb389b6a77051, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
