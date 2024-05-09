@@ -12,20 +12,25 @@ public class Arrow : MonoBehaviour
     public bool hasBeenFired = false;
     public LayerMask mask;
 
-    // public GameObject waterImpactEffect;
-    // public GameObject regularImpactEffect;
+    private GameObject waterImpactEffect;
+    private GameObject regularImpactEffect;
     [HideInInspector]
     public GameObject trailEffect;
-    private RaycastHit info;
-    Rigidbody rb;
+    private Rigidbody rb;
+    private bool firstContact;
+    private Collider sphereCollider;
 
     private void Awake()
     {
         fireEffects = transform.GetChild(0).gameObject;
         trailEffect = transform.GetChild(7).gameObject;
-        //regularImpactEffect = transform.GetChild(8).gameObject;
-        //waterImpactEffect = transform.GetChild(9).gameObject;
+        regularImpactEffect = transform.GetChild(10).gameObject;
+        waterImpactEffect = transform.GetChild(11).gameObject;
         rb = GetComponent<Rigidbody>();
+        sphereCollider = transform.GetChild(9).GetComponent<SphereCollider>();
+
+        regularImpactEffect.SetActive(false);
+        waterImpactEffect.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -68,39 +73,67 @@ public class Arrow : MonoBehaviour
     //For improved hit detection
     private void FixedUpdate()
     {
-        Vector3 predictedPosition = new Vector3 (transform.position.x + rb.velocity.x, transform.position.y + rb.velocity.y, transform.position.z + rb.velocity.z);
-        if (Physics.Linecast(transform.position, predictedPosition, out info, mask))
+        if (!firstContact && hasBeenFired)
         {
-            // Debug.Log("The Arrow Hit: " + info.transform.gameObject.name);
-            // regularImpactEffect.SetActive(true);
-            // if(regularImpactEffect.activeSelf)
-            // {
-            //     Debug.Log("Particles on: " + regularImpactEffect.name);
-            // }else
-            // {
-            //     Debug.Log("Particles off: " + regularImpactEffect.name);
-            // }
-            if (info.transform.CompareTag("Target"))
+            RaycastHit hit;
+            if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 1.0f)) //, 0, QueryTriggerInteraction.Ignore  the integer between the float and querytriggerinteraction is the layer number, the default layer. it will ignore any other.
             {
-                if (info.transform.gameObject.GetComponent<TargetPractice>() != null)
+                //Debug.Log(hit.collider.gameObject);
+                if (hit.transform.CompareTag("Water"))
                 {
-                    info.transform.gameObject.GetComponent<TargetPractice>().GotHit();
+                    firstContact = true;
+                    waterImpactEffect.SetActive(true);
+                    AudioManager.instance.PlayAtPosition("Water_splash", hit.point);
+                    //Makes the arrow disappear but keeps the trail
+                    GetComponent<BoxCollider>().enabled = false;
+                    rb.constraints = RigidbodyConstraints.FreezeAll;
+                    transform.GetChild(1).gameObject.SetActive(false);
+                    transform.GetChild(2).gameObject.SetActive(false);
+                    transform.GetChild(3).gameObject.SetActive(false);
+                    transform.GetChild(4).gameObject.SetActive(false);
+                    transform.GetChild(5).gameObject.SetActive(false);
                 }
-                if (info.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                else if ((!hit.collider.gameObject.CompareTag("NonStick") && !hit.collider.gameObject.CompareTag("Bow") && !hit.collider.gameObject.CompareTag("FireZone")) && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
                 {
-                    info.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
+                    firstContact = true;
+                    //arrowRigidbody.velocity = Vector3.zero;
+                    transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                    rb.constraints = RigidbodyConstraints.FreezeAll;
+                    regularImpactEffect.SetActive(true);
+                    //boxCollider.enabled = false; //error! the targets check for the box collider to trigger them!
+                    if (hit.transform.CompareTag("Target"))
+                    {
+                        AudioManager.instance.Play("Target_hit");
+                        if (hit.transform.gameObject.GetComponent<TargetPractice>() != null)
+                        {
+                            hit.transform.gameObject.GetComponent<TargetPractice>().GotHit();
+                        }
+                        if (hit.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                        {
+                            hit.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
+                        }
+                        if (hit.transform.gameObject.GetComponent<FirstTargets>() != null)
+                        {
+                            hit.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
+                        }
+                        if (hit.transform.gameObject.GetComponent<SecondTargets>() != null)
+                        {
+                            hit.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
+                        }
+                        if (hit.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
+                        {
+                            hit.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                        }
+                    }
+                    else
+                    {
+                        AudioManager.instance.PlayAtPosition("Stone_Impact", hit.point);
+                    }
                 }
-                if (info.transform.gameObject.GetComponent<FirstTargets>() != null)
+                else if (hit.collider.gameObject.CompareTag("NonStick"))
                 {
-                    info.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
-                }
-                if (info.transform.gameObject.GetComponent<SecondTargets>() != null)
-                {
-                    info.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
-                }
-                if (info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
-                {
-                    info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                    //Debug.Log("Hit nonstick");
+                    //AudioManager.instance.PlayAtPosition("Metal_Impact", hit.point);
                 }
             }
         }
@@ -114,7 +147,7 @@ public class Arrow : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (GetComponentInChildren<AudioSource>() != null)
+        if (GetComponentInChildren<AudioSource>())
         {
             GetComponentInChildren<AudioSource>().gameObject.SetActive(false);
             GetComponentInChildren<AudioSource>().transform.parent = null;

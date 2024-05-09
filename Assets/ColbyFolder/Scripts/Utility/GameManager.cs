@@ -35,9 +35,13 @@ public class GameManager : MonoBehaviour
         {
             return;
         }
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (player.GetComponent<SpawnArrowWASD>())
+        {
+            return;
+        }
         rightController = GameObject.FindGameObjectWithTag("RightHand");
         leftController = GameObject.FindGameObjectWithTag("LeftHand");
-        player = GameObject.FindGameObjectWithTag("Player");
         player.GetComponent<SpawnArrowVR>().rightController = rightController;
         player.GetComponent<SpawnArrowVR>().leftController = leftController;
         player.GetComponent<SpawnBow>().rightController = rightController;
