@@ -23,12 +23,21 @@ public class SpawnArrowWASD : MonoBehaviour
         {
             arrow = Instantiate(prefabarrow, spawnLocation.position, arrowParent.rotation, arrowParent);
             arr_rigidbody = arrow.GetComponent<Rigidbody>();
-            arrow.GetComponent<Arrow>().arrowNocked = true;
-            arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
-            if (inFireZone)
+            if (arrow.GetComponent<Arrow>())
             {
-                arrow.GetComponent<Arrow>().onFire = true;
+                arrow.GetComponent<Arrow>().arrowNocked = true;
+                arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
+                if (inFireZone)
+                {
+                    arrow.GetComponent<Arrow>().onFire = true;
+                }
             }
+            else
+            {
+                arrow.GetComponent<TeleportArrow>().arrowNocked = true;
+                arrow.GetComponent<TeleportArrow>().trailEffect.SetActive(false);
+            }
+            
             keyDownFlag = true;
         }
 
@@ -37,16 +46,29 @@ public class SpawnArrowWASD : MonoBehaviour
             arrow.transform.parent = null;
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             arr_rigidbody.AddForce(arrow.transform.forward * thrust, ForceMode.Impulse);
-            if (arrow.GetComponent<Arrow>().onFire )
+            if (arrow.GetComponent<Arrow>())
             {
-                arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
+                if (arrow.GetComponent<Arrow>().onFire)
+                {
+                    arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
+                }
+                arrow.GetComponent<Arrow>().arrowNocked = false;
+                arrow.GetComponent<Arrow>().hasBeenFired = true;
+                if (arrow.GetComponent<Arrow>().hasBeenFired == true)
+                {
+                    arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
+                }
             }
-            arrow.GetComponent<Arrow>().arrowNocked = false;
-            arrow.GetComponent<Arrow>().hasBeenFired = true;
-            if(arrow.GetComponent<Arrow>().hasBeenFired == true)
+            else
             {
-                arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
+                arrow.GetComponent<TeleportArrow>().arrowNocked = false;
+                arrow.GetComponent<TeleportArrow>().hasBeenFired = true;
+                if (arrow.GetComponent<TeleportArrow>().hasBeenFired)
+                {
+                    arrow.GetComponent<TeleportArrow>().trailEffect.SetActive(true);
+                }
             }
+            
             keyDownFlag = false;
             AudioManager.instance.Play("Arrow_Whoosh");
         }
