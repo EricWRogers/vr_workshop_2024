@@ -170,8 +170,9 @@ public class Arrow : MonoBehaviour
     {
         if (GetComponentInChildren<AudioSource>())
         {
-            GetComponentInChildren<AudioSource>().gameObject.SetActive(false);
-            GetComponentInChildren<AudioSource>().transform.parent = null;
+            GameObject obj = GetComponentInChildren<AudioSource>().gameObject;
+            obj.transform.parent = null;
+            obj.SetActive(false);
         }
     }
 }
