@@ -5,6 +5,8 @@ public class ChangeDominantHand : MonoBehaviour
     private bool rightHandMode = true;
     private VRInputs[] inputs;
     private Quiver quiver;
+    private Vector3 rightQuiverRotation = new Vector3(-60f, 90f, -90f);
+    private Vector3 leftQuiverRotation = new Vector3(-120f, 90f, -90f);
 
     public void OnTriggerEnter(Collider other)
     {
@@ -25,6 +27,9 @@ public class ChangeDominantHand : MonoBehaviour
                 quiver = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
                 //Swap hands for the quiver
                 (quiver.leftController, quiver.rightController) = (quiver.rightController, quiver.leftController);
+                //Flip the quiver model
+                Transform quiverPouch = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform;
+                quiverPouch.localEulerAngles = leftQuiverRotation;
                 rightHandMode = false;
             }
             else
@@ -42,6 +47,9 @@ public class ChangeDominantHand : MonoBehaviour
                 quiver = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
                 //Swap hands for the quiver
                 (quiver.leftController, quiver.rightController) = (quiver.rightController, quiver.leftController);
+                //Flip the quiver model
+                Transform quiverPouch = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform;
+                quiverPouch.localEulerAngles = rightQuiverRotation;
                 rightHandMode = true;
             }
         }
