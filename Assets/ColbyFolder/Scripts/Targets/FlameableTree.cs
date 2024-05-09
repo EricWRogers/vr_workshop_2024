@@ -5,16 +5,10 @@ public class FlameableTree : MonoBehaviour
     public GameObject explosionVFX;
     public GameObject target;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnHit()
     {
-        if (other.CompareTag("Arrow"))
-        {
-            if (other.GetComponent<Arrow>().onFire)
-            {
-                Instantiate(explosionVFX, transform.position, Quaternion.identity);
-                target.SetActive(true);
-                Destroy(gameObject);
-            }
-        }
+        Instantiate(explosionVFX, transform.position, Quaternion.identity);
+        target.SetActive(true);
+        Destroy(gameObject);
     }
 }

@@ -27,18 +27,12 @@ public class UpdatedTargetLogic : MonoBehaviour
 
     public void StartPuzzleSolver()
     {
-        timer = timerDuration;
-        meshRenderer.material = hitMaterial;
-        timerManager.AddTargetToList(this);
-        CurrentIntensity = MaxIntensity;
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Arrow") && !timerManager.puzzleComplete)
+        if (!timerManager.puzzleComplete)
         {
-            //Invoke("CompleteTimer", timerDuration); Let's try not to use CoRoutines. Generally bad deals
-            StartPuzzleSolver();
+            timer = timerDuration;
+            meshRenderer.material = hitMaterial;
+            timerManager.AddTargetToList(this);
+            CurrentIntensity = MaxIntensity;
         }
     }
 
