@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1650167657268589630}
   - component: {fileID: 5322759826722526725}
   - component: {fileID: 6509127333596576610}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Smoke PS
   m_TagString: NonStick
   m_Icon: {fileID: 0}
@@ -4856,7 +4856,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7615279352543994680}
   - component: {fileID: 3776526067713568317}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Trail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5021,7 +5021,7 @@ GameObject:
   - component: {fileID: 6084953192700792938}
   - component: {fileID: 6635004357785128430}
   - component: {fileID: 36216094364792354}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: SphereCollider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5125,7 +5125,7 @@ GameObject:
   - component: {fileID: 6559648953585838579}
   - component: {fileID: 2945430048790698835}
   - component: {fileID: 510722032248169307}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Point Light
   m_TagString: NonStick
   m_Icon: {fileID: 0}
@@ -5241,7 +5241,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5285611627204712003}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: KnockPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5274,7 +5274,7 @@ GameObject:
   - component: {fileID: 799178109040311939}
   - component: {fileID: 3773476842690288145}
   - component: {fileID: 2959924947760324105}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire PS
   m_TagString: NonStick
   m_Icon: {fileID: 0}
@@ -10119,7 +10119,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8153221016420094648}
   - component: {fileID: 7972274656422114290}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Fire Particle System
   m_TagString: NonStick
   m_Icon: {fileID: 0}
@@ -10250,7 +10250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3254326493303947768}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: AttachPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10350,11 +10350,26 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8513424388201257645, guid: d04b70ed0e239fc4081749347c3336db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -7609145667655734672, guid: d04b70ed0e239fc4081749347c3336db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -6067185528594298527, guid: d04b70ed0e239fc4081749347c3336db,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: c16bf4866d9cba84bb0d32140e6b7478, type: 2}
+    - target: {fileID: -3957782524123411102, guid: d04b70ed0e239fc4081749347c3336db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: -3270834789232462163, guid: d04b70ed0e239fc4081749347c3336db,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10407,6 +10422,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d04b70ed0e239fc4081749347c3336db,
         type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d04b70ed0e239fc4081749347c3336db,
+        type: 3}
       propertyPath: m_TagString
       value: Arrow
       objectReference: {fileID: 0}
@@ -10425,11 +10445,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.048870046
       objectReference: {fileID: 0}
+    - target: {fileID: 3379836402047742272, guid: d04b70ed0e239fc4081749347c3336db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3566390031902043909, guid: d04b70ed0e239fc4081749347c3336db,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 5f2521a388a24ee4192a027e9295d4f9, type: 2}
+    - target: {fileID: 3779745573541866595, guid: d04b70ed0e239fc4081749347c3336db,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5898855749840620490, guid: d04b70ed0e239fc4081749347c3336db,
         type: 3}
       propertyPath: m_LocalPosition.y
