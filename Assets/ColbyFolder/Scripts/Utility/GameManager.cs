@@ -9,16 +9,20 @@ public class GameManager : MonoBehaviour
     private Vector3 rightQuiverRotation = new Vector3(-60f, 90f, -90f);
     private Vector3 leftQuiverRotation = new Vector3(-120f, 90f, -90f);
     public bool rightHandMode = true;
+    [HideInInspector]
+    public GameObject rightController;
+    [HideInInspector]
+    public GameObject leftController;
 
     private void Awake()
     {
-        if (Instance == null)
+        if (Instance != null && Instance != this)
         {
-            Instance = this;
+            Destroy(gameObject);
         }
         else
         {
-            Destroy(gameObject);
+            Instance = this;
         }
         DontDestroyOnLoad(gameObject);
 
@@ -27,7 +31,21 @@ public class GameManager : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        if (this != Instance)
+        {
+            return;
+        }
+        rightController = GameObject.FindGameObjectWithTag("RightHand");
+        leftController = GameObject.FindGameObjectWithTag("LeftHand");
         player = GameObject.FindGameObjectWithTag("Player");
+        player.GetComponent<SpawnArrowVR>().rightController = rightController;
+        player.GetComponent<SpawnArrowVR>().leftController = leftController;
+        player.GetComponent<SpawnBow>().rightController = rightController;
+        player.GetComponent<SpawnBow>().leftController = leftController;
+        quiver = player.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
+        quiver.rightController = rightController;
+        quiver.leftController = leftController;
+
         if (!rightHandMode)
         {
             ChangeToLeftHandMode();
@@ -45,8 +63,6 @@ public class GameManager : MonoBehaviour
         inputs[1].deviceCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.Right;
         //Swap hands in SpawnArrowVR
         (player.GetComponent<SpawnArrowVR>().leftController, player.GetComponent<SpawnArrowVR>().rightController) = (player.GetComponent<SpawnArrowVR>().rightController, player.GetComponent<SpawnArrowVR>().leftController);
-        //Access the quiver
-        quiver = player.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
         //Swap hands for the quiver
         (quiver.leftController, quiver.rightController) = (quiver.rightController, quiver.leftController);
         //Flip the quiver model
@@ -66,8 +82,6 @@ public class GameManager : MonoBehaviour
         inputs[1].deviceCharacteristics = UnityEngine.XR.InputDeviceCharacteristics.Left;
         //Swap hands in SpawnArrowVR
         (player.GetComponent<SpawnArrowVR>().leftController, player.GetComponent<SpawnArrowVR>().rightController) = (player.GetComponent<SpawnArrowVR>().rightController, player.GetComponent<SpawnArrowVR>().leftController);
-        //Access the quiver
-        quiver = player.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
         //Swap hands for the quiver
         (quiver.leftController, quiver.rightController) = (quiver.rightController, quiver.leftController);
         //Flip the quiver model
