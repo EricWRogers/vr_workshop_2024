@@ -9,13 +9,4 @@ public class BridgeTargets : MonoBehaviour
         Destroy(rope);
         Destroy(gameObject);
     }
-    
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Arrow"))
-        {
-            Destroy(rope);
-            Destroy(gameObject);
-        }
-    }
 }

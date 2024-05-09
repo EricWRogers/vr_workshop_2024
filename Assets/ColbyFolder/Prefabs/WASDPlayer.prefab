@@ -201,7 +201,7 @@ Transform:
   m_GameObject: {fileID: 6443962624503166008}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.423, z: 0}
+  m_LocalPosition: {x: -4.7002935, y: -2.0100043, z: 6.314769}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -328,6 +328,9 @@ MonoBehaviour:
   lookXlimit: 45
   canMove: 1
   cursorVisible: 0
+  playerFrozen: 0
+  footstepSoundDelay: 1
+  footNum: 1
 --- !u!114 &794004031295200473
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,6 +348,7 @@ MonoBehaviour:
   thrust: 50
   spawnLocation: {fileID: 4351800871490880772}
   arrowParent: {fileID: 63051251823785686}
+  inFireZone: 0
 --- !u!114 &3084619017847509576
 MonoBehaviour:
   m_ObjectHideFlags: 0

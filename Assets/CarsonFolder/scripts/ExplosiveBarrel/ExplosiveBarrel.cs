@@ -13,25 +13,12 @@ public class ExplosiveBarrel : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, ExplosiveRange);
-
     }
 #endif
 
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.CompareTag("Arrow"))
-        {
-            if (other.gameObject.GetComponent<Arrow>().onFire)
-            {
-                Detonate();
-                turnTable.isPuzzleDone = true;
-            }
-        }
-
-    }
-
     public void Detonate()
     {
+        turnTable.isPuzzleDone = true;
         targetChecker.CheckTargets();
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange, explodableLayerMask);

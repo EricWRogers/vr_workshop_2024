@@ -11,21 +11,27 @@ public class Arrow : MonoBehaviour
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
     public LayerMask mask;
+    public float distanceAwayFromFireToLight = 10f;
 
-    // public GameObject waterImpactEffect;
-    // public GameObject regularImpactEffect;
+    private GameObject waterImpactEffect;
+    private GameObject regularImpactEffect;
     [HideInInspector]
     public GameObject trailEffect;
-    private RaycastHit info;
-    Rigidbody rb;
+    private Rigidbody rb;
+    private bool firstContact;
+    private Collider sphereCollider;
 
     private void Awake()
     {
         fireEffects = transform.GetChild(0).gameObject;
         trailEffect = transform.GetChild(7).gameObject;
-        //regularImpactEffect = transform.GetChild(8).gameObject;
-        //waterImpactEffect = transform.GetChild(9).gameObject;
+        regularImpactEffect = transform.GetChild(10).gameObject;
+        waterImpactEffect = transform.GetChild(11).gameObject;
         rb = GetComponent<Rigidbody>();
+        sphereCollider = transform.GetChild(9).GetComponent<SphereCollider>();
+
+        regularImpactEffect.SetActive(false);
+        waterImpactEffect.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -68,39 +74,87 @@ public class Arrow : MonoBehaviour
     //For improved hit detection
     private void FixedUpdate()
     {
-        Vector3 predictedPosition = new Vector3 (transform.position.x + rb.velocity.x, transform.position.y + rb.velocity.y, transform.position.z + rb.velocity.z);
-        if (Physics.Linecast(transform.position, predictedPosition, out info, mask))
+        RaycastHit hit;
+        //Where the front of the arrow will be next frame
+        Vector3 predictedPosition = new Vector3(transform.GetChild(9).position.x + rb.velocity.x*Time.deltaTime, transform.GetChild(9).position.y + rb.velocity.y*Time.deltaTime, transform.GetChild(9).position.z + rb.velocity.z*Time.deltaTime);
+        //Linecast from the back of the arrow to front
+        if (Physics.Linecast(transform.GetChild(8).position, predictedPosition, out hit, mask))
         {
-            // Debug.Log("The Arrow Hit: " + info.transform.gameObject.name);
-            // regularImpactEffect.SetActive(true);
-            // if(regularImpactEffect.activeSelf)
-            // {
-            //     Debug.Log("Particles on: " + regularImpactEffect.name);
-            // }else
-            // {
-            //     Debug.Log("Particles off: " + regularImpactEffect.name);
-            // }
-            if (info.transform.CompareTag("Target"))
+            if (!firstContact && hasBeenFired)
             {
-                if (info.transform.gameObject.GetComponent<TargetPractice>() != null)
+                Transform hitTransform = hit.transform;
+                //Debug.Log(hit.collider.gameObject);
+                if (hitTransform.CompareTag("Water"))
                 {
-                    info.transform.gameObject.GetComponent<TargetPractice>().GotHit();
+                    firstContact = true;
+                    waterImpactEffect.SetActive(true);
+                    AudioManager.instance.PlayAtPosition("Water_splash", hit.point);
+                    //Makes the arrow disappear but keeps the trail
+                    GetComponent<BoxCollider>().enabled = false;
+                    rb.constraints = RigidbodyConstraints.FreezeAll;
+                    transform.GetChild(1).gameObject.SetActive(false);
+                    transform.GetChild(2).gameObject.SetActive(false);
+                    transform.GetChild(3).gameObject.SetActive(false);
+                    transform.GetChild(4).gameObject.SetActive(false);
+                    transform.GetChild(5).gameObject.SetActive(false);
                 }
-                if (info.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                else if (hitTransform.CompareTag("NonStick"))
                 {
-                    info.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
+                    //Debug.Log("Hit nonstick");
+                    //AudioManager.instance.PlayAtPosition("Metal_Impact", hit.point);
                 }
-                if (info.transform.gameObject.GetComponent<FirstTargets>() != null)
+                else if ((!hitTransform.CompareTag("Bow") && !hitTransform.CompareTag("FireZone")) && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
                 {
-                    info.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
-                }
-                if (info.transform.gameObject.GetComponent<SecondTargets>() != null)
-                {
-                    info.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
-                }
-                if (info.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
-                {
-                    info.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                    //Debug.Log("Stick to " + hit.transform.name);
+                    firstContact = true;
+                    regularImpactEffect.SetActive(true);
+                    //arrowRigidbody.velocity = Vector3.zero;
+                    transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                    rb.constraints = RigidbodyConstraints.FreezeAll;
+                    //boxCollider.enabled = false; //error! the targets check for the box collider to trigger them!
+                    if (hit.transform.CompareTag("Target"))
+                    {
+                        AudioManager.instance.Play("Target_hit");
+                        if (hitTransform.GetComponent<TargetPractice>())
+                        {
+                            hitTransform.GetComponent<TargetPractice>().GotHit();
+                        }
+                        else if (hitTransform.GetComponent<BridgeTargets>())
+                        {
+                            hitTransform.GetComponent<BridgeTargets>().DestroyRope();
+                        }
+                        else if (hitTransform.GetComponent<FirstTargets>())
+                        {
+                            hitTransform.GetComponent<FirstTargets>().HitTarget();
+                        }
+                        else if (hitTransform.GetComponent<SecondTargets>())
+                        {
+                            hitTransform.GetComponent<SecondTargets>().HitTarget();
+                        }
+                        else if (hitTransform.GetComponent<UpdatedTargetLogic>())
+                        {
+                            hitTransform.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                        }
+                        else if (onFire)
+                        {
+                            if (hitTransform.GetComponent<FireTargets>())
+                            {
+                                hitTransform.GetComponent<FireTargets>().OnHit();
+                            }
+                            else if (hitTransform.GetComponent<FlameableTree>())
+                            {
+                                hitTransform.GetComponent<FlameableTree>().OnHit();
+                            }
+                            else if (hitTransform.GetComponent<ExplosiveBarrel>())
+                            {
+                                hitTransform.GetComponent<ExplosiveBarrel>().Detonate();
+                            }
+                        }
+                    }
+                    else
+                    {
+                        AudioManager.instance.PlayAtPosition("Stone_Impact", hit.point);
+                    }
                 }
             }
         }
@@ -114,7 +168,7 @@ public class Arrow : MonoBehaviour
 
     private void OnDestroy()
     {
-        if (GetComponentInChildren<AudioSource>() != null)
+        if (GetComponentInChildren<AudioSource>())
         {
             GetComponentInChildren<AudioSource>().gameObject.SetActive(false);
             GetComponentInChildren<AudioSource>().transform.parent = null;

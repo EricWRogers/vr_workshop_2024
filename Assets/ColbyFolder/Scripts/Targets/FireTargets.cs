@@ -5,16 +5,13 @@ public class FireTargets : MonoBehaviour
     public bool isHit = false;
     public SecondTargetChecker targetChecker;
 
-    private void OnTriggerEnter(Collider other)
+    public void OnHit()
     {
-        if (other.CompareTag("Arrow"))
+        if (!isHit)
         {
-            if (!isHit && other.GetComponent<Arrow>().onFire)
-            {
-                isHit = true;
-                transform.GetChild(0).gameObject.SetActive(true);
-                targetChecker.CheckTargets();
-            }
+            isHit = true;
+            transform.GetChild(0).gameObject.SetActive(true);
+            targetChecker.CheckTargets();
         }
     }
 }
