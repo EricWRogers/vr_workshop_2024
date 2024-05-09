@@ -73,10 +73,13 @@ public class Arrow : MonoBehaviour
     //For improved hit detection
     private void FixedUpdate()
     {
-        if (!firstContact && hasBeenFired)
+        RaycastHit hit;
+        //Where the front of the arrow will be next frame
+        Vector3 predictedPosition = new Vector3(transform.GetChild(9).position.x + rb.velocity.x*Time.deltaTime, transform.GetChild(9).position.y + rb.velocity.y*Time.deltaTime, transform.GetChild(9).position.z + rb.velocity.z*Time.deltaTime);
+        //Linecast from the back of the arrow to front
+        if (Physics.Linecast(transform.GetChild(8).position, predictedPosition, out hit, mask))
         {
-            RaycastHit hit;
-            if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 1.0f)) //, 0, QueryTriggerInteraction.Ignore  the integer between the float and querytriggerinteraction is the layer number, the default layer. it will ignore any other.
+            if (!firstContact && hasBeenFired)
             {
                 //Debug.Log(hit.collider.gameObject);
                 if (hit.transform.CompareTag("Water"))
@@ -93,13 +96,19 @@ public class Arrow : MonoBehaviour
                     transform.GetChild(4).gameObject.SetActive(false);
                     transform.GetChild(5).gameObject.SetActive(false);
                 }
-                else if ((!hit.collider.gameObject.CompareTag("NonStick") && !hit.collider.gameObject.CompareTag("Bow") && !hit.collider.gameObject.CompareTag("FireZone")) && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
+                else if (hit.collider.gameObject.CompareTag("NonStick"))
                 {
+                    //Debug.Log("Hit nonstick");
+                    //AudioManager.instance.PlayAtPosition("Metal_Impact", hit.point);
+                }
+                else if ((!hit.collider.gameObject.CompareTag("Bow") && !hit.collider.gameObject.CompareTag("FireZone")) && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
+                {
+                    //Debug.Log("Stick to " + hit.transform.name);
                     firstContact = true;
+                    regularImpactEffect.SetActive(true);
                     //arrowRigidbody.velocity = Vector3.zero;
                     transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     rb.constraints = RigidbodyConstraints.FreezeAll;
-                    regularImpactEffect.SetActive(true);
                     //boxCollider.enabled = false; //error! the targets check for the box collider to trigger them!
                     if (hit.transform.CompareTag("Target"))
                     {
@@ -130,16 +139,11 @@ public class Arrow : MonoBehaviour
                         AudioManager.instance.PlayAtPosition("Stone_Impact", hit.point);
                     }
                 }
-                else if (hit.collider.gameObject.CompareTag("NonStick"))
-                {
-                    //Debug.Log("Hit nonstick");
-                    //AudioManager.instance.PlayAtPosition("Metal_Impact", hit.point);
-                }
             }
         }
 
-        // Look in the direction we are moving
-        if (hasBeenFired && (rb.velocity.z > 0.5f || rb.velocity.y > 0.5f || rb.velocity.x > 0.5f))
+            // Look in the direction we are moving
+            if (hasBeenFired && (rb.velocity.z > 0.5f || rb.velocity.y > 0.5f || rb.velocity.x > 0.5f))
         {
             transform.forward = rb.velocity;
         }

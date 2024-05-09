@@ -5111,7 +5111,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -11120,7 +11120,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.002489112, y: 0.001394932, z: 0.10340351}
   m_Center: {x: 0.00018487437, y: -0.00044960057, z: -0.00006319831}
@@ -11293,7 +11293,7 @@ MonoBehaviour:
   hasBeenFired: 0
   mask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 63
   trailEffect: {fileID: 0}
 --- !u!4 &7743213513685764711 stripped
 Transform:
