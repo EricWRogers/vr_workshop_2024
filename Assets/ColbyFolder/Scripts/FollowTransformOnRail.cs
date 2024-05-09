@@ -34,6 +34,7 @@ public class FollowTransformOnRail : MonoBehaviour
     public void ResetPosition()
     {
         transform.localPosition = _resetPosition;
+        GetComponents<AudioSource>()[1].Play();
     }
 
     public void CalculatePullAmount()
@@ -46,7 +47,7 @@ public class FollowTransformOnRail : MonoBehaviour
             if (previousPullAmount > 0)
             {
                 // If so, stop the sound effect
-                GetComponent<AudioSource>().Stop();
+                GetComponents<AudioSource>()[0].Stop();
             }
         }
         else
@@ -59,11 +60,11 @@ public class FollowTransformOnRail : MonoBehaviour
             if (pullAmount > previousPullAmount)
             {
                 // Adjust pitch based on pull amount
-                GetComponent<AudioSource>().pitch = pullAmount + 1;
+                GetComponents<AudioSource>()[0].pitch = pullAmount + 1;
                 // If the audio is not already playing, start playing it
                 if (!GetComponent<AudioSource>().isPlaying)
                 {
-                    GetComponent<AudioSource>().Play();
+                    GetComponents<AudioSource>()[0].Play();
                 }
             }
         }
