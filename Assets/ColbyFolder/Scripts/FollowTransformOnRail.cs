@@ -38,10 +38,11 @@ public class FollowTransformOnRail : MonoBehaviour
 
     public void ResetPosition()
     {
+        float amp = pullAmount;
         transform.localPosition = _resetPosition;
         GetComponents<AudioSource>()[1].Play();
-        leftController.SendHapticImpulse(0.3f, 0.02f);
-        rightController.SendHapticImpulse(0.6f, 0.02f);
+        leftController.SendHapticImpulse(amp/2, 0.02f);
+        rightController.SendHapticImpulse(amp, 0.02f);
     }
 
     public void CalculatePullAmount()
