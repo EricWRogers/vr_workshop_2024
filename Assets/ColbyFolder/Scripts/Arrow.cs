@@ -11,6 +11,9 @@ public class Arrow : MonoBehaviour
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
     public LayerMask mask;
+
+    public GameObject waterImpactEffect;
+    public GameObject regularImpactEffect;
     [HideInInspector]
     public GameObject trailEffect;
     private RaycastHit info;
@@ -20,6 +23,8 @@ public class Arrow : MonoBehaviour
     {
         fireEffects = transform.GetChild(0).gameObject;
         trailEffect = transform.GetChild(7).gameObject;
+        //regularImpactEffect = transform.GetChild(8).gameObject;
+        //waterImpactEffect = transform.GetChild(9).gameObject;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -66,6 +71,15 @@ public class Arrow : MonoBehaviour
         Vector3 predictedPosition = new Vector3 (transform.position.x + rb.velocity.x, transform.position.y + rb.velocity.y, transform.position.z + rb.velocity.z);
         if (Physics.Linecast(transform.position, predictedPosition, out info, mask))
         {
+            // Debug.Log("The Arrow Hit: " + info.transform.gameObject.name);
+            // regularImpactEffect.SetActive(true);
+            // if(regularImpactEffect.activeSelf)
+            // {
+            //     Debug.Log("Particles on: " + regularImpactEffect.name);
+            // }else
+            // {
+            //     Debug.Log("Particles off: " + regularImpactEffect.name);
+            // }
             if (info.transform.CompareTag("Target"))
             {
                 if (info.transform.gameObject.GetComponent<TargetPractice>() != null)
