@@ -11,6 +11,7 @@ public class Arrow : MonoBehaviour
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
     public LayerMask mask;
+    public float distanceAwayFromFireToLight = 10f;
 
     private GameObject waterImpactEffect;
     private GameObject regularImpactEffect;
@@ -81,8 +82,9 @@ public class Arrow : MonoBehaviour
         {
             if (!firstContact && hasBeenFired)
             {
+                Transform hitTransform = hit.transform;
                 //Debug.Log(hit.collider.gameObject);
-                if (hit.transform.CompareTag("Water"))
+                if (hitTransform.CompareTag("Water"))
                 {
                     firstContact = true;
                     waterImpactEffect.SetActive(true);
@@ -96,12 +98,12 @@ public class Arrow : MonoBehaviour
                     transform.GetChild(4).gameObject.SetActive(false);
                     transform.GetChild(5).gameObject.SetActive(false);
                 }
-                else if (hit.collider.gameObject.CompareTag("NonStick"))
+                else if (hitTransform.CompareTag("NonStick"))
                 {
                     //Debug.Log("Hit nonstick");
                     //AudioManager.instance.PlayAtPosition("Metal_Impact", hit.point);
                 }
-                else if ((!hit.collider.gameObject.CompareTag("Bow") && !hit.collider.gameObject.CompareTag("FireZone")) && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
+                else if ((!hitTransform.CompareTag("Bow") && !hitTransform.CompareTag("FireZone")) && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
                 {
                     //Debug.Log("Stick to " + hit.transform.name);
                     firstContact = true;
@@ -113,25 +115,40 @@ public class Arrow : MonoBehaviour
                     if (hit.transform.CompareTag("Target"))
                     {
                         AudioManager.instance.Play("Target_hit");
-                        if (hit.transform.gameObject.GetComponent<TargetPractice>() != null)
+                        if (hitTransform.GetComponent<TargetPractice>())
                         {
-                            hit.transform.gameObject.GetComponent<TargetPractice>().GotHit();
+                            hitTransform.GetComponent<TargetPractice>().GotHit();
                         }
-                        if (hit.transform.gameObject.GetComponent<BridgeTargets>() != null)
+                        else if (hitTransform.GetComponent<BridgeTargets>())
                         {
-                            hit.transform.gameObject.GetComponent<BridgeTargets>().DestroyRope();
+                            hitTransform.GetComponent<BridgeTargets>().DestroyRope();
                         }
-                        if (hit.transform.gameObject.GetComponent<FirstTargets>() != null)
+                        else if (hitTransform.GetComponent<FirstTargets>())
                         {
-                            hit.transform.gameObject.GetComponent<FirstTargets>().HitTarget();
+                            hitTransform.GetComponent<FirstTargets>().HitTarget();
                         }
-                        if (hit.transform.gameObject.GetComponent<SecondTargets>() != null)
+                        else if (hitTransform.GetComponent<SecondTargets>())
                         {
-                            hit.transform.gameObject.GetComponent<SecondTargets>().HitTarget();
+                            hitTransform.GetComponent<SecondTargets>().HitTarget();
                         }
-                        if (hit.transform.gameObject.GetComponent<UpdatedTargetLogic>() != null)
+                        else if (hitTransform.GetComponent<UpdatedTargetLogic>())
                         {
-                            hit.transform.gameObject.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                            hitTransform.GetComponent<UpdatedTargetLogic>().StartPuzzleSolver();
+                        }
+                        else if (onFire)
+                        {
+                            if (hitTransform.GetComponent<FireTargets>())
+                            {
+                                hitTransform.GetComponent<FireTargets>().OnHit();
+                            }
+                            else if (hitTransform.GetComponent<FlameableTree>())
+                            {
+                                hitTransform.GetComponent<FlameableTree>().OnHit();
+                            }
+                            else if (hitTransform.GetComponent<ExplosiveBarrel>())
+                            {
+                                hitTransform.GetComponent<ExplosiveBarrel>().Detonate();
+                            }
                         }
                     }
                     else
@@ -142,8 +159,8 @@ public class Arrow : MonoBehaviour
             }
         }
 
-            // Look in the direction we are moving
-            if (hasBeenFired && (rb.velocity.z > 0.5f || rb.velocity.y > 0.5f || rb.velocity.x > 0.5f))
+        // Look in the direction we are moving
+        if (hasBeenFired && (rb.velocity.z > 0.5f || rb.velocity.y > 0.5f || rb.velocity.x > 0.5f))
         {
             transform.forward = rb.velocity;
         }
