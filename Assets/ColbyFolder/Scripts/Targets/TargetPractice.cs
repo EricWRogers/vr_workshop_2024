@@ -25,12 +25,4 @@ public class TargetPractice : MonoBehaviour
         GetComponent<MeshRenderer>().material = hitMaterial;
         timer = timeToStayHit;
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Arrow"))
-        {
-            GotHit();
-        }
-    }
 }
