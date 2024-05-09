@@ -7,6 +7,7 @@ public class FreezeDrawBridge : MonoBehaviour
     {
         if(other.CompareTag("DrawBridge"))
         {
+            AudioManager.instance.PlayAtPosition("Stone_crash", transform.position);
             other.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeAll;
         }
     }
