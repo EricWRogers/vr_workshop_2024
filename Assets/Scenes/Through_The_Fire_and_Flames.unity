@@ -8617,7 +8617,6 @@ GameObject:
   - component: {fileID: 275474234}
   - component: {fileID: 275474233}
   - component: {fileID: 275474232}
-  - component: {fileID: 275474245}
   - component: {fileID: 275474246}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
@@ -8980,50 +8979,6 @@ Transform:
   - {fileID: 504625569}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
---- !u!114 &275474245
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275474231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7623a58f1db09408f0a2ef6f5e739b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deviceCharacteristics: 256
-  button: 0
-  OnPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 561662223}
-        m_TargetAssemblyTypeName: NoteInteraction, Assembly-CSharp
-        m_MethodName: SetAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 277964262}
-        m_TargetAssemblyTypeName: NoteInteraction, Assembly-CSharp
-        m_MethodName: SetAction
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnRelease:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &275474246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9258,18 +9213,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d6478478d5e4749ad5cd85548f59c0, type: 3}
---- !u!114 &277964262 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2304762296582522601, guid: 21d6478478d5e4749ad5cd85548f59c0,
-    type: 3}
-  m_PrefabInstance: {fileID: 277964261}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1250ce4d4ea43148a1ccb3a76b3fd98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &287730078
 GameObject:
   m_ObjectHideFlags: 0
@@ -13573,18 +13516,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21d6478478d5e4749ad5cd85548f59c0, type: 3}
---- !u!114 &561662223 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2304762296582522601, guid: 21d6478478d5e4749ad5cd85548f59c0,
-    type: 3}
-  m_PrefabInstance: {fileID: 561662222}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1250ce4d4ea43148a1ccb3a76b3fd98, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &561816635
 PrefabInstance:
   m_ObjectHideFlags: 0
