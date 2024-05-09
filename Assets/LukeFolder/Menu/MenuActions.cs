@@ -31,6 +31,6 @@ public class MenuActions : MonoBehaviour
     }
     public void ExitButton()
     {
-        Debug.Log("PRESSED RETURN");
+        SceneManager.LoadSceneAsync("StarterAreaScene");
     }
 }
