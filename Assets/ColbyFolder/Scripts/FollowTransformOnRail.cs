@@ -38,15 +38,35 @@ public class FollowTransformOnRail : MonoBehaviour
 
     public void CalculatePullAmount()
     {
+        float previousPullAmount = pullAmount; // Store the previous pull amount
         if (!isGrabbing)
         {
             bowAnimator.SetFloat("PullBack", 0);
+            // Check if the bowstring was being pulled back in the previous frame
+            if (previousPullAmount > 0)
+            {
+                // If so, stop the sound effect
+                GetComponent<AudioSource>().Stop();
+            }
         }
         else
         {
             pullAmount = Vector3.Distance(_resetPosition, transform.localPosition) / Mathf.Abs(railMin);
             pullAmount = Mathf.Clamp(pullAmount, 0.0f, 1.0f);
             bowAnimator.SetFloat("PullBack", pullAmount);
+
+            // If the pull amount has increased (bowstring being pulled back)
+            if (pullAmount > previousPullAmount)
+            {
+                // Adjust pitch based on pull amount
+                GetComponent<AudioSource>().pitch = pullAmount + 1;
+                // If the audio is not already playing, start playing it
+                if (!GetComponent<AudioSource>().isPlaying)
+                {
+                    GetComponent<AudioSource>().Play();
+                }
+            }
         }
     }
+
 }
