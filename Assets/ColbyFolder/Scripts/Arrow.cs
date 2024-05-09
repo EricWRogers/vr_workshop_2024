@@ -97,4 +97,13 @@ public class Arrow : MonoBehaviour
             transform.forward = rb.velocity;
         }
     }
+
+    private void OnDestroy()
+    {
+        if (GetComponentInChildren<AudioSource>() != null)
+        {
+            GetComponentInChildren<AudioSource>().gameObject.SetActive(false);
+            GetComponentInChildren<AudioSource>().transform.parent = null;
+        }
+    }
 }
