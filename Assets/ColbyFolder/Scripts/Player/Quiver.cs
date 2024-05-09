@@ -11,8 +11,6 @@ public class Quiver : MonoBehaviour
 
     private void Start()
     {
-        rightController = GameObject.FindGameObjectWithTag("RightHand");
-        leftController = GameObject.FindGameObjectWithTag("LeftHand");
         player = FindObjectOfType<SpawnArrowVR>().GetComponent<SpawnArrowVR>();
     }
 
