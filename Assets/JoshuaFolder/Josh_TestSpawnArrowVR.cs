@@ -11,7 +11,10 @@ public class SpawnArrowVR : MonoBehaviour
     [SerializeField]
     [Tooltip("n changes the logrithmic rolloff of the arrow thrust based on how far back it is pulled. Smaller numbers increase the weakening effect on low pull back amounts")]
     private float n = 0.1f;
+    [HideInInspector]
     public GameObject rightController;
+    [HideInInspector]
+    public GameObject leftController;
 
     public bool arrowSpawned = false;
     public bool arrowNocked = false;
@@ -57,6 +60,7 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             float arrowForce = ForceCalculator(amountPulledBack);
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * arrowForce, ForceMode.Impulse);
+            AudioManager.instance.Play("Arrow_Whoosh");
             if (inFireZone)
             {
                 arrow.GetComponent<Arrow>().onFire = true;

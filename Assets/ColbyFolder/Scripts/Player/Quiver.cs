@@ -2,13 +2,15 @@ using UnityEngine;
 
 public class Quiver : MonoBehaviour
 {
-    private GameObject rightController;
+    [HideInInspector]
+    public GameObject rightController;
+    [HideInInspector]
+    public GameObject leftController;
     private SpawnArrowVR player;
     public bool canGrabArrow = false;
 
     private void Start()
     {
-        rightController = GameObject.FindGameObjectWithTag("RightHand");
         player = FindObjectOfType<SpawnArrowVR>().GetComponent<SpawnArrowVR>();
     }
 

@@ -3,7 +3,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class BowString : MonoBehaviour
 {
-    private GameObject rightController;
+    [HideInInspector]
+    public GameObject rightController;
+    [HideInInspector]
+    public GameObject leftController;
     private SpawnArrowVR player;
     public Vector3 localPosition;
     public FollowTransformOnRail joint;
@@ -11,7 +14,8 @@ public class BowString : MonoBehaviour
     private void Start()
     {
         localPosition = transform.localPosition;
-        rightController = GameObject.FindGameObjectWithTag("RightHand");
+        //rightController = GameObject.FindGameObjectWithTag("RightHand");
+        //leftController = GameObject.FindGameObjectWithTag("LeftHand");
         player = FindObjectOfType<SpawnArrowVR>().GetComponent<SpawnArrowVR>();
     }
 
