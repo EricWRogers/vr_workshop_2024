@@ -13065,6 +13065,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Portalprefab
       objectReference: {fileID: 0}
+    - target: {fileID: 750892233092851360, guid: 9fca7a100f040d34597303bdc9e44754,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4624382760700805333, guid: 9fca7a100f040d34597303bdc9e44754,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -31304,7 +31309,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 44c098c49afd2914eaa722927c27f3f7, type: 2}
+  - {fileID: 2100000, guid: 9eb1147a3a92811429a77f2a9fd77ccb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
