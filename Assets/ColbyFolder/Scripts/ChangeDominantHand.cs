@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class ChangeDominantHand : MonoBehaviour
 {
-    private bool rightHandMode = true;
     private VRInputs[] inputs;
     private Quiver quiver;
     private Vector3 rightQuiverRotation = new Vector3(-60f, 90f, -90f);
@@ -12,7 +11,7 @@ public class ChangeDominantHand : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (rightHandMode)
+            if (GameManager.Instance.rightHandMode)
             {
                 inputs = other.GetComponents<VRInputs>();
                 //Change lefthand bow spawn to right hand
@@ -30,7 +29,7 @@ public class ChangeDominantHand : MonoBehaviour
                 //Flip the quiver model
                 Transform quiverPouch = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform;
                 quiverPouch.localEulerAngles = leftQuiverRotation;
-                rightHandMode = false;
+                GameManager.Instance.rightHandMode = false;
             }
             else
             {
@@ -50,7 +49,7 @@ public class ChangeDominantHand : MonoBehaviour
                 //Flip the quiver model
                 Transform quiverPouch = other.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform;
                 quiverPouch.localEulerAngles = rightQuiverRotation;
-                rightHandMode = true;
+                GameManager.Instance.rightHandMode = true;
             }
         }
     }
