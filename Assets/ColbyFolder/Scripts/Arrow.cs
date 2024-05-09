@@ -12,8 +12,8 @@ public class Arrow : MonoBehaviour
     public bool hasBeenFired = false;
     public LayerMask mask;
 
-    public GameObject waterImpactEffect;
-    public GameObject regularImpactEffect;
+    // public GameObject waterImpactEffect;
+    // public GameObject regularImpactEffect;
     [HideInInspector]
     public GameObject trailEffect;
     private RaycastHit info;
