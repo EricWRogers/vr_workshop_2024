@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 /// <summary>
 /// snaps our transform to the target trans, position but restricts position to be 0,0 x,y and between min and max on z when FireOnRail is fired.
@@ -8,6 +9,8 @@ using UnityEngine;
 public class FollowTransformOnRail : MonoBehaviour
 {
     public Transform targetTransform;
+    XRBaseController rightController;
+    XRBaseController leftController;
     private Animator bowAnimator;
     public bool isGrabbing = false;
     
@@ -22,6 +25,8 @@ public class FollowTransformOnRail : MonoBehaviour
     {
         _resetPosition = targetTransform.localPosition;
         bowAnimator = GetComponentInParent<Animator>();
+        rightController = GameManager.Instance.rightController.GetComponent<XRBaseController>();
+        leftController = GameManager.Instance.leftController.GetComponent<XRBaseController>();
     }
 
     private void Update()
@@ -35,6 +40,8 @@ public class FollowTransformOnRail : MonoBehaviour
     {
         transform.localPosition = _resetPosition;
         GetComponents<AudioSource>()[1].Play();
+        leftController.SendHapticImpulse(0.3f, 0.02f);
+        rightController.SendHapticImpulse(0.6f, 0.02f);
     }
 
     public void CalculatePullAmount()
