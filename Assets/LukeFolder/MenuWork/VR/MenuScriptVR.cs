@@ -11,7 +11,7 @@ public class MenuScriptVR : MonoBehaviour
     public Camera gameCamera;
     public Camera overlayCamera;
     //bool keyDown = false; //for the keypress toggle for the menu
-    public float menuDistance = 9.0f; //meant to push the z value of the menu away from camera
+    public float menuDistance = 3.0f; //meant to push the z value of the menu away from camera
     public GameObject[] handObjects;
     public GameObject postProcessingVolume;
 
