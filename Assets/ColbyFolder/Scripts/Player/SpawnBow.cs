@@ -14,12 +14,6 @@ public class SpawnBow : MonoBehaviour
     private bool bowSpawned = false;
     private BowString bowString;
 
-    private void Start()
-    {
-        leftController = transform.GetChild(0).transform.GetChild(1).gameObject;
-        rightController = transform.GetChild(0).transform.GetChild(2).gameObject;
-    }
-
     [System.Obsolete] //This is because StartManualInteraction is deprecated, but it still works good for us at the moment and this line removes the error message
     public void SpawnBowNow()
     {

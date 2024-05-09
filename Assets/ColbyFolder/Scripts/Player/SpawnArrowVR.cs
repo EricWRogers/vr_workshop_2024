@@ -22,12 +22,6 @@ public class SpawnArrowVR : MonoBehaviour
 
     private float amountPulledBack = 1.0f;
 
-    private void Start()
-    {
-        rightController = GameObject.FindGameObjectWithTag("RightHand");
-        leftController = GameObject.FindGameObjectWithTag("LeftHand");
-    }
-
     public void SpawnArrow()
     {
         if (!arrowSpawned)
