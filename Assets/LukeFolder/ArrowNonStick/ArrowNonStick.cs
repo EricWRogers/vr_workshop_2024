@@ -15,33 +15,15 @@ public class ArrowNonStick : MonoBehaviour
         arrowRigidbody = GetComponent<Rigidbody>();
     }
 
-    private void OnTriggerEnter(Collider other) // make the arrow sticking a sphere cast in fixed update, will make it more reliable
-    {
-        /* if (!other.CompareTag("NonStick") && !other.CompareTag("Bow"))
-         {
-             arrowRigidbody.constraints = RigidbodyConstraints.FreezeAll;
-         }
-         if (other.CompareTag("Bow"))
-         {
-             player.GetComponent<SpawnArrowVR>().arrowNocked = true;
-         }
-         else if (other.CompareTag("NonStick"))
-         {
-             Debug.Log("Hit a nonstick object");
-         }
-
-         //Debug.Log(other);*/
-    }
-
     private void FixedUpdate()
     {
-        if (!firstContact)
+        if (!firstContact && GetComponent<Arrow>().hasBeenFired)
         {
             RaycastHit hit;
             if (Physics.Raycast(sphereCollider.transform.position, sphereCollider.transform.forward, out hit, 1.0f)) //, 0, QueryTriggerInteraction.Ignore  the integer between the float and querytriggerinteraction is the layer number, the default layer. it will ignore any other.
             {
-                Debug.Log(hit.collider.gameObject);
-                if ((!hit.collider.gameObject.CompareTag("NonStick") || !hit.collider.gameObject.CompareTag("Bow") || !hit.collider.gameObject.CompareTag("FireZone")) && arrowScript.arrowNocked == false && hit.collider.isTrigger == false)
+                //Debug.Log(hit.collider.gameObject);
+                if ((!hit.collider.gameObject.CompareTag("NonStick") && !hit.collider.gameObject.CompareTag("Bow") && !hit.collider.gameObject.CompareTag("FireZone")) && arrowScript.arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
                 {
                     firstContact = true;
                     //arrowRigidbody.velocity = Vector3.zero;

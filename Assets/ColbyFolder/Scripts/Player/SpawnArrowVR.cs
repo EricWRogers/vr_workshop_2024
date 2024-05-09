@@ -22,12 +22,6 @@ public class SpawnArrowVR : MonoBehaviour
 
     private float amountPulledBack = 1.0f;
 
-    private void Start()
-    {
-        rightController = GameObject.FindGameObjectWithTag("RightHand");
-        leftController = GameObject.FindGameObjectWithTag("LeftHand");
-    }
-
     public void SpawnArrow()
     {
         if (!arrowSpawned)
@@ -66,6 +60,7 @@ public class SpawnArrowVR : MonoBehaviour
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             float arrowForce = ForceCalculator(amountPulledBack);
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * arrowForce, ForceMode.Impulse);
+            AudioManager.instance.Play("Arrow_Whoosh");
             if (inFireZone)
             {
                 arrow.GetComponent<Arrow>().onFire = true;

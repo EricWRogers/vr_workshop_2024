@@ -25,6 +25,7 @@ public class InputNameVolume : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             player = other.gameObject;
+            EventSystem.current.SetSelectedGameObject(gameObject);
             if (player.GetComponent<FPSController>() != null) //Playing in WASD
             {
                 playerMovespeed = player.GetComponent<FPSController>().walkspeed;
@@ -34,8 +35,8 @@ public class InputNameVolume : MonoBehaviour
             {
                 playerMovespeed = player.GetComponent<ActionBasedContinuousMoveProvider>().moveSpeed;
                 player.GetComponent<ActionBasedContinuousMoveProvider>().moveSpeed = 0.0f;
+                ShowKeyboard();
             }
-            EventSystem.current.SetSelectedGameObject(gameObject);
         }
     }
 

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8799238930003167373}
   - component: {fileID: 3550783152930359433}
   - component: {fileID: 7763140229147406322}
+  - component: {fileID: 1061988848888345218}
   m_Layer: 0
   m_Name: Targets
   m_TagString: Untagged
@@ -75,7 +76,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalTargets: 3
   doorToMove: {fileID: 1288471958715749798}
-  heightOfDoorOpening: -10
+  heightOfDoorOpening: -9
   speed: 3
 --- !u!114 &7763140229147406322
 MonoBehaviour:
@@ -94,6 +95,102 @@ MonoBehaviour:
   puzzleComplete: 0
   waa: {fileID: 0}
   doorToCredits: {fileID: 3953592768597956389}
+--- !u!82 &1061988848888345218
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2185986298751631776}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5a65ce93f83f5004b80b4159c20d718b, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &3953592768597956389
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,7 +694,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -719,7 +816,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2415449939290862090, guid: 2e387da12cfcb8b439d449a9ec07a0c3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6115810124238525458}
+      addedObject: {fileID: 4025821706227019326}
   m_SourcePrefab: {fileID: 100100000, guid: 2e387da12cfcb8b439d449a9ec07a0c3, type: 3}
 --- !u!4 &2375325046935747792 stripped
 Transform:
@@ -750,8 +847,11 @@ MonoBehaviour:
   timerManager: {fileID: 7763140229147406322}
   hitMaterial: {fileID: 2100000, guid: 95acca25e497a744aa2fe974e8372d20, type: 2}
   winMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
---- !u!65 &6115810124238525458
-BoxCollider:
+  MaxIntensity: 4
+  MinIntensity: 0
+  CurrentIntensity: 0
+--- !u!64 &4025821706227019326
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -765,12 +865,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01969616, y: 0.02, z: 0.020000005}
-  m_Center: {x: 0.0000000037252903, y: -0.000000007450581, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 5126f40e0f76f164c895562d88bf9704, type: 3}
 --- !u!23 &3512233039447885759 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4216946621486994399, guid: 2e387da12cfcb8b439d449a9ec07a0c3,
@@ -1023,6 +1124,9 @@ MonoBehaviour:
   timerManager: {fileID: 7763140229147406322}
   hitMaterial: {fileID: 2100000, guid: 95acca25e497a744aa2fe974e8372d20, type: 2}
   winMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
+  MaxIntensity: 4
+  MinIntensity: 0
+  CurrentIntensity: 0
 --- !u!65 &1286393088635967888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1251,7 +1355,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -1406,7 +1510,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -1546,7 +1650,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -1671,7 +1775,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -1819,6 +1923,9 @@ MonoBehaviour:
   timerManager: {fileID: 7763140229147406322}
   hitMaterial: {fileID: 2100000, guid: 95acca25e497a744aa2fe974e8372d20, type: 2}
   winMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
+  MaxIntensity: 4
+  MinIntensity: 0
+  CurrentIntensity: 0
 --- !u!65 &7359660536140099465
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2249,7 +2356,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2415449939290862090, guid: 2e387da12cfcb8b439d449a9ec07a0c3,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 77254612082899493}
+      addedObject: {fileID: 524032929025173283}
   m_SourcePrefab: {fileID: 100100000, guid: 2e387da12cfcb8b439d449a9ec07a0c3, type: 3}
 --- !u!1 &4862223604795643754 stripped
 GameObject:
@@ -2274,8 +2381,11 @@ MonoBehaviour:
   timerManager: {fileID: 7763140229147406322}
   hitMaterial: {fileID: 2100000, guid: 95acca25e497a744aa2fe974e8372d20, type: 2}
   winMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
---- !u!65 &77254612082899493
-BoxCollider:
+  MaxIntensity: 4
+  MinIntensity: 0
+  CurrentIntensity: 0
+--- !u!64 &524032929025173283
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -2289,12 +2399,13 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.01969616, y: 0.02, z: 0.020000005}
-  m_Center: {x: 0, y: -0.000000007450581, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 5126f40e0f76f164c895562d88bf9704, type: 3}
 --- !u!4 &5202156987955891664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3084603183182112944, guid: 2e387da12cfcb8b439d449a9ec07a0c3,
@@ -2434,7 +2545,7 @@ MeshCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 5
@@ -2573,6 +2684,9 @@ MonoBehaviour:
   timerManager: {fileID: 7763140229147406322}
   hitMaterial: {fileID: 2100000, guid: 95acca25e497a744aa2fe974e8372d20, type: 2}
   winMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
+  MaxIntensity: 4
+  MinIntensity: 0
+  CurrentIntensity: 0
 --- !u!65 &632998410163181214
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2726,6 +2840,9 @@ MonoBehaviour:
   timerManager: {fileID: 7763140229147406322}
   hitMaterial: {fileID: 2100000, guid: 95acca25e497a744aa2fe974e8372d20, type: 2}
   winMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
+  MaxIntensity: 4
+  MinIntensity: 0
+  CurrentIntensity: 0
 --- !u!65 &1522562408941666331
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2884,6 +3001,9 @@ MonoBehaviour:
   timerManager: {fileID: 7763140229147406322}
   hitMaterial: {fileID: 2100000, guid: 95acca25e497a744aa2fe974e8372d20, type: 2}
   winMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
+  MaxIntensity: 4
+  MinIntensity: 0
+  CurrentIntensity: 0
 --- !u!65 &8859725043364701210
 BoxCollider:
   m_ObjectHideFlags: 0
