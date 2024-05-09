@@ -100,8 +100,10 @@ public class Arrow : MonoBehaviour
 
     private void OnDestroy()
     {
-        GameObject audio = GetComponentInChildren<AudioSource>().gameObject;
-        audio.SetActive(false);
-        audio.transform.parent = null;
+        if (GetComponentInChildren<AudioSource>() != null)
+        {
+            GetComponentInChildren<AudioSource>().gameObject.SetActive(false);
+            GetComponentInChildren<AudioSource>().transform.parent = null;
+        }
     }
 }
