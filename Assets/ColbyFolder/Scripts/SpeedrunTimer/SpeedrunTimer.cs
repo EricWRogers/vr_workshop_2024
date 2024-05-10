@@ -5,7 +5,7 @@ public class SpeedrunTimer : MonoBehaviour
 {
     private bool timerStarted = false;
     public double accumulatedTime = 0.0f;
-    private TextMeshProUGUI timer = null;
+    public TextMeshProUGUI timer = null;
     [Tooltip("Multipiler for how fast the timer counts up, should be 1 for the build")]
     public double timerMultiplier = 1.0f;
 

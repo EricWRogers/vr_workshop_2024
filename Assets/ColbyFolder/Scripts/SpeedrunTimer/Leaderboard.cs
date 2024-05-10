@@ -6,8 +6,6 @@ using UnityEngine.SceneManagement;
 public class Leaderboard : MonoBehaviour
 {
     private static Leaderboard _instance;
-    [HideInInspector]
-    public bool summoningClone = false;
     public static Leaderboard Instance { get { return _instance; } }
     public bool currentRunHighscore = false;
     [HideInInspector]
@@ -24,14 +22,8 @@ public class Leaderboard : MonoBehaviour
     private Quaternion winSceneLeaderboardRotation;
     [SerializeField]
     private Vector3 winSceneLeaderboardScale;
-    [SerializeField]
-    private Vector3 overlayPosition;
-    [SerializeField]
-    private Vector3 overlayRotation;
-    [SerializeField]
-    private Vector3 overlayScale;
     private TextMeshProUGUI leaderboard;
-    private GameObject speedrunTimer;
+    public GameObject speedrunTimer;
     private List<KeyValuePairData> top5;
     private GameObject player;
 
@@ -41,14 +33,7 @@ public class Leaderboard : MonoBehaviour
         //Turns this object into a singleton
         if (_instance != null && _instance != this)
         {
-            if (Instance.summoningClone)
-            {
-                Instance.summoningClone = false;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
+            Destroy(gameObject);
         }
         else
         {
@@ -102,19 +87,6 @@ public class Leaderboard : MonoBehaviour
             if (player.GetComponent<FPSController>())
             {
                 GetComponent<Canvas>().renderMode = RenderMode.ScreenSpaceOverlay;
-            }
-            else //You can't have overlay camera in VR
-            {
-                //Puts a speedrunTimer as a child of the left controller to show it on the left wrist
-                summoningClone = true;
-                GameObject newCanvas = Instantiate(gameObject, player.transform.GetChild(0).transform.GetChild(1));
-                newCanvas.GetComponent<Canvas>().renderMode = RenderMode.WorldSpace;
-                newCanvas.transform.localPosition = new Vector3(overlayPosition.x, overlayPosition.y, overlayPosition.z);
-                //I don't know why I need the - 90 but it works
-                newCanvas.transform.eulerAngles = new Vector3(overlayRotation.x, overlayRotation.y - 90, overlayRotation.z);
-                newCanvas.transform.localScale = new Vector3(overlayScale.x, overlayScale.y, overlayScale.z);
-                //Move the extra instance to ten buc to so it's not seen
-                _instance.speedrunTimer.GetComponent<RectTransform>().position = new Vector3(999f, 999f, 999f);
             }
         }
     }

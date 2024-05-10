@@ -19,16 +19,14 @@ public class Arrow : MonoBehaviour
     public GameObject trailEffect;
     private Rigidbody rb;
     private bool firstContact;
-    private Collider sphereCollider;
 
     private void Awake()
     {
         fireEffects = transform.GetChild(0).gameObject;
         trailEffect = transform.GetChild(7).gameObject;
-        regularImpactEffect = transform.GetChild(10).gameObject;
-        waterImpactEffect = transform.GetChild(11).gameObject;
+        regularImpactEffect = transform.GetChild(9).gameObject;
+        waterImpactEffect = transform.GetChild(10).gameObject;
         rb = GetComponent<Rigidbody>();
-        sphereCollider = transform.GetChild(9).GetComponent<SphereCollider>();
 
         regularImpactEffect.SetActive(false);
         waterImpactEffect.SetActive(false);
@@ -74,11 +72,10 @@ public class Arrow : MonoBehaviour
     //For improved hit detection
     private void FixedUpdate()
     {
-        RaycastHit hit;
         //Where the front of the arrow will be next frame
         Vector3 predictedPosition = new Vector3(transform.GetChild(9).position.x + rb.velocity.x*Time.deltaTime, transform.GetChild(9).position.y + rb.velocity.y*Time.deltaTime, transform.GetChild(9).position.z + rb.velocity.z*Time.deltaTime);
         //Linecast from the back of the arrow to front
-        if (Physics.Linecast(transform.GetChild(8).position, predictedPosition, out hit, mask))
+        if (Physics.Linecast(transform.GetChild(8).position, predictedPosition, out RaycastHit hit, mask))
         {
             if (!firstContact && hasBeenFired)
             {
@@ -110,6 +107,7 @@ public class Arrow : MonoBehaviour
                     regularImpactEffect.SetActive(true);
                     //arrowRigidbody.velocity = Vector3.zero;
                     transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
+                    //transform.parent = hitTransform;
                     rb.constraints = RigidbodyConstraints.FreezeAll;
                     //boxCollider.enabled = false; //error! the targets check for the box collider to trigger them!
                     if (hit.transform.CompareTag("Target"))
