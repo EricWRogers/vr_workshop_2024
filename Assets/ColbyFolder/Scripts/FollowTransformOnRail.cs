@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 /// <summary>
 /// snaps our transform to the target trans, position but restricts position to be 0,0 x,y and between min and max on z when FireOnRail is fired.
@@ -8,6 +9,8 @@ using UnityEngine;
 public class FollowTransformOnRail : MonoBehaviour
 {
     public Transform targetTransform;
+    XRBaseController rightController;
+    XRBaseController leftController;
     private Animator bowAnimator;
     public bool isGrabbing = false;
     
@@ -22,6 +25,8 @@ public class FollowTransformOnRail : MonoBehaviour
     {
         _resetPosition = targetTransform.localPosition;
         bowAnimator = GetComponentInParent<Animator>();
+        rightController = GameManager.Instance.rightController.GetComponent<XRBaseController>();
+        leftController = GameManager.Instance.leftController.GetComponent<XRBaseController>();
     }
 
     private void Update()
@@ -33,20 +38,44 @@ public class FollowTransformOnRail : MonoBehaviour
 
     public void ResetPosition()
     {
+        float amp = pullAmount;
         transform.localPosition = _resetPosition;
+        GetComponents<AudioSource>()[1].Play();
+        leftController.SendHapticImpulse(amp/2, 0.02f);
+        rightController.SendHapticImpulse(amp, 0.02f);
     }
 
     public void CalculatePullAmount()
     {
+        float previousPullAmount = pullAmount; // Store the previous pull amount
         if (!isGrabbing)
         {
             bowAnimator.SetFloat("PullBack", 0);
+            // Check if the bowstring was being pulled back in the previous frame
+            if (previousPullAmount > 0)
+            {
+                // If so, stop the sound effect
+                GetComponents<AudioSource>()[0].Stop();
+            }
         }
         else
         {
             pullAmount = Vector3.Distance(_resetPosition, transform.localPosition) / Mathf.Abs(railMin);
             pullAmount = Mathf.Clamp(pullAmount, 0.0f, 1.0f);
             bowAnimator.SetFloat("PullBack", pullAmount);
+
+            // If the pull amount has increased (bowstring being pulled back)
+            if (pullAmount > previousPullAmount)
+            {
+                // Adjust pitch based on pull amount
+                GetComponents<AudioSource>()[0].pitch = pullAmount + 1;
+                // If the audio is not already playing, start playing it
+                if (!GetComponent<AudioSource>().isPlaying)
+                {
+                    GetComponents<AudioSource>()[0].Play();
+                }
+            }
         }
     }
+
 }

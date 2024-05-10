@@ -41,8 +41,8 @@ public class StretchSound : MonoBehaviour
         {
             aSource.volume = Mathf.Lerp(maxVolume, minVolume, 1-Mathf.Abs(newPitch - _lastPitch) / volumeCurve);
 
-                //aSource.Pause();
-                _isPaused = true;
+            //aSource.Pause();
+            _isPaused = true;
         }
 
         else

@@ -92,5 +92,6 @@ public class GameManager : MonoBehaviour
         Transform quiverPouch = player.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).transform.GetChild(2).transform;
         quiverPouch.localEulerAngles = leftQuiverRotation;
         rightHandMode = false;
+        (rightController, leftController) = (leftController, rightController);
     }
 }
