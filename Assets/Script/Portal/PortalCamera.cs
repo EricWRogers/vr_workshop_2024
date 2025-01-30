@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class PortalCamera : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    public Transform playerCamera;
+    public Transform portal;
+    public Transform otherPortal;
     void Update()
     {
+        Vector3 playerOffsetFromPortal = playerCamera.position - otherPortal.position;
+        transform.position = portal.position+ playerOffsetFromPortal;
+
+        float angularDiffernceBetweenPortalRotation = Quaternion.Angle(portal.rotation, otherPortal.rotation);
         
+        Quaternion portalRotationalDiffernce =Quaternion.AngleAxis(angularDiffernceBetweenPortalRotation, Vector3.up);
+        Vector3 newCameraDirection = portalRotationalDiffernce* playerCamera.forward;
+        transform.rotation = Quaternion.LookRotation(newCameraDirection, Vector3.up);
+
     }
 }
