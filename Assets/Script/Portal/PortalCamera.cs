@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms;
 
 public class PortalCamera : MonoBehaviour
 {
@@ -11,6 +13,7 @@ public class PortalCamera : MonoBehaviour
     {
         Vector3 playerOffsetFromPortal = playerCamera.position - otherPortal.position;
         transform.position = portal.position+ playerOffsetFromPortal;
+       // transform.position = new Vector3(Mathf.Clamp(transform.localPosition.x, 0 , 8), transform.position.y, transform.position.z);
 
         float angularDiffernceBetweenPortalRotation = Quaternion.Angle(portal.rotation, otherPortal.rotation);
         
