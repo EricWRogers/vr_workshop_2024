@@ -8435,7 +8435,7 @@ PrefabInstance:
         type: 3}
       propertyPath: spawnPoints
       value: 
-      objectReference: {fileID: 918235776}
+      objectReference: {fileID: 171546194}
     - target: {fileID: 4880002654937643898, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -35644,6 +35644,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 318933476131959640, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: mask.m_Bits
+      value: 63
+      objectReference: {fileID: 0}
     - target: {fileID: 2584346463302533713, guid: d52be6b56df80a64ea63d953f0d75c92,
         type: 3}
       propertyPath: m_Name

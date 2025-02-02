@@ -29,6 +29,7 @@ public class AbstractArrow : MonoBehaviour
     {
 
         trailEffect = transform.GetComponentInChildren<TrailRenderer>().gameObject;
+        m_rb = GetComponent<Rigidbody>();
         /*
         m_TerrainImpactEffect = GameObject.Find("Terrain_Impact");
         m_waterImpactEffect = GameObject.Find("Water_Impact");
