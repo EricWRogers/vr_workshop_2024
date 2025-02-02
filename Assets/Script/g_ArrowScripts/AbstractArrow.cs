@@ -80,16 +80,41 @@ public class AbstractArrow : MonoBehaviour
                     m_TerrainImpactEffect.SetActive(true);
                     transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     m_rb.constraints = RigidbodyConstraints.FreezeAll;
+                    TheTargetScript target = hitTransform.GetComponent<TheTargetScript>();
                     if (hit.transform.CompareTag("Target"))
                     {
                         
                         AudioManager.instance.Play("Target_Hit");
-                        if(arrowType == arrow_Types.Fire && hitTransform.GetComponent<TheTargetScript>().needsFire)
+                        //calls the targets event when hit with respective arrow
+
+                        //normal
+                        if(arrowType == arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
                         {
+                            Debug.Log("normal");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
-                        if (arrowType == arrow_Types.Normal && !hitTransform.GetComponent<TheTargetScript>().needsFire)
+                        //fire
+                        else if (arrowType == arrow_Types.Fire && target.arrowRequired == TheTargetScript.arrow_Types.Fire)
                         {
+                            Debug.Log("fire");
+                            hitTransform.GetComponent<TheTargetScript>().Hit();
+                        }
+                        //ice
+                        else if(arrowType == arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
+                        {
+                            Debug.Log("ice");
+                            hitTransform.GetComponent<TheTargetScript>().Hit();
+                        }
+                        //earth
+                        else if(arrowType == arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
+                        {   
+                            Debug.Log("earth");
+                            hitTransform.GetComponent<TheTargetScript>().Hit();
+                        }
+                        //wind
+                        else if(arrowType == arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
+                        {
+                            Debug.Log("wind");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                     }

@@ -5,8 +5,9 @@ using UnityEngine.Events;
 
 public class TheTargetScript : MonoBehaviour
 {
-    private UnityEvent m_hitTarget;
-    public bool needsFire;
+    public UnityEvent m_hitTarget;
+    public enum arrow_Types { Normal, Fire, Earth, Ice, Wind };
+    public arrow_Types arrowRequired;
     public void Hit()
     {
         m_hitTarget.Invoke();
