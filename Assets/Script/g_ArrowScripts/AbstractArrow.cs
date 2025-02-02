@@ -91,30 +91,35 @@ public class AbstractArrow : MonoBehaviour
                         if(arrowType == arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
                         {
                             Debug.Log("normal");
+                            Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //fire
                         else if (arrowType == arrow_Types.Fire && target.arrowRequired == TheTargetScript.arrow_Types.Fire)
                         {
                             Debug.Log("fire");
+                            Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //ice
                         else if(arrowType == arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
                         {
                             Debug.Log("ice");
+                            Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //earth
                         else if(arrowType == arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
                         {   
                             Debug.Log("earth");
+                            Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //wind
                         else if(arrowType == arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
                         {
                             Debug.Log("wind");
+                            Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                     }
