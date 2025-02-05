@@ -1,17 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
+using UnityEngine.UIElements;
 
 public class AbstractArrow : MonoBehaviour
 {
-    public enum arrow_Types {Normal, Fire, Earth, Ice, Wind};
+   
     public bool arrowNocked = false;
     public GameObject nockPoint;
     public GameObject attachedObject;
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
     public LayerMask mask;
-    public arrow_Types arrowType;
+    public ArrowTypes.arrow_Types arrowType;
 
     [HideInInspector]
     public GameObject trailEffect;
@@ -27,7 +29,7 @@ public class AbstractArrow : MonoBehaviour
 
     private void Awake()
     {
-
+        arrowType = GameObject.FindWithTag("Player").GetComponent<ArrowTypes>().typesOfArrow;
         trailEffect = transform.GetComponentInChildren<TrailRenderer>().gameObject;
         m_rb = GetComponent<Rigidbody>();
         /*
@@ -44,6 +46,9 @@ public class AbstractArrow : MonoBehaviour
 
     void Update()
     {
+        arrowType = GameObject.FindWithTag("Player").GetComponent<ArrowTypes>().typesOfArrow;
+        
+
         if (arrowAttached)
         {
             transform.position = attachedObject.transform.position;
@@ -88,35 +93,35 @@ public class AbstractArrow : MonoBehaviour
                         //calls the targets event when hit with respective arrow
 
                         //normal
-                        if(arrowType == arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
+                        if(arrowType == ArrowTypes.arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
                         {
                             Debug.Log("normal");
                             Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //fire
-                        else if (arrowType == arrow_Types.Fire && target.arrowRequired == TheTargetScript.arrow_Types.Fire)
+                        else if (arrowType == ArrowTypes.arrow_Types.Fire && target.arrowRequired == TheTargetScript.arrow_Types.Fire)
                         {
                             Debug.Log("fire");
                             Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //ice
-                        else if(arrowType == arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
+                        else if(arrowType == ArrowTypes.arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
                         {
                             Debug.Log("ice");
                             Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //earth
-                        else if(arrowType == arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
+                        else if(arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
                         {   
                             Debug.Log("earth");
                             Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //wind
-                        else if(arrowType == arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
+                        else if(arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
                         {
                             Debug.Log("wind");
                             Attach(hitTransform.gameObject);
@@ -148,6 +153,31 @@ public class AbstractArrow : MonoBehaviour
         attachedObject = attachObject;
         transform.SetParent(attachedObject.transform);
         arrowAttached = true;
+    }
+
+    public void NormalArrow()
+    {
+        
+    }
+
+    public void FireArrow()
+    {
+
+    }
+
+    public void IceArrow()
+    {
+
+    }
+
+    public void EarthArrow()
+    {
+
+    }
+
+    public void WindArrow()
+    {
+
     }
 
 }

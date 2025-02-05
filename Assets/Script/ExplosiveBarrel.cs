@@ -4,7 +4,6 @@ public class ExplosiveBarrel : MonoBehaviour
 {
     public RotateTurntable turnTable;
     public GameObject explosionVFX;
-    public SecondTargetChecker targetChecker;
     [SerializeField] private float ExplosiveRange = 3f;
     [SerializeField] private LayerMask explodableLayerMask;
 
@@ -18,15 +17,21 @@ public class ExplosiveBarrel : MonoBehaviour
 
     public void Detonate()
     {
-        turnTable.isPuzzleDone = true;
-        targetChecker.CheckTargets();
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange, explodableLayerMask);
 
-        foreach(var objectToExplode in objectsToExplode) 
+        for(int i = 0; i < objectsToExplode.Length; i++)
         {
-            AudioManager.instance.PlayAtPosition("Explosion_sound", transform.position);
-            Destroy(objectToExplode.gameObject);
+            
+            if (objectsToExplode[i].tag == "Target" && !objectsToExplode[i].GetComponent<TheTargetScript>().isHit)
+            {
+                Debug.Log(objectsToExplode[i].name);
+                objectsToExplode[i].GetComponent<TheTargetScript>().Hit();
+            }
+            //AudioManager.instance.PlayAtPosition("Explosion_sound", transform.position);
+            objectsToExplode[i].gameObject.SetActive(false);
+
         }
+
     }
 }

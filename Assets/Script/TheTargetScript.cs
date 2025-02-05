@@ -5,11 +5,16 @@ using UnityEngine.Events;
 
 public class TheTargetScript : MonoBehaviour
 {
-    public UnityEvent m_hitTarget;
+    public UnityEvent hitTarget;
+    public bool isHit = false;
     public enum arrow_Types { Normal, Fire, Earth, Ice, Wind };
     public arrow_Types arrowRequired;
     public void Hit()
     {
-        m_hitTarget.Invoke();
+        if(isHit == false)
+        {
+            isHit = true;
+            hitTarget.Invoke();
+        }
     }
 }

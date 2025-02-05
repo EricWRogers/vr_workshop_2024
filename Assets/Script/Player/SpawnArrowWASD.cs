@@ -8,7 +8,6 @@ public class SpawnArrowWASD : MonoBehaviour
     public float thrust = 5.0f;
     public Transform spawnLocation;
     public Transform arrowParent;
-    public bool inFireZone = false;
 
     void Start()
     {
