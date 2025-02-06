@@ -18,7 +18,6 @@ public class SpawnArrowVR : MonoBehaviour
 
     public bool arrowSpawned = false;
     public bool arrowNocked = false;
-    public bool inFireZone = false;
 
     private float amountPulledBack = 1.0f;
 
@@ -30,11 +29,7 @@ public class SpawnArrowVR : MonoBehaviour
             #pragma warning disable CS0618 // Type or member is obsolete, this line removes the error message
             rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(arrow.GetComponent<XRGrabInteractable>());
             #pragma warning restore CS0618 // Type or member is obsolete, this line resumes error messages
-            arrow.GetComponent<Arrow>().trailEffect.SetActive(false);
-            if (inFireZone)
-            {
-                arrow.GetComponent<Arrow>().onFire = true;
-            }
+            arrow.GetComponent<Arrow_v2>().trailEffect.SetActive(false);
             arrowSpawned = true;
         }
     }
@@ -52,20 +47,15 @@ public class SpawnArrowVR : MonoBehaviour
         }
         else
         {
-            amountPulledBack = arrow.GetComponent<Arrow>().attachedObject.transform.parent.GetComponent<FollowTransformOnRail>().pullAmount;
-            arrow.GetComponent<Arrow>().arrowAttached = false;
-            arrow.GetComponent<Arrow>().attachedObject = null;
-            arrow.GetComponent<Arrow>().hasBeenFired = true;
-            arrow.GetComponent<Arrow>().trailEffect.SetActive(true);
+            amountPulledBack = arrow.GetComponent<Arrow_v2>().attachedObject.transform.parent.GetComponent<FollowTransformOnRail>().pullAmount;
+            arrow.GetComponent<Arrow_v2>().arrowAttached = false;
+            arrow.GetComponent<Arrow_v2>().attachedObject = null;
+            arrow.GetComponent<Arrow_v2>().hasBeenFired = true;
+            arrow.GetComponent<Arrow_v2>().trailEffect.SetActive(true);
             arrow.GetComponent<Rigidbody>().isKinematic = false;
             float arrowForce = ForceCalculator(amountPulledBack);
             arrow.GetComponent<Rigidbody>().AddForce(arrow.transform.forward * arrowForce, ForceMode.Impulse);
             AudioManager.instance.Play("Arrow_Whoosh");
-            if (inFireZone)
-            {
-                arrow.GetComponent<Arrow>().onFire = true;
-                arrow.GetComponent<Arrow>().fireTimer = arrow.GetComponent<Arrow>().lengthOfFire;
-            }
             arrowSpawned = false;
             arrowNocked = false;
             rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
@@ -75,21 +65,5 @@ public class SpawnArrowVR : MonoBehaviour
     private float ForceCalculator(float percentagePulledBack)
     {
         return ((n+1)*percentagePulledBack)/(n*amountPulledBack+1) * thrust;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("FireZone"))
-        {
-            inFireZone = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("FireZone"))
-        {
-            inFireZone = false;
-        }
     }
 }

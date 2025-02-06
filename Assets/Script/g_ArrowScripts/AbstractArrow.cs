@@ -8,7 +8,7 @@ public class AbstractArrow : MonoBehaviour
 {
    
     public bool arrowNocked = false;
-    public GameObject nockPoint;
+    public GameObject arrowNockPoint;
     public GameObject attachedObject;
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
@@ -62,7 +62,7 @@ public class AbstractArrow : MonoBehaviour
         //Gets front of arrow and has regular impact follow
         Vector3 predictedPos = new Vector3(m_TerrainImpactEffect.transform.position.x + m_rb.velocity.x * Time.deltaTime, m_TerrainImpactEffect.transform.position.y + m_rb.velocity.y * Time.deltaTime, m_TerrainImpactEffect.transform.position.z + m_rb.velocity.z * Time.deltaTime);
         //Linecast that gets where the arrow will shoot
-        if(Physics.Linecast(nockPoint.transform.position, predictedPos, out RaycastHit hit))
+        if(Physics.Linecast(arrowNockPoint.transform.position, predictedPos, out RaycastHit hit))
         {
             if (!m_firstContact && hasBeenFired)
             {
@@ -96,35 +96,35 @@ public class AbstractArrow : MonoBehaviour
                         if(arrowType == ArrowTypes.arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
                         {
                             Debug.Log("normal");
-                            Attach(hitTransform.gameObject);
+                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //fire
                         else if (arrowType == ArrowTypes.arrow_Types.Fire && target.arrowRequired == TheTargetScript.arrow_Types.Fire)
                         {
                             Debug.Log("fire");
-                            Attach(hitTransform.gameObject);
+                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //ice
                         else if(arrowType == ArrowTypes.arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
                         {
                             Debug.Log("ice");
-                            Attach(hitTransform.gameObject);
+                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //earth
                         else if(arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
                         {   
                             Debug.Log("earth");
-                            Attach(hitTransform.gameObject);
+                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //wind
                         else if(arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
                         {
                             Debug.Log("wind");
-                            Attach(hitTransform.gameObject);
+                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                     }
@@ -178,6 +178,10 @@ public class AbstractArrow : MonoBehaviour
     public void WindArrow()
     {
 
+    }
+    public void Destroy()
+    {
+        Destroy(gameObject);
     }
 
 }

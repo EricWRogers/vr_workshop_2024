@@ -7837,7 +7837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesOfArrow: 1
+  typesOfArrow: 0
 --- !u!1 &202201372
 GameObject:
   m_ObjectHideFlags: 0
@@ -8565,7 +8565,7 @@ PrefabInstance:
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8696,6 +8696,7 @@ GameObject:
   - component: {fileID: 275474236}
   - component: {fileID: 275474235}
   - component: {fileID: 275474234}
+  - component: {fileID: 275474247}
   - component: {fileID: 275474233}
   - component: {fileID: 275474232}
   - component: {fileID: 275474246}
@@ -8705,7 +8706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &275474232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8762,7 +8763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 157a544e352117049bd8dd008155523d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabarrow: {fileID: 6935186114090029277, guid: 8d67a33f86a070c4a93837c3d3d08160,
+  prefabarrow: {fileID: 2584346463302533713, guid: d52be6b56df80a64ea63d953f0d75c92,
     type: 3}
   arrow: {fileID: 0}
   thrust: 30
@@ -8771,7 +8772,6 @@ MonoBehaviour:
   leftController: {fileID: 0}
   arrowSpawned: 0
   arrowNocked: 0
-  inFireZone: 0
 --- !u!114 &275474234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9074,6 +9074,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnPoints: {fileID: 918235776}
   spawnIndex: 0
+--- !u!114 &275474247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275474231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  typesOfArrow: 0
 --- !u!1 &277460661
 GameObject:
   m_ObjectHideFlags: 0
@@ -23729,7 +23742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1232715924
 MonoBehaviour:
   m_ObjectHideFlags: 0
