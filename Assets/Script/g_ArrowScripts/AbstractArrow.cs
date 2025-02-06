@@ -151,7 +151,7 @@ public class AbstractArrow : MonoBehaviour
     public void Attach(GameObject attachObject)
     {
         attachedObject = attachObject;
-        transform.SetParent(attachedObject.transform);
+        //transform.SetParent(attachedObject.transform);
         arrowAttached = true;
     }
 
