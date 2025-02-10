@@ -51,8 +51,8 @@ public class AbstractArrow : MonoBehaviour
 
         if (arrowAttached)
         {
-            transform.position = attachedObject.transform.position;
-            transform.rotation = attachedObject.transform.rotation;
+            //transform.position = attachedObject.transform.position;
+            //transform.rotation = attachedObject.transform.rotation;
         }
 
     }
@@ -67,6 +67,7 @@ public class AbstractArrow : MonoBehaviour
             if (!m_firstContact && hasBeenFired)
             {
                 Transform hitTransform = hit.transform;
+                transform.parent = null;
 
                 if (hitTransform.CompareTag("Water"))
                 {
@@ -151,7 +152,9 @@ public class AbstractArrow : MonoBehaviour
     public void Attach(GameObject attachObject)
     {
         attachedObject = attachObject;
-        //transform.SetParent(attachedObject.transform);
+        transform.position = attachedObject.transform.position;
+        transform.rotation = attachedObject.transform.rotation;
+        transform.SetParent(attachedObject.transform);
         arrowAttached = true;
     }
 

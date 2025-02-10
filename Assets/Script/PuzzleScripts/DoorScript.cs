@@ -30,7 +30,7 @@ public class DoorScript : MonoBehaviour
         {
             //It has arrived
             //AudioManager.instance.Stop("Stone_door");
-            AudioManager.instance.Play("Stone_crash");
+            //AudioManager.instance.Play("Stone_crash");
             GetComponent<AudioSource>().Stop();
             particles.SetActive(false);
         }
