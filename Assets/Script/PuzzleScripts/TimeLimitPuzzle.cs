@@ -9,11 +9,14 @@ public class TimeLimitPuzzle : MonoBehaviour
     public List<TheTargetScript> targets;
     public int numOfTargetsHit;
     public float timeToComplete;
+    private float timeLeft;
     public bool timerIsDone = false;
+    public bool puzzleStarted = false;
     // Start is called before the first frame update
     void Start()
     {
         numOfTargetsHit = 0;
+        timeLeft = timeToComplete;
     }
 
     // Update is called once per frame
@@ -21,7 +24,7 @@ public class TimeLimitPuzzle : MonoBehaviour
     {
         if(numOfTargetsHit > 0)
         {
-            Timer(timeToComplete);
+            Timer();
         }
         
 
@@ -36,12 +39,13 @@ public class TimeLimitPuzzle : MonoBehaviour
         numOfTargetsHit++;
     }
 
-    public void Timer(float _time)
+    public void Timer()
     {
-        float timeLeft = _time;
-        if(!timerIsDone)
-            timeToComplete -= Time.deltaTime;
-        if (timeToComplete <= 0.0f)
+        puzzleStarted = true;
+        Debug.Log("" + timeLeft);
+        if(!timerIsDone && puzzleStarted)
+            timeLeft -= Time.deltaTime;
+        if (timeLeft <= 0.0f)
         {
             timerIsDone = true;
             RestPuzzle();
@@ -51,6 +55,9 @@ public class TimeLimitPuzzle : MonoBehaviour
 
     public void RestPuzzle()
     {
+        puzzleStarted = false;
+        timerIsDone = false;
+        timeLeft = timeToComplete + Time.deltaTime;
         numOfTargetsHit = 0;
         for(int i = 0; i <= targets.Count; i++)
         {
