@@ -173,4 +173,9 @@ public class Arrow : MonoBehaviour
             obj.SetActive(false);
         }
     }
+
+    public void Destroy()
+    {
+        Destroy(gameObject);
+    }
 }

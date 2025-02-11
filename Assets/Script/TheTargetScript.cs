@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class TheTargetScript : MonoBehaviour
 {
-    public UnityEvent hitTarget;
+    public UnityEvent hitEvent;
+    public UnityEvent unhitEvent;
     public bool isHit = false;
     public enum arrow_Types { Normal, Fire, Earth, Ice, Wind };
     public arrow_Types arrowRequired;
@@ -14,7 +13,12 @@ public class TheTargetScript : MonoBehaviour
         if(isHit == false)
         {
             isHit = true;
-            hitTarget.Invoke();
+            hitEvent.Invoke();
         }
+    }
+    public void Unhit()
+    {
+        isHit = false;
+        unhitEvent.Invoke();
     }
 }
