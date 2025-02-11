@@ -1904,33 +1904,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1019879381}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 979170391}
-        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
-        m_MethodName: AddPoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1001 &91962240
@@ -11370,21 +11349,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1019655714}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1 &426562595
@@ -13280,18 +13250,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7591467144381165658}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &535789642 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4615856433501817910, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 7591467144381165658}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535789639}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff486cb6d0b50b48a8a4d7cbbbbf2ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &535789646
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13304,21 +13262,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 535789642}
-        m_TargetAssemblyTypeName: ExplosiveBarrel, Assembly-CSharp
-        m_MethodName: Detonate
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1001 &539107926
@@ -14721,21 +14670,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 402235410}
-        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
-        m_MethodName: AddPoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 0
 --- !u!43 &681670897
@@ -16805,21 +16745,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 852337789}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1001 &867334752
@@ -19444,21 +19375,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 402235410}
-        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
-        m_MethodName: AddPoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 0
 --- !u!1001 &954810043
@@ -19586,7 +19508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
@@ -19603,21 +19528,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 954810044}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1001 &960598697
@@ -20512,21 +20428,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1005362061}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1001 &1008194410
@@ -20629,12 +20536,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7125811575933234253, guid: d71d185f4b1ea9e4ebd3fe727299d098,
     type: 3}
   m_PrefabInstance: {fileID: 403931506}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1019879381 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8665401475534665438, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 7591467144381165658}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1035731141
 PrefabInstance:
@@ -20865,21 +20766,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1038908451}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!4 &1040084179 stripped
@@ -21503,21 +21395,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1071208700}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1 &1075169990
@@ -23111,21 +22994,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1151039268}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1001 &1159638407
@@ -23268,21 +23142,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1159638408}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1001 &1170476112
@@ -25096,21 +24961,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 402235410}
-        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
-        m_MethodName: AddPoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 0
 --- !u!4 &1311906677 stripped
@@ -26814,21 +26670,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1409009919}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!4 &1411228153 stripped
@@ -26855,33 +26702,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 423500846}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 1411677955}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!4 &1425295198 stripped
@@ -27453,21 +27279,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1459617797}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!4 &1468075240 stripped
@@ -29009,21 +28826,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1614189688}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!4 &1621367687 stripped
@@ -29357,21 +29165,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1636447621}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!4 &1638627026 stripped
@@ -29730,33 +29529,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2007367033}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
-      - m_Target: {fileID: 979170391}
-        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
-        m_MethodName: AddPoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1 &1648052839
@@ -32366,21 +32144,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1824238806}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 1
 --- !u!1 &1856665709
@@ -32566,21 +32335,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitTarget:
+  hitEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 402235410}
-        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
-        m_MethodName: AddPoint
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  unhitEvent:
+    m_PersistentCalls:
+      m_Calls: []
   isHit: 0
   arrowRequired: 0
 --- !u!1 &1897547316
@@ -34206,12 +33966,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &2007367033 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3244810757693653644, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 7591467144381165658}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2025846557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5207775164704393748, guid: f514c4c5c0830a744ae01ffb060b3274,
