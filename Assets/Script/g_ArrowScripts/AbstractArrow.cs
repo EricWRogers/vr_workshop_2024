@@ -14,6 +14,7 @@ public class AbstractArrow : MonoBehaviour
     public bool hasBeenFired = false;
     public LayerMask mask;
     public ArrowTypes.arrow_Types arrowType;
+    public GameObject iceBlockPrefab;
 
     [HideInInspector]
     public GameObject trailEffect;
@@ -111,8 +112,10 @@ public class AbstractArrow : MonoBehaviour
                         else if(arrowType == ArrowTypes.arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
                         {
                             Debug.Log("ice");
+                            Debug.Log("Spawning Ice Block");
                             //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
+                            SpawnIceBlock(hit.point, hit.normal);
                         }
                         //earth
                         else if(arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
@@ -144,6 +147,28 @@ public class AbstractArrow : MonoBehaviour
 
     }
 
+    private void SpawnIceBlock(Vector3 position, Vector3 normal)
+    {
+        if (iceBlockPrefab != null)
+        {
+            Quaternion rotation = Quaternion.LookRotation(normal);
+            GameObject iceBlock = Instantiate(iceBlockPrefab, position, rotation);
+        
+            IceBlock iceBlockScript = iceBlock.GetComponent<IceBlock>();
+            if (iceBlockScript != null)
+            {
+                iceBlockScript.StartGrowing();
+            }
+            else
+            {
+                Debug.LogWarning("IceBlock script is missing from the IceBlock prefab!");
+            }
+        }
+        else
+        {
+            Debug.LogError("Ice Block Prefab not assigned in AbstractArrow!");
+        }
+    }
     public void NockArrow(bool nocked)
     {
         arrowNocked = nocked;
