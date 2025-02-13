@@ -847,6 +847,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bcee0ddec479f15478bc65333af5f244, type: 3}
+--- !u!4 &38188745 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+    type: 3}
+  m_PrefabInstance: {fileID: 320524665}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &55775363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4711600789870895183, guid: bcee0ddec479f15478bc65333af5f244,
@@ -1906,11 +1912,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2078183078}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1001 &91962240
 PrefabInstance:
@@ -7816,7 +7847,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesOfArrow: 0
+  typesOfArrow: 1
 --- !u!1 &202201372
 GameObject:
   m_ObjectHideFlags: 0
@@ -9065,7 +9096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  typesOfArrow: 0
+  typesOfArrow: 1
 --- !u!1 &277460661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9853,6 +9884,98 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1001 &320524665
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1977134545}
+    m_Modifications:
+    - target: {fileID: 335133863216714811, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_Name
+      value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.20801175
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.20801175
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20801175
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 119.46
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 38.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4918275422343941089, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2077009825}
+  m_SourcePrefab: {fileID: 100100000, guid: 808201dc4847a4b42be7521853fefa92, type: 3}
 --- !u!1001 &320681234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10971,7 +11094,7 @@ MonoBehaviour:
   SolvedPuzzled:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2063966372}
+      - m_Target: {fileID: 2058264777}
         m_TargetAssemblyTypeName: DoorScript, Assembly-CSharp
         m_MethodName: OpenDoor
         m_Mode: 1
@@ -10984,10 +11107,10 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   targets:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1309629728}
+  - {fileID: 954387202}
+  - {fileID: 678078700}
+  - {fileID: 1892361598}
   numOfTargetsHit: 0
 --- !u!1001 &403931506
 PrefabInstance:
@@ -11356,6 +11479,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1 &426562595
 GameObject:
@@ -13264,12 +13388,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 535789649}
+        m_TargetAssemblyTypeName: ExplosiveBarrel, Assembly-CSharp
+        m_MethodName: Detonate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
+--- !u!114 &535789649 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4615856433501817910, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 7591467144381165658}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535789639}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ff486cb6d0b50b48a8a4d7cbbbbf2ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &539107926
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14672,11 +14821,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 0
 --- !u!43 &681670897
 Mesh:
@@ -15226,12 +15400,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 306446a1ff375a942bd352bf30a9213e, type: 3}
---- !u!1 &721013559 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8534870952931487224, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 7591467144381165658}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &726897724 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4185386529100054265, guid: 58342414e2e7bcf4fa5b291206fd33e6,
@@ -16747,12 +16915,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 852337789}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
+--- !u!1 &854790479 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3244810757693653644, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 7591467144381165658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &867334752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19377,11 +19564,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 0
 --- !u!1001 &954810043
 PrefabInstance:
@@ -19515,6 +19727,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 0
 --- !u!114 &954810051
 MonoBehaviour:
@@ -19530,11 +19743,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 954810044}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1001 &960598697
 PrefabInstance:
@@ -19682,6 +19908,94 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2768ece9ac04784f933bfd14f22af38, type: 3}
+--- !u!1001 &965472299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1977134545}
+    m_Modifications:
+    - target: {fileID: 335133863216714811, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_Name
+      value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.20801175
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.20801175
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.20801175
+      objectReference: {fileID: 0}
+    - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 53.08191
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 30.953619
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -27.39016
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 808201dc4847a4b42be7521853fefa92, type: 3}
 --- !u!4 &971433848 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2889540061594824501, guid: 278e0122f0a55274c8e94a88d0c53a44,
@@ -19783,58 +20097,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 940239404}
   m_SourcePrefab: {fileID: 100100000, guid: f514c4c5c0830a744ae01ffb060b3274, type: 3}
---- !u!1 &979170384 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3556211400506736276, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 7591467144381165658}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &979170391
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979170384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90d6e15461418574ea88315cbcc7ffbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SolvedPuzzled:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 979170392}
-        m_TargetAssemblyTypeName: DoorScript, Assembly-CSharp
-        m_MethodName: OpenDoor
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  targets:
-  - {fileID: 83822251}
-  - {fileID: 1644889542}
-  numOfTargetsHit: 0
---- !u!114 &979170392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 979170384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ec7a0b3a7195ab8469af36a7cdd5cd61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  particles: {fileID: 1751847467}
-  heightOfDoorOpening: -6
-  speed: 10
 --- !u!1001 &981442812
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20430,11 +20692,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1005362061}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1001 &1008194410
 PrefabInstance:
@@ -20768,11 +21043,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1038908451}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!4 &1040084179 stripped
 Transform:
@@ -21397,11 +21685,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1071208700}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1 &1075169990
 GameObject:
@@ -22996,11 +23297,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1151039268}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1001 &1159638407
 PrefabInstance:
@@ -23144,11 +23458,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1159638408}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1001 &1170476112
 PrefabInstance:
@@ -24963,11 +25290,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 0
 --- !u!4 &1311906677 stripped
 Transform:
@@ -26672,11 +27024,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1409009919}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!4 &1411228153 stripped
 Transform:
@@ -26704,11 +27069,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1411677955}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!4 &1425295198 stripped
 Transform:
@@ -27204,6 +27582,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
@@ -27281,11 +27664,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459617797}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!4 &1468075240 stripped
 Transform:
@@ -27465,6 +27861,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5091841317216394820, guid: a2768ece9ac04784f933bfd14f22af38,
     type: 3}
   m_PrefabInstance: {fileID: 2037048862}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1487892119 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2218662918798534370, guid: 808201dc4847a4b42be7521853fefa92,
+    type: 3}
+  m_PrefabInstance: {fileID: 965472299}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1488184909 stripped
 Transform:
@@ -28828,11 +29230,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1614189688}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!4 &1621367687 stripped
 Transform:
@@ -29167,11 +29582,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1636447621}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!4 &1638627026 stripped
 Transform:
@@ -29531,11 +29959,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 854790479}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1 &1648052839
 GameObject:
@@ -31250,12 +31703,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 986320337}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1751847467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4730663015037971646, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 7591467144381165658}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1759970428
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32146,11 +32593,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1824238806}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 1
 --- !u!1 &1856665709
 GameObject:
@@ -32337,11 +32797,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 402235410}
+        m_TargetAssemblyTypeName: MultiTargetPuzzle, Assembly-CSharp
+        m_MethodName: AddPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
       m_Calls: []
   isHit: 0
+  hitMaterial: {fileID: 0}
   arrowRequired: 0
 --- !u!1 &1897547316
 GameObject:
@@ -34611,27 +35096,73 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 757070617}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2063966367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5857499273517565663, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-    type: 3}
-  m_PrefabInstance: {fileID: 7591467144381165658}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2063966372
+--- !u!114 &2058264777 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 3966620331075535315, guid: 808201dc4847a4b42be7521853fefa92,
+    type: 3}
+  m_PrefabInstance: {fileID: 965472299}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2063966367}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ec7a0b3a7195ab8469af36a7cdd5cd61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  particles: {fileID: 721013559}
-  heightOfDoorOpening: -6
-  speed: 10
+--- !u!1 &2077009823 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4918275422343941089, guid: 808201dc4847a4b42be7521853fefa92,
+    type: 3}
+  m_PrefabInstance: {fileID: 320524665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2077009825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077009823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90d6e15461418574ea88315cbcc7ffbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SolvedPuzzled:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2077009826}
+        m_TargetAssemblyTypeName: DoorScript, Assembly-CSharp
+        m_MethodName: OpenDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  targets:
+  - {fileID: 83822251}
+  - {fileID: 1644889542}
+  numOfTargetsHit: 0
+--- !u!114 &2077009826 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3966620331075535315, guid: 808201dc4847a4b42be7521853fefa92,
+    type: 3}
+  m_PrefabInstance: {fileID: 320524665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077009823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7a0b3a7195ab8469af36a7cdd5cd61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &2078183078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8665401475534665438, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+    type: 3}
+  m_PrefabInstance: {fileID: 7591467144381165658}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2078906791
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36129,6 +36660,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 3556211400506736276, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3684079116293338978, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -36218,6 +36754,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444340668585965544, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4444340668585965544, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: doorToMove
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4484363556960677631, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
@@ -36327,6 +36873,11 @@ PrefabInstance:
     - target: {fileID: 5539782341309846939, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5857499273517565663, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6087892789041385304, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
@@ -36605,7 +37156,10 @@ PrefabInstance:
     - {fileID: 5539782341309846939, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
     - {fileID: 137626958104148526, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
     - {fileID: 1131373442332245334, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
-    m_RemovedGameObjects: []
+    - {fileID: 3414097041729313055, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
+    m_RemovedGameObjects:
+    - {fileID: 5857499273517565663, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
+    - {fileID: 3556211400506736276, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
@@ -36613,8 +37167,16 @@ PrefabInstance:
       addedObject: {fileID: 1086406743}
     - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
+      insertIndex: 7
+      addedObject: {fileID: 38188745}
+    - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
       insertIndex: 11
       addedObject: {fileID: 806547001}
+    - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      insertIndex: 13
+      addedObject: {fileID: 1487892119}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6127015765039459218, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
@@ -36624,14 +37186,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 423500852}
-    - targetCorrespondingSourceObject: {fileID: 3556211400506736276, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 979170392}
-    - targetCorrespondingSourceObject: {fileID: 3556211400506736276, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 979170391}
     - targetCorrespondingSourceObject: {fileID: 7522276959741600782, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
       insertIndex: -1
@@ -36680,10 +37234,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 535789646}
-    - targetCorrespondingSourceObject: {fileID: 5857499273517565663, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2063966372}
     - targetCorrespondingSourceObject: {fileID: 4763807104033005309, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
       insertIndex: -1
