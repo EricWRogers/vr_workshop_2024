@@ -70263,7 +70263,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 944343814}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -111301,7 +111301,7 @@ PrefabInstance:
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
@@ -116734,7 +116734,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1725266509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144264,6 +144264,74 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7907039185305221768}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7992607934785638309
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -141.99
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470980752065976484, guid: 94b6f31d7e5abb97f8397953f6956d0d,
+        type: 3}
+      propertyPath: m_Name
+      value: Minecraft Portal
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 94b6f31d7e5abb97f8397953f6956d0d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -144307,6 +144375,7 @@ SceneRoots:
   - {fileID: 1074679010}
   - {fileID: 1010112859}
   - {fileID: 591310732}
+  - {fileID: 7992607934785638309}
   - {fileID: 944343818}
   - {fileID: 734310936}
   - {fileID: 425403553}

@@ -7,7 +7,7 @@ public class ArrowSwitch : MonoBehaviour
 {
     public ArrowTypes arrowTypesScript;
     private InputDevice rightController;
-    private bool gripPressed = false;
+    private bool triggerPressed = false;
 
     void Start()
     {
@@ -29,20 +29,20 @@ public class ArrowSwitch : MonoBehaviour
     {
         if (rightController.isValid)
         {
-            bool gripButtonValue = false;
+            bool triggerButtonValue = false;
 
             // Check if the right grip button is pressed
-            if (rightController.TryGetFeatureValue(CommonUsages.gripButton, out gripButtonValue) && gripButtonValue)
+            if (rightController.TryGetFeatureValue(CommonUsages.gripButton, out triggerButtonValue) && triggerButtonValue)
             {
-                if (!gripPressed)
+                if (!triggerPressed)
                 {
-                    gripPressed = true;
+                    triggerPressed = true;
                     SwitchArrowType();
                 }
             }
             else
             {
-                gripPressed = false;
+                triggerPressed = false;
             }
         }
     }
