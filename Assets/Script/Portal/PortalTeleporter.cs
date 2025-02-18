@@ -28,6 +28,7 @@ public class PortalTeleporter : MonoBehaviour
                 player.position = reciver.position + positionOffset;
 
                 playerIsOverlapping = false;
+                
 
             }
         }
