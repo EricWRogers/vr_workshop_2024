@@ -91,7 +91,7 @@ public class AbstractArrow : MonoBehaviour
                     if (hit.transform.CompareTag("Target"))
                     {
                         
-                        AudioManager.instance.Play("Target_Hit");
+                        AudioManager.instance.Play("Target_hit");
                         //calls the targets event when hit with respective arrow
 
                         //normal
