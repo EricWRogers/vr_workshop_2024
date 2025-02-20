@@ -9091,7 +9091,7 @@ MonoBehaviour:
   OnPress:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1715458179}
         m_TargetAssemblyTypeName: Quiver, Assembly-CSharp
         m_MethodName: DistanceCheck
         m_Mode: 1
@@ -9106,7 +9106,7 @@ MonoBehaviour:
   OnRelease:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 275474233}
         m_TargetAssemblyTypeName: SpawnArrowVR, Assembly-CSharp
         m_MethodName: ReleaseArrow
         m_Mode: 1
@@ -31444,6 +31444,18 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed1a0ae97a8922644b8205d35ab2ba17, type: 3}
+--- !u!114 &1715458179 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 771683784010345062, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+    type: 3}
+  m_PrefabInstance: {fileID: 204203871}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d7371f4684075940b507676699c7b5e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1725124126
 GameObject:
   m_ObjectHideFlags: 0
