@@ -11,7 +11,6 @@ public class IceBlock : MonoBehaviour
     void Start()
     {
         initialSize = Vector3.zero;
-        transform.localScale = initialSize;
     }
 
     public void StartGrowing()
