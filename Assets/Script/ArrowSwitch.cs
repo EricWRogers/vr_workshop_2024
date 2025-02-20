@@ -6,7 +6,7 @@ using UnityEngine.XR;
 public class ArrowSwitch : MonoBehaviour
 {
     public ArrowTypes arrowTypesScript; // Reference to ArrowTypes script
-    public Transform wristIndicator; // 🔹 CHANGE THIS TO YOUR FINAL WRIST OBJECT NAME 🔹
+    public Transform wristIndicator; //  CHANGE THIS TO YOUR FINAL WRIST OBJECT NAME 
 
     private InputDevice rightController;
     private bool triggerPressed = false;
