@@ -14,6 +14,9 @@ public class AbstractArrow : MonoBehaviour
     public bool hasBeenFired = false;
     public LayerMask mask;
     public ArrowTypes.arrow_Types arrowType;
+
+    public MeshRenderer arrowTip;
+
     public GameObject iceBlockPrefab;
 
     [HideInInspector]
@@ -56,6 +59,27 @@ public class AbstractArrow : MonoBehaviour
             //transform.rotation = attachedObject.transform.rotation;
         }
 
+        if (arrowType == ArrowTypes.arrow_Types.Normal)
+        {
+            NormalArrow();
+        }
+        if (arrowType == ArrowTypes.arrow_Types.Fire)
+        {
+            FireArrow();
+        }
+        if (arrowType == ArrowTypes.arrow_Types.Ice)
+        {
+            IceArrow();
+        }
+        if (arrowType == ArrowTypes.arrow_Types.Wind)
+        {
+            WindArrow();
+        }
+        if (arrowType == ArrowTypes.arrow_Types.Earth)
+        {
+            EarthArrow();
+        }
+
     }
 
     private void FixedUpdate()
@@ -87,6 +111,7 @@ public class AbstractArrow : MonoBehaviour
                     m_TerrainImpactEffect.SetActive(true);
                     transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
                     m_rb.constraints = RigidbodyConstraints.FreezeAll;
+                    transform.SetParent(hitTransform);
                     TheTargetScript target = hitTransform.GetComponent<TheTargetScript>();
                     if (hit.transform.CompareTag("Target"))
                     {
@@ -98,22 +123,18 @@ public class AbstractArrow : MonoBehaviour
                         if(arrowType == ArrowTypes.arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
                         {
                             Debug.Log("normal");
-                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //fire
                         else if (arrowType == ArrowTypes.arrow_Types.Fire && target.arrowRequired == TheTargetScript.arrow_Types.Fire)
                         {
                             Debug.Log("fire");
-                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //ice
                         else if(arrowType == ArrowTypes.arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
                         {
                             Debug.Log("ice");
-                            Debug.Log("Spawning Ice Block");
-                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                             SpawnIceBlock(hit.point, hit.normal);
                         }
@@ -121,14 +142,12 @@ public class AbstractArrow : MonoBehaviour
                         else if(arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
                         {   
                             Debug.Log("earth");
-                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //wind
                         else if(arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
                         {
                             Debug.Log("wind");
-                            //Attach(hitTransform.gameObject);
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                     }
@@ -185,27 +204,27 @@ public class AbstractArrow : MonoBehaviour
 
     public void NormalArrow()
     {
-        
+        arrowTip.material.color = Color.grey;
     }
 
     public void FireArrow()
     {
-
+        arrowTip.material.color = Color.red;
     }
 
     public void IceArrow()
     {
-
+        arrowTip.material.color = Color.blue;
     }
 
     public void EarthArrow()
     {
-
+        arrowTip.material.color = Color.black;
     }
 
     public void WindArrow()
     {
-
+        arrowTip.material.color = Color.white;
     }
     public void Destroy()
     {
