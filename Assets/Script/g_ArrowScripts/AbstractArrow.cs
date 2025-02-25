@@ -15,7 +15,6 @@ public class AbstractArrow : MonoBehaviour
     public LayerMask mask;
     public ArrowTypes.arrow_Types arrowType;
 
-    public MeshRenderer arrowTip;
 
     public GameObject iceBlockPrefab;
 
@@ -107,6 +106,7 @@ public class AbstractArrow : MonoBehaviour
                 }
                 else if(!hitTransform.CompareTag("Bow") && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
                 {
+                    trailEffect.SetActive(false);
                     m_firstContact = true;
                     m_TerrainImpactEffect.SetActive(true);
                     transform.position = new Vector3(hit.point.x, hit.point.y, hit.point.z);
@@ -204,27 +204,27 @@ public class AbstractArrow : MonoBehaviour
 
     public void NormalArrow()
     {
-        arrowTip.material.color = Color.grey;
+        
     }
 
     public void FireArrow()
     {
-        arrowTip.material.color = Color.red;
+        
     }
 
     public void IceArrow()
     {
-        arrowTip.material.color = Color.blue;
+        
     }
 
     public void EarthArrow()
     {
-        arrowTip.material.color = Color.black;
+        
     }
 
     public void WindArrow()
     {
-        arrowTip.material.color = Color.white;
+        
     }
     public void Destroy()
     {
