@@ -80,6 +80,24 @@ public class ArrowSwitch : MonoBehaviour
         }
     }
 
+       public void LeftHandleInput()
+    {
+            
+                SwitchArrowType(-1); // Previous arrow type
+                RotateWristIndicator(-30f); // Rotate UI Left
+            
+    }
+
+          public  void RightHandleInput()
+    {
+            
+                SwitchArrowType(1); // Next arrow type
+                //RotateWristIndicator(-30f); // Rotate UI Right
+            
+    }
+
+
+
     void SwitchArrowType(int direction)
     {
         if (arrowTypesScript != null)
