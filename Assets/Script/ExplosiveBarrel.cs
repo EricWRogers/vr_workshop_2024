@@ -28,7 +28,7 @@ public class ExplosiveBarrel : MonoBehaviour
                 Debug.Log(objectsToExplode[i].name);
                 objectsToExplode[i].GetComponent<TheTargetScript>().Hit();
             }
-            //AudioManager.instance.PlayAtPosition("Explosion_sound", transform.position);
+            AudioManager.instance.PlayAtPosition("Explosion_sound", transform.position);
             objectsToExplode[i].gameObject.SetActive(false);
 
         }
