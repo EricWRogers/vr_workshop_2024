@@ -15,6 +15,7 @@ public class ArrowSwitch : MonoBehaviour
 
     void Start()
     {
+        return;
         InitializeRightController();
 
         if (wristIndicator != null)
@@ -29,13 +30,13 @@ public class ArrowSwitch : MonoBehaviour
 
     void Update()
     {
-        if (!rightController.isValid)
+        /*if (!rightController.isValid)
         {
             InitializeRightController(); // Reinitialize if controller disconnects
             return;
         }
 
-        HandleInput();
+        HandleInput();*/
     }
 
     void InitializeRightController()
@@ -80,19 +81,19 @@ public class ArrowSwitch : MonoBehaviour
         }
     }
 
-       public void LeftHandleInput()
+    public void LeftHandleInput()
     {
             
-                SwitchArrowType(-1); // Previous arrow type
-                RotateWristIndicator(-30f); // Rotate UI Left
+        SwitchArrowType(-1); // Previous arrow type
+        //RotateWristIndicator(-30f); // Rotate UI Left
             
     }
 
-          public  void RightHandleInput()
+        public  void RightHandleInput()
     {
             
-                SwitchArrowType(1); // Next arrow type
-                //RotateWristIndicator(-30f); // Rotate UI Right
+        SwitchArrowType(1); // Next arrow type
+        //RotateWristIndicator(-30f); // Rotate UI Right
             
     }
 
