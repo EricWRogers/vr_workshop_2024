@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour
         player.GetComponent<SpawnArrowVR>().leftController = leftController;
         player.GetComponent<SpawnBow>().rightController = rightController;
         player.GetComponent<SpawnBow>().leftController = leftController;
+        player.GetComponent<SpawnKnife>().rightController = rightController;
+        player.GetComponent<SpawnKnife>().leftController = leftController;
         quiver = player.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
         quiver.rightController = rightController;
         quiver.leftController = leftController;

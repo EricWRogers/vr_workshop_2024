@@ -15,6 +15,7 @@ public class AbstractArrow : MonoBehaviour
     public LayerMask mask;
     public ArrowTypes.arrow_Types arrowType;
 
+    public GameObject fireEffects;
 
     public GameObject iceBlockPrefab;
 
@@ -58,6 +59,12 @@ public class AbstractArrow : MonoBehaviour
             //transform.rotation = attachedObject.transform.rotation;
         }
 
+        
+
+    }
+
+    private void FixedUpdate()
+    {
         if (arrowType == ArrowTypes.arrow_Types.Normal)
         {
             NormalArrow();
@@ -78,11 +85,6 @@ public class AbstractArrow : MonoBehaviour
         {
             EarthArrow();
         }
-
-    }
-
-    private void FixedUpdate()
-    {
         //Gets front of arrow and has regular impact follow
         Vector3 predictedPos = new Vector3(m_TerrainImpactEffect.transform.position.x + m_rb.velocity.x * Time.deltaTime, m_TerrainImpactEffect.transform.position.y + m_rb.velocity.y * Time.deltaTime, m_TerrainImpactEffect.transform.position.z + m_rb.velocity.z * Time.deltaTime);
         //Linecast that gets where the arrow will shoot
@@ -209,7 +211,7 @@ public class AbstractArrow : MonoBehaviour
 
     public void FireArrow()
     {
-        
+        fireEffects.SetActive(true);
     }
 
     public void IceArrow()

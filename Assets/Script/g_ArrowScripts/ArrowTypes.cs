@@ -11,7 +11,15 @@ public class ArrowTypes : MonoBehaviour
         public void SwitchArrowType()
     {
         // Cycle through enum values
-        typesOfArrow = (arrow_Types)(((int)typesOfArrow + 1) % System.Enum.GetValues(typeof(arrow_Types)).Length);
+        //typesOfArrow = (arrow_Types)(((int)typesOfArrow + 1) % System.Enum.GetValues(typeof(arrow_Types)).Length);
+        if (typesOfArrow == ArrowTypes.arrow_Types.Normal)
+        {
+            typesOfArrow = ArrowTypes.arrow_Types.Fire;
+        }
+        else if (typesOfArrow == ArrowTypes.arrow_Types.Fire)
+        {
+            typesOfArrow = ArrowTypes.arrow_Types.Normal;
+        }
         Debug.Log("Switched Arrow Type to: " + typesOfArrow);
     }
     // Start is called before the first frame update
