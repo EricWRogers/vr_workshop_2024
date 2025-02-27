@@ -27306,6 +27306,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 204203873}
+  - {fileID: 2602414636910544834}
   m_Father: {fileID: 504625569}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1426749324
@@ -36780,6 +36781,39 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!4 &2602414636910544834
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411040204870704504}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.043071818, z: -0, w: 0.999072}
+  m_LocalPosition: {x: -0.196, y: -0.668, z: 0.076}
+  m_LocalScale: {x: 0.050000064, y: 0.05, z: 0.050000064}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 1426749323}
+  m_LocalEulerAnglesHint: {x: 0, y: -4.937, z: 0}
+--- !u!1 &3411040204870704504
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2602414636910544834}
+  - component: {fileID: 8099159819183326163}
+  - component: {fileID: 5955313561033327043}
+  m_Layer: 7
+  m_Name: KnifeBelt
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!33 &3469287837761634619
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -36788,6 +36822,27 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132147844043812}
   m_Mesh: {fileID: 6969276327395207880, guid: b33ca20d07a4c9f438af13664ead71b5, type: 3}
+--- !u!65 &5955313561033327043
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411040204870704504}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 31.050142, y: 48.363003, z: 8.232978}
+  m_Center: {x: 1.3700016, y: -13.737152, z: -2.9549747}
 --- !u!1001 &7591467144381165658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37491,6 +37546,33 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1411677961}
   m_SourcePrefab: {fileID: 100100000, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
+--- !u!54 &8099159819183326163
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3411040204870704504}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
