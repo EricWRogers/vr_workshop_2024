@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
     private GameObject player;
     private Quiver quiver;
+    private KnifeBelt knifebelt;
     private Vector3 rightQuiverRotation = new Vector3(-60f, 90f, -90f);
     private Vector3 leftQuiverRotation = new Vector3(-120f, 90f, -90f);
     public bool rightHandMode = true;
@@ -51,6 +52,9 @@ public class GameManager : MonoBehaviour
         quiver = player.transform.GetChild(0).transform.GetChild(0).transform.GetChild(0).GetComponent<Quiver>();
         quiver.rightController = rightController;
         quiver.leftController = leftController;
+        knifebelt = player.transform.GetChild(0).transform.GetChild(0).transform.GetChild(1).GetComponent<KnifeBelt>();
+        knifebelt.rightController = rightController;
+        knifebelt.leftController = leftController;
 
         if (!rightHandMode)
         {

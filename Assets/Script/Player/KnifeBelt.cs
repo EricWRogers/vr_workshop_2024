@@ -8,21 +8,21 @@ public class KnifeBelt : MonoBehaviour
     public GameObject rightController;
     [HideInInspector]
     public GameObject leftController;
-    private SpawnKnife player;
+    private SpawnKnife spawnKnife;
     public bool canGrabKnife = false;
 
     private void Start()
     {
-        player = FindObjectOfType<SpawnKnife>().GetComponent<SpawnKnife>();
+        spawnKnife = FindObjectOfType<SpawnKnife>().GetComponent<SpawnKnife>();
     }
 
     public void DistanceCheck()
     {
-        if (player != null)
+        if (spawnKnife != null)
         {
             if (canGrabKnife)
             {
-                player.SpawnAKnife();
+                spawnKnife.SpawnAKnife();
             }
         }
     }
@@ -33,7 +33,7 @@ public class KnifeBelt : MonoBehaviour
         {
             if (other.gameObject == rightController.transform.GetChild(0).transform.GetChild(0).gameObject)
             {
-                if (!player.knifeSpawned)
+                if (!spawnKnife.knifeSpawned)
                 {
                     canGrabKnife = true;
                 }
