@@ -8,19 +8,17 @@ public class FireUpdate : MonoBehaviour
    private float magnatude;
 
    public List<ParticleSystem> fire;
-    void Start()
-    {
-        
-    }
 
     void FixedUpdate()
     {  
         magnatude = (transform.position - lasPos).magnitude;
+        Debug.Log(magnatude);
         if (magnatude > 0){
             foreach (ParticleSystem _fire in fire){
                 var emission = _fire.emission;
-                emission.rateOverTime = magnatude * 50;
+                emission.rateOverTime = magnatude * 1000;
             }
+            magnatude = 0;
         }
         else {
             foreach (ParticleSystem _fire in fire){
@@ -28,7 +26,7 @@ public class FireUpdate : MonoBehaviour
                 emission.rateOverTime = 10;
             }
         }
-
+        lasPos = transform.position;
     
     }
 
