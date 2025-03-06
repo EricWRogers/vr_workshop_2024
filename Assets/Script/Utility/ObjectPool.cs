@@ -14,9 +14,7 @@ public class ObjectPool : MonoBehaviour
         for (int i = 0; i < amountToPool; i++)
         {
             tmp = Instantiate(objectToPool);
-            Rigidbody rigidbody = tmp.GetComponent<Rigidbody>() ? tmp.GetComponent<Rigidbody>() : tmp.AddComponent<Rigidbody>();
-            rigidbody.useGravity = false;
-            rigidbody.isKinematic = true;
+
             tmp.SetActive(false);
             pooledObjects.Add(tmp);
         }
