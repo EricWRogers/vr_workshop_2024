@@ -73,6 +73,10 @@ public class AbstractArrow : MonoBehaviour
         {
             FireArrow();
         }
+        else
+        {
+            fireEffects.SetActive(false);
+        }
         if (arrowType == ArrowTypes.arrow_Types.Ice)
         {
             IceArrow();
