@@ -36,13 +36,12 @@ public class ThrowingKnife : MonoBehaviour
     {
         if (Physics.SphereCast(new Vector3(transform.position.x + checkerXOffset, transform.position.y + checkerYOffset, transform.position.z + checkerZOffset), checkerRadius, transform.up , out hit, checkerDistance, layerMask))
         {
-            return;
+            Debug.Log(hit.collider.gameObject.name);
         }
         else
         {
             if (curThrowDistance >= maxThrowDistance)
             {
-                return;
             }
             else
             {
