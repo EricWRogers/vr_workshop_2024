@@ -314,7 +314,7 @@ public class RopeController : MonoBehaviour
 
             RopeSection bottomSection = allRopeSections[i - 1];
 
-            //The distance between the sections
+            //The checkerDistance between the sections
             float dist = (topSection.pos - bottomSection.pos).magnitude;
 
             //What's the stretch/compression

@@ -22,11 +22,11 @@ public class Sound
     [Range(0f, 1.1f)]
     [Tooltip("The amount by which the signal from the AudioSource will be mixed into the global reverb associated with the Reverb Zones.")]
     public float revebZoneMix = 1f;
-    [Tooltip("(Logarithmic rolloff) MaxDistance is the distance a sound stops attenuating at.")]
+    [Tooltip("(Logarithmic rolloff) MaxDistance is the checkerDistance a sound stops attenuating at.")]
     public float maxDistance = float.PositiveInfinity;
-    [Tooltip("Within the Min distance the AudioSource will cease to grow louder in volume.")]
+    [Tooltip("Within the Min checkerDistance the AudioSource will cease to grow louder in volume.")]
     public float minDistance = 0f;
-    [Tooltip("Determines the distance rolloff for the volume of 3D sounds")]
+    [Tooltip("Determines the checkerDistance rolloff for the volume of 3D sounds")]
     public AudioRolloffMode rolloffMode = AudioRolloffMode.Linear;
     [Range (0f, 5f)]
     [Tooltip("The higher this number, the more frequency change will happen based on the audio's relative motion to those hearing it")]

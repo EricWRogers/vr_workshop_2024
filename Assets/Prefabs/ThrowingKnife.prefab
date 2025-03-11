@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9163421264439826716}
   - component: {fileID: 5093521081291179383}
   - component: {fileID: 8486918675951901324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: knife1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,11 +93,11 @@ GameObject:
   m_Component:
   - component: {fileID: 3619844925660009716}
   - component: {fileID: 8662365340117363526}
-  - component: {fileID: 6053814915632253563}
   - component: {fileID: 7261664459586685279}
   - component: {fileID: 8849399985473941150}
   - component: {fileID: 6813238123988650305}
-  m_Layer: 0
+  - component: {fileID: 5952827693080706657}
+  m_Layer: 9
   m_Name: ThrowingKnife
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,29 +148,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!136 &6053814915632253563
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3230315994994161681}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 1, z: 0.13}
 --- !u!114 &7261664459586685279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,16 +309,29 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 1
-  speed: 10
-  lifeTime: 1000
-  destroyOnImpact: 0
+  speed: 20
+  lifeTime: 10
+  destroyOnImpact: 1
   hitTarget:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5952827693080706657}
+        m_TargetAssemblyTypeName: ThrowingKnife, Assembly-CSharp
+        m_MethodName: CheckToTeleport
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   mask:
     serializedVersion: 2
-    m_Bits: 1087
-  tags: []
+    m_Bits: 1
+  tags:
+  - Teleportable
 --- !u!114 &6813238123988650305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -361,6 +351,29 @@ MonoBehaviour:
   autoRestart: 0
   countDownTime: 1
   timeScale: 1
+--- !u!114 &5952827693080706657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3230315994994161681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5774000737febd74e8d3f1192aca1601, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  checkerYOffset: -2.4
+  checkerXOffset: 0
+  checkerZOffset: -0.25
+  checkerRadius: 0.25
+  checkerDistance: 4
+  maxThrowDistance: 5
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  canTeleport: 0
 --- !u!1 &5564570065586331283
 GameObject:
   m_ObjectHideFlags: 0
@@ -385,10 +398,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5564570065586331283}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: 0.13052616, y: 0, z: 0, w: 0.9914449}
+  m_LocalPosition: {x: 0, y: 0.05, z: 0.091}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3619844925660009716}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 15, y: 0, z: 0}

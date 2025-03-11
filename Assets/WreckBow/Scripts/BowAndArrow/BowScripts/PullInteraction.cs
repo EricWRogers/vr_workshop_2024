@@ -4,10 +4,10 @@ using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.Events;
 
 /// <summary>
-/// Checks for a "grab"(push a button like the trigger button) in a trigger collider and tracks the movement of your hand to "pull" in a direction and for a distance.
+/// Checks for a "grab"(push a button like the trigger button) in a trigger collider and tracks the movement of your hand to "pull" in a direction and for a checkerDistance.
 /// I made it to pull a bowstring here, but could be used to pull open a menu, move a joystick, pull a rope, scale objects, even a pull to move locomotion system if the trigger was placed around the player
 /// Has exposed events for entering and exiting the triggerCollider, starting (must be in trigger collider) and releasing the grab. 
-/// Also exposes event that fires a normalised float each frame of the %distance between the initial grab and the new position of the pullTransform.
+/// Also exposes event that fires a normalised float each frame of the %checkerDistance between the initial grab and the new position of the pullTransform.
 /// </summary>
 public class PullInteraction : MonoBehaviour
 {
