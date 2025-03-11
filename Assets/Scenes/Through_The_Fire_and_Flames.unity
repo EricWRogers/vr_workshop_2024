@@ -8706,10 +8706,8 @@ GameObject:
   - component: {fileID: 275474234}
   - component: {fileID: 275474247}
   - component: {fileID: 275474233}
-  - component: {fileID: 275474232}
   - component: {fileID: 275474246}
   - component: {fileID: 275474248}
-  - component: {fileID: 275474250}
   - component: {fileID: 275474249}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
@@ -8718,38 +8716,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &275474232
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275474231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7623a58f1db09408f0a2ef6f5e739b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deviceCharacteristics: 576
-  button: 0
-  OnPress:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 275474249}
-        m_TargetAssemblyTypeName: ArrowSwitch, Assembly-CSharp
-        m_MethodName: RightHandleInput
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnRelease:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &275474233
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9142,28 +9108,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc482469b8b405440b8215344362ac1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  arrowTypesScript: {fileID: 275474247}
-  wristIndicator: {fileID: 56343857}
---- !u!114 &275474250
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 275474231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c7623a58f1db09408f0a2ef6f5e739b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  deviceCharacteristics: 320
+  rightControllerCharacteristics: 512
+  leftControllerCharacteristics: 256
   button: 0
-  OnPress:
+  OnNextArrow:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 275474249}
-        m_TargetAssemblyTypeName: ArrowSwitch, Assembly-CSharp
-        m_MethodName: LeftHandleInput
+      - m_Target: {fileID: 275474247}
+        m_TargetAssemblyTypeName: ArrowTypes, Assembly-CSharp
+        m_MethodName: SwitchToNextArrow
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9173,9 +9126,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnRelease:
+  OnPreviousArrow:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275474247}
+        m_TargetAssemblyTypeName: ArrowTypes, Assembly-CSharp
+        m_MethodName: SwitchToPreviousArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  arrowTypes: {fileID: 275474247}
 --- !u!1 &277460661
 GameObject:
   m_ObjectHideFlags: 0
