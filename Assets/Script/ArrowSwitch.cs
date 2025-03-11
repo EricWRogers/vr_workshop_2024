@@ -1,122 +1,73 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.XR;
 
-public class ArrowSwitch : MonoBehaviour
+public class ArrowSwitchVR : MonoBehaviour
 {
-    public ArrowTypes arrowTypesScript; // Reference to ArrowTypes script
-    public Transform wristIndicator; //  CHANGE THIS TO YOUR FINAL WRIST OBJECT NAME 
+    static readonly Dictionary<string, InputFeatureUsage<bool>> availableButtons = new Dictionary<string, InputFeatureUsage<bool>>
+    {
+        {"triggerButton", CommonUsages.triggerButton },
+    };
 
-    private InputDevice rightController;
-    private bool triggerPressed = false;
-    private Vector2 joystickInput;
-    private Quaternion initialRotation;
+    public enum ButtonOption
+    {
+        triggerButton
+    };
+
+    [Header("Controller Settings")]
+    public InputDeviceCharacteristics rightControllerCharacteristics = InputDeviceCharacteristics.Right;
+    public InputDeviceCharacteristics leftControllerCharacteristics = InputDeviceCharacteristics.Left;
+    public ButtonOption button = ButtonOption.triggerButton;
+
+    [Header("Arrow Switching Events")]
+    public UnityEvent OnNextArrow;
+    public UnityEvent OnPreviousArrow;
+
+    [Header("Arrow Types Reference")]
+    public ArrowTypes arrowTypes; // Reference to ArrowTypes script
+
+    private bool rightTriggerPressed = false;
+    private bool leftTriggerPressed = false;
 
     void Start()
     {
-        return;
-        InitializeRightController();
-
-        if (wristIndicator != null)
+        if (arrowTypes == null)
         {
-            initialRotation = wristIndicator.localRotation; // Store initial wrist rotation
-        }
-        else
-        {
-            Debug.LogError("Wrist Indicator not assigned!"); // Warn if not set
+            arrowTypes = FindObjectOfType<ArrowTypes>();
+            if (arrowTypes == null)
+            {
+                Debug.LogError("ArrowTypes script not found!");
+            }
         }
     }
 
     void Update()
     {
-        /*if (!rightController.isValid)
-        {
-            InitializeRightController(); // Reinitialize if controller disconnects
-            return;
-        }
-
-        HandleInput();*/
+        CheckControllerInput(rightControllerCharacteristics, ref rightTriggerPressed, arrowTypes.SwitchToNextArrow);
+        CheckControllerInput(leftControllerCharacteristics, ref leftTriggerPressed, arrowTypes.SwitchToPreviousArrow);
     }
 
-    void InitializeRightController()
+    void CheckControllerInput(InputDeviceCharacteristics deviceCharacteristics, ref bool isPressed, UnityAction action)
     {
         List<InputDevice> devices = new List<InputDevice>();
-        InputDevices.GetDevicesWithCharacteristics(InputDeviceCharacteristics.Right | InputDeviceCharacteristics.Controller, devices);
+        InputDevices.GetDevicesWithCharacteristics(deviceCharacteristics, devices);
 
-        if (devices.Count > 0)
+        foreach (var device in devices)
         {
-            rightController = devices[0];
-        }
-        else
-        {
-            Debug.LogError("Right controller not found!");
-        }
-    }
-
-    void HandleInput()
-    {
-        bool triggerButtonValue = false;
-
-        if (rightController.TryGetFeatureValue(CommonUsages.triggerButton, out triggerButtonValue) && triggerButtonValue)
-        {
-            rightController.TryGetFeatureValue(CommonUsages.primary2DAxis, out joystickInput);
-
-            if (joystickInput.x > 0.5f && !triggerPressed) // Right on joystick
+            if (device.TryGetFeatureValue(CommonUsages.triggerButton, out bool value) && value)
             {
-                triggerPressed = true;
-                SwitchArrowType(1); // Next arrow type
-                RotateWristIndicator(30f); // Rotate UI Right
+                if (!isPressed)
+                {
+                    isPressed = true;
+                    action.Invoke();
+                }
             }
-            else if (joystickInput.x < -0.5f && !triggerPressed) // Left on joystick
+            else
             {
-                triggerPressed = true;
-                SwitchArrowType(-1); // Previous arrow type
-                RotateWristIndicator(-30f); // Rotate UI Left
+                isPressed = false;
             }
-        }
-        else
-        {
-            triggerPressed = false;
-        }
-    }
-
-    public void LeftHandleInput()
-    {
-            
-        SwitchArrowType(-1); // Previous arrow type
-        //RotateWristIndicator(-30f); // Rotate UI Left
-            
-    }
-
-        public  void RightHandleInput()
-    {
-            
-        SwitchArrowType(1); // Next arrow type
-        //RotateWristIndicator(-30f); // Rotate UI Right
-            
-    }
-
-
-
-    void SwitchArrowType(int direction)
-    {
-        if (arrowTypesScript != null)
-        {
-            arrowTypesScript.SwitchArrowType();
-            Debug.Log("Switched to: " + arrowTypesScript.typesOfArrow);
-        }
-        else
-        {
-            Debug.LogError("ArrowTypes script not assigned!");
-        }
-    }
-
-    void RotateWristIndicator(float rotationAmount)
-    {
-        if (wristIndicator != null)
-        {
-            wristIndicator.localRotation *= Quaternion.Euler(0, rotationAmount, 0);
         }
     }
 }
