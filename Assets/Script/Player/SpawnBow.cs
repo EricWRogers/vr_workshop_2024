@@ -6,6 +6,9 @@ public class SpawnBow : MonoBehaviour
     [SerializeField]
     private GameObject objectToSpawn;
     [HideInInspector]
+
+    [SerializeField]
+    private GameObject indicatorPrefab;
     public GameObject leftController;
     [HideInInspector]
     public GameObject rightController;
@@ -28,6 +31,20 @@ public class SpawnBow : MonoBehaviour
         }
     }
 
+    private void SpawnIndicator()
+    {
+        if (bowReference == null || indicatorPrefab == null) return;
+
+        // Create indicator and parent it to the bow
+        GameObject indicator = Instantiate(indicatorPrefab, bowReference.transform);
+        indicator.transform.localPosition = new Vector3(0.2f, 0, 0); // Adjust placement
+        indicator.transform.localRotation = Quaternion.identity;
+
+        // Ensure the indicator updates with arrow type
+        ArrowIndicator arrowIndicator = indicator.AddComponent<ArrowIndicator>();
+        arrowIndicator.indicatorPrefab = indicatorPrefab;
+    }
+
     public void DestroyBow()
     {
         SpawnArrowVR player = leftController.transform.parent.transform.parent.GetComponent<SpawnArrowVR>();
@@ -39,7 +56,11 @@ public class SpawnBow : MonoBehaviour
             rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
         }
 
+        if (bowReference != null)
+        {
         Destroy(bowReference);
+        }
+        
         bowSpawned = false;
     }
 }
