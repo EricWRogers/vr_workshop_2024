@@ -71,7 +71,7 @@ public class AbstractArrow : MonoBehaviour
         }
         if (arrowType == ArrowTypes.arrow_Types.Fire)
         {
-            FireArrow();
+            fireEffects.SetActive(true);
         }
         else
         {
