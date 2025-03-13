@@ -5,8 +5,10 @@ public class ArrowIndicator : MonoBehaviour
     public Transform bowTransform; // Reference to the bow
     public GameObject indicatorPrefab; // Cube prefab
     public Material fireMaterial, iceMaterial, windMaterial, earthMaterial, normalMaterial; // Element materials
+    
     private GameObject indicatorCube;
     private ArrowTypes arrowTypes; // Reference to ArrowTypes script
+    private MeshRenderer indicatorRenderer;
 
     void Start()
     {
@@ -21,6 +23,10 @@ public class ArrowIndicator : MonoBehaviour
 
         // Spawn the indicator cube
         indicatorCube = Instantiate(indicatorPrefab, bowTransform.position + bowTransform.right * 0.2f, Quaternion.identity, bowTransform);
+        
+        // Cache MeshRenderer for performance
+        indicatorRenderer = indicatorCube.GetComponent<MeshRenderer>();
+
         UpdateIndicator();
     }
 
@@ -31,24 +37,24 @@ public class ArrowIndicator : MonoBehaviour
 
     void UpdateIndicator()
     {
-        if (indicatorCube == null || arrowTypes == null) return;
+        if (indicatorCube == null || arrowTypes == null || indicatorRenderer == null) return;
 
         switch (arrowTypes.typesOfArrow)
         {
             case ArrowTypes.arrow_Types.Fire:
-                indicatorCube.GetComponent<MeshRenderer>().material = fireMaterial;
+                indicatorRenderer.material = fireMaterial;
                 break;
             case ArrowTypes.arrow_Types.Ice:
-                indicatorCube.GetComponent<MeshRenderer>().material = iceMaterial;
+                indicatorRenderer.material = iceMaterial;
                 break;
             case ArrowTypes.arrow_Types.Wind:
-                indicatorCube.GetComponent<MeshRenderer>().material = windMaterial;
+                indicatorRenderer.material = windMaterial;
                 break;
             case ArrowTypes.arrow_Types.Earth:
-                indicatorCube.GetComponent<MeshRenderer>().material = earthMaterial;
+                indicatorRenderer.material = earthMaterial;
                 break;
             default:
-                indicatorCube.GetComponent<MeshRenderer>().material = normalMaterial;
+                indicatorRenderer.material = normalMaterial;
                 break;
         }
     }
