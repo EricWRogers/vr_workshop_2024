@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 16683250}
   m_Layer: 0
   m_Name: Entrance Wall Right
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -514,7 +514,7 @@ GameObject:
   - component: {fileID: 24427769}
   m_Layer: 0
   m_Name: Back Interior Wall Right
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -9377,7 +9377,7 @@ GameObject:
   - component: {fileID: 287730079}
   m_Layer: 0
   m_Name: Front Back Wall
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -9941,6 +9941,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 335133863216714811, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
         type: 3}
@@ -11561,7 +11566,7 @@ GameObject:
   - component: {fileID: 426562596}
   m_Layer: 0
   m_Name: Back Interior Floor
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -11841,7 +11846,7 @@ GameObject:
   - component: {fileID: 445195000}
   m_Layer: 0
   m_Name: Front Back Wall (1)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -12084,7 +12089,7 @@ GameObject:
   - component: {fileID: 456585740}
   m_Layer: 0
   m_Name: Next Level Back Wall
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -12259,7 +12264,7 @@ GameObject:
   - component: {fileID: 458157862}
   m_Layer: 0
   m_Name: Outdoor Floor
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -13139,7 +13144,7 @@ GameObject:
   - component: {fileID: 498235000}
   m_Layer: 0
   m_Name: Front Interior Cliff
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -15778,6 +15783,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2199086692705656371, guid: eb5b3d310d49b15428f1d4173729573b,
         type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199086692705656371, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -15875,6 +15885,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614746938867140251, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614746938867140251, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 7614746938867140251, guid: eb5b3d310d49b15428f1d4173729573b,
         type: 3}
@@ -16906,6 +16926,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17793,7 +17818,7 @@ GameObject:
   - component: {fileID: 904257485}
   m_Layer: 0
   m_Name: Exit Wall Door Right
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -18593,7 +18618,7 @@ GameObject:
   - component: {fileID: 934002874}
   m_Layer: 0
   m_Name: Exit Wall Door Right (1)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -18904,7 +18929,7 @@ GameObject:
   - component: {fileID: 939157514}
   m_Layer: 0
   m_Name: Entrance Floor
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -19079,7 +19104,7 @@ GameObject:
   - component: {fileID: 940143405}
   m_Layer: 0
   m_Name: Floor inbetween areas
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -19728,6 +19753,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -19985,6 +20015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 335133863216714811, guid: 808201dc4847a4b42be7521853fefa92,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 387565260234276150, guid: 808201dc4847a4b42be7521853fefa92,
         type: 3}
@@ -20406,7 +20441,7 @@ GameObject:
   - component: {fileID: 995792646}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -20701,6 +20736,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21028,6 +21068,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -21149,6 +21194,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpeedrunLeaderboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 3794906712218626665, guid: f02799c4bff3e714db87ea22974c772d,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 5713822942878991941, guid: f02799c4bff3e714db87ea22974c772d,
         type: 3}
@@ -21669,6 +21719,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -22980,7 +23035,7 @@ GameObject:
   - component: {fileID: 1143502126}
   m_Layer: 0
   m_Name: Front Left Wall
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -23350,6 +23405,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23510,6 +23570,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27089,6 +27154,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27741,6 +27811,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -28100,6 +28175,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2860562580030357286, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2860562580030357286, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
@@ -28115,8 +28195,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3018492220454996185, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3018492220454996185, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 3240483833003430107, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 3240483833003430107, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
@@ -28125,8 +28215,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3694180037417787384, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694180037417787384, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4520118036566068114, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 4520118036566068114, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
@@ -28135,8 +28235,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6539696413860390200, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6539696413860390200, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 6781125140767154791, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 6781125140767154791, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
@@ -28145,13 +28255,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7658751690448268181, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7658751690448268181, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7796186960764942570, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7796186960764942570, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121676379223369930, guid: 7fde002f5a6df0547aa273173d699652,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 9121676379223369930, guid: 7fde002f5a6df0547aa273173d699652,
         type: 3}
@@ -29307,6 +29432,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Target
       objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -29658,6 +29788,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31589,7 +31724,7 @@ GameObject:
   - component: {fileID: 1725124127}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -32154,7 +32289,7 @@ GameObject:
   - component: {fileID: 1770697934}
   m_Layer: 0
   m_Name: Front Right Wall
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -32471,7 +32606,7 @@ GameObject:
   - component: {fileID: 1802474436}
   m_Layer: 0
   m_Name: Front Interior Floor
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -32777,6 +32912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33591,7 +33731,7 @@ GameObject:
   - component: {fileID: 1925381935}
   m_Layer: 0
   m_Name: Wall Outside Left (1)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -33766,7 +33906,7 @@ GameObject:
   - component: {fileID: 1931727850}
   m_Layer: 0
   m_Name: Back Interior Wall Left
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -34046,7 +34186,7 @@ GameObject:
   - component: {fileID: 1940393911}
   m_Layer: 0
   m_Name: Wall Outside Left
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -36593,7 +36733,7 @@ GameObject:
   - component: {fileID: 2142893306}
   m_Layer: 0
   m_Name: Entrance Back Wall
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 1
@@ -36944,6 +37084,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 3850709939599799365, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: 3920943320114744038, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -37023,6 +37168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406235908082376272, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 4444340668585965544, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
@@ -37482,6 +37632,9 @@ PrefabInstance:
     m_RemovedGameObjects:
     - {fileID: 5857499273517565663, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
     - {fileID: 3556211400506736276, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
+    - {fileID: 7953737449555299324, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
+    - {fileID: 3477948755394168088, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
+    - {fileID: 6614121680304558852, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
@@ -37489,15 +37642,15 @@ PrefabInstance:
       addedObject: {fileID: 1086406743}
     - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
-      insertIndex: 7
+      insertIndex: 4
       addedObject: {fileID: 38188745}
     - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
-      insertIndex: 11
+      insertIndex: 8
       addedObject: {fileID: 806547001}
     - targetCorrespondingSourceObject: {fileID: 8898382637111421257, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
-      insertIndex: 13
+      insertIndex: 10
       addedObject: {fileID: 1487892119}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6127015765039459218, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
