@@ -13,7 +13,7 @@ public class FireUpdate : MonoBehaviour
     {  
         magnatude = (transform.position - lasPos).magnitude;
         Debug.Log(magnatude);
-        if (magnatude > 0){
+        if (magnatude > 0.01){
             foreach (ParticleSystem _fire in fire){
                 var emission = _fire.emission;
                 emission.rateOverTime = magnatude * 1000;
