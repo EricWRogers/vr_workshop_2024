@@ -8672,7 +8672,7 @@ GameObject:
   - component: {fileID: 127190204}
   m_Layer: 0
   m_Name: mountain (21)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8777,7 +8777,7 @@ GameObject:
   - component: {fileID: 128392867}
   m_Layer: 0
   m_Name: mountain (23)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16859,7 +16859,7 @@ GameObject:
   - component: {fileID: 196250831}
   m_Layer: 0
   m_Name: mountain (31)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -23020,7 +23020,7 @@ GameObject:
   - component: {fileID: 285206952}
   m_Layer: 0
   m_Name: ramp
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -83181,7 +83181,7 @@ GameObject:
   - component: {fileID: 1145368462}
   m_Layer: 0
   m_Name: Cube (1)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87181,7 +87181,7 @@ GameObject:
   - component: {fileID: 1215440057}
   m_Layer: 0
   m_Name: Cube (3)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112954,7 +112954,7 @@ GameObject:
   - component: {fileID: 1645348995}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125271,7 +125271,7 @@ GameObject:
   - component: {fileID: 1850238308}
   m_Layer: 0
   m_Name: Staicase
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126177,7 +126177,7 @@ GameObject:
   - component: {fileID: 1864551578}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -138463,6 +138463,16 @@ PrefabInstance:
     - target: {fileID: 156243619062990460, guid: eb5b3d310d49b15428f1d4173729573b,
         type: 3}
       propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 536077281913997871, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 574147413937823373, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
       value: Teleportable
       objectReference: {fileID: 0}
     - target: {fileID: 675757728980507846, guid: eb5b3d310d49b15428f1d4173729573b,
@@ -138534,6 +138544,176 @@ PrefabInstance:
         type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1163489931015989600, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1274067369474502927, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1473294712482218253, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1577642051205563747, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1762618581640235984, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1875421080523956653, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971469547536208339, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2199086692705656371, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2349108985695629298, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595104163508697783, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2647974851811850239, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806371755326622539, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3258544896595720786, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3267636362854066415, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3319522890906949489, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3320450066263469450, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669906698854912906, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4142266304856125546, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4223855270099916622, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 4270332918446549388, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5652731580545940151, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 5975413847849115858, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6035345422227218138, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 6545881840350368093, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7472299135274381814, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 7614746938867140251, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8084141053339251935, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270984513162730447, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8376874429529557465, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 8645601355169148299, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9011058977705224855, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9141639351320659170, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9151767041794426726, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
+    - target: {fileID: 9209715941571192610, guid: eb5b3d310d49b15428f1d4173729573b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -138622,7 +138802,7 @@ GameObject:
   - component: {fileID: 2059765388}
   m_Layer: 0
   m_Name: mountain (22)
-  m_TagString: Untagged
+  m_TagString: Teleportable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
