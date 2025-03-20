@@ -8758,7 +8758,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToSpawn: {fileID: 3700396227118915201, guid: 0d8092ecb8c0ab24083abe51cb555c30,
     type: 3}
-  leftController: {fileID: 0}
+  indicatorPrefab: {fileID: 0}
+  leftController: {fileID: 1297219146}
   rightController: {fileID: 0}
 --- !u!114 &275474235
 MonoBehaviour:
@@ -9161,7 +9162,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65cf12c2180af7245ac252e4d26c9530, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bowTransform: {fileID: 204203873}
   indicatorPrefab: {fileID: 204203872}
   fireMaterial: {fileID: 2100000, guid: 29c18c1d19f0e144697561627cc9447b, type: 2}
   iceMaterial: {fileID: 2100000, guid: 93a453fed84194d47b325b7a621f4446, type: 2}
@@ -36815,6 +36815,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 911677738196630763, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: targetChecker
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1131373442332245334, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
       propertyPath: target
@@ -37159,6 +37164,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_StaticEditorFlags
       value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 5398733741781202967, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
+        type: 3}
+      propertyPath: targetChecker
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5480099731343797537, guid: 6bf7c8e8f6c27eb408fde9cfdcf830ad,
         type: 3}
