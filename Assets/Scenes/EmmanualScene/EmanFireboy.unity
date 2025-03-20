@@ -8036,6 +8036,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b5dadbc667fcc5341ae1f7a35c14d552, type: 3}
+--- !u!1 &204203872 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3643021570834197956, guid: b5dadbc667fcc5341ae1f7a35c14d552,
+    type: 3}
+  m_PrefabInstance: {fileID: 204203871}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &204203873 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4659876416580008709, guid: b5dadbc667fcc5341ae1f7a35c14d552,
@@ -8709,6 +8715,7 @@ GameObject:
   - component: {fileID: 275474246}
   - component: {fileID: 275474248}
   - component: {fileID: 275474249}
+  - component: {fileID: 275474250}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -9142,6 +9149,25 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   arrowTypes: {fileID: 275474247}
+--- !u!114 &275474250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 275474231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65cf12c2180af7245ac252e4d26c9530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bowTransform: {fileID: 204203873}
+  indicatorPrefab: {fileID: 204203872}
+  fireMaterial: {fileID: 2100000, guid: 29c18c1d19f0e144697561627cc9447b, type: 2}
+  iceMaterial: {fileID: 2100000, guid: 93a453fed84194d47b325b7a621f4446, type: 2}
+  windMaterial: {fileID: 2100000, guid: 54aa3c7e3d7171146b2c7d566db278da, type: 2}
+  earthMaterial: {fileID: 2100000, guid: 18e9ac908182d1f4798167a1dfb60fad, type: 2}
+  normalMaterial: {fileID: 2100000, guid: d29658622fac1d04190466040e22118c, type: 2}
 --- !u!1 &277460661
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class ArrowIndicator : MonoBehaviour
 {
-    public Transform bowTransform; // Reference to the bow
     public GameObject indicatorPrefab; // Cube prefab
     public Material fireMaterial, iceMaterial, windMaterial, earthMaterial, normalMaterial; // Element materials
     private GameObject indicatorCube;
     private ArrowTypes arrowTypes; // Reference to ArrowTypes script
+    private Transform bowTransform;
 
     void Start()
     {
-        // Find the ArrowTypes script in the scene
+        // Find ArrowTypes script
         arrowTypes = FindObjectOfType<ArrowTypes>();
 
         if (arrowTypes == null)
@@ -19,14 +19,39 @@ public class ArrowIndicator : MonoBehaviour
             return;
         }
 
-        // Spawn the indicator cube
-        indicatorCube = Instantiate(indicatorPrefab, bowTransform.position + bowTransform.right * 0.2f, Quaternion.identity, bowTransform);
+        // Try to find the bow after it spawns
+        InvokeRepeating(nameof(FindBow), 0f, 0.5f); // Check every 0.5 seconds
+    }
+
+    void FindBow()
+    {
+        GameObject bow = GameObject.FindWithTag("Bow");
+        if (bow != null)
+        {
+            bowTransform = bow.transform;
+            SpawnIndicator();
+            CancelInvoke(nameof(FindBow)); // Stop searching once found
+        }
+    }
+
+    void SpawnIndicator()
+    {
+        // Make sure the bow exists before spawning the indicator
+        if (bowTransform == null) return;
+
+        // Spawn the indicator cube and parent it to the bow
+        indicatorCube = Instantiate(indicatorPrefab, bowTransform);
+        indicatorCube.transform.localPosition = new Vector3(0.2f, 0, 0); // Adjust position as needed
+
         UpdateIndicator();
     }
 
     void Update()
     {
-        UpdateIndicator();
+        if (indicatorCube != null)
+        {
+            UpdateIndicator();
+        }
     }
 
     void UpdateIndicator()
