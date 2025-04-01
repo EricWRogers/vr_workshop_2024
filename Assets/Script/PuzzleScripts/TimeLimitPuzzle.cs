@@ -12,6 +12,7 @@ public class TimeLimitPuzzle : MonoBehaviour
     private float timeLeft;
     public bool timerIsDone = false;
     public bool puzzleStarted = false;
+    public bool useTimer;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,9 +23,12 @@ public class TimeLimitPuzzle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(numOfTargetsHit > 0)
-        {
-            Timer();
+        if (useTimer){
+
+            if(numOfTargetsHit > 0)
+            {   
+                Timer();
+            }
         }
         
 
@@ -63,5 +67,9 @@ public class TimeLimitPuzzle : MonoBehaviour
         {
             targets[i].Unhit();
         }
+    }
+
+    public void RemovePoint(){
+        numOfTargetsHit--;
     }
 }

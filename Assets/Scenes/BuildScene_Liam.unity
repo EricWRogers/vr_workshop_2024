@@ -14797,36 +14797,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -18.12
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_Name
-      value: Small_Trees (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -18.12
-      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -14871,6 +14841,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
+        type: 3}
+      propertyPath: m_Name
+      value: Small_Trees (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
         type: 3}
@@ -21857,7 +21837,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &775144373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -32176,6 +32156,7 @@ MonoBehaviour:
   timeToComplete: 20
   timerIsDone: 0
   puzzleStarted: 0
+  useTimer: 1
 --- !u!1001 &1625524473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32289,41 +32270,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 9.17
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_Name
-      value: Small_Trees
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 2147483647
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.4
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 24.56
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
-        type: 3}
       propertyPath: m_LocalPosition.y
       value: -0.9000002
       objectReference: {fileID: 0}
@@ -32366,6 +32312,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
+        type: 3}
+      propertyPath: m_Name
+      value: Small_Trees
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 3b9de467d6432a440b6d80fe15bfcd74,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
         type: 3}
@@ -67504,7 +67460,7 @@ PrefabInstance:
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -77316,6 +77272,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!4 &4586276285410285743
 Transform:
   m_ObjectHideFlags: 0
@@ -79588,10 +79547,25 @@ MonoBehaviour:
         m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1623182967}
+        m_TargetAssemblyTypeName: TimeLimitPuzzle, Assembly-CSharp
+        m_MethodName: RemovePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 20
+  hasTimer: 1
+  timepuzzle: {fileID: 0}
 --- !u!65 &7541655356704810581
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -79754,10 +79728,25 @@ MonoBehaviour:
         m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1623182967}
+        m_TargetAssemblyTypeName: TimeLimitPuzzle, Assembly-CSharp
+        m_MethodName: RemovePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 20
+  hasTimer: 1
+  timepuzzle: {fileID: 0}
 --- !u!33 &7760641748328370179
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -80013,6 +80002,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!1 &8131376671672498986
 GameObject:
   m_ObjectHideFlags: 0
@@ -80236,10 +80228,25 @@ MonoBehaviour:
         m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1623182967}
+        m_TargetAssemblyTypeName: TimeLimitPuzzle, Assembly-CSharp
+        m_MethodName: RemovePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 20
+  hasTimer: 1
+  timepuzzle: {fileID: 0}
 --- !u!82 &8301432483920041164
 AudioSource:
   m_ObjectHideFlags: 0
@@ -80558,10 +80565,25 @@ MonoBehaviour:
         m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1623182967}
+        m_TargetAssemblyTypeName: TimeLimitPuzzle, Assembly-CSharp
+        m_MethodName: RemovePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 20
+  hasTimer: 1
+  timepuzzle: {fileID: 0}
 --- !u!4 &8505969506885089006
 Transform:
   m_ObjectHideFlags: 0
@@ -80671,6 +80693,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!114 &8604412944127185470 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3966620331075535315, guid: 808201dc4847a4b42be7521853fefa92,
@@ -80736,6 +80761,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!4 &8641459722170456327
 Transform:
   m_ObjectHideFlags: 0
@@ -80834,6 +80862,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!4 &8712828563094972200
 Transform:
   m_ObjectHideFlags: 0
@@ -80914,6 +80945,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!4 &8759459368959932772
 Transform:
   m_ObjectHideFlags: 0
@@ -81010,10 +81044,25 @@ MonoBehaviour:
         m_CallState: 2
   unhitEvent:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1623182967}
+        m_TargetAssemblyTypeName: TimeLimitPuzzle, Assembly-CSharp
+        m_MethodName: RemovePoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 20
+  hasTimer: 1
+  timepuzzle: {fileID: 0}
 --- !u!23 &8859649504498502890
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -81123,6 +81172,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!4 &8953126865818560675
 Transform:
   m_ObjectHideFlags: 0
@@ -81459,6 +81511,9 @@ MonoBehaviour:
   isHit: 0
   hitMaterial: {fileID: 2100000, guid: 5a7b9c11d90c79042a2fb0544bc2e314, type: 2}
   arrowRequired: 0
+  timeToComplete: 0
+  hasTimer: 0
+  timepuzzle: {fileID: 0}
 --- !u!23 &9176541208204980909
 MeshRenderer:
   m_ObjectHideFlags: 0
