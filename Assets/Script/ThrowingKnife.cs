@@ -34,24 +34,14 @@ public class ThrowingKnife : MonoBehaviour
 
     public void CheckToTeleport()
     {
-        if (Physics.SphereCast(new Vector3(transform.position.x + checkerXOffset, transform.position.y + checkerYOffset, transform.position.z + checkerZOffset), checkerRadius, transform.up , out hit, checkerDistance, layerMask))
+        if (GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>())
         {
+            GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>().TeleportToCrystal();
             return;
         }
-        else
-        {
-            if (curThrowDistance >= maxThrowDistance)
-            {
-                if (GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>())
-                    GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>().TeleportToCrystal();
-                    
-                return;
-            }
-            else
-            {
-                Teleport();
-            }
-        }
+
+        if (curThrowDistance < maxThrowDistance)
+            Teleport();
     }
 
     public void Teleport()
