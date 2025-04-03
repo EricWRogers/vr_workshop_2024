@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SuperPupSystems.Helper;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -41,6 +42,9 @@ public class ThrowingKnife : MonoBehaviour
         {
             if (curThrowDistance >= maxThrowDistance)
             {
+                if (GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>())
+                    GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>().TeleportToCrystal();
+                    
                 return;
             }
             else
