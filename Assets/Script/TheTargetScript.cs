@@ -8,7 +8,7 @@ public class TheTargetScript : MonoBehaviour
     public bool isHit = false;
     public Material hitMaterial;
     private Material baseMaterial;
-    public enum arrow_Types { Normal, Fire, Earth, Ice, Wind };
+    public enum arrow_Types { Normal, Fire, Earth, Ice, Wind};
     public arrow_Types arrowRequired;
     public float timeToComplete;
     private float timeLeft;
