@@ -39,9 +39,15 @@ public class ThrowingKnife : MonoBehaviour
             GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>().TeleportToCrystal();
             return;
         }
+        if (player.GetComponent<SpawnKnife>().canTeleport)
+        {
+             if (curThrowDistance < maxThrowDistance)
+            {
+                Teleport();
+            }
+        }
 
-        if (curThrowDistance < maxThrowDistance)
-            Teleport();
+           
     }
 
     public void Teleport()
