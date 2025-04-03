@@ -15,6 +15,8 @@ public class SpawnKnife : MonoBehaviour
     public GameObject leftController;
 
     public bool knifeSpawned = false;
+
+    public bool canTeleport;
     // Start is called before the first frame update
     public void SpawnAKnife()
     {

@@ -17,7 +17,6 @@ public class ThrowingKnife : MonoBehaviour
     private float curThrowDistance;
     public LayerMask layerMask;
     private RaycastHit hit;
-    public bool canTeleport;
 
     // Start is called before the first frame update
     void Start()
@@ -36,12 +35,13 @@ public class ThrowingKnife : MonoBehaviour
     {
         if (Physics.SphereCast(new Vector3(transform.position.x + checkerXOffset, transform.position.y + checkerYOffset, transform.position.z + checkerZOffset), checkerRadius, transform.up , out hit, checkerDistance, layerMask))
         {
-            Debug.Log(hit.collider.gameObject.name);
+            return;
         }
         else
         {
             if (curThrowDistance >= maxThrowDistance)
             {
+                return;
             }
             else
             {
@@ -52,6 +52,9 @@ public class ThrowingKnife : MonoBehaviour
 
     public void Teleport()
     {
-        player.transform.position = transform.position + (-transform.forward);
+        if (player.GetComponent<SpawnKnife>().canTeleport)
+        {
+            player.transform.position = transform.position + (-transform.forward);
+        }
     }
 }
