@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using SuperPupSystems.Helper;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -33,21 +34,20 @@ public class ThrowingKnife : MonoBehaviour
 
     public void CheckToTeleport()
     {
-        if (Physics.SphereCast(new Vector3(transform.position.x + checkerXOffset, transform.position.y + checkerYOffset, transform.position.z + checkerZOffset), checkerRadius, transform.up , out hit, checkerDistance, layerMask))
+        if (GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>())
         {
+            GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>().TeleportToCrystal();
             return;
         }
-        else
+        if (player.GetComponent<SpawnKnife>().canTeleport)
         {
-            if (curThrowDistance >= maxThrowDistance)
-            {
-                return;
-            }
-            else
+             if (curThrowDistance < maxThrowDistance)
             {
                 Teleport();
             }
         }
+
+           
     }
 
     public void Teleport()
