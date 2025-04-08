@@ -54,6 +54,11 @@ public class ArrowIndicator : MonoBehaviour
         }
     }
 
+    void UnlockedArrow()
+    {
+        //
+    }
+
     void UpdateIndicator()
     {
         if (indicatorCube == null || arrowTypes == null) return;
