@@ -18,11 +18,14 @@ public class AbstractArrow : MonoBehaviour
     public GameObject fireEffects;
 
     public GameObject iceBlockPrefab;
-    public GameObject earthWallPrefab;
+
+    [Header ("Arrow Prefab")]
     public GameObject normalArrowPrefab;
     public GameObject fireArrowPrefab;
     public GameObject iceArrowPrefab;
     public GameObject EarthArrowPrefab;
+
+    private GameObject currentArrowModel;
 
     [HideInInspector]
     public GameObject trailEffect;
@@ -41,11 +44,47 @@ public class AbstractArrow : MonoBehaviour
         arrowType = GameObject.FindWithTag("Player").GetComponent<ArrowTypes>().typesOfArrow;
         trailEffect = transform.GetComponentInChildren<TrailRenderer>().gameObject;
         m_rb = GetComponent<Rigidbody>();
+
+        SpawnArrowModel();
         /*
         m_TerrainImpactEffect = GameObject.Find("Terrain_Impact");
         m_waterImpactEffect = GameObject.Find("Water_Impact");
         m_arrowGraphics = GameObject.Find("ArrowGraphic");
         */
+    }
+
+    public void SpawnArrowModel()
+    {
+        if (currentArrowModel != null)
+        {
+            Destroy(currentArrowModel); // Clean up previous model if needed
+        }
+
+        GameObject prefabToUse = null;
+
+        switch (arrowType)
+        {
+            case ArrowTypes.arrow_Types.Normal:
+                prefabToUse = normalArrowPrefab;
+                break;
+            case ArrowTypes.arrow_Types.Fire:
+                prefabToUse = fireArrowPrefab;
+                break;
+            case ArrowTypes.arrow_Types.Ice:
+                prefabToUse = iceArrowPrefab;
+                break;
+            case ArrowTypes.arrow_Types.Earth:
+                prefabToUse = EarthArrowPrefab;
+                break;
+        }
+
+        if (prefabToUse != null)
+        {
+            // Instantiate the model and parent it to this arrow
+            currentArrowModel = Instantiate(prefabToUse, transform);
+            currentArrowModel.transform.localPosition = Vector3.zero;
+            currentArrowModel.transform.localRotation = Quaternion.identity;
+        }
     }
 
     void Start()
@@ -162,7 +201,6 @@ public class AbstractArrow : MonoBehaviour
                         {   
                             Debug.Log("earth");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
-                            SpawnEarthWall(hit.point, hit.normal);
                         }
                         //wind
                         else if(arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
@@ -221,22 +259,7 @@ public class AbstractArrow : MonoBehaviour
         transform.SetParent(attachedObject.transform);
         arrowAttached = true;
     }
-    private void SpawnEarthWall(Vector3 _pos, Vector3 _normal){
-        if (iceBlockPrefab != null)
-        {
-            Quaternion rotation = Quaternion.LookRotation(_normal);
-            GameObject earthWall = Instantiate(earthWallPrefab, _pos, rotation);
-            EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
 
-            if (earthWallScript == null){
-                Debug.Log("You do not have EarthBlock Script On prefab");
-
-            }
-            else {
-                earthWallScript.StartGrowing();
-            }
-        }
-    }
     public void NormalArrow()
     {
         
