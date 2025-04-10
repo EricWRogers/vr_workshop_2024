@@ -150,6 +150,7 @@ public class AbstractArrow : MonoBehaviour
                         {   
                             Debug.Log("earth");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
+                            SpawnEarthWall(hit.point, hit.normal);
                         }
                         //wind
                         else if(arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
