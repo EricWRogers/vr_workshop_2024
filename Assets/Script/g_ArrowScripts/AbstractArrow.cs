@@ -18,6 +18,7 @@ public class AbstractArrow : MonoBehaviour
     public GameObject fireEffects;
 
     public GameObject iceBlockPrefab;
+    public GameObject earthWallPrefab;
 
     [HideInInspector]
     public GameObject trailEffect;
@@ -207,7 +208,22 @@ public class AbstractArrow : MonoBehaviour
         transform.SetParent(attachedObject.transform);
         arrowAttached = true;
     }
+    private void SpawnEarthWall(Vector3 _pos, Vector3 _normal){
+        if (iceBlockPrefab != null)
+        {
+            Quaternion rotation = Quaternion.LookRotation(_normal);
+            GameObject earthWall = Instantiate(earthWallPrefab, _pos, rotation);
+            EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
 
+            if (earthWallScript == null){
+                Debug.Log("You do not have EarthBlock Script On prefab");
+
+            }
+            else {
+                earthWallScript.StartGrowing();
+            }
+        }
+    }
     public void NormalArrow()
     {
         
