@@ -124,6 +124,14 @@ public class AbstractArrow : MonoBehaviour
                     m_rb.constraints = RigidbodyConstraints.FreezeAll;
                     transform.SetParent(hitTransform);
                     TheTargetScript target = hitTransform.GetComponent<TheTargetScript>();
+                    if(arrowType == ArrowTypes.arrow_Types.Earth)
+                    {
+                        SpawnEarthWall(hit.point, hit.normal);
+                    }
+                    if(arrowType == ArrowTypes.arrow_Types.Ice)
+                    {
+                        SpawnIceBlock(hit.point, hit.normal);
+                    }
                     if (hit.transform.CompareTag("Target"))
                     {
                         
