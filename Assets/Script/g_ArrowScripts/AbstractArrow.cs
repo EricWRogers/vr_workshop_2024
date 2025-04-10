@@ -19,6 +19,10 @@ public class AbstractArrow : MonoBehaviour
 
     public GameObject iceBlockPrefab;
     public GameObject earthWallPrefab;
+    public GameObject normalArrowPrefab;
+    public GameObject fireArrowPrefab;
+    public GameObject iceArrowPrefab;
+    public GameObject EarthArrowPrefab;
 
     [HideInInspector]
     public GameObject trailEffect;
