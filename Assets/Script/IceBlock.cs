@@ -25,9 +25,13 @@ public class IceBlock : MonoBehaviour
     {
         isGrowing = true;
         float elapsedTime = 0f;
+        RaycastHit _hit;
 
         while (elapsedTime < 1f)
         {
+            if (Physics.BoxCast(transform.position, transform.localScale* 0.5f, transform.forward, out _hit, transform.rotation)){
+                break;
+            }
             transform.localScale = Vector3.Lerp(initialSize, maxSize, elapsedTime);
             elapsedTime += Time.deltaTime * growSpeed;
             yield return null;
