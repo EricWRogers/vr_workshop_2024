@@ -57939,6 +57939,80 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 611046057}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &612442632
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 318933476131959640, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: normalArrowPrefab
+      value: 
+      objectReference: {fileID: 919132149155446097, guid: 19c790abc9668151e8f32c624b621c44,
+        type: 3}
+    - target: {fileID: 2584346463302533713, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_Name
+      value: TheArrow
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.981
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.794
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127309644257258139, guid: d52be6b56df80a64ea63d953f0d75c92,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: d52be6b56df80a64ea63d953f0d75c92, type: 3}
 --- !u!1001 &613387953
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -71958,6 +72032,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 0}
+  earthArrowModel: {fileID: 0}
+  iceArrowModel: {fileID: 0}
   typesOfArrow: 0
 --- !u!1 &839962165
 GameObject:
@@ -135769,6 +135846,7 @@ GameObject:
   - component: {fileID: 1725266525}
   - component: {fileID: 1725266524}
   - component: {fileID: 1725266526}
+  - component: {fileID: 1725266527}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -136156,6 +136234,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 919132149155446097, guid: d8ed50d811e2ed6d8b8d1fdd922d1e36,
+    type: 3}
+  earthArrowModel: {fileID: 919132149155446097, guid: 19c790abc9668151e8f32c624b621c44,
+    type: 3}
+  iceArrowModel: {fileID: 919132149155446097, guid: e6993b0cfc98a37e889bd54b0b54049d,
+    type: 3}
   typesOfArrow: 0
 --- !u!114 &1725266524
 MonoBehaviour:
@@ -136239,6 +136323,52 @@ MonoBehaviour:
   windMaterial: {fileID: 2100000, guid: 54aa3c7e3d7171146b2c7d566db278da, type: 2}
   earthMaterial: {fileID: 2100000, guid: 18e9ac908182d1f4798167a1dfb60fad, type: 2}
   normalMaterial: {fileID: 2100000, guid: d29658622fac1d04190466040e22118c, type: 2}
+--- !u!114 &1725266527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1725266508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc482469b8b405440b8215344362ac1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightControllerCharacteristics: 512
+  leftControllerCharacteristics: 256
+  button: 0
+  OnNextArrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1725266523}
+        m_TargetAssemblyTypeName: ArrowTypes, Assembly-CSharp
+        m_MethodName: SwitchToNextArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPreviousArrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1725266523}
+        m_TargetAssemblyTypeName: ArrowTypes, Assembly-CSharp
+        m_MethodName: SwitchToPreviousArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  arrowTypes: {fileID: 1725266523}
 --- !u!1 &1725533747
 GameObject:
   m_ObjectHideFlags: 0
@@ -167892,3 +168022,4 @@ SceneRoots:
   - {fileID: 377127798}
   - {fileID: 1411774247}
   - {fileID: 41018597}
+  - {fileID: 612442632}

@@ -14,6 +14,7 @@ public class AbstractArrow : MonoBehaviour
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
     public LayerMask mask;
+    public ArrowTypes arrowTypes;
     public ArrowTypes.arrow_Types arrowType;
 
     public GameObject fireEffects;
