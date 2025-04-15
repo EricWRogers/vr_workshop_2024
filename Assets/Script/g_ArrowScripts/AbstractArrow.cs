@@ -20,8 +20,16 @@ public class AbstractArrow : MonoBehaviour
     public GameObject fireEffects;
 
     public GameObject iceBlockPrefab;
+    [Tooltip("How many Ice BLocks are Allowed to be spawned at once")]
+    public int iceBlockAmt = 3;
+    
+    private Queue<GameObject> iceBlocks;
     public GameObject earthBlockPrefab;
-    private List<GameObject> earthWalls;
+    private Queue<GameObject> earthWalls = new Queue<GameObject>();
+
+    [Tooltip("How many Earth Walls are Allowed to be spawned at once")]
+    public int earthBlockAmt = 3;
+    
 
     [Header ("Arrow Prefab")]
     public GameObject normalArrowPrefab;
@@ -232,9 +240,14 @@ public class AbstractArrow : MonoBehaviour
     {
         if (iceBlockPrefab != null)
         {
+            if(iceBlocks.Count+1 > iceBlockAmt)
+            {
+               GameObject tempWall = iceBlocks.Dequeue();
+               Destroy(tempWall);
+            }
             Quaternion rotation = Quaternion.LookRotation(normal);
             GameObject iceBlock = Instantiate(iceBlockPrefab, position, rotation);
-        
+            iceBlocks.Enqueue(iceBlock);
             IceBlock iceBlockScript = iceBlock.GetComponent<IceBlock>();
             if (iceBlockScript != null)
             {
@@ -253,12 +266,16 @@ public class AbstractArrow : MonoBehaviour
         private void SpawnEarthWall(Vector3 _pos, Vector3 _normal){
         if (earthBlockPrefab != null)
         {
-            
-
+            if(earthWalls.Count+1 > earthBlockAmt)
+            {
+               GameObject tempWall = earthWalls.Dequeue();
+               Destroy(tempWall);
+            }
            
             Quaternion rotation = Quaternion.LookRotation(_normal);
             GameObject earthWall = Instantiate(earthBlockPrefab, _pos, rotation);
             EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
+            earthWalls.Enqueue(earthWall);
           
 
 
