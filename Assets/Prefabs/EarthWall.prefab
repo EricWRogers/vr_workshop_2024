@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4318639847858126568}
   - component: {fileID: 5671193960108130219}
   - component: {fileID: 5230840441175495470}
-  - component: {fileID: 1714975282615421234}
+  - component: {fileID: 4929941259047523876}
   m_Layer: 0
   m_Name: EarthWall
   m_TagString: Untagged
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1714975282615421234
+--- !u!114 &4929941259047523876
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,8 +118,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4be05810812936e8b7242d9706c3692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxSize: {x: 1, y: 3, z: 5}
+  maxSize: {x: 3, y: 3, z: 3}
   growSpeed: 2
   groundLayer:
     serializedVersion: 2
     m_Bits: 2048
+  hits: []
+  hasHit: 0

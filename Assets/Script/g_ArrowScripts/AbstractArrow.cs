@@ -252,17 +252,13 @@ public class AbstractArrow : MonoBehaviour
         private void SpawnEarthWall(Vector3 _pos, Vector3 _normal){
         if (earthBlockPrefab != null)
         {
-            if (earthWalls != null){
-                GameObject temp = earthWalls[0];
-                Destroy(temp);
-                 earthWalls.Clear();
-            }
+            
 
            
             Quaternion rotation = Quaternion.LookRotation(_normal);
             GameObject earthWall = Instantiate(earthBlockPrefab, _pos, rotation);
             EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
-            earthWalls.Add(earthWall);
+          
 
 
             if (earthWallScript == null){
