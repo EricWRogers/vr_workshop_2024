@@ -9,6 +9,7 @@ public class EarthBlock : MonoBehaviour
     public float growSpeed = 2f; // Growth speed multiplier
     private Vector3 initialSize;
     private bool isGrowing = false;
+    public LayerMask groundLayer;
 
     void Start()
     {
@@ -28,6 +29,7 @@ public class EarthBlock : MonoBehaviour
         isGrowing = true;
         float elapsedTime = 0f;
         RaycastHit _hit;
+        bool shouldBreak = false;
   
 
         while (elapsedTime < 1f)
@@ -35,9 +37,20 @@ public class EarthBlock : MonoBehaviour
             transform.localScale = Vector3.Lerp(initialSize, maxSize, elapsedTime);
             elapsedTime += Time.deltaTime * growSpeed;
             yield return null;
-        if (Physics.BoxCast(transform.position, transform.localScale* 0.5f, transform.forward, out _hit, transform.rotation)){
+
+        RaycastHit[] hits = Physics.BoxCastAll(transform.position, transform.localScale , transform.forward, transform.rotation, 10000, groundLayer);
+        foreach (RaycastHit _i in hits){
+            if (_i.point == transform.position){
+                shouldBreak = true;
                 break;
-        }  
+
+            }
+
+        }
+            if(shouldBreak){
+                break;
+            }
+
         }
 
         transform.localScale = maxSize; // Ensure it reaches the final size

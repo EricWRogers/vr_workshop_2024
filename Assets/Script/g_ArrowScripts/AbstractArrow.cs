@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.UIElements;
+using Unity.VisualScripting;
 
 public class AbstractArrow : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class AbstractArrow : MonoBehaviour
     public GameObject fireEffects;
 
     public GameObject iceBlockPrefab;
+    public GameObject earthBlockPrefab;
+    private List<GameObject> earthWalls;
 
     [Header ("Arrow Prefab")]
     public GameObject normalArrowPrefab;
@@ -246,6 +249,32 @@ public class AbstractArrow : MonoBehaviour
             Debug.LogError("Ice Block Prefab not assigned in AbstractArrow!");
         }
     }
+        private void SpawnEarthWall(Vector3 _pos, Vector3 _normal){
+        if (earthBlockPrefab != null)
+        {
+            if (earthWalls != null){
+                GameObject temp = earthWalls[0];
+                Destroy(temp);
+                 earthWalls.Clear();
+            }
+
+           
+            Quaternion rotation = Quaternion.LookRotation(_normal);
+            GameObject earthWall = Instantiate(earthBlockPrefab, _pos, rotation);
+            EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
+            earthWalls.Add(earthWall);
+
+
+            if (earthWallScript == null){
+                Debug.Log("You do not have EarthBlock Script On prefab");
+
+            }
+            else {
+                earthWallScript.StartGrowing();
+            }
+        }
+    }
+
     public void NockArrow(bool nocked)
     {
         arrowNocked = nocked;
