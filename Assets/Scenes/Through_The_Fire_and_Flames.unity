@@ -7850,6 +7850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 0}
+  earthArrowModel: {fileID: 0}
+  iceArrowModel: {fileID: 0}
   typesOfArrow: 1
 --- !u!1 &202201372
 GameObject:
@@ -9062,6 +9065,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 0}
+  earthArrowModel: {fileID: 0}
+  iceArrowModel: {fileID: 0}
   typesOfArrow: 1
 --- !u!114 &275474248
 MonoBehaviour:
@@ -9171,6 +9177,7 @@ MonoBehaviour:
   rightController: {fileID: 0}
   leftController: {fileID: 0}
   knifeSpawned: 0
+  canTeleport: 0
 --- !u!114 &275474251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15490,7 +15497,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6cbda5dd711954398ddf79eddb5b3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: WinScene
+  sceneName: Skull_And_Bones
 --- !u!65 &694425987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16986,6 +16993,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17040,16 +17057,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (8)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -19728,6 +19735,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19782,16 +19799,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (11)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20638,6 +20645,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20692,16 +20709,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -20900,6 +20907,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -20954,16 +20971,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (7)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -21464,6 +21471,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -21518,16 +21535,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (2)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -23061,6 +23068,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23116,16 +23133,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small_Trees (3)
       objectReference: {fileID: 0}
-    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -23139,6 +23146,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23193,16 +23210,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (9)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -26647,6 +26654,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -26701,16 +26718,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (10)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -27215,6 +27222,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27269,21 +27291,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (5)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -28763,6 +28770,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -28817,16 +28834,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees
-      objectReference: {fileID: 0}
-    - target: {fileID: 4224281758837514645, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 6196079223242982902, guid: 58342414e2e7bcf4fa5b291206fd33e6,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29032,6 +29039,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29086,16 +29103,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (6)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -31255,7 +31262,7 @@ PrefabInstance:
     - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.00091743626
+      value: 0.0009
       objectReference: {fileID: 0}
     - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
         type: 3}
@@ -31265,7 +31272,7 @@ PrefabInstance:
     - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.009403993
+      value: -0.0041
       objectReference: {fileID: 0}
     - target: {fileID: 1145843510378077220, guid: 94b6f31d7e5abb97f8397953f6956d0d,
         type: 3}
@@ -32066,6 +32073,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1363170317}
     m_Modifications:
+    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Teleportable
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 3b9de467d6432a440b6d80fe15bfcd74,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -32120,16 +32137,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small_Trees (4)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4066965397710308126, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Target
-      objectReference: {fileID: 0}
-    - target: {fileID: 5137105377570620339, guid: fcca3774ad5abde4aa94ece205bbc26a,
-        type: 3}
-      propertyPath: m_TagString
-      value: Teleportable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

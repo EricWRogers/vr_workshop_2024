@@ -35,7 +35,7 @@ public class AntiTeleportZone : MonoBehaviour
 
     public void Destroy()
     {
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 
     public void OnCollisionStay()
