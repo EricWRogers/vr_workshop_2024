@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 public class AbstractArrow : MonoBehaviour
 {
-   
+
     public bool arrowNocked = false;
     public GameObject arrowNockPoint;
     public GameObject attachedObject;
@@ -22,15 +22,14 @@ public class AbstractArrow : MonoBehaviour
     public GameObject iceBlockPrefab;
     [Tooltip("How many Ice BLocks are Allowed to be spawned at once")]
     public int iceBlockAmt = 3;
-    
-    private Queue<GameObject> iceBlocks = new Queue<GameObject>();
+
     public GameObject earthBlockPrefab;
 
     [Tooltip("How many Earth Walls are Allowed to be spawned at once")]
     public int earthBlockAmt = 3;
-    
 
-    [Header ("Arrow Prefab")]
+
+    [Header("Arrow Prefab")]
     public GameObject normalArrowPrefab;
     public GameObject fireArrowPrefab;
     public GameObject iceArrowPrefab;
@@ -100,13 +99,13 @@ public class AbstractArrow : MonoBehaviour
 
     void Start()
     {
-        
+
     }
 
     void Update()
     {
         arrowType = GameObject.FindWithTag("Player").GetComponent<ArrowTypes>().typesOfArrow;
-        
+
 
         if (arrowAttached)
         {
@@ -114,7 +113,7 @@ public class AbstractArrow : MonoBehaviour
             //transform.rotation = attachedObject.transform.rotation;
         }
 
-        
+
 
     }
 
@@ -147,7 +146,7 @@ public class AbstractArrow : MonoBehaviour
         //Gets front of arrow and has regular impact follow
         Vector3 predictedPos = new Vector3(m_TerrainImpactEffect.transform.position.x + m_rb.velocity.x * Time.deltaTime, m_TerrainImpactEffect.transform.position.y + m_rb.velocity.y * Time.deltaTime, m_TerrainImpactEffect.transform.position.z + m_rb.velocity.z * Time.deltaTime);
         //Linecast that gets where the arrow will shoot
-        if(Physics.Linecast(arrowNockPoint.transform.position, predictedPos, out RaycastHit hit))
+        if (Physics.Linecast(arrowNockPoint.transform.position, predictedPos, out RaycastHit hit))
         {
             if (!m_firstContact && hasBeenFired)
             {
@@ -165,7 +164,7 @@ public class AbstractArrow : MonoBehaviour
                 {
                     //stop the arrow and make it fall
                 }
-                else if(!hitTransform.CompareTag("Bow") && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
+                else if (!hitTransform.CompareTag("Bow") && arrowNocked == false && !hit.collider.isTrigger && hit.collider.excludeLayers != gameObject.layer)
                 {
                     trailEffect.SetActive(false);
                     m_firstContact = true;
@@ -174,22 +173,22 @@ public class AbstractArrow : MonoBehaviour
                     m_rb.constraints = RigidbodyConstraints.FreezeAll;
                     transform.SetParent(hitTransform);
                     TheTargetScript target = hitTransform.GetComponent<TheTargetScript>();
-                    if(arrowType == ArrowTypes.arrow_Types.Earth)
+                    if (arrowType == ArrowTypes.arrow_Types.Earth)
                     {
                         SpawnEarthWall(hit.point, hit.normal);
                     }
-                    if(arrowType == ArrowTypes.arrow_Types.Ice)
+                    if (arrowType == ArrowTypes.arrow_Types.Ice)
                     {
                         SpawnIceBlock(hit.point, hit.normal);
                     }
                     if (hit.transform.CompareTag("Target"))
                     {
-                        
+
                         AudioManager.instance.Play("Target_hit");
                         //calls the targets event when hit with respective arrow
 
                         //normal
-                        if(arrowType == ArrowTypes.arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
+                        if (arrowType == ArrowTypes.arrow_Types.Normal && target.arrowRequired == TheTargetScript.arrow_Types.Normal)
                         {
                             Debug.Log("normal");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
@@ -201,20 +200,20 @@ public class AbstractArrow : MonoBehaviour
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //ice
-                        else if(arrowType == ArrowTypes.arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
+                        else if (arrowType == ArrowTypes.arrow_Types.Ice && target.arrowRequired == TheTargetScript.arrow_Types.Ice)
                         {
                             Debug.Log("ice");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                             SpawnIceBlock(hit.point, hit.normal);
                         }
                         //earth
-                        else if(arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
-                        {   
+                        else if (arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
+                        {
                             Debug.Log("earth");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
                         //wind
-                        else if(arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
+                        else if (arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
                         {
                             Debug.Log("wind");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
@@ -239,11 +238,6 @@ public class AbstractArrow : MonoBehaviour
     {
         if (iceBlockPrefab != null)
         {
-            if(iceBlocks.Count >= iceBlockAmt)
-            {
-               GameObject tempWall = iceBlocks.Dequeue();
-               Destroy(tempWall);
-            }
             Quaternion rotation = Quaternion.LookRotation(normal);
             GameObject iceBlock = Instantiate(iceBlockPrefab, position, rotation);
             IceBlock iceBlockScript = iceBlock.GetComponent<IceBlock>();
@@ -262,26 +256,24 @@ public class AbstractArrow : MonoBehaviour
             Debug.LogError("Ice Block Prefab not assigned in AbstractArrow!");
         }
     }
-        private void SpawnEarthWall(Vector3 _pos, Vector3 _normal){
+    private void SpawnEarthWall(Vector3 _pos, Vector3 _normal)
+    {
         if (earthBlockPrefab != null)
         {
-            if(earthWalls.Count >= earthBlockAmt)
-            {
-               GameObject tempWall = earthWalls.Dequeue();
-               Destroy(tempWall);
-            }
-           
+
             Quaternion rotation = Quaternion.LookRotation(_normal);
             GameObject earthWall = Instantiate(earthBlockPrefab, _pos, rotation);
             EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
-            BlockManager.instance.AddEarthWall(earthWall); 
+            BlockManager.instance.AddEarthWall(earthWall);
 
 
-            if (earthWallScript == null){
+            if (earthWallScript == null)
+            {
                 Debug.Log("You do not have EarthBlock Script On prefab");
 
             }
-            else {
+            else
+            {
                 earthWallScript.StartGrowing();
             }
         }
@@ -303,7 +295,7 @@ public class AbstractArrow : MonoBehaviour
 
     public void NormalArrow()
     {
-        
+
     }
 
     public void FireArrow()
@@ -313,17 +305,17 @@ public class AbstractArrow : MonoBehaviour
 
     public void IceArrow()
     {
-        
+
     }
 
     public void EarthArrow()
     {
-        
+
     }
 
     public void WindArrow()
     {
-        
+
     }
     public void Destroy()
     {
