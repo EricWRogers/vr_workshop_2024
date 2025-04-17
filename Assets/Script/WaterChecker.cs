@@ -18,6 +18,6 @@ public class WaterChecker : MonoBehaviour
     void Update()
     {
         aboveHeight = (player.transform.position.y >height) ? true : false;
-        gameObject.SetActive(aboveHeight);
+        water.SetActive(aboveHeight);
     }
 }
