@@ -21831,6 +21831,7 @@ GameObject:
   - component: {fileID: 775144386}
   - component: {fileID: 775144389}
   - component: {fileID: 775144388}
+  - component: {fileID: 775144390}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -22218,6 +22219,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 919132149155446097, guid: d8ed50d811e2ed6d8b8d1fdd922d1e36,
+    type: 3}
+  earthArrowModel: {fileID: 919132149155446097, guid: 19c790abc9668151e8f32c624b621c44,
+    type: 3}
+  iceArrowModel: {fileID: 919132149155446097, guid: e6993b0cfc98a37e889bd54b0b54049d,
+    type: 3}
   typesOfArrow: 0
 --- !u!114 &775144388
 MonoBehaviour:
@@ -22237,6 +22244,7 @@ MonoBehaviour:
   rightController: {fileID: 0}
   leftController: {fileID: 0}
   knifeSpawned: 0
+  canTeleport: 0
 --- !u!114 &775144389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22281,6 +22289,52 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &775144390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 775144372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc482469b8b405440b8215344362ac1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rightControllerCharacteristics: 512
+  leftControllerCharacteristics: 256
+  button: 0
+  OnNextArrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 775144387}
+        m_TargetAssemblyTypeName: ArrowTypes, Assembly-CSharp
+        m_MethodName: SwitchToNextArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnPreviousArrow:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 775144387}
+        m_TargetAssemblyTypeName: ArrowTypes, Assembly-CSharp
+        m_MethodName: SwitchToPreviousArrow
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  arrowTypes: {fileID: 775144387}
 --- !u!1 &782195181
 GameObject:
   m_ObjectHideFlags: 0
@@ -28209,6 +28263,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 0}
+  earthArrowModel: {fileID: 0}
+  iceArrowModel: {fileID: 0}
   typesOfArrow: 0
 --- !u!1 &1079539704
 GameObject:
