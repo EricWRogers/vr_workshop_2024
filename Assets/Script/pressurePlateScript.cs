@@ -10,7 +10,7 @@ public class pressurePlateScript : MonoBehaviour
     public UnityEvent activatorEvent; //on activate
     public UnityEvent deactivatorEvent; //on deactivate
     Collider lastCollided;
-    bool buttonActive = false; //is button active? only one object should activate it at a time?
+    bool buttonActive = false; //is button active? only one object should activate it at a m_time?
     public GameObject buttonObject;
     
     void Start()

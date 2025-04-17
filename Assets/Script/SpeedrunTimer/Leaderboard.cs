@@ -140,7 +140,7 @@ public class Leaderboard : MonoBehaviour
                 currentRunIndex = i;
             }
         }
-        //Remove the slowest time if there are more than 5 entries
+        //Remove the slowest m_time if there are more than 5 entries
         if (top5.Count > 5)
         {
             //If the bottom score isn't the current speed, this run is a highscore
