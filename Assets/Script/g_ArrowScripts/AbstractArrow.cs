@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 using UnityEngine.UIElements;
+using Unity.VisualScripting;
 
 public class AbstractArrow : MonoBehaviour
 {
@@ -13,11 +14,28 @@ public class AbstractArrow : MonoBehaviour
     public bool arrowAttached = false;
     public bool hasBeenFired = false;
     public LayerMask mask;
+    public ArrowTypes arrowTypes;
     public ArrowTypes.arrow_Types arrowType;
 
     public GameObject fireEffects;
 
     public GameObject iceBlockPrefab;
+    [Tooltip("How many Ice BLocks are Allowed to be spawned at once")]
+    public int iceBlockAmt = 3;
+    
+    public GameObject earthBlockPrefab;
+
+    [Tooltip("How many Earth Walls are Allowed to be spawned at once")]
+    public int earthBlockAmt = 3;
+    
+
+    [Header ("Arrow Prefab")]
+    public GameObject normalArrowPrefab;
+    public GameObject fireArrowPrefab;
+    public GameObject iceArrowPrefab;
+    public GameObject EarthArrowPrefab;
+
+    private GameObject currentArrowModel;
 
     [HideInInspector]
     public GameObject trailEffect;
@@ -36,11 +54,47 @@ public class AbstractArrow : MonoBehaviour
         arrowType = GameObject.FindWithTag("Player").GetComponent<ArrowTypes>().typesOfArrow;
         trailEffect = transform.GetComponentInChildren<TrailRenderer>().gameObject;
         m_rb = GetComponent<Rigidbody>();
+
+        SpawnArrowModel();
         /*
         m_TerrainImpactEffect = GameObject.Find("Terrain_Impact");
         m_waterImpactEffect = GameObject.Find("Water_Impact");
         m_arrowGraphics = GameObject.Find("ArrowGraphic");
         */
+    }
+
+    public void SpawnArrowModel()
+    {
+        if (currentArrowModel != null)
+        {
+            Destroy(currentArrowModel); // Clean up previous model if needed
+        }
+
+        GameObject prefabToUse = null;
+
+        switch (arrowType)
+        {
+            case ArrowTypes.arrow_Types.Normal:
+                prefabToUse = normalArrowPrefab;
+                break;
+            case ArrowTypes.arrow_Types.Fire:
+                prefabToUse = fireArrowPrefab;
+                break;
+            case ArrowTypes.arrow_Types.Ice:
+                prefabToUse = iceArrowPrefab;
+                break;
+            case ArrowTypes.arrow_Types.Earth:
+                prefabToUse = EarthArrowPrefab;
+                break;
+        }
+
+        if (prefabToUse != null)
+        {
+            // Instantiate the model and parent it to this arrow
+            currentArrowModel = Instantiate(prefabToUse, transform);
+            currentArrowModel.transform.localPosition = Vector3.zero;
+            currentArrowModel.transform.localRotation = Quaternion.identity;
+        }
     }
 
     void Start()
@@ -119,6 +173,14 @@ public class AbstractArrow : MonoBehaviour
                     m_rb.constraints = RigidbodyConstraints.FreezeAll;
                     transform.SetParent(hitTransform);
                     TheTargetScript target = hitTransform.GetComponent<TheTargetScript>();
+                    if(arrowType == ArrowTypes.arrow_Types.Earth)
+                    {
+                        SpawnEarthWall(hit.point, hit.normal);
+                    }
+                    if(arrowType == ArrowTypes.arrow_Types.Ice)
+                    {
+                        SpawnIceBlock(hit.point, hit.normal);
+                    }
                     if (hit.transform.CompareTag("Target"))
                     {
                         
@@ -178,8 +240,8 @@ public class AbstractArrow : MonoBehaviour
         {
             Quaternion rotation = Quaternion.LookRotation(normal);
             GameObject iceBlock = Instantiate(iceBlockPrefab, position, rotation);
-        
             IceBlock iceBlockScript = iceBlock.GetComponent<IceBlock>();
+            BlockManager.instance.AddIceBlock(iceBlock);
             if (iceBlockScript != null)
             {
                 iceBlockScript.StartGrowing();
@@ -194,6 +256,26 @@ public class AbstractArrow : MonoBehaviour
             Debug.LogError("Ice Block Prefab not assigned in AbstractArrow!");
         }
     }
+        private void SpawnEarthWall(Vector3 _pos, Vector3 _normal){
+        if (earthBlockPrefab != null)
+        {
+           
+            Quaternion rotation = Quaternion.LookRotation(_normal);
+            GameObject earthWall = Instantiate(earthBlockPrefab, _pos, rotation);
+            EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
+            BlockManager.instance.AddEarthWall(earthWall); 
+
+
+            if (earthWallScript == null){
+                Debug.Log("You do not have EarthBlock Script On prefab");
+
+            }
+            else {
+                earthWallScript.StartGrowing();
+            }
+        }
+    }
+
     public void NockArrow(bool nocked)
     {
         arrowNocked = nocked;
