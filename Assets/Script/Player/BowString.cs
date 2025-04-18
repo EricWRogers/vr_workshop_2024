@@ -14,8 +14,8 @@ public class BowString : MonoBehaviour
     private void Start()
     {
         localPosition = transform.localPosition;
-        //rightController = GameObject.FindGameObjectWithTag("RightHand");
-        //leftController = GameObject.FindGameObjectWithTag("LeftHand");
+        rightController = GameObject.FindGameObjectWithTag("RightHand");
+        leftController = GameObject.FindGameObjectWithTag("LeftHand");
         player = FindObjectOfType<SpawnArrowVR>().GetComponent<SpawnArrowVR>();
     }
 
@@ -50,11 +50,12 @@ public class BowString : MonoBehaviour
 
     public void OnStopGrab()
     {
+        transform.localPosition = localPosition;
+        joint.isGrabbing = false;
         if (player.arrowSpawned)
         {
             rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
         }
-        transform.localPosition = localPosition;
-        joint.isGrabbing = false;
+        
     }
 }

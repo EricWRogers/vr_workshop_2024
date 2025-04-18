@@ -34,17 +34,15 @@ public class ThrowingKnife : MonoBehaviour
 
     public void CheckToTeleport()
     {
+        Debug.Log("Try teleport");
         if (GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>())
         {
             GetComponent<Bullet>().hitInfo.collider.gameObject.GetComponent<TeleportCrystal>().TeleportToCrystal();
             return;
         }
-        if (player.GetComponent<SpawnKnife>().canTeleport)
+        if (curThrowDistance < maxThrowDistance)
         {
-             if (curThrowDistance < maxThrowDistance)
-            {
-                Teleport();
-            }
+        Teleport();
         }
 
            
@@ -52,6 +50,7 @@ public class ThrowingKnife : MonoBehaviour
 
     public void Teleport()
     {
+        Debug.Log("teleport");
         if (player.GetComponent<SpawnKnife>().canTeleport)
         {
             player.transform.position = transform.position + (-transform.forward);

@@ -16,14 +16,14 @@ public class SpawnKnife : MonoBehaviour
 
     public bool knifeSpawned = false;
 
-    public bool canTeleport;
+    public bool canTeleport = true;
     // Start is called before the first frame update
     public void SpawnAKnife()
     {
         if (!knifeSpawned)
         {
             knife = Instantiate(knifePrefab, rightController.transform.position, transform.rotation);
-            bulletScript = knife.GetComponent<Bullet>();
+            //bulletScript = knife.GetComponent<Bullet>();
 #pragma warning disable CS0618 // Type or member is obsolete, this line removes the error message
             rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(knife.GetComponent<XRGrabInteractable>());
 #pragma warning restore CS0618 // Type or member is obsolete, this line resumes error messages
@@ -33,7 +33,7 @@ public class SpawnKnife : MonoBehaviour
     public void ThrowKnife()
     {
         rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
-        bulletScript.enabled = true;
+        knife.GetComponent<Bullet>().enabled = true;
         knifeSpawned = false;
     }
 }

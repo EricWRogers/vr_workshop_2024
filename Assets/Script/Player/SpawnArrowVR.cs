@@ -49,6 +49,7 @@ public class SpawnArrowVR : MonoBehaviour
         {
             amountPulledBack = arrow.GetComponent<Arrow_v2>().attachedObject.transform.parent.GetComponent<FollowTransformOnRail>().pullAmount;
             arrow.GetComponent<Arrow_v2>().arrowAttached = false;
+            arrow.transform.SetParent(null, true);
             arrow.GetComponent<Arrow_v2>().attachedObject = null;
             arrow.GetComponent<Arrow_v2>().hasBeenFired = true;
             arrow.GetComponent<Arrow_v2>().trailEffect.SetActive(true);
@@ -59,6 +60,7 @@ public class SpawnArrowVR : MonoBehaviour
             arrowSpawned = false;
             arrowNocked = false;
             rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
+            
         }
     }
 
