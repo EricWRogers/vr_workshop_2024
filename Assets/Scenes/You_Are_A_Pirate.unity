@@ -2620,6 +2620,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 0}
+  earthArrowModel: {fileID: 0}
+  iceArrowModel: {fileID: 0}
   typesOfArrow: 1
 --- !u!1 &494995499
 GameObject:
@@ -3672,6 +3675,7 @@ GameObject:
   - component: {fileID: 901738884}
   - component: {fileID: 901738883}
   - component: {fileID: 901738882}
+  - component: {fileID: 901738900}
   m_Layer: 7
   m_Name: XR Origin (XR Rig)
   m_TagString: Player
@@ -3879,6 +3883,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 117ff57e8526e8043b4f85c040a659a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireArrowModel: {fileID: 0}
+  earthArrowModel: {fileID: 0}
+  iceArrowModel: {fileID: 0}
   typesOfArrow: 1
 --- !u!114 &901738889
 MonoBehaviour:
@@ -4169,6 +4176,25 @@ Transform:
   - {fileID: 274601191}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+--- !u!114 &901738900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901738881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65cf12c2180af7245ac252e4d26c9530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicatorPrefab: {fileID: 4456441709053727938, guid: 469f30351ff77744ca56350d3920891e,
+    type: 3}
+  fireMaterial: {fileID: 2100000, guid: 23e58769b982e4047a0783a8ac6fe1b4, type: 2}
+  iceMaterial: {fileID: 2100000, guid: 93a453fed84194d47b325b7a621f4446, type: 2}
+  windMaterial: {fileID: 2100000, guid: 54aa3c7e3d7171146b2c7d566db278da, type: 2}
+  earthMaterial: {fileID: 2100000, guid: 18e9ac908182d1f4798167a1dfb60fad, type: 2}
+  normalMaterial: {fileID: 2100000, guid: d29658622fac1d04190466040e22118c, type: 2}
 --- !u!1 &924475088
 GameObject:
   m_ObjectHideFlags: 0
