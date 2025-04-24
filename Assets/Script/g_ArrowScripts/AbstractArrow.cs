@@ -28,13 +28,6 @@ public class AbstractArrow : MonoBehaviour
     [Tooltip("How many Earth Walls are Allowed to be spawned at once")]
     public int earthBlockAmt = 3;
 
-
-    [Header("Arrow Prefab")]
-    public GameObject normalArrowPrefab;
-    public GameObject fireArrowPrefab;
-    public GameObject iceArrowPrefab;
-    public GameObject EarthArrowPrefab;
-
     private GameObject currentArrowModel;
 
     [HideInInspector]
@@ -55,7 +48,7 @@ public class AbstractArrow : MonoBehaviour
         trailEffect = transform.GetComponentInChildren<TrailRenderer>().gameObject;
         m_rb = GetComponent<Rigidbody>();
 
-        SpawnArrowModel();
+        //SpawnArrowModel();
         /*
         m_TerrainImpactEffect = GameObject.Find("Terrain_Impact");
         m_waterImpactEffect = GameObject.Find("Water_Impact");
@@ -63,7 +56,7 @@ public class AbstractArrow : MonoBehaviour
         */
     }
 
-    public void SpawnArrowModel()
+   /* public void SpawnArrowModel()
     {
         if (currentArrowModel != null)
         {
@@ -95,7 +88,7 @@ public class AbstractArrow : MonoBehaviour
             currentArrowModel.transform.localPosition = Vector3.zero;
             currentArrowModel.transform.localRotation = Quaternion.identity;
         }
-    }
+    }*/
 
     void Start()
     {
@@ -122,26 +115,18 @@ public class AbstractArrow : MonoBehaviour
         if (arrowType == ArrowTypes.arrow_Types.Normal)
         {
             NormalArrow();
-            normalArrowPrefab.SetActive(true);
         }
         if (arrowType == ArrowTypes.arrow_Types.Fire)
         {
             fireEffects.SetActive(true);
-            fireArrowPrefab.SetActive(true);
         }
         else
         {
             fireEffects.SetActive(false);
-            fireArrowPrefab.SetActive(false);
         }
         if (arrowType == ArrowTypes.arrow_Types.Ice)
         {
             IceArrow();
-            iceArrowPrefab.SetActive(true);
-        }
-        else
-        {
-            iceArrowPrefab.SetActive(false);
         }
         /*if (arrowType == ArrowTypes.arrow_Types.Wind)
         {
@@ -150,11 +135,6 @@ public class AbstractArrow : MonoBehaviour
         if (arrowType == ArrowTypes.arrow_Types.Earth)
         {
             EarthArrow();
-            EarthArrowPrefab.SetActive(true);
-        }
-        else
-        {
-            EarthArrowPrefab.SetActive(false);
         }
         //Gets front of arrow and has regular impact follow
         Vector3 predictedPos = new Vector3(m_TerrainImpactEffect.transform.position.x + m_rb.velocity.x * Time.deltaTime, m_TerrainImpactEffect.transform.position.y + m_rb.velocity.y * Time.deltaTime, m_TerrainImpactEffect.transform.position.z + m_rb.velocity.z * Time.deltaTime);
