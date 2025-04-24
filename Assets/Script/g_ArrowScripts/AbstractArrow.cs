@@ -122,26 +122,39 @@ public class AbstractArrow : MonoBehaviour
         if (arrowType == ArrowTypes.arrow_Types.Normal)
         {
             NormalArrow();
+            normalArrowPrefab.SetActive(true);
         }
         if (arrowType == ArrowTypes.arrow_Types.Fire)
         {
             fireEffects.SetActive(true);
+            fireArrowPrefab.SetActive(true);
         }
         else
         {
             fireEffects.SetActive(false);
+            fireArrowPrefab.SetActive(false);
         }
         if (arrowType == ArrowTypes.arrow_Types.Ice)
         {
             IceArrow();
+            iceArrowPrefab.SetActive(true);
         }
-        if (arrowType == ArrowTypes.arrow_Types.Wind)
+        else
+        {
+            iceArrowPrefab.SetActive(false);
+        }
+        /*if (arrowType == ArrowTypes.arrow_Types.Wind)
         {
             WindArrow();
-        }
+        }*/
         if (arrowType == ArrowTypes.arrow_Types.Earth)
         {
             EarthArrow();
+            EarthArrowPrefab.SetActive(true);
+        }
+        else
+        {
+            EarthArrowPrefab.SetActive(false);
         }
         //Gets front of arrow and has regular impact follow
         Vector3 predictedPos = new Vector3(m_TerrainImpactEffect.transform.position.x + m_rb.velocity.x * Time.deltaTime, m_TerrainImpactEffect.transform.position.y + m_rb.velocity.y * Time.deltaTime, m_TerrainImpactEffect.transform.position.z + m_rb.velocity.z * Time.deltaTime);

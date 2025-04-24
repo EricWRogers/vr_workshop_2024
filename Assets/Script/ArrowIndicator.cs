@@ -71,9 +71,6 @@ public class ArrowIndicator : MonoBehaviour
             case ArrowTypes.arrow_Types.Ice:
                 indicatorCube.GetComponent<MeshRenderer>().material = iceMaterial;
                 break;
-            case ArrowTypes.arrow_Types.Wind:
-                indicatorCube.GetComponent<MeshRenderer>().material = windMaterial;
-                break;
             case ArrowTypes.arrow_Types.Earth:
                 indicatorCube.GetComponent<MeshRenderer>().material = earthMaterial;
                 break;
