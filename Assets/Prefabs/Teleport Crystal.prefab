@@ -9,8 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5801813635032649677}
-  - component: {fileID: 1508513804130172724}
-  - component: {fileID: 644125793457332171}
   m_Layer: 0
   m_Name: TeleportPOS
   m_TagString: Untagged
@@ -26,44 +24,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1234143672947889515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.4, y: -4.7, z: -7.8}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.9, y: 0.16333327, z: -17.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1241656549264739942}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1508513804130172724
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234143672947889515}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!136 &644125793457332171
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1234143672947889515}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 1.66
-  m_Height: 14.13
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2762881382891870823
 GameObject:
   m_ObjectHideFlags: 0
@@ -77,7 +44,6 @@ GameObject:
   - component: {fileID: 1356949704846091219}
   - component: {fileID: 8761846841809875011}
   - component: {fileID: 6749763531611515126}
-  - component: {fileID: 539738206729950675}
   m_Layer: 0
   m_Name: Teleport Crystal
   m_TagString: Teleportable
@@ -187,27 +153,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   teleportPos: {fileID: 1234143672947889515}
   Player: {fileID: 0}
---- !u!114 &539738206729950675
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2762881382891870823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93f05e1b372e754195b3236fe72ecb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  unhitEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  isHit: 0
-  hitMaterial: {fileID: 0}
-  arrowRequired: 0
-  timeToComplete: 0
-  hasTimer: 0
-  timepuzzle: {fileID: 0}

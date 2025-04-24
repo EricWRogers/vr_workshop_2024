@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5671193960108130219}
   - component: {fileID: 5230840441175495470}
   - component: {fileID: 3088969693669483461}
+  - component: {fileID: 8786089648312488865}
   m_Layer: 0
   m_Name: IceBlock
   m_TagString: Untagged
@@ -32,7 +33,8 @@ Transform:
   m_LocalPosition: {x: 0.5081, y: 0.59, z: 266.0775}
   m_LocalScale: {x: 2.0162, y: 1, z: 3.3139}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 182979984203848561}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4318639847858126568
@@ -120,3 +122,48 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxSize: {x: 1.5, y: 1.5, z: 1.5}
   growSpeed: 1
+--- !u!114 &8786089648312488865
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2164724018225547792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4ff1b7be1c8984dbeebea9172b6033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPos: {fileID: 3294541605724884073}
+  Player: {fileID: 0}
+--- !u!1 &3294541605724884073
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 182979984203848561}
+  m_Layer: 0
+  m_Name: TeleportPOS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &182979984203848561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3294541605724884073}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.58, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 118916309747977612}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
