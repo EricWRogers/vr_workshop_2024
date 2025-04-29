@@ -179,7 +179,7 @@ public class AbstractArrow : MonoBehaviour
                     }
                     if (arrowType == ArrowTypes.arrow_Types.Ice)
                     {
-                        SpawnIceBlock(hit.point, hit.normal);
+                        SpawnIceBlock(hit.point, new Vector3());
                     }
                     if (hit.transform.CompareTag("Target"))
                     {
@@ -204,7 +204,7 @@ public class AbstractArrow : MonoBehaviour
                         {
                             Debug.Log("ice");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
-                            SpawnIceBlock(hit.point, hit.normal);
+                            SpawnIceBlock(hit.point, new Vector3());
                         }
                         //earth
                         else if (arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
@@ -242,6 +242,9 @@ public class AbstractArrow : MonoBehaviour
             GameObject iceBlock = Instantiate(iceBlockPrefab, position, rotation);
             IceBlock iceBlockScript = iceBlock.GetComponent<IceBlock>();
             BlockManager.instance.AddIceBlock(iceBlock);
+            //Vector3 iceTelePos = Vector3.up;
+            //iceTelePos.y =+ iceBlock.GetComponent<IceBlock>().teleportOffest;
+            //iceBlock.GetComponent<IceBlock>().teleportPos.position = iceTelePos;
             if (iceBlockScript != null)
             {
                 iceBlockScript.StartGrowing();

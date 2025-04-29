@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.XR.CoreUtils;
 using UnityEngine;
 
 public class IceBlock : MonoBehaviour
@@ -7,6 +8,8 @@ public class IceBlock : MonoBehaviour
     public float growSpeed = 2f; // Growth speed multiplier
     private Vector3 initialSize;
     private bool isGrowing = false;
+    public Transform teleportPos;
+    public float teleportOffest;
 
     void Start()
     {
