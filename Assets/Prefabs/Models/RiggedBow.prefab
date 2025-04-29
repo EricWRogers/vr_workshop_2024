@@ -1129,6 +1129,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 4811790624236892407}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 43ce59f9e638ae8459cbd046e4570e97,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6736844492845146184}
     - targetCorrespondingSourceObject: {fileID: -2797864980895152918, guid: 43ce59f9e638ae8459cbd046e4570e97,
         type: 3}
       insertIndex: -1
@@ -1366,6 +1370,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.48249245, y: 1.1752415, z: 0.5031109}
   m_Center: {x: 0.25615215, y: 9.800649, z: 7.2113705}
+--- !u!114 &6736844492845146184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3700396227118915201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65cf12c2180af7245ac252e4d26c9530, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  indicatorPrefab: {fileID: 4456441709053727938, guid: 469f30351ff77744ca56350d3920891e,
+    type: 3}
+  fireMaterial: {fileID: 2100000, guid: 23e58769b982e4047a0783a8ac6fe1b4, type: 2}
+  iceMaterial: {fileID: 2100000, guid: 93a453fed84194d47b325b7a621f4446, type: 2}
+  windMaterial: {fileID: 2100000, guid: 54aa3c7e3d7171146b2c7d566db278da, type: 2}
+  earthMaterial: {fileID: 2100000, guid: d29658622fac1d04190466040e22118c, type: 2}
+  normalMaterial: {fileID: 2100000, guid: d29658622fac1d04190466040e22118c, type: 2}
 --- !u!4 &4040188941829014587 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 43ce59f9e638ae8459cbd046e4570e97,

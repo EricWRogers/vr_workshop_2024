@@ -28,13 +28,6 @@ public class AbstractArrow : MonoBehaviour
     [Tooltip("How many Earth Walls are Allowed to be spawned at once")]
     public int earthBlockAmt = 3;
 
-
-    [Header("Arrow Prefab")]
-    public GameObject normalArrowPrefab;
-    public GameObject fireArrowPrefab;
-    public GameObject iceArrowPrefab;
-    public GameObject EarthArrowPrefab;
-
     private GameObject currentArrowModel;
 
     [HideInInspector]
@@ -55,7 +48,7 @@ public class AbstractArrow : MonoBehaviour
         trailEffect = transform.GetComponentInChildren<TrailRenderer>().gameObject;
         m_rb = GetComponent<Rigidbody>();
 
-        SpawnArrowModel();
+        //SpawnArrowModel();
         /*
         m_TerrainImpactEffect = GameObject.Find("Terrain_Impact");
         m_waterImpactEffect = GameObject.Find("Water_Impact");
@@ -63,7 +56,7 @@ public class AbstractArrow : MonoBehaviour
         */
     }
 
-    public void SpawnArrowModel()
+   /* public void SpawnArrowModel()
     {
         if (currentArrowModel != null)
         {
@@ -95,7 +88,7 @@ public class AbstractArrow : MonoBehaviour
             currentArrowModel.transform.localPosition = Vector3.zero;
             currentArrowModel.transform.localRotation = Quaternion.identity;
         }
-    }
+    }*/
 
     void Start()
     {
@@ -135,10 +128,10 @@ public class AbstractArrow : MonoBehaviour
         {
             IceArrow();
         }
-        if (arrowType == ArrowTypes.arrow_Types.Wind)
+        /*if (arrowType == ArrowTypes.arrow_Types.Wind)
         {
             WindArrow();
-        }
+        }*/
         if (arrowType == ArrowTypes.arrow_Types.Earth)
         {
             EarthArrow();
