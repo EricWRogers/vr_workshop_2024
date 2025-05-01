@@ -5,7 +5,7 @@ using UnityEngine;
 public class ArrowTypes : MonoBehaviour
 {
 
-    public enum arrow_Types { Normal, Fire, Earth, Ice, Wind };
+    public enum arrow_Types { Normal, Fire, Earth, Ice, };
 
     [Header("Arrow Models")]
     public GameObject fireArrowModel;
