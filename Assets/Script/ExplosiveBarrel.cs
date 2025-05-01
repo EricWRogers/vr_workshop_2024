@@ -17,6 +17,7 @@ public class ExplosiveBarrel : MonoBehaviour
 
     public void Detonate()
     {
+        Debug.Log("Explode");
         Instantiate(explosionVFX, transform.position, Quaternion.identity);
         Collider[] objectsToExplode = Physics.OverlapSphere(transform.position, ExplosiveRange, explodableLayerMask);
 
