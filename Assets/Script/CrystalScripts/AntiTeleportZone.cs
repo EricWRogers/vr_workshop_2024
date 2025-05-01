@@ -39,13 +39,15 @@ public class AntiTeleportZone : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnCollisionStay()
+    public void OnTriggerEnter()
     {
+        Debug.Log("Can Teleport False");
         player.GetComponent<SpawnKnife>().canTeleport = false;
     }
 
     public void OnTriggerExit()
     {
+        Debug.Log("Can Teleport True");
         player.GetComponent<SpawnKnife>().canTeleport = true;
     }
 }

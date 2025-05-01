@@ -205,12 +205,7 @@ public class AbstractArrow : MonoBehaviour
                             Debug.Log("earth");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
                         }
-                        //wind
-                        else if (arrowType == ArrowTypes.arrow_Types.Wind && target.arrowRequired == TheTargetScript.arrow_Types.Wind)
-                        {
-                            Debug.Log("wind");
-                            hitTransform.GetComponent<TheTargetScript>().Hit();
-                        }
+
                     }
                 }
                 else

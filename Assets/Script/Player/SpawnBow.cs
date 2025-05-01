@@ -41,8 +41,7 @@ public class SpawnBow : MonoBehaviour
         indicator.transform.localRotation = Quaternion.identity;
 
         // Ensure the indicator updates with arrow type
-        ArrowIndicator arrowIndicator = indicator.AddComponent<ArrowIndicator>();
-        arrowIndicator.indicatorPrefab = indicatorPrefab;
+
     }
 
     public void DestroyBow()
