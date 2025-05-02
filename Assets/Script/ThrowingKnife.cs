@@ -21,6 +21,7 @@ public class ThrowingKnife : MonoBehaviour
     private RaycastHit hit;
     public Vector3 lastPos;
     public Vector3 curPos;
+    private Rigidbody rb;
 
     void Awake()
     {
@@ -37,8 +38,8 @@ public class ThrowingKnife : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {   
-       
+    {
+
         curThrowDistance = Vector3.Distance(transform.position, player.transform.position);
         lastPos = curPos;
         curPos = transform.position;
@@ -54,10 +55,10 @@ public class ThrowingKnife : MonoBehaviour
         }
         if (curThrowDistance < maxThrowDistance)
         {
-        Teleport();
+            Teleport();
         }
 
-           
+
     }
 
     public void Teleport()
@@ -79,7 +80,7 @@ public class ThrowingKnife : MonoBehaviour
     {
         if (((1 << collision.gameObject.layer) & collisionLayer) != 0)
         {
-            hasLanded = true;
+            //hasLanded = true;
             rb.isKinematic = true;
             rb.velocity = Vector3.zero;
             rb.angularVelocity = Vector3.zero;
@@ -92,7 +93,7 @@ public class ThrowingKnife : MonoBehaviour
     void CheckToTeleport(Collision collision)
     {
         float curThrowDistance = Vector3.Distance(transform.position, player.transform.position);
-        
+
         TeleportCrystal crystal = collision.collider.GetComponent<TeleportCrystal>();
         if (crystal != null)
         {
