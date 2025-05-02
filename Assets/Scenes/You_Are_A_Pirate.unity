@@ -2144,7 +2144,7 @@ MonoBehaviour:
   fireArrowModel: {fileID: 0}
   earthArrowModel: {fileID: 0}
   iceArrowModel: {fileID: 0}
-  typesOfArrow: 1
+  typesOfArrow: 2
 --- !u!1 &483335656 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6499529959314878404, guid: 546d7f44fe93bca418d5537ba49930e6,
@@ -2185,6 +2185,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cannon (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848352913978830756, guid: e11caeb725da55240bf6329e0d826658,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8735415228540225596, guid: e11caeb725da55240bf6329e0d826658,
         type: 3}
@@ -2257,7 +2262,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &494995500
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2281,7 +2286,7 @@ Transform:
   m_GameObject: {fileID: 494995499}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.9229999, y: 0.643, z: 4.0880003}
+  m_LocalPosition: {x: 7.4769998, y: 2.723, z: 12.158}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3862,7 +3867,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &901738882
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4349,7 +4354,7 @@ Transform:
   m_GameObject: {fileID: 901738881}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 3.4, y: 1.35, z: 9.17}
+  m_LocalPosition: {x: 5.65, y: 3.43, z: 17.24}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5676,6 +5681,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cannon (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4848352913978830756, guid: e11caeb725da55240bf6329e0d826658,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8735415228540225596, guid: e11caeb725da55240bf6329e0d826658,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6637,7 +6647,7 @@ PrefabInstance:
     - target: {fileID: 6443962624503166008, guid: d13a3ec6c1b8ef14fa3adb7b65acc6de,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10006,6 +10016,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cannon (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4848352913978830756, guid: e11caeb725da55240bf6329e0d826658,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8735415228540225596, guid: e11caeb725da55240bf6329e0d826658,
         type: 3}
