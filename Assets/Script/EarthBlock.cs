@@ -43,9 +43,8 @@ public class EarthBlock : MonoBehaviour
     {
         isGrowing = true;
         float elapsedTime = 0f;
-      
-        bool shouldBreak = false;
-
+        float offset = transform.position.y + (maxSize.y / 2);
+        transform.position = new Vector3 (transform.position.x, offset, transform.position.y);
         while (elapsedTime < 1f)
         {
             transform.localScale = Vector3.Lerp(initialSize, maxSize, elapsedTime);
