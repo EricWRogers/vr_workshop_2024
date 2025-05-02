@@ -15,6 +15,7 @@ public class SpawnKnife : MonoBehaviour
     public GameObject leftController;
 
     public bool knifeSpawned = false;
+    private ThrowingKnife TKScript;
 
     public bool canTeleport = true;
     // Start is called before the first frame update
@@ -30,12 +31,19 @@ public class SpawnKnife : MonoBehaviour
                 rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(knife.GetComponent<XRGrabInteractable>());
     #pragma    warning restore CS0618 // Type or member is obsolete, this line resumes error messages
                 knifeSpawned = true;
+                TKScript = knife.GetComponent<ThrowingKnife>();
             }
         }
     }
     public void ThrowKnife()
     {
         rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
+        
+        float mag = Vector3.Magnitude(TKScript.curPos - TKScript.lastPos);
+        Vector3 direction = (TKScript.curPos - TKScript.lastPos).normalized;
+
+        knife.transform.rotation = Quaternion.LookRotation(direction);
+        knife.GetComponent<Bullet>().speed = mag * 10;
         knife.GetComponent<Bullet>().enabled = true;
         knifeSpawned = false;
     }

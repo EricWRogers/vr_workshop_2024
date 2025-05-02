@@ -18,6 +18,8 @@ public class ThrowingKnife : MonoBehaviour
     private float curThrowDistance;
     public LayerMask layerMask;
     private RaycastHit hit;
+    public Vector3 lastPos;
+    public Vector3 curPos;
 
     // Start is called before the first frame update
     void Start()
@@ -27,9 +29,11 @@ public class ThrowingKnife : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
+    {   
+       
         curThrowDistance = Vector3.Distance(transform.position, player.transform.position);
-        
+        lastPos = curPos;
+        curPos = transform.position;
     }
 
     public void CheckToTeleport()
