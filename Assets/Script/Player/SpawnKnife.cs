@@ -7,7 +7,7 @@ public class SpawnKnife : MonoBehaviour
     public GameObject knifePrefab;
     [HideInInspector]
     public GameObject knife;
-    //private Bullet bulletScript;
+    private Bullet bulletScript;
 
     [HideInInspector]
     public GameObject rightController;
@@ -43,7 +43,7 @@ public class SpawnKnife : MonoBehaviour
         if (canTeleport && !knifeSpawned)
         {
             knife = Instantiate(knifePrefab, rightController.transform.position, transform.rotation);
-
+            bulletScript = knife.GetComponent<Bullet>();
 #pragma warning disable CS0618
             interactor.StartManualInteraction(knife.GetComponent<XRGrabInteractable>());
 #pragma warning restore CS0618
@@ -78,6 +78,8 @@ public class SpawnKnife : MonoBehaviour
             Vector3 throwDir = velocity.normalized;
             float throwStrength = velocity.magnitude * throwForceMultiplier;
             throwingKnife.Throw(throwDir, throwStrength);
+            knife.GetComponent<Bullet>().enabled = true;
+            knife.GetComponent<Bullet>().speed = 0;
         }
 
         knifeSpawned = false;
