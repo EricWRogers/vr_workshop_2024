@@ -12,6 +12,7 @@ public class TeleporterMover : MonoBehaviour
     public float m_time = 0;
     public float timeBetween;
     public bool m_goingUp = true;
+    private bool shouldStop = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,21 +24,28 @@ public class TeleporterMover : MonoBehaviour
     {
         transform.position = Vector3.Lerp(m_startPos, m_endPos, m_time / timeBetween);
 
-        if (!m_goingUp)
+        if (!shouldStop)
         {
-            m_time -= Time.deltaTime;
-        }
+            if (!m_goingUp)
+            {
+                m_time -= Time.deltaTime;
+            }
 
-        if (m_goingUp)
-        {
-            m_time += Time.deltaTime;
-        }
-           
+            if (m_goingUp)
+            {
+                m_time += Time.deltaTime;
+            }
+        }   
 
     }
     public void ChangeDirction()
     {
         Debug.Log("1");
         m_goingUp = !m_goingUp;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        shouldStop = true;
     }
 }
