@@ -9,7 +9,7 @@ public class CannonBallScript : MonoBehaviour
     [SerializeField] private float ExplosiveRange = 3f;
     [SerializeField] private LayerMask explodableLayerMask;
     // Start is called before the first frame update
-    void Start()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, ExplosiveRange);
@@ -35,5 +35,6 @@ public class CannonBallScript : MonoBehaviour
         }
 
             AudioManager.instance.PlayAtPosition("Explosion_sound", transform.position);
+        Destroy(gameObject);
     }
 }
