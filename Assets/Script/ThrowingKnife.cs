@@ -14,40 +14,26 @@ public class ThrowingKnife : MonoBehaviour
     public float checkerRadius;
     public float checkerDistance;
 
-    public float maxThrowDistance = 20f;
+    public float maxThrowDistance;
     private float curThrowDistance;
     public LayerMask layerMask;
-    public LayerMask collisionLayer;
     private RaycastHit hit;
-    private Rigidbody rb;
-    private bool hasLanded = false;
-
-
-    void Awake()
-    {
-        rb = GetComponent<Rigidbody>();
-        player = GameObject.FindWithTag("Player");
-    }
+    public Vector3 lastPos;
+    public Vector3 curPos;
 
     // Start is called before the first frame update
     void Start()
     {
-        //player = GameObject.FindWithTag("Player");
-        Throw(transform.forward, 15f); // Optional default throw, you can call externally too
+        player = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame
     void Update()
     {
+
         curThrowDistance = Vector3.Distance(transform.position, player.transform.position);
-
-        if (!hasLanded)
-        {
-            // Optional: Rotate to face movement direction for realistic look
-            if (rb.velocity != Vector3.zero)
-                transform.rotation = Quaternion.LookRotation(rb.velocity);
-        }
-
+        lastPos = curPos;
+        curPos = transform.position;
     }
 
     public void CheckToTeleport()
@@ -60,7 +46,7 @@ public class ThrowingKnife : MonoBehaviour
         }
         if (curThrowDistance < maxThrowDistance)
         {
-            Teleport();
+        Teleport();
         }
 
 
@@ -72,43 +58,6 @@ public class ThrowingKnife : MonoBehaviour
         if (player.GetComponent<SpawnKnife>().canTeleport)
         {
             player.transform.position = transform.position + (-transform.forward);
-        }
-    }
-
-    public void Throw(Vector3 direction, float force)
-    {
-        rb.isKinematic = false;
-        rb.AddForce(direction * force, ForceMode.VelocityChange);
-    }
-
-    void OnCollisionEnter(Collision collision)
-    {
-        if (((1 << collision.gameObject.layer) & collisionLayer) != 0)
-        {
-            hasLanded = true;
-            rb.isKinematic = true;
-            rb.velocity = Vector3.zero;
-            rb.angularVelocity = Vector3.zero;
-            transform.parent = collision.transform; // Stick to surface
-
-            CheckToTeleport(collision);
-        }
-    }
-
-    void CheckToTeleport(Collision collision)
-    {
-        float curThrowDistance = Vector3.Distance(transform.position, player.transform.position);
-
-        TeleportCrystal crystal = collision.collider.GetComponent<TeleportCrystal>();
-        if (crystal != null)
-        {
-            crystal.TeleportToCrystal();
-            return;
-        }
-
-        if (curThrowDistance <= maxThrowDistance)
-        {
-            Teleport();
         }
     }
 }

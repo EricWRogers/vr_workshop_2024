@@ -15,45 +15,13 @@ public class SpawnKnife : MonoBehaviour
     public GameObject leftController;
 
     public bool knifeSpawned = false;
+    private ThrowingKnife TKScript;
 
     public bool canTeleport = true;
-    public float throwForceMultiplier = 1.5f;
-
-    private XRBaseInteractor interactor;
-    private Vector3 lastPosition;
-    private Vector3 velocity;
     // Start is called before the first frame update
-
-    void Start()
-    {
-        interactor = rightController.GetComponent<XRBaseInteractor>();
-    }
-
-    void FixedUpdate()
-    {
-        // Track velocity manually
-        if (knifeSpawned && knife != null)
-        {
-            velocity = (rightController.transform.position - lastPosition) / Time.fixedDeltaTime;
-            lastPosition = rightController.transform.position;
-        }
-    }
     public void SpawnAKnife()
     {
-        if (canTeleport && !knifeSpawned)
-        {
-            knife = Instantiate(knifePrefab, rightController.transform.position, transform.rotation);
-            bulletScript = knife.GetComponent<Bullet>();
-#pragma warning disable CS0618
-            interactor.StartManualInteraction(knife.GetComponent<XRGrabInteractable>());
-#pragma warning restore CS0618
-
-            knifeSpawned = true;
-        }
-    }
-    /*public void SpawnAKnife()
-    {
-        if (canTeleport && !knifeSpawned)
+        if (canTeleport)
         {
             if (!knifeSpawned)
             {
@@ -63,33 +31,22 @@ public class SpawnKnife : MonoBehaviour
                 rightController.GetComponent<XRBaseInteractor>().StartManualInteraction(knife.GetComponent<XRGrabInteractable>());
     #pragma    warning restore CS0618 // Type or member is obsolete, this line resumes error messages
                 knifeSpawned = true;
+                TKScript = knife.GetComponent<ThrowingKnife>();
             }
         }
-    }*/
+    }
     public void ThrowKnife()
     {
-        if (knife == null) return;
-
-        interactor.EndManualInteraction();
-
-        ThrowingKnife throwingKnife = knife.GetComponent<ThrowingKnife>();
-        if (throwingKnife != null)
-        {
-            Vector3 throwDir = velocity.normalized;
-            float throwStrength = velocity.magnitude * throwForceMultiplier;
-            throwingKnife.Throw(throwDir, throwStrength);
-            knife.GetComponent<Bullet>().enabled = true;
-            knife.GetComponent<Bullet>().speed = 0;
-        }
-
-        knifeSpawned = false;
-    }
-    /*public void ThrowKnife()
-    {
         rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
+
+        float mag = Vector3.Magnitude(TKScript.curPos - TKScript.lastPos);
+        Vector3 direction = (TKScript.curPos - TKScript.lastPos).normalized;
+
+        knife.transform.rotation = Quaternion.LookRotation(direction);
+        knife.GetComponent<Bullet>().speed = mag * 30;
         knife.GetComponent<Bullet>().enabled = true;
         knifeSpawned = false;
-    }*/
+    }
 
     public void TeleportTrue()
     {
