@@ -139,7 +139,7 @@ public class AbstractArrow : MonoBehaviour
         //Gets front of arrow and has regular impact follow
         Vector3 predictedPos = new Vector3(m_TerrainImpactEffect.transform.position.x + m_rb.velocity.x * Time.deltaTime, m_TerrainImpactEffect.transform.position.y + m_rb.velocity.y * Time.deltaTime, m_TerrainImpactEffect.transform.position.z + m_rb.velocity.z * Time.deltaTime);
         //Linecast that gets where the arrow will shoot
-        if (Physics.Linecast(arrowNockPoint.transform.position, predictedPos, out RaycastHit hit))
+        if (Physics.Linecast(arrowNockPoint.transform.position, predictedPos, out RaycastHit hit, ~mask))
         {
             if (!m_firstContact && hasBeenFired)
             {
