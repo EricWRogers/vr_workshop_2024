@@ -42,9 +42,13 @@ public class SpawnKnife : MonoBehaviour
         float mag = Vector3.Magnitude(TKScript.curPos - TKScript.lastPos);
         Vector3 direction = (TKScript.curPos - TKScript.lastPos).normalized;
 
-        knife.transform.rotation = Quaternion.LookRotation(direction);
-        knife.GetComponent<Bullet>().speed = mag * 30;
-        knife.GetComponent<Bullet>().enabled = true;
+        if (knife != null)
+        {
+            knife.transform.rotation = Quaternion.LookRotation(direction);
+            knife.GetComponent<Bullet>().speed = mag * 100;
+            knife.GetComponent<Bullet>().enabled = true;
+        }
+
         knifeSpawned = false;
     }
 

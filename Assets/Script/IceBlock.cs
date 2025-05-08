@@ -33,14 +33,12 @@ public class IceBlock : MonoBehaviour
 
         while (elapsedTime < 1f)
         {
-            if (Physics.BoxCast(transform.position, transform.localScale* 0.5f, transform.forward, out _hit, transform.rotation)){
-                break;
-            }
+
             transform.localScale = Vector3.Lerp(initialSize, maxSize, elapsedTime);
             elapsedTime += Time.deltaTime * growSpeed;
             yield return null;
         }
-        transform.position = new Vector3(transform.position.x, m_teleportOffest, transform.position.z);
+        
         transform.localScale = maxSize; // Ensure it reaches the final size
     }
 }

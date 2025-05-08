@@ -46,18 +46,18 @@ public class ThrowingKnife : MonoBehaviour
         }
         if (curThrowDistance < maxThrowDistance)
         {
-        Teleport();
+        Teleport(GetComponent<Bullet>().hitInfo);
         }
 
 
     }
 
-    public void Teleport()
+    public void Teleport(RaycastHit _hit)
     {
         Debug.Log("teleport");
         if (player.GetComponent<SpawnKnife>().canTeleport)
         {
-            player.transform.position = transform.position + (-transform.forward);
+            player.transform.position = _hit.point + (_hit.normal * 0.5f) ;
         }
     }
 }
