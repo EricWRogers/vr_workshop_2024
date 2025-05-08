@@ -4181,8 +4181,9 @@ MonoBehaviour:
   rightController: {fileID: 0}
   leftController: {fileID: 0}
   knifeSpawned: 0
+  speedMult: 200
+  minSpeed: 0.2
   canTeleport: 1
-  throwForceMultiplier: 1.5
 --- !u!114 &640577287
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5904,6 +5905,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 603624332}
     m_Modifications:
+    - target: {fileID: 328388962494352054, guid: b4de69103c4b1b64c8ee6d5715315be7,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 31.050148
+      objectReference: {fileID: 0}
+    - target: {fileID: 328388962494352054, guid: b4de69103c4b1b64c8ee6d5715315be7,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 20.384481
+      objectReference: {fileID: 0}
+    - target: {fileID: 328388962494352054, guid: b4de69103c4b1b64c8ee6d5715315be7,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 1.3700014
+      objectReference: {fileID: 0}
+    - target: {fileID: 328388962494352054, guid: b4de69103c4b1b64c8ee6d5715315be7,
+        type: 3}
+      propertyPath: m_Center.z
+      value: -0.14807563
+      objectReference: {fileID: 0}
     - target: {fileID: 1290593013958240173, guid: b4de69103c4b1b64c8ee6d5715315be7,
         type: 3}
       propertyPath: m_LocalPosition.x
