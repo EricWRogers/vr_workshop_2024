@@ -16,6 +16,8 @@ public class SpawnKnife : MonoBehaviour
 
     public bool knifeSpawned = false;
     private ThrowingKnife TKScript;
+    public float speedMult;
+    public float minSpeed;
 
     public bool canTeleport = true;
     // Start is called before the first frame update
@@ -40,12 +42,13 @@ public class SpawnKnife : MonoBehaviour
         rightController.GetComponent<XRBaseInteractor>().EndManualInteraction();
 
         float mag = Vector3.Magnitude(TKScript.curPos - TKScript.lastPos);
+        mag = (mag < minSpeed) ? minSpeed : mag;
         Vector3 direction = (TKScript.curPos - TKScript.lastPos).normalized;
 
         if (knife != null)
         {
             knife.transform.rotation = Quaternion.LookRotation(direction);
-            knife.GetComponent<Bullet>().speed = mag * 100;
+            knife.GetComponent<Bullet>().speed = mag * speedMult;
             knife.GetComponent<Bullet>().enabled = true;
         }
 

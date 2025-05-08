@@ -143,8 +143,8 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
@@ -311,6 +311,7 @@ MonoBehaviour:
   damage: 1
   speed: 20
   lifeTime: 10
+  gravity: -6
   destroyOnImpact: 1
   hitTarget:
     m_PersistentCalls:
@@ -373,6 +374,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1
+  lastPos: {x: 0, y: 0, z: 0}
+  curPos: {x: 0, y: 0, z: 0}
 --- !u!1 &5564570065586331283
 GameObject:
   m_ObjectHideFlags: 0
