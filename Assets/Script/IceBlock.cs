@@ -9,11 +9,12 @@ public class IceBlock : MonoBehaviour
     private Vector3 initialSize;
     private bool isGrowing = false;
     public Transform teleportPos;
-    public float teleportOffest;
+    private float m_teleportOffest;
 
     void Start()
     {
         initialSize = Vector3.zero;
+        m_teleportOffest = maxSize.y / 2;
     }
 
     public void StartGrowing()
@@ -39,7 +40,7 @@ public class IceBlock : MonoBehaviour
             elapsedTime += Time.deltaTime * growSpeed;
             yield return null;
         }
-
+        transform.position = new Vector3(transform.position.x, m_teleportOffest, transform.position.z);
         transform.localScale = maxSize; // Ensure it reaches the final size
     }
 }

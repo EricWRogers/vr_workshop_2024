@@ -29,12 +29,12 @@ public class SpawnKnife : MonoBehaviour
         interactor = rightController.GetComponent<XRBaseInteractor>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         // Track velocity manually
         if (knifeSpawned && knife != null)
         {
-            velocity = (rightController.transform.position - lastPosition) / Time.deltaTime;
+            velocity = (rightController.transform.position - lastPosition) / Time.fixedDeltaTime;
             lastPosition = rightController.transform.position;
         }
     }
