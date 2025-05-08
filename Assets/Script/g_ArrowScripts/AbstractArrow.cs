@@ -22,6 +22,7 @@ public class AbstractArrow : MonoBehaviour
     public GameObject iceBlockPrefab;
     [Tooltip("How many Ice BLocks are Allowed to be spawned at once")]
     public int iceBlockAmt = 3;
+    public float iceBlockOffset;
 
     public GameObject earthBlockPrefab;
 
@@ -172,7 +173,8 @@ public class AbstractArrow : MonoBehaviour
                     }
                     if (arrowType == ArrowTypes.arrow_Types.Ice)
                     {
-                        SpawnIceBlock(hit.point, new Vector3());
+                        SpawnIceBlock(hit.point + (hit.normal * iceBlockOffset));
+                        Debug.Log(hit.normal * iceBlockOffset);
                     }
                     if (hit.transform.CompareTag("Target"))
                     {
@@ -197,7 +199,8 @@ public class AbstractArrow : MonoBehaviour
                         {
                             Debug.Log("ice");
                             hitTransform.GetComponent<TheTargetScript>().Hit();
-                            SpawnIceBlock(hit.point, new Vector3());
+                            SpawnIceBlock(hit.point + (hit.normal * iceBlockOffset));
+                            Debug.Log(hit.normal * iceBlockOffset);
                         }
                         //earth
                         else if (arrowType == ArrowTypes.arrow_Types.Earth && target.arrowRequired == TheTargetScript.arrow_Types.Earth)
@@ -222,12 +225,12 @@ public class AbstractArrow : MonoBehaviour
 
     }
 
-    private void SpawnIceBlock(Vector3 position, Vector3 normal)
+    private void SpawnIceBlock(Vector3 position)
     {
         if (iceBlockPrefab != null)
         {
-            Quaternion rotation = Quaternion.LookRotation(normal);
-            GameObject iceBlock = Instantiate(iceBlockPrefab, position, rotation);
+            
+            GameObject iceBlock = Instantiate(iceBlockPrefab, position, Quaternion.identity);
             IceBlock iceBlockScript = iceBlock.GetComponent<IceBlock>();
             BlockManager.instance.AddIceBlock(iceBlock);
             //Vector3 iceTelePos = Vector3.up;

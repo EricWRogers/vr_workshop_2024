@@ -9,11 +9,12 @@ public class IceBlock : MonoBehaviour
     private Vector3 initialSize;
     private bool isGrowing = false;
     public Transform teleportPos;
-    public float teleportOffest;
+    private float m_teleportOffest;
 
     void Start()
     {
         initialSize = Vector3.zero;
+        m_teleportOffest = maxSize.y / 2;
     }
 
     public void StartGrowing()
@@ -32,14 +33,12 @@ public class IceBlock : MonoBehaviour
 
         while (elapsedTime < 1f)
         {
-            if (Physics.BoxCast(transform.position, transform.localScale* 0.5f, transform.forward, out _hit, transform.rotation)){
-                break;
-            }
+
             transform.localScale = Vector3.Lerp(initialSize, maxSize, elapsedTime);
             elapsedTime += Time.deltaTime * growSpeed;
             yield return null;
         }
-
+        
         transform.localScale = maxSize; // Ensure it reaches the final size
     }
 }
