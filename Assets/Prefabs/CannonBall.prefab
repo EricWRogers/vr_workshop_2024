@@ -170,6 +170,7 @@ MonoBehaviour:
   damage: 1
   speed: 20
   lifeTime: 10
+  gravity: 0
   destroyOnImpact: 1
   hitTarget:
     m_PersistentCalls:
@@ -192,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosionVFX: {fileID: 8542098529388183569, guid: d0e559a47925d36479983db9bec08a26,
     type: 3}
-  ExplosiveRange: 1
+  ExplosiveRange: 0
   explodableLayerMask:
     serializedVersion: 2
     m_Bits: 128

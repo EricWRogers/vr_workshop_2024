@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 1234143672947889515}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.9, y: 0.16333327, z: -17.5}
+  m_LocalPosition: {x: 6.4, y: 0.16333327, z: -21.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -42,8 +42,8 @@ GameObject:
   - component: {fileID: 1241656549264739942}
   - component: {fileID: 8529259936371807571}
   - component: {fileID: 1356949704846091219}
-  - component: {fileID: 8761846841809875011}
   - component: {fileID: 6749763531611515126}
+  - component: {fileID: 7216604841318983291}
   m_Layer: 0
   m_Name: Teleport Crystal
   m_TagString: Teleportable
@@ -117,8 +117,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &8761846841809875011
-MeshCollider:
+--- !u!114 &6749763531611515126
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2762881382891870823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe4ff1b7be1c8984dbeebea9172b6033, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  teleportPos: {fileID: 1234143672947889515}
+  Player: {fileID: 0}
+--- !u!135 &7216604841318983291
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -135,21 +149,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4641267266388411429, guid: dda4f35d63b29af51a67efe20df80fa0, type: 3}
---- !u!114 &6749763531611515126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2762881382891870823}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe4ff1b7be1c8984dbeebea9172b6033, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  teleportPos: {fileID: 1234143672947889515}
-  Player: {fileID: 0}
+  serializedVersion: 3
+  m_Radius: 15
+  m_Center: {x: 0.000017642975, y: -0.0000014305115, z: -0.0000166893}

@@ -169,7 +169,7 @@ public class AbstractArrow : MonoBehaviour
                     TheTargetScript target = hitTransform.GetComponent<TheTargetScript>();
                     if (arrowType == ArrowTypes.arrow_Types.Earth)
                     {
-                        SpawnEarthWall(hit.point, hit.normal);
+                        SpawnEarthWall(hit.point);
                     }
                     if (arrowType == ArrowTypes.arrow_Types.Ice)
                     {
@@ -250,13 +250,11 @@ public class AbstractArrow : MonoBehaviour
             Debug.LogError("Ice Block Prefab not assigned in AbstractArrow!");
         }
     }
-    private void SpawnEarthWall(Vector3 _pos, Vector3 _normal)
+    private void SpawnEarthWall(Vector3 _pos)
     {
         if (earthBlockPrefab != null)
         {
-
-            Quaternion rotation = Quaternion.LookRotation(_normal);
-            GameObject earthWall = Instantiate(earthBlockPrefab, _pos, rotation);
+            GameObject earthWall = Instantiate(earthBlockPrefab, _pos, Quaternion.identity);
             EarthBlock earthWallScript = earthWall.GetComponent<EarthBlock>();
             BlockManager.instance.AddEarthWall(earthWall);
 
